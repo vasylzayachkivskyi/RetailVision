@@ -24,7 +24,7 @@ $(document).ready(function () {
         $('.header__search').addClass('active');
     });
 
-    $('.header__search .close').on('click', function () {
+    $('.header__search .close, .header__search-dropdown').on('click', function () {
         $('.header__search-dropdown').slideUp();
         $('.header').removeClass('darkened');
         $('.mainsect').removeClass('darkened');
@@ -110,11 +110,6 @@ $(document).ready(function () {
         $('.filter-dropdown').slideToggle();
     });
 
-
-
-
-
-
     // notification items z-index from last to first  -------- //
     function assignZIndex() {
         var items = $('.notification-box__item');
@@ -126,14 +121,29 @@ $(document).ready(function () {
     }
     assignZIndex();
 
-
-
     // notification items collapsing  -------- //
     $('.notification-box__item').on('click', function () {
         var elementTarget = $(this).parent('.notification-box__wrapper').find('.notification-box__item:not(:first-child)');
         $(elementTarget).find('.notification-item__wrapper').slideToggle();
         $(elementTarget).toggleClass('active');
-
     });
+
+
+
+    // select2
+    // function formatState (state) {
+    //     if (!state.id) {
+    //       return state.text;
+    //     }
+    //     var baseUrl = "/img/svg_icons/images/flags";
+    //     var $state = $(
+    //       '<span><img src="' + baseUrl + '/' + state.element.value.toLowerCase() + '.png" class="img-icon" /> ' + state.text + '</span>'
+    //     );
+    //     return $state;
+    //   };
+      
+    //     $('.search__select').select2({
+    //         templateResult: formatState
+    //       });
 
 });
