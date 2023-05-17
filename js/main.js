@@ -7,8 +7,9 @@ $(document).ready(function () {
         $('.header').toggleClass('darkened');
         $('.mainsect').toggleClass('darkened');
     });
+    
     // close notification -------- //
-    $('.sidebar, .mainsect').on('click', function () {
+    $('.sidebar').on('click', function () {
         $('.header').removeClass('darkened');
         $('.mainsect').removeClass('darkened');
         $('.notification').removeClass('active');
@@ -24,7 +25,7 @@ $(document).ready(function () {
         $('.header__search').addClass('active');
     });
 
-    $('.header__search .close, .header__search-dropdown').on('click', function () {
+    $('.header__search .close').on('click', function () {
         $('.header__search-dropdown').slideUp();
         $('.header').removeClass('darkened');
         $('.mainsect').removeClass('darkened');
@@ -80,14 +81,21 @@ $(document).ready(function () {
 
     //  checkbox form select menu ----------------- //
     $('.select input').on('click', function () {
-        $(this).next('.dropdown-response').slideDown();
+        $(this).next('.dropdown-response').slideToggle();
     });
     $('.dropdown-btn').on('click', function (event) {
         event.preventDefault();
         $(this).parent('.dropdown-response').slideUp();
         const $select = $(this).closest('.select');
-        const selectedValue = $(this).parent('.dropdown-response').find('input[type=checkbox]').val();
-        $select.find('input[type=text]').val(selectedValue);
+        const selectedValue = $(this).parent('.dropdown-response').find('input[type=checkbox]:checked,input[type=radio]:checked').val();
+        var maxLength = 9; // Максимальна довжина для скороченого тексту
+
+        if (selectedValue.length > maxLength) {
+            var shortText = selectedValue.substring(0, maxLength) + '...'; // Скорочений текст з трикрапкою
+            $select.find('input[type=text]').val(shortText);
+        } else {
+            $select.find('input[type=text]').val(selectedValue);
+        }
     });
 
 
@@ -105,10 +113,62 @@ $(document).ready(function () {
     });
 
     // estate filter open/hide ----------------- //
-
     $('.filter').on('click', function () {
         $('.filter-dropdown').slideToggle();
     });
+
+
+
+    // lead row settings -------- //
+    $('.lead_settings').on('click', function () {
+        $(this).next('.lead-row-dropdown').slideToggle();
+        $(this).closest('.leads__row').toggleClass('active');
+    });
+
+    $('.lead-row-dropdown').on('click', function () {
+        $(this).slideUp();
+        $(this).closest('.leads__row').removeClass('active');
+    });
+
+    $('.leads__rightblock-settings').on('click', function () {
+        $(this).next('.lead-row-dropdown').slideToggle();
+    });
+
+
+    // lead info -------- //
+    $('.leads__head-btn').on('click', function () {
+        $('.leads__info').addClass('show');
+        $('.header').addClass('darkened');
+        $('.mainsect').addClass('darkened');
+    });
+    $('.leads__info-close').on('click', function () {
+        $('.leads__info').removeClass('show');
+        $('.header').removeClass('darkened');
+        $('.mainsect').removeClass('darkened');
+    });
+
+
+    // lead edit -------- //
+    $('.leads__leftblock-edit').on('click', function () {
+        $(this).closest('.leads__info-leftblock').toggleClass('active');
+    });
+
+    // lead task name -------- //
+    $('.leads__task-name').on('click', function () {
+        $(this).next('.task-name__list').slideToggle('fast');
+    });
+    $('.task-name__list').find('li').on('click', function () {
+        $(this).closest('.task-name__list').slideUp('fast');
+    });
+
+    // lead task type -------- //
+    $('.leads__task-type').on('click', function () {
+        $(this).find('ul').slideToggle('fast');
+    });
+
+
+
+
 
     // notification items z-index from last to first  -------- //
     function assignZIndex() {
@@ -121,6 +181,7 @@ $(document).ready(function () {
     }
     assignZIndex();
 
+
     // notification items collapsing  -------- //
     $('.notification-box__item').on('click', function () {
         var elementTarget = $(this).parent('.notification-box__wrapper').find('.notification-box__item:not(:first-child)');
@@ -129,21 +190,14 @@ $(document).ready(function () {
     });
 
 
+    // init select style
+    if ($('.lead_row_input').length > 0) {
+        $(function () {
+            $('.lead_row_input').styler();
+        });
+    }
 
-    // select2
-    // function formatState (state) {
-    //     if (!state.id) {
-    //       return state.text;
-    //     }
-    //     var baseUrl = "/img/svg_icons/images/flags";
-    //     var $state = $(
-    //       '<span><img src="' + baseUrl + '/' + state.element.value.toLowerCase() + '.png" class="img-icon" /> ' + state.text + '</span>'
-    //     );
-    //     return $state;
-    //   };
-      
-    //     $('.search__select').select2({
-    //         templateResult: formatState
-    //       });
+    //datepicker
+    $('.datepicker').flatpickr({ /* options here */ });
 
 });
