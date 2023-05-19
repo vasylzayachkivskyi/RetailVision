@@ -12,14 +12,6 @@
    overflow-y: scroll;
    overflow-x: hidden;
 
-   &::-webkit-scrollbar {
-      width: 0;
-   }
-
-   /* ie 10+ */
-   -ms-overflow-style: none;
-   /* FF*/
-   overflow: -moz-scrollbars-none;
 
    a {
       display: block;
@@ -1986,12 +1978,59 @@
    padding: 16px;
    filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.08));
 
-   .result {
+   .result-info {
       font-weight: 700;
       font-size: 12px;
       line-height: 15px;
       color: #22232A;
       margin-bottom: 16px;
+   }
+
+   .result {
+      margin-bottom: 16px;
+      display: none;
+
+      >div {
+         display: flex;
+         justify-content: space-between;
+         align-items: center;
+      }
+
+
+      .btns {
+         display: flex;
+         align-items: center;
+
+         a {
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+
+            &+a {
+               margin-left: 5px;
+            }
+         }
+      }
+
+      textarea {
+         background: #F5F5F5;
+         border: 0.5px solid #D9D9D9;
+         box-shadow: inset 0px 2px 1px rgba(56, 61, 84, 0.03);
+         border-radius: 4px;
+         font-weight: 600;
+         font-size: 12px;
+         line-height: 15px;
+         resize: none;
+         height: 24px;
+         width: 60%;
+         padding: 4px 10px;
+         outline: none;
+         color: #22232A;
+
+         &::placeholder {
+            opacity: .4;
+         }
+      }
    }
 
    p {
@@ -2024,6 +2063,27 @@
 
 .leads__task-head {
    display: flex;
+   align-items: flex-end;
+
+   span {
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 18px;
+      color: #22232A;
+   }
+
+   .dropdown-element {
+      p {
+         color: #3670F0;
+         font-weight: 600;
+         font-size: 14px;
+         line-height: 14px;
+         margin-right: 9px;
+         cursor: pointer;
+         padding-bottom: 3px;
+         border-bottom: 1px solid #3670F0;
+      }
+   }
 
    input {
       margin-left: 9px;
@@ -2032,7 +2092,7 @@
       line-height: 18px;
       border: none;
       border-radius: 0;
-      width: 70px;
+      width: 65px;
       padding: 0;
       cursor: pointer;
       display: inline-block;
@@ -2041,7 +2101,7 @@
       border-bottom: 1px solid #3670F0;
 
       &.datepicker {
-         width: 140px;
+         width: 110px;
       }
 
       &::placeholder {
@@ -2204,6 +2264,16 @@
    width: 222px;
 }
 
+.dayContainer {
+   width: 222px;
+   min-width: 222px;
+   max-width: 222px;
+}
+
+.flatpickr-days {
+   width: 222px;
+}
+
 
 .flatpickr-calendar {
    opacity: 0;
@@ -2233,18 +2303,20 @@
    text-align: center;
 }
 
+.flatpickr-weekday,
+.flatpickr-day {
+   height: 25px;
+}
+
 .flatpickr-day {
    border-radius: 2px;
    color: #22232A;
    border: none;
    cursor: pointer;
    font-weight: 400;
-   max-width: 20px;
-   height: 20px;
    line-height: 39px;
    display: flex;
    align-items: center;
-   margin: 3px;
 }
 
 .flatpickr-day.selected,
@@ -2277,6 +2349,20 @@ span.flatpickr-weekday,
    line-height: 14px;
    text-align: center;
    color: #22232A;
+}
+
+.flatpickr-months .flatpickr-prev-month:hover svg,
+.flatpickr-months .flatpickr-next-month:hover svg {
+   fill: inherit;
+}
+
+.flatpickr-current-month .flatpickr-monthDropdown-months:hover {
+   background: inherit;
+}
+
+.flatpickr-months .flatpickr-prev-month svg,
+.flatpickr-months .flatpickr-next-month svg {
+   margin-bottom: 8px;
 }
 
 
@@ -2831,9 +2917,11 @@ span.flatpickr-weekday,
    .leads__forminput.select .dropdown-response {
       width: 266px;
       flex-wrap: nowrap;
+
       .dropdown-row {
          width: 100%;
-     }
+      }
+
       .dropdown-wrapper {
          width: 45%;
       }
@@ -2841,6 +2929,7 @@ span.flatpickr-weekday,
 
    .leads__forminput:last-of-type.select .dropdown-response {
       width: 365px;
+
       .dropdown-wrapper {
          width: 60%;
       }
@@ -2918,6 +3007,23 @@ span.flatpickr-weekday,
 }
 
 @media(max-width:991.8px) {
+   .leads__rightblock-content .result textarea {
+      width: 40%;
+  }
+   .leads__task-head input.datepicker {
+      width: 110px;
+   }
+
+   .leads__task-head .dropdown-element p {
+      font-size: 13px;
+   }
+
+   .leads__task-head .leads__task-type ul {
+      right: 0;
+      left: initial;
+      padding: 14px 25px;
+   }
+
    .leads__leftblock-input p {
       max-width: 180px;
    }

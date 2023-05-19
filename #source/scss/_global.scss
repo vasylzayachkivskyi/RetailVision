@@ -12,7 +12,8 @@ html,
 body {
     height: 100%;
 }
-label{
+
+label {
     cursor: pointer;
 }
 
@@ -72,16 +73,18 @@ body {
     flex-direction: column;
     position: relative;
     overflow: hidden;
-    *{
+
+    * {
         &::-webkit-scrollbar {
             width: 0;
-         }
-      
-         /* ie 10+ */
-         -ms-overflow-style: none;
-         /* FF*/
-         overflow: -moz-scrollbars-none;
+        }
+
+        /* ie 10+ */
+        -ms-overflow-style: none;
+        /* FF*/
+        overflow: -moz-scrollbars-none;
     }
+
 }
 
 
@@ -99,6 +102,7 @@ body {
 
 .bluebtn {
     background: #3670F0;
+    border: 1px solid #3670F0;
     border-radius: 8px;
     padding: 8px 24px;
     transition: .3s;
@@ -110,5 +114,20 @@ body {
     &:hover {
         background: rgba(54, 112, 240, 0.8);
         color: #fff;
+    }
+}
+
+.whitebtn {
+    border: 1px solid #3670F0;
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
+    color: #3670F0;
+    transition: .3s;
+
+    &:hover {
+        background: rgba(54, 112, 240, 0.04);
+        color: #3670F0;
     }
 }

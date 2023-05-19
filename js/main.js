@@ -9,13 +9,20 @@ $(document).ready(function () {
     });
 
     // close notification -------- //
-    $('.sidebar, .mainsect').on('click', function () {
+    $(document).on('click', function (event) {
+        var target = $(event.target);
+
+        if (!target.closest('.notification, .header__notification, .open-leadinfo').length) {
+            fkt();
+        }
+    });
+    function fkt() {
         $('.header').removeClass('darkened');
         $('.mainsect').removeClass('darkened');
         $('.notification').removeClass('active');
         $('.header__search-dropdown').slideUp();
         $('.header__search').removeClass('active');
-    });
+    }
 
     //  header search open ----------------- //
     $('.hsbtn').on('click', function () {
@@ -147,7 +154,17 @@ $(document).ready(function () {
 
     // lead rightblock edit -------- //
     $('.lead__rightblock_done').on('click', function () {
+        $(this).closest('.leads__info-rightblock').find('.result').slideDown();
+    });
+    $('.cancel-result').on('click', function () {
+        $(this).closest('.result').slideUp();
+    });
+    $('.done-result').on('click', function (event) {
+        event.preventDefault();
+        var textareaValue = $('.result textarea').val();
+        var resultInfo = $('<h3 class="result-info"></h3>').text('Результат: ' +textareaValue);
         $(this).closest('.leads__info-rightblock').addClass('done');
+        $(this).closest('.result').html(resultInfo);
     });
     $('.lead__rightblock_edit').on('click', function () {
         $(this).closest('.leads__info-rightblock').addClass('active');
@@ -225,35 +242,35 @@ $(document).ready(function () {
     });
 
     // action to element on lead left block
-    $('.hover-elevent li').on('click', function() {
+    $('.hover-elevent li').on('click', function () {
         var action = $(this).text().trim();
         var leadElement = $(this).closest('.leads__leftblock-action').find('.lead-element');
-    
+
         if (action === 'Перейти') {
-          window.open(leadElement.text(), '_blank');
+            window.open(leadElement.text(), '_blank');
         } else if (action === 'Скопіювати') {
-          copyToClipboard(leadElement.text());
+            copyToClipboard(leadElement.text());
         } else if (action === 'Редагувати') {
-          var currentValue = leadElement.text();
-    
-          // Замінюємо елемент на textarea для редагування
-          leadElement.replaceWith('<textarea class="lead-element-edit">' + currentValue + '</textarea>');
-    
-          // Встановлюємо фокус на новоствореному textarea
-          $('.lead-element-edit').focus();
-    
-          // Обробник події для збереження змін при натисканні клавіші Enter
-          $('.lead-element-edit').on('keydown', function(e) {
-            if (e.key === 'Enter') {
-              e.preventDefault();
-              var editedValue = $(this).val().trim();
-    
-              // Замінюємо textarea на оновлене значення
-              $(this).replaceWith('<p class="lead-element">' + editedValue + '</p>');
-            }
-          });
+            var currentValue = leadElement.text();
+
+            // Замінюємо елемент на textarea для редагування
+            leadElement.replaceWith('<textarea class="lead-element-edit">' + currentValue + '</textarea>');
+
+            // Встановлюємо фокус на новоствореному textarea
+            $('.lead-element-edit').focus();
+
+            // Обробник події для збереження змін при натисканні клавіші Enter
+            $('.lead-element-edit').on('keydown', function (e) {
+                if (e.key === 'Enter') {
+                    e.preventDefault();
+                    var editedValue = $(this).val().trim();
+
+                    // Замінюємо textarea на оновлене значення
+                    $(this).replaceWith('<p class="lead-element">' + editedValue + '</p>');
+                }
+            });
         }
-      });
+    });
 
     // Функція для копіювання тексту у буфер обміну
     function copyToClipboard(text) {
@@ -296,13 +313,6 @@ $(document).ready(function () {
     });
 
 
-    // init select style
-    if ($('.lead_row_input, .customselect').length > 0) {
-        $(function () {
-            $('.lead_row_input, .customselect, .customradio').styler();
-        });
-    }
-
     //datepicker
     $('.datepicker').flatpickr({
         time_24hr: true,
@@ -311,7 +321,29 @@ $(document).ready(function () {
         altFormat: "d.m.Y G:i",
         enableTime: true,
         minDate: "Завтра",
-        minuteIncrement: 30
+        minuteIncrement: 30,
+        disableMobile: "true",
+        locale: {
+            firstDayOfWeek: 1, // Встановлюємо перший день тижня на понеділок
+            months: {
+                shorthand: ['Січ', 'Лют', 'Бер', 'Кві', 'Тра', 'Чер', 'Лип', 'Сер', 'Вер', 'Жов', 'Лис', 'Гру'],
+                longhand: ['Січень', 'Лютий', 'Березень', 'Квітень', 'Травень', 'Червень', 'Липень', 'Серпень', 'Вересень', 'Жовтень', 'Листопад', 'Грудень']
+            },
+            weekdays: {
+                shorthand: ['Нд', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'],
+                longhand: ["Неділя", "Понеділок", "Вівторок", "Середа", "Четвер", "П'ятниця", "Субота"]
+            }
+        }
     });
+
+    // init select style
+    if ($('.lead_row_input, .customselect').length > 0) {
+        $(function () {
+            $('.lead_row_input, .customselect, .customradio').styler();
+        });
+    }
+
+
+
 
 });
