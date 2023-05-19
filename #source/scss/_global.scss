@@ -12,9 +12,13 @@ html,
 body {
     height: 100%;
 }
+label{
+    cursor: pointer;
+}
 
 a {
     text-decoration: none;
+    cursor: pointer;
     color: inherit;
 
     &:hover {
@@ -68,6 +72,16 @@ body {
     flex-direction: column;
     position: relative;
     overflow: hidden;
+    *{
+        &::-webkit-scrollbar {
+            width: 0;
+         }
+      
+         /* ie 10+ */
+         -ms-overflow-style: none;
+         /* FF*/
+         overflow: -moz-scrollbars-none;
+    }
 }
 
 
@@ -80,5 +94,21 @@ body {
     .container-xl,
     .container-xxl {
         max-width: 1400px;
+    }
+}
+
+.bluebtn {
+    background: #3670F0;
+    border-radius: 8px;
+    padding: 8px 24px;
+    transition: .3s;
+    color: #fff;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
+
+    &:hover {
+        background: rgba(54, 112, 240, 0.8);
+        color: #fff;
     }
 }

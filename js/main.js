@@ -7,9 +7,9 @@ $(document).ready(function () {
         $('.header').toggleClass('darkened');
         $('.mainsect').toggleClass('darkened');
     });
-    
+
     // close notification -------- //
-    $('.sidebar').on('click', function () {
+    $('.sidebar, .mainsect').on('click', function () {
         $('.header').removeClass('darkened');
         $('.mainsect').removeClass('darkened');
         $('.notification').removeClass('active');
@@ -25,7 +25,7 @@ $(document).ready(function () {
         $('.header__search').addClass('active');
     });
 
-    $('.header__search .close').on('click', function () {
+    $('.header__search .close, .search-inner__wrapper a').on('click', function () {
         $('.header__search-dropdown').slideUp();
         $('.header').removeClass('darkened');
         $('.mainsect').removeClass('darkened');
@@ -88,7 +88,7 @@ $(document).ready(function () {
         $(this).parent('.dropdown-response').slideUp();
         const $select = $(this).closest('.select');
         const selectedValue = $(this).parent('.dropdown-response').find('input[type=checkbox]:checked,input[type=radio]:checked').val();
-        var maxLength = 9; // Максимальна довжина для скороченого тексту
+        var maxLength = 10; // Максимальна довжина для скороченого тексту
 
         if (selectedValue.length > maxLength) {
             var shortText = selectedValue.substring(0, maxLength) + '...'; // Скорочений текст з трикрапкою
@@ -119,11 +119,8 @@ $(document).ready(function () {
 
 
 
+
     // lead row settings -------- //
-    $('.lead_settings').on('click', function () {
-        $(this).next('.lead-row-dropdown').slideToggle();
-        $(this).closest('.leads__row').toggleClass('active');
-    });
 
     $('.lead-row-dropdown').on('click', function () {
         $(this).slideUp();
@@ -136,34 +133,143 @@ $(document).ready(function () {
 
 
     // lead info -------- //
-    $('.leads__head-btn').on('click', function () {
+    $('.open-leadinfo').on('click', function () {
         $('.leads__info').addClass('show');
         $('.header').addClass('darkened');
         $('.mainsect').addClass('darkened');
     });
-    $('.leads__info-close').on('click', function () {
+    $('.close-leadinfo').on('click', function () {
         $('.leads__info').removeClass('show');
         $('.header').removeClass('darkened');
         $('.mainsect').removeClass('darkened');
     });
 
 
-    // lead edit -------- //
-    $('.leads__leftblock-edit').on('click', function () {
-        $(this).closest('.leads__info-leftblock').toggleClass('active');
+    // lead rightblock edit -------- //
+    $('.lead__rightblock_done').on('click', function () {
+        $(this).closest('.leads__info-rightblock').addClass('done');
     });
+    $('.lead__rightblock_edit').on('click', function () {
+        $(this).closest('.leads__info-rightblock').addClass('active');
+    });
+    $('.lead__rightblock_delete').on('click', function () {
+        $(this).closest('.leads__info-rightblock').hide();
+    });
+
+
+
 
     // lead task name -------- //
     $('.leads__task-name').on('click', function () {
         $(this).next('.task-name__list').slideToggle('fast');
     });
-    $('.task-name__list').find('li').on('click', function () {
+    $('.task-name__list li').on('click', function () {
         $(this).closest('.task-name__list').slideUp('fast');
+        const select = $(this).parent('.task-name__list');
+        const selectedValue = $(this).text();
+        select.prev('.leads__task-name').val(selectedValue);
     });
 
     // lead task type -------- //
     $('.leads__task-type').on('click', function () {
         $(this).find('ul').slideToggle('fast');
+    });
+    $('.leads__task-type li').on('click', function () {
+        const selectedValue = $(this).html();
+        console.log(selectedValue);
+        $(this).closest('.leads__task-type').find('p').html(selectedValue);
+    });
+
+    // dropdown-element -------- //
+    $('.dropdown-element p').on('click', function () {
+        $(this).parent('.dropdown-element').find('ul').slideToggle('fast');
+    });
+    $('.dropdown-element li').on('click', function () {
+        $(this).closest('ul').slideUp('fast');
+        const select = $(this).parent('ul');
+        const selectedValue = $(this).text();
+        select.prev('.dropdown-element p').text(selectedValue);
+    });
+
+
+    // POPUP ---------------------------------------------- //
+    $('.popup__btn').on('click', function () {
+        var indexPopup = $(this).attr('data-popup');
+        $('.popup__window').removeClass('active');
+        $('.' + indexPopup).addClass('active');
+        return false;
+    });
+
+    $('.popup__close').on('click', function () {
+        $('.popup__window').removeClass('active');
+    });
+
+
+    // lead form select ---------------------------------------------- //
+    $('.select').on('click', function () {
+        $(this).find('ul').slideToggle();
+    });
+
+    $('.select li').on('click', function () {
+        const $select = $(this).closest('.select');
+        const selectedValue = $(this).find('input[type=radio]').val();
+        $select.find('input[type=text]').val(selectedValue);
+        var maxLength = 15; // Максимальна довжина для скороченого тексту
+
+        if (selectedValue.length > maxLength) {
+            var shortText = selectedValue.substring(0, maxLength) + '...'; // Скорочений текст з трикрапкою
+            $select.find('input[type=text]').val(shortText);
+        } else {
+            $select.find('input[type=text]').val(selectedValue);
+        }
+    });
+
+    // action to element on lead left block
+    $('.hover-elevent li').on('click', function() {
+        var action = $(this).text().trim();
+        var leadElement = $(this).closest('.leads__leftblock-action').find('.lead-element');
+    
+        if (action === 'Перейти') {
+          window.open(leadElement.text(), '_blank');
+        } else if (action === 'Скопіювати') {
+          copyToClipboard(leadElement.text());
+        } else if (action === 'Редагувати') {
+          var currentValue = leadElement.text();
+    
+          // Замінюємо елемент на textarea для редагування
+          leadElement.replaceWith('<textarea class="lead-element-edit">' + currentValue + '</textarea>');
+    
+          // Встановлюємо фокус на новоствореному textarea
+          $('.lead-element-edit').focus();
+    
+          // Обробник події для збереження змін при натисканні клавіші Enter
+          $('.lead-element-edit').on('keydown', function(e) {
+            if (e.key === 'Enter') {
+              e.preventDefault();
+              var editedValue = $(this).val().trim();
+    
+              // Замінюємо textarea на оновлене значення
+              $(this).replaceWith('<p class="lead-element">' + editedValue + '</p>');
+            }
+          });
+        }
+      });
+
+    // Функція для копіювання тексту у буфер обміну
+    function copyToClipboard(text) {
+        var tempInput = $('<input>');
+        $('body').append(tempInput);
+        tempInput.val(text).select();
+        document.execCommand('copy');
+        tempInput.remove();
+    }
+
+
+
+    // copy input element ---------------------------------------------- //
+    $('.addinput-btn').click(function () {
+        var inputField = $(this).prev('.inputfield').clone();
+        $(this).before(inputField);
     });
 
 
@@ -191,13 +297,21 @@ $(document).ready(function () {
 
 
     // init select style
-    if ($('.lead_row_input').length > 0) {
+    if ($('.lead_row_input, .customselect').length > 0) {
         $(function () {
-            $('.lead_row_input').styler();
+            $('.lead_row_input, .customselect, .customradio').styler();
         });
     }
 
     //datepicker
-    $('.datepicker').flatpickr({ /* options here */ });
+    $('.datepicker').flatpickr({
+        time_24hr: true,
+        dateFormat: "d.m.Y H:i",
+        ariaDateFormat: "d.m.Y G:i",
+        altFormat: "d.m.Y G:i",
+        enableTime: true,
+        minDate: "Завтра",
+        minuteIncrement: 30
+    });
 
 });
