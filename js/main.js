@@ -12,7 +12,7 @@ $(document).ready(function () {
     $(document).on('click', function (event) {
         var target = $(event.target);
 
-        if (!target.closest('.notification, .header__notification, .open-leadinfo').length) {
+        if (!target.closest('.notification, .header__notification, .open-leadinfo, .leads__info ').length) {
             fkt();
         }
     });
