@@ -161,7 +161,7 @@ $(document).ready(function () {
     });
     $('.done-result').on('click', function (event) {
         event.preventDefault();
-        var textareaValue = $('.result textarea').val();
+        var textareaValue = $(this).closest('.leads__info-rightblock').find('textarea').val();
         var resultInfo = $('<h3 class="result-info"></h3>').text('Результат: ' +textareaValue);
         $(this).closest('.leads__info-rightblock').addClass('done');
         $(this).closest('.result').html(resultInfo);
@@ -272,7 +272,7 @@ $(document).ready(function () {
         }
     });
 
-    // Функція для копіювання тексту у буфер обміну
+    // Copy text 
     function copyToClipboard(text) {
         var tempInput = $('<input>');
         $('body').append(tempInput);
