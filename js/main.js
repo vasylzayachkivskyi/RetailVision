@@ -12,7 +12,7 @@ $(document).ready(function () {
     $(document).on('click', function (event) {
         var target = $(event.target);
 
-        if (!target.closest('.notification, .header__notification, .open-leadinfo, .leads__info, .header__search').length) {
+        if (!target.closest('.notification, .header__notification, .open-leadinfo, .leads__info, .header__search, .lead__popup').length) {
             fkt();
         }
     });
@@ -124,6 +124,8 @@ $(document).ready(function () {
         $('.filter-dropdown').slideToggle();
     });
 
+
+
     //  leads__row active
     $('.leads__row .lead_row_input').on('click', function () {
         $(this).toggleClass('active');
@@ -154,7 +156,7 @@ $(document).ready(function () {
     });
 
 
-    // lead rightblock edit -------- //
+    // lead rightblock edit result-------- //
     $('.lead__rightblock_done').on('click', function () {
         $(this).closest('.leads__info-rightblock').find('.result').slideDown();
     });
@@ -168,8 +170,15 @@ $(document).ready(function () {
         $(this).closest('.leads__info-rightblock').addClass('done');
         $(this).closest('.result').html(resultInfo);
     });
+
+    // lead rightblock edit note -------- //
+    $('.cancel-edit, .done-edit').on('click', function () {
+        $(this).closest('.note-edit').slideUp();
+    })
+
     $('.lead__rightblock_edit').on('click', function () {
         $(this).closest('.leads__info-rightblock').addClass('active');
+        $(this).closest('.leads__info-rightblock').find('.note-edit').slideToggle();
 
         var leadElement = $(this).closest('.leads__info-rightblock').find('.leads__rightblock-content p');
         console.log(leadElement)
@@ -181,21 +190,21 @@ $(document).ready(function () {
         // Встановлюємо фокус на новоствореному textarea
         $('.leads__rightblock-content textarea').focus();
 
-        // Обробник події для збереження змін при натисканні клавіші Enter
-        $('.leads__rightblock-content textarea').on('keydown', function (e) {
-            if (e.key === 'Enter') {
+        $('.done-edit').on('click', function (e) {
                 e.preventDefault();
-                var editedValue = $(this).val().trim();
-
+                var textEl = $(this).closest('.leads__rightblock-content').find('textarea');
+                var editedValue = textEl.val().trim();
                 // Замінюємо textarea на оновлене значення
-                $(this).replaceWith('<p>' + editedValue + '</p>');
-            }
+                textEl.replaceWith('<p>' + editedValue + '</p>');
         });
-
     });
+
+     // lead rightblock delete -------- //
     $('.lead__rightblock_delete').on('click', function () {
         $(this).closest('.leads__info-rightblock').hide();
     });
+
+
 
 
 
@@ -222,7 +231,6 @@ $(document).ready(function () {
     });
 
     // lead-note choise
-
     $('.lead-note').on('click', function () {
         $('.leads__task-headinfo').hide();
     });
@@ -287,7 +295,7 @@ $(document).ready(function () {
             var currentValue = leadElement.text();
 
             // Замінюємо елемент на textarea для редагування
-            leadElement.replaceWith('<textarea class="lead-element-edit">' + currentValue + '</textarea>');
+            leadElement.replaceWith('<input type="text" class="lead-element-edit" value="' + currentValue + '">');
 
             // Встановлюємо фокус на новоствореному textarea
             $('.lead-element-edit').focus();
@@ -327,8 +335,9 @@ $(document).ready(function () {
         var leadElement = $(this).find('p');
         var currentValue = leadElement.text();
 
-        // Замінюємо елемент на textarea для редагування
-        leadElement.replaceWith('<textarea class="lead-element-edit">' + currentValue + '</textarea>');
+        // Замінюємо елемент на input для редагування
+        leadElement.replaceWith('<input type="text" class="lead-element-edit" value="' + currentValue + '">');
+
 
         // Встановлюємо фокус на новоствореному textarea
         $('.lead-element-edit').focus();
@@ -370,6 +379,10 @@ $(document).ready(function () {
 
 
     //datepicker
+    $('.datepicker').on('click', function () {
+        console.log('click')
+        $('.datepicker').addClass('width-active');
+    });
     $('.datepicker').flatpickr({
         time_24hr: true,
         dateFormat: "d.m.Y H:i",

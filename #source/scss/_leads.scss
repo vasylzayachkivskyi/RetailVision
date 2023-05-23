@@ -324,7 +324,8 @@
         padding: 9px 4px 9px 4px;
         transition: .3s;
         border-radius: 5px;
-        img{
+
+        img {
             margin-right: 8px;
         }
 
@@ -460,7 +461,7 @@
 
 .leads__leftblock-inner {
     h3 {
-        font-weight: 700;
+        font-weight: 600;
         font-size: 16px;
         line-height: 20px;
         color: #050A15;
@@ -484,7 +485,6 @@
         width: 30%;
         font-size: 12px;
         line-height: 15px;
-        text-align: right;
         color: #5C6476;
         text-align: right;
     }
@@ -720,7 +720,7 @@
     .leads-archived {
         border: 1px solid #3670F0;
         border-radius: 8px;
-        font-weight: 700;
+        font-weight: 600;
         font-size: 14px;
         line-height: 16px;
         height: 40px;
@@ -746,7 +746,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        font-weight: 700;
+        font-weight: 600;
         font-size: 14px;
         line-height: 16px;
         color: #FFFFFF;
@@ -766,7 +766,7 @@
 }
 
 .leads__right-wrapper {
-    height: calc(100vh - 180px);
+    height: calc(100vh - 190px);
     overflow-y: scroll;
     position: relative;
 }
@@ -787,10 +787,11 @@
     left: 0;
 
     h3 {
-        font-weight: 700;
+        font-weight: 600;
         font-size: 14px;
         line-height: 18px;
         text-align: center;
+        color: #5C6476;
     }
 
     img {
@@ -807,7 +808,7 @@
     p {
         display: inline-block;
         padding: 4px 16px;
-        font-weight: 700;
+        font-weight: 600;
         font-size: 14px;
         line-height: 18px;
         color: #22232A;
@@ -972,12 +973,13 @@
     align-items: center;
 
     h3 {
-        font-weight: 700;
+        font-weight: 600;
         font-size: 14px;
         line-height: 18px;
 
         span {
             border-bottom: 1px solid;
+            padding-right: 1px;
             color: #22232A;
         }
     }
@@ -1011,6 +1013,27 @@
     border-radius: 0px 0px 8px 8px;
     padding: 16px;
     filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.08));
+
+    .note-edit {
+        display: none;
+
+        .btns {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding-top: 16px;
+            width: 100%;
+        }
+
+        a {
+            padding: 4px 8px;
+            border-radius: 4px;
+
+            &+a {
+                margin-left: 8px;
+            }
+        }
+    }
 
     >textarea {
         font-weight: 600;
@@ -1111,14 +1134,14 @@
 
 .leads__task-head {
     display: flex;
-    align-items: flex-end;
+    align-items: center;
 
     span {
-        font-weight: 600;
+        font-weight: 500;
         font-size: 14px;
         line-height: 18px;
         color: #22232A;
-        height: 20px;
+        height: 19px;
     }
 
     .dropdown-element {
@@ -1126,10 +1149,9 @@
             color: #3670F0;
             font-weight: 600;
             font-size: 14px;
-            line-height: 14px;
+            line-height: 18px;
             margin-right: 9px;
             cursor: pointer;
-            padding-bottom: 3px;
             border-bottom: 1px solid #3670F0;
         }
     }
@@ -1150,8 +1172,20 @@
         border-bottom: 1px solid #3670F0;
 
         &.datepicker {
-            width: 110px;
+            width: 54px;
+
+            &.width-active {
+                width: 122px;
+                border: 1px solid #D9D9D9;
+                border-radius: 2px;
+                padding: 4px 4px 4px 8px;
+                font-weight: 500;
+                font-size: 14px;
+                line-height: 18px;
+                color: #22232A;
+            }
         }
+
 
         &::placeholder {
             color: #3670F0;
@@ -1175,7 +1209,7 @@
         border-radius: 10px;
 
         li {
-            font-weight: 600;
+            font-weight: 500;
             font-size: 14px;
             line-height: 20px;
             display: flex;
@@ -1198,7 +1232,7 @@
     .leads__task-type {
         position: relative;
         margin-left: 10px;
-        font-weight: 700;
+        font-weight: 600;
         font-size: 14px;
         line-height: 18px;
         display: flex;
@@ -1218,16 +1252,18 @@
         ul {
             display: none;
             position: absolute;
+            width: 167px;
             bottom: 110%;
             left: 0;
-            padding: 16px 40px;
+            padding: 8px 16px;
             background: #FBFBFB;
             border: 0.5px solid #D9D9D9;
             box-shadow: 2px 0px 3px rgba(0, 0, 0, 0.08), 0px 3px 3px rgba(0, 0, 0, 0.08);
             border-radius: 10px;
 
             li {
-                font-weight: 600;
+                font-weight: 500;
+                padding: 8px 4px;
                 font-size: 14px;
                 line-height: 20px;
                 display: flex;
@@ -1238,10 +1274,6 @@
 
                 &:hover {
                     opacity: 0.7;
-                }
-
-                &+li {
-                    margin-top: 16px;
                 }
 
                 img {
@@ -1267,15 +1299,17 @@
     padding: 10px 0 0;
     font-size: 12px;
     line-height: 15px;
+    font-weight: 500;
     color: #22232A;
     background: transparent;
     border: none;
     outline: none;
 
     &::placeholder {
-        font-weight: 600;
+        font-weight: 500;
         font-size: 12px;
         line-height: 15px;
+        font-weight: 500;
         color: #D9D9D9;
     }
 }
@@ -1288,7 +1322,7 @@
     a {
         border: 1px solid #3670F0;
         border-radius: 4px;
-        font-weight: 700;
+        font-weight: 600;
         font-size: 12px;
         line-height: 16px;
         padding: 5px 8px;
@@ -1465,7 +1499,7 @@ span.flatpickr-weekday,
 }
 
 .lead__popup {
-    
+
     .lead__popup-inner {
         overflow: hidden;
         width: 100%;
@@ -1904,17 +1938,17 @@ span.flatpickr-weekday,
             height: 5px;
             /* ширина всей полосы прокрутки */
         }
-        
+
         &::-webkit-scrollbar-track {
             background: #d9d9d9;
             padding: 5px 0;
             /* цвет зоны отслеживания */
         }
-        
+
         &::-webkit-scrollbar-thumb {
             background-color: #3670F0;
             border-radius: 12px;
-            border: 1px solid #d9d9d9;  
+            border: 1px solid #d9d9d9;
         }
 
         .customcontainer {
@@ -1941,9 +1975,6 @@ span.flatpickr-weekday,
         width: 40%;
     }
 
-    .leads__task-head input.datepicker {
-        width: 110px;
-    }
 
     .leads__task-head .dropdown-element p {
         font-size: 13px;
