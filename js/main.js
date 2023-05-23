@@ -124,11 +124,13 @@ $(document).ready(function () {
         $('.filter-dropdown').slideToggle();
     });
 
-
+    //  leads__row active
+    $('.leads__row .lead_row_input').on('click', function () {
+        $(this).toggleClass('active');
+    });
 
 
     // lead row settings -------- //
-
     $('.lead-row-dropdown').on('click', function () {
         $(this).slideUp();
         $(this).closest('.leads__row').removeClass('active');
@@ -162,12 +164,34 @@ $(document).ready(function () {
     $('.done-result').on('click', function (event) {
         event.preventDefault();
         var textareaValue = $(this).closest('.leads__info-rightblock').find('textarea').val();
-        var resultInfo = $('<h3 class="result-info"></h3>').text('Результат: ' +textareaValue);
+        var resultInfo = $('<h3 class="result-info"></h3>').text('Результат: ' + textareaValue);
         $(this).closest('.leads__info-rightblock').addClass('done');
         $(this).closest('.result').html(resultInfo);
     });
     $('.lead__rightblock_edit').on('click', function () {
         $(this).closest('.leads__info-rightblock').addClass('active');
+
+        var leadElement = $(this).closest('.leads__info-rightblock').find('.leads__rightblock-content p');
+        console.log(leadElement)
+        var currentValue = leadElement.text();
+
+        // Замінюємо елемент на textarea для редагування
+        leadElement.replaceWith('<textarea>' + currentValue + '</textarea>');
+
+        // Встановлюємо фокус на новоствореному textarea
+        $('.leads__rightblock-content textarea').focus();
+
+        // Обробник події для збереження змін при натисканні клавіші Enter
+        $('.leads__rightblock-content textarea').on('keydown', function (e) {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                var editedValue = $(this).val().trim();
+
+                // Замінюємо textarea на оновлене значення
+                $(this).replaceWith('<p>' + editedValue + '</p>');
+            }
+        });
+
     });
     $('.lead__rightblock_delete').on('click', function () {
         $(this).closest('.leads__info-rightblock').hide();
@@ -195,6 +219,15 @@ $(document).ready(function () {
         const selectedValue = $(this).html();
         console.log(selectedValue);
         $(this).closest('.leads__task-type').find('p').html(selectedValue);
+    });
+
+    // lead-note choise
+
+    $('.lead-note').on('click', function () {
+        $('.leads__task-headinfo').hide();
+    });
+    $('.lead-task').on('click', function () {
+        $('.leads__task-headinfo').show();
     });
 
     // dropdown-element -------- //
@@ -289,6 +322,29 @@ $(document).ready(function () {
         $(this).before(inputField);
     });
 
+    // edit element on click ------------------ //
+    $('.edit-element').on('click', function () {
+        var leadElement = $(this).find('p');
+        var currentValue = leadElement.text();
+
+        // Замінюємо елемент на textarea для редагування
+        leadElement.replaceWith('<textarea class="lead-element-edit">' + currentValue + '</textarea>');
+
+        // Встановлюємо фокус на новоствореному textarea
+        $('.lead-element-edit').focus();
+
+        // Обробник події для збереження змін при натисканні клавіші Enter
+        $('.lead-element-edit').on('keydown', function (e) {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                var editedValue = $(this).val().trim();
+
+                // Замінюємо textarea на оновлене значення
+                $(this).replaceWith('<p class="lead-element">' + editedValue + '</p>');
+            }
+        });
+    });
+
 
 
 
@@ -337,11 +393,30 @@ $(document).ready(function () {
     });
 
     // init select style
-    if ($('.lead_row_input, .customselect').length > 0) {
-        $(function () {
-            $('.lead_row_input, .customselect, .customradio').styler();
-        });
-    }
+    $(function () {
+        $('.customselect, .customradio').styler();
+    });
+
+
+
+    // lead row checkbox -------- //
+    $('.head_lead_check').click(function () {
+        var name = $(this).attr('name');
+        var checkboxes = $('input[type="checkbox"][name="' + name + '"]');
+
+        if ($(this).prop('checked')) {
+            checkboxes.prop('checked', true);
+            checkboxes.closest('.leads__row').addClass('active');
+        } else {
+            checkboxes.prop('checked', false);
+            checkboxes.closest('.leads__row').removeClass('active');
+        }
+    });
+
+
+    $('.leads__row input[type="checkbox"]').click(function () {
+        $(this).closest('.leads__row').toggleClass('active');
+    });
 
 
 

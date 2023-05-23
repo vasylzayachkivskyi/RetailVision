@@ -88,17 +88,21 @@ body {
 }
 
 
-@media (min-width: 1420px) {
+.customcontainer {
+    max-width: 1300px;
+    width: 100%;
+    padding: 0 12px;
+    margin: 0 auto;
+}
 
-    .container,
-    .container-lg,
-    .container-md,
-    .container-sm,
-    .container-xl,
-    .container-xxl {
-        max-width: 1400px;
+@media (min-width:1440.8px) {
+    .customcontainer {
+        padding: 0 20px;
+        max-width: 1800px;
     }
 }
+
+
 
 .bluebtn {
     background: #3670F0;
@@ -107,7 +111,7 @@ body {
     padding: 8px 24px;
     transition: .3s;
     color: #fff;
-    font-weight: 700;
+    font-weight: 600;
     font-size: 14px;
     line-height: 16px;
 
@@ -120,7 +124,7 @@ body {
 .whitebtn {
     border: 1px solid #3670F0;
     border-radius: 4px;
-    font-weight: 700;
+    font-weight: 600;
     font-size: 14px;
     line-height: 16px;
     color: #3670F0;
