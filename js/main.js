@@ -372,7 +372,7 @@ $(document).ready(function () {
             editedValue = editedValue.slice(0, 4);
 
             // Додаємо знак долара на останнє місце
-            editedValue += '$';
+            editedValue = '$' + editedValue;
 
             // Оновлюємо значення input
             $(this).val(editedValue);
