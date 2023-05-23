@@ -1037,17 +1037,27 @@
             }
         }
     }
+    .leads__rightblock-note{
 
-    >textarea {
-        font-weight: 600;
-        font-size: 12px;
-        line-height: 15px;
-        color: #22232A;
-        resize: none;
-        width: 100%;
-        border: none;
-        outline: none;
-        background-color: transparent;
+        textarea {
+            font-weight: 600;
+            font-size: 12px;
+            line-height: 15px;
+            color: #22232A;
+            resize: none;
+            width: 100%;
+            border: none;
+            outline: none;
+            background-color: transparent;
+        }
+
+        p {
+            font-weight: 600;
+            font-size: 12px;
+            line-height: 15px;
+            color: #22232A;
+        }
+
     }
 
     .result-info {
@@ -1103,13 +1113,6 @@
                 opacity: .4;
             }
         }
-    }
-
-    p {
-        font-weight: 600;
-        font-size: 12px;
-        line-height: 15px;
-        color: #22232A;
     }
 
     span {

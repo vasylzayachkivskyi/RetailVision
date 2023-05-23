@@ -143,13 +143,49 @@ $(document).ready(function () {
     });
 
 
-    // lead info -------- //
+    // lead info open/close-------- //
     $('.open-leadinfo').on('click', function () {
         $('.leads__info').addClass('show');
     });
     $('.close-leadinfo').on('click', function () {
         $('.leads__info').removeClass('show');
     });
+
+
+        // lead rightblock edit note -------- //
+        $('.cancel-edit, .done-edit').on('click', function () {
+            $(this).closest('.note-edit').slideUp();
+        })
+    
+        $('.lead__rightblock_edit').on('click', function () {
+            $(this).closest('.leads__info-rightblock').addClass('active');
+            $(this).closest('.leads__info-rightblock').find('.note-edit').slideToggle();
+    
+            var leadElement = $(this).closest('.leads__info-rightblock').find('.leads__rightblock-content p');
+            var currentValue = leadElement.text();
+    
+            // Замінюємо елемент на textarea для редагування
+            leadElement.replaceWith('<textarea>' + currentValue + '</textarea>');
+    
+            // Встановлюємо фокус на новоствореному textarea
+            $('.leads__rightblock-note textarea').focus();
+    
+            $('.done-edit').on('click', function (e) {
+                e.preventDefault();
+                var textEl = $(this).closest('.leads__rightblock-note').find('textarea');
+                var editedValue = textEl.val().trim();
+                // Замінюємо textarea на оновлене значення
+                textEl.replaceWith('<p>' + editedValue + '</p>');
+            });
+    
+            $('.cancel-edit').on('click', function (e) {
+                e.preventDefault();
+                var textarea = $(this).closest('.leads__rightblock-content').find('textarea');
+    
+                // Замінюємо textarea на початковий елемент p з оригінальним значенням
+                textarea.replaceWith('<p>' + currentValue + '</p>');
+            });
+        });
 
 
     // lead rightblock edit result-------- //
@@ -161,41 +197,13 @@ $(document).ready(function () {
     });
     $('.done-result').on('click', function (event) {
         event.preventDefault();
-        var textareaValue = $(this).closest('.leads__info-rightblock').find('textarea').val();
+        var textareaValue = $(this).closest('.leads__info-rightblock').find('.result-text').val();
         var resultInfo = $('<h3 class="result-info"></h3>').text('Результат: ' + textareaValue);
         $(this).closest('.leads__info-rightblock').addClass('done');
         $(this).closest('.result').html(resultInfo);
     });
 
-    // lead rightblock edit note -------- //
-    $('.cancel-edit, .done-edit').on('click', function () {
-        $(this).closest('.note-edit').slideUp();
-    })
-
-    $('.lead__rightblock_edit').on('click', function () {
-        $(this).closest('.leads__info-rightblock').addClass('active');
-        $(this).closest('.leads__info-rightblock').find('.note-edit').slideToggle();
-
-        var leadElement = $(this).closest('.leads__info-rightblock').find('.leads__rightblock-content p');
-        console.log(leadElement)
-        var currentValue = leadElement.text();
-
-        // Замінюємо елемент на textarea для редагування
-        leadElement.replaceWith('<textarea>' + currentValue + '</textarea>');
-
-        // Встановлюємо фокус на новоствореному textarea
-        $('.leads__rightblock-content textarea').focus();
-
-        $('.done-edit').on('click', function (e) {
-                e.preventDefault();
-                var textEl = $(this).closest('.leads__rightblock-content').find('textarea');
-                var editedValue = textEl.val().trim();
-                // Замінюємо textarea на оновлене значення
-                textEl.replaceWith('<p>' + editedValue + '</p>');
-        });
-    });
-
-     // lead rightblock delete -------- //
+    // lead rightblock delete -------- //
     $('.lead__rightblock_delete').on('click', function () {
         $(this).closest('.leads__info-rightblock').hide();
     });
