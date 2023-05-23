@@ -87,8 +87,16 @@ $(document).ready(function () {
     });
 
     //  checkbox form select menu ----------------- //
-    $('.select input').on('click', function () {
-        $(this).next('.dropdown-response').slideToggle();
+    $('.select input[type="text"]').on('click', function () {
+        $(this).closest('.select').find('.dropdown-response').slideToggle();
+
+        // close dropdown-element if click not this element-------- //
+        $(document).on('click', function (event) {
+            var target = $(event.target);
+            if (!target.closest('.select input[type="text"], .dropdown-response').length) {
+                $('.select').find('.dropdown-response').slideUp();
+            }
+        });
     });
     $('.dropdown-btn').on('click', function (event) {
         event.preventDefault();
@@ -104,6 +112,7 @@ $(document).ready(function () {
             $select.find('input[type=text]').val(selectedValue);
         }
     });
+
 
 
     // estate image slider --------------------- // 
@@ -152,40 +161,40 @@ $(document).ready(function () {
     });
 
 
-        // lead rightblock edit note -------- //
-        $('.cancel-edit, .done-edit').on('click', function () {
-            $(this).closest('.note-edit').slideUp();
-        })
-    
-        $('.lead__rightblock_edit').on('click', function () {
-            $(this).closest('.leads__info-rightblock').addClass('active');
-            $(this).closest('.leads__info-rightblock').find('.note-edit').slideToggle();
-    
-            var leadElement = $(this).closest('.leads__info-rightblock').find('.leads__rightblock-content p');
-            var currentValue = leadElement.text();
-    
-            // Замінюємо елемент на textarea для редагування
-            leadElement.replaceWith('<textarea>' + currentValue + '</textarea>');
-    
-            // Встановлюємо фокус на новоствореному textarea
-            $('.leads__rightblock-note textarea').focus();
-    
-            $('.done-edit').on('click', function (e) {
-                e.preventDefault();
-                var textEl = $(this).closest('.leads__rightblock-content').find('.leads__rightblock-note textarea');
-                var editedValue = textEl.val().trim();
-                // Замінюємо textarea на оновлене значення
-                textEl.replaceWith('<p>' + editedValue + '</p>');
-            });
-    
-            $('.cancel-edit').on('click', function (e) {
-                e.preventDefault();
-                var textarea = $(this).closest('.leads__rightblock-content').find('textarea');
-    
-                // Замінюємо textarea на початковий елемент p з оригінальним значенням
-                textarea.replaceWith('<p>' + currentValue + '</p>');
-            });
+    // lead rightblock edit note -------- //
+    $('.cancel-edit, .done-edit').on('click', function () {
+        $(this).closest('.note-edit').slideUp();
+    })
+
+    $('.lead__rightblock_edit').on('click', function () {
+        $(this).closest('.leads__info-rightblock').addClass('active');
+        $(this).closest('.leads__info-rightblock').find('.note-edit').slideToggle();
+
+        var leadElement = $(this).closest('.leads__info-rightblock').find('.leads__rightblock-content p');
+        var currentValue = leadElement.text();
+
+        // Замінюємо елемент на textarea для редагування
+        leadElement.replaceWith('<textarea>' + currentValue + '</textarea>');
+
+        // Встановлюємо фокус на новоствореному textarea
+        $('.leads__rightblock-note textarea').focus();
+
+        $('.done-edit').on('click', function (e) {
+            e.preventDefault();
+            var textEl = $(this).closest('.leads__rightblock-content').find('.leads__rightblock-note textarea');
+            var editedValue = textEl.val().trim();
+            // Замінюємо textarea на оновлене значення
+            textEl.replaceWith('<p>' + editedValue + '</p>');
         });
+
+        $('.cancel-edit').on('click', function (e) {
+            e.preventDefault();
+            var textarea = $(this).closest('.leads__rightblock-content').find('textarea');
+
+            // Замінюємо textarea на початковий елемент p з оригінальним значенням
+            textarea.replaceWith('<p>' + currentValue + '</p>');
+        });
+    });
 
 
     // lead rightblock edit result-------- //
@@ -251,6 +260,13 @@ $(document).ready(function () {
         const select = $(this).parent('ul');
         const selectedValue = $(this).text();
         select.prev('.dropdown-element p').text(selectedValue);
+    });
+    // close dropdown-element if click not this element-------- //
+    $(document).on('click', function (event) {
+        var target = $(event.target);
+        if (!target.closest('.dropdown-element p').length) {
+            $('.dropdown-element').find('ul').slideUp('fast');
+        }
     });
 
 
@@ -340,11 +356,27 @@ $(document).ready(function () {
         var currentValue = leadElement.text();
 
         // Замінюємо елемент на input для редагування
-        leadElement.replaceWith('<input type="text" class="lead-element-edit" value="' + currentValue + '">');
+        leadElement.replaceWith('<input type="text" class="lead-element-edit">');
 
-
-        // Встановлюємо фокус на новоствореному textarea
+        // Встановлюємо фокус на новоствореному input
         $('.lead-element-edit').focus();
+
+        // Обробник події для введення тільки цифрових символів та обмеження до 4 символів
+        $('.lead-element-edit').on('input', function () {
+            var editedValue = $(this).val().trim();
+
+            // Видаляємо всі символи, крім цифр
+            editedValue = editedValue.replace(/\D/g, '');
+
+            // Обмежуємо значення до 4 символів
+            editedValue = editedValue.slice(0, 4);
+
+            // Додаємо знак долара на останнє місце
+            editedValue += '$';
+
+            // Оновлюємо значення input
+            $(this).val(editedValue);
+        });
 
         // Обробник події для збереження змін при натисканні клавіші Enter
         $('.lead-element-edit').on('keydown', function (e) {
@@ -352,11 +384,12 @@ $(document).ready(function () {
                 e.preventDefault();
                 var editedValue = $(this).val().trim();
 
-                // Замінюємо textarea на оновлене значення
+                // Замінюємо input на оновлене значення
                 $(this).replaceWith('<p class="lead-element">' + editedValue + '</p>');
             }
         });
     });
+
 
 
 
@@ -411,12 +444,12 @@ $(document).ready(function () {
 
     // init select style
     $(function () {
-        $('.customselect, .customradio').styler();
+        $('.customselect, .customradio, .customcheсk').styler();
     });
 
 
 
-    // lead row checkbox -------- //
+    // lead row checkbox ------------ //
     $('.head_lead_check').click(function () {
         var name = $(this).attr('name');
         var checkboxes = $('input[type="checkbox"][name="' + name + '"]');
@@ -424,13 +457,13 @@ $(document).ready(function () {
         if ($(this).prop('checked')) {
             checkboxes.prop('checked', true);
             checkboxes.closest('.leads__row').addClass('active');
+            $('.leads__row').find('.jq-checkbox').addClass('checked');
         } else {
             checkboxes.prop('checked', false);
             checkboxes.closest('.leads__row').removeClass('active');
+            $('.leads__row').find('.jq-checkbox').removeClass('checked');
         }
     });
-
-
     $('.leads__row input[type="checkbox"]').click(function () {
         $(this).closest('.leads__row').toggleClass('active');
     });

@@ -20,7 +20,7 @@
       <header class="header">
          <div class="customcontainer">
             <div class="row justify-content-between">
-               <div class="col-lg-6 col-7 offset-xxl-3 offset-lg-2 offset-1">
+               <div class="col-6 offset-3">
                   <div class="header__search">
                      <img src="img/svg_icons/close.svg" alt="close" class="close">
                      <form>
@@ -150,7 +150,7 @@
                      </form>
                   </div>
                </div>
-               <div class="col-xl-2 col-4 offset-xl-1 offset-0">
+               <div class="col-xl-2 col-3 offset-xl-1 offset-0">
                   <div class="header__info">
                      <a href="#" class="header__notification">
                         <img src="img/svg_icons/notification.svg" alt="notification">
@@ -1660,26 +1660,70 @@
                            <div class="col-xxl-5 col-xl-7 col-lg-8 col-7">
                               <form>
                                  <div class="leads__forminput select">
-                                    <label for="response_lead">Відповідальний</label>
-                                    <svg width="14" height="8" viewBox="0 0 14 8" fill="none"
-                                       xmlns="http://www.w3.org/2000/svg">
-                                       <path d="M13 1L7 7L1 1" stroke="#383D54" stroke-width="2" stroke-linecap="round"
-                                          stroke-linejoin="round" />
-                                    </svg>
-                                    <input id="response_lead" type="text" placeholder="Усі" readonly>
+                                    <label>
+                                       Відповідальний
+                                       <svg width="14" height="8" viewBox="0 0 14 8" fill="none"
+                                          xmlns="http://www.w3.org/2000/svg">
+                                          <path d="M13 1L7 7L1 1" stroke="#383D54" stroke-width="2"
+                                             stroke-linecap="round" stroke-linejoin="round" />
+                                       </svg>
+                                       <input type="text" placeholder="Усі" readonly>
+                                    </label>
+
                                     <div class="dropdown-response">
                                        <div class="dropdown-wrapper">
                                           <div class="dropdown-row">
-                                             <input id="responselead1" type="radio" name="responselead" value="Вхідні">
-                                             <label for="responselead1">Вхідні</label>
+                                             <label>
+                                                <input class="customcheсk" type="checkbox" name="response" value="Усі">
+                                                Усі
+                                             </label>
                                           </div>
                                           <div class="dropdown-row">
-                                             <input id="responselead2" type="radio" name="responselead" value="Архів">
-                                             <label for="responselead2">Архів</label>
+                                             <label>
+                                                <input class="customcheсk" type="checkbox" name="response"
+                                                   value="Лише мої">
+                                                Лише мої
+                                             </label>
                                           </div>
                                           <div class="dropdown-row">
-                                             <input id="responselead3" type="radio" name="responselead" value="Усі">
-                                             <label for="responselead3">Усі</label>
+                                             <label>
+                                                <input class="customcheсk" type="checkbox" name="response" value="Коля">
+                                                Коля
+                                             </label>
+                                          </div>
+                                          <div class="dropdown-row">
+                                             <label>
+                                                <input class="customcheсk" type="checkbox" name="response" value="Олег">
+                                                Олег
+                                             </label>
+                                          </div>
+                                          <div class="dropdown-row">
+                                             <input class="customcheсk" type="checkbox" name="response" value="Діма">
+                                             <label>Діма</label>
+                                          </div>
+                                          <div class="dropdown-row">
+                                             <label>
+                                                <input class="customcheсk" type="checkbox" name="response" value="Оля">
+                                                Оля
+                                             </label>
+                                          </div>
+                                          <div class="dropdown-row">
+                                             <label>
+                                                <input class="customcheсk" type="checkbox" name="response" value="Іван">
+                                                Іван
+                                             </label>
+                                          </div>
+                                          <div class="dropdown-row">
+                                             <label>
+                                                <input class="customcheсk" type="checkbox" name="response" value="Діма">
+                                                Діма
+                                             </label>
+                                          </div>
+                                          <div class="dropdown-row">
+                                             <label>
+                                                <input class="customcheсk" type="checkbox" name="response" value="Іван">
+                                                Іван
+                                             </label>
                                           </div>
                                        </div>
                                        <a href="#" class="dropdown-btn">
@@ -1687,14 +1731,16 @@
                                        </a>
                                     </div>
                                  </div>
-                                 <div class="leads__forminput select">
-                                    <label for="status_lead">Етап/Статус</label>
-                                    <svg width="14" height="8" viewBox="0 0 14 8" fill="none"
-                                       xmlns="http://www.w3.org/2000/svg">
-                                       <path d="M13 1L7 7L1 1" stroke="#383D54" stroke-width="2" stroke-linecap="round"
-                                          stroke-linejoin="round" />
-                                    </svg>
-                                    <input id="status_lead" type="text" placeholder="Обрати" readonly>
+                                 <div class="leads__forminput select leads-filter">
+                                    <label for="status_lead">
+                                       Етап/Статус
+                                       <svg width="14" height="8" viewBox="0 0 14 8" fill="none"
+                                          xmlns="http://www.w3.org/2000/svg">
+                                          <path d="M13 1L7 7L1 1" stroke="#383D54" stroke-width="2"
+                                             stroke-linecap="round" stroke-linejoin="round" />
+                                       </svg>
+                                       <input type="text" placeholder="Обрати" readonly>
+                                    </label>
                                     <div class="dropdown-response">
                                        <div class="dropdown-wrapper">
                                           <div class="dropdown-row">
@@ -1708,7 +1754,8 @@
                                              <label for="statuslead2">Передзвонити</label>
                                           </div>
                                           <div class="dropdown-row">
-                                             <input id="statuslead3" type="radio" name="statuslead" value="Розібрати">
+                                             <input id="statuslead3" type="radio" name="statuslead"
+                                                value="Розібрати">
                                              <label for="statuslead3">Розібрати</label>
                                           </div>
                                        </div>
@@ -1737,7 +1784,7 @@
                         <table>
                            <tr class="leads__headrow">
                               <th>
-                                 <input class="lead_row_input row-input head_lead_check" type="checkbox"
+                                 <input class="lead_row_input row-input head_lead_check customcheсk" type="checkbox"
                                     name="lead_row">
                               </th>
                               <th>
@@ -1778,15 +1825,15 @@
                            </tr>
                            <tr class="leads__row">
                               <td>
-                                 <input class="lead_row_input" type="checkbox" name="lead_row">
+                                 <input class="lead_row_input customcheсk" type="checkbox" name="lead_row">
                               </td>
                               <td>
-                                 <p>
+                                 <p class="open-leadinfo">
                                     23.06.23, 16:58
                                  </p>
                               </td>
                               <td>
-                                 <p class="lead_call">
+                                 <p class="lead_call open-leadinfo">
                                     <img src="img/svg_icons/lead_green_phone.svg" alt="icon">
                                     Дзвінок
                                  </p>
@@ -1797,18 +1844,18 @@
                                  </p>
                               </td>
                               <td>
-                                 <p>
+                                 <p class="open-leadinfo">
                                     Роман Старовойтовський
                                  </p>
                               </td>
                               <td>
-                                 <p>
+                                 <p class="open-leadinfo">
                                     <img src="img/svg_icons/lead_outgoing_call.svg" alt="icon">
                                     Вихідний
                                  </p>
                               </td>
                               <td>
-                                 <p>
+                                 <p class="open-leadinfo">
                                     Передзвонити
                                  </p>
                               </td>
@@ -1822,15 +1869,15 @@
                            </tr>
                            <tr class="leads__row">
                               <td>
-                                 <input class="lead_row_input" type="checkbox" name="lead_row">
+                                 <input class="lead_row_input customcheсk" type="checkbox" name="lead_row">
                               </td>
                               <td>
-                                 <p>
+                                 <p class="open-leadinfo">
                                     23.06.23, 16:58
                                  </p>
                               </td>
                               <td>
-                                 <p class="lead_call">
+                                 <p class="lead_call open-leadinfo">
                                     <img src="img/svg_icons/lead_green_phone.svg" alt="icon">
                                     Дзвінок
                                  </p>
@@ -1841,18 +1888,18 @@
                                  </p>
                               </td>
                               <td>
-                                 <p>
+                                 <p class="open-leadinfo">
                                     Роман Старовойтовський
                                  </p>
                               </td>
                               <td>
-                                 <p>
+                                 <p class="open-leadinfo">
                                     <img src="img/svg_icons/lead_outgoing_call.svg" alt="icon">
                                     Вихідний
                                  </p>
                               </td>
                               <td>
-                                 <p>
+                                 <p class="open-leadinfo">
                                     Передзвонити
                                  </p>
                               </td>
@@ -1866,15 +1913,15 @@
                            </tr>
                            <tr class="leads__row">
                               <td>
-                                 <input class="lead_row_input" type="checkbox" name="lead_row">
+                                 <input class="lead_row_input customcheсk" type="checkbox" name="lead_row">
                               </td>
                               <td>
-                                 <p>
+                                 <p class="open-leadinfo">
                                     23.06.23, 16:58
                                  </p>
                               </td>
                               <td>
-                                 <p class="lead_meeting">
+                                 <p class="lead_meeting open-leadinfo">
                                     <img src="img/svg_icons/lead_red_meeting.svg" alt="icon">
                                     Дзвінок
                                  </p>
@@ -1885,18 +1932,18 @@
                                  </p>
                               </td>
                               <td>
-                                 <p>
+                                 <p class="open-leadinfo">
                                     Роман Старовойтовський
                                  </p>
                               </td>
                               <td>
-                                 <p>
+                                 <p class="open-leadinfo">
                                     <img src="img/svg_icons/lead_not_call.svg" alt="icon">
                                     Не додзвонився
                                  </p>
                               </td>
                               <td>
-                                 <p>
+                                 <p class="open-leadinfo">
                                     Передзвонити
                                  </p>
                               </td>
@@ -1910,15 +1957,15 @@
                            </tr>
                            <tr class="leads__row">
                               <td>
-                                 <input class="lead_row_input" type="checkbox" name="lead_row">
+                                 <input class="lead_row_input customcheсk" type="checkbox" name="lead_row">
                               </td>
                               <td>
-                                 <p>
+                                 <p class="open-leadinfo">
                                     23.06.23, 16:58
                                  </p>
                               </td>
                               <td>
-                                 <p class="lead_task">
+                                 <p class="lead_task open-leadinfo">
                                     <img src="img/svg_icons/lead_green_task.svg" alt="icon">
                                     Задача
                                  </p>
@@ -1929,18 +1976,18 @@
                                  </p>
                               </td>
                               <td>
-                                 <p>
+                                 <p class="open-leadinfo">
                                     Роман Старовойтовський
                                  </p>
                               </td>
                               <td>
-                                 <p>
+                                 <p class="open-leadinfo">
                                     <img src="img/svg_icons/lead_incoming_call.svg" alt="icon">
                                     Вхідний
                                  </p>
                               </td>
                               <td>
-                                 <p>
+                                 <p class="open-leadinfo">
                                     Передзвонити
                                  </p>
                               </td>
@@ -1954,15 +2001,15 @@
                            </tr>
                            <tr class="leads__row">
                               <td>
-                                 <input class="lead_row_input" type="checkbox" name="lead_row">
+                                 <input class="lead_row_input customcheсk" type="checkbox" name="lead_row">
                               </td>
                               <td>
-                                 <p>
+                                 <p class="open-leadinfo">
                                     23.06.23, 16:58
                                  </p>
                               </td>
                               <td>
-                                 <p class="lead_call">
+                                 <p class="lead_call open-leadinfo">
                                     <img src="img/svg_icons/lead_green_phone.svg" alt="icon">
                                     Дзвінок
                                  </p>
@@ -1973,18 +2020,18 @@
                                  </p>
                               </td>
                               <td>
-                                 <p>
+                                 <p class="open-leadinfo">
                                     Роман Старовойтовський
                                  </p>
                               </td>
                               <td>
-                                 <p>
+                                 <p class="open-leadinfo">
                                     <img src="img/svg_icons/lead_outgoing_call.svg" alt="icon">
                                     Вихідний
                                  </p>
                               </td>
                               <td>
-                                 <p>
+                                 <p class="open-leadinfo">
                                     Передзвонити
                                  </p>
                               </td>
@@ -1998,15 +2045,15 @@
                            </tr>
                            <tr class="leads__row">
                               <td>
-                                 <input class="lead_row_input" type="checkbox" name="lead_row">
+                                 <input class="lead_row_input customcheсk" type="checkbox" name="lead_row">
                               </td>
                               <td>
-                                 <p>
+                                 <p class="open-leadinfo">
                                     23.06.23, 16:58
                                  </p>
                               </td>
                               <td>
-                                 <p class="lead_call">
+                                 <p class="lead_call open-leadinfo">
                                     <img src="img/svg_icons/lead_green_phone.svg" alt="icon">
                                     Дзвінок
                                  </p>
@@ -2017,18 +2064,18 @@
                                  </p>
                               </td>
                               <td>
-                                 <p>
+                                 <p class="open-leadinfo">
                                     Роман Старовойтовський
                                  </p>
                               </td>
                               <td>
-                                 <p>
+                                 <p class="open-leadinfo">
                                     <img src="img/svg_icons/lead_outgoing_call.svg" alt="icon">
                                     Вихідний
                                  </p>
                               </td>
                               <td>
-                                 <p>
+                                 <p class="open-leadinfo">
                                     Передзвонити
                                  </p>
                               </td>
@@ -2042,15 +2089,15 @@
                            </tr>
                            <tr class="leads__row">
                               <td>
-                                 <input class="lead_row_input" type="checkbox" name="lead_row">
+                                 <input class="lead_row_input customcheсk" type="checkbox" name="lead_row">
                               </td>
                               <td>
-                                 <p>
+                                 <p class="open-leadinfo">
                                     23.06.23, 16:58
                                  </p>
                               </td>
                               <td>
-                                 <p class="lead_call">
+                                 <p class="lead_call open-leadinfo">
                                     <img src="img/svg_icons/lead_green_phone.svg" alt="icon">
                                     Дзвінок
                                  </p>
@@ -2061,62 +2108,18 @@
                                  </p>
                               </td>
                               <td>
-                                 <p>
+                                 <p class="open-leadinfo">
                                     Роман Старовойтовський
-                                 </p>
-                              </td>
-                              <td>
-                                 <p>
-                                    <img src="img/svg_icons/lead_outgoing_call.svg" alt="icon">
-                                    Вихідний
-                                 </p>
-                              </td>
-                              <td>
-                                 <p>
-                                    Передзвонити
-                                 </p>
-                              </td>
-                              <td>
-                                 <p class="lead_settings open-leadinfo">
-                                    <span>
-                                       ...
-                                    </span>
-                                 </p>
-                              </td>
-                           </tr>
-                           <tr class="leads__row">
-                              <td>
-                                 <input class="lead_row_input" type="checkbox" name="lead_row">
-                              </td>
-                              <td>
-                                 <p>
-                                    23.06.23, 16:58
-                                 </p>
-                              </td>
-                              <td>
-                                 <p class="lead_call">
-                                    <img src="img/svg_icons/lead_green_phone.svg" alt="icon">
-                                    Дзвінок
                                  </p>
                               </td>
                               <td>
                                  <p class="open-leadinfo">
-                                    +380 67 567 45 29
-                                 </p>
-                              </td>
-                              <td>
-                                 <p>
-                                    Роман Старовойтовський
-                                 </p>
-                              </td>
-                              <td>
-                                 <p>
                                     <img src="img/svg_icons/lead_outgoing_call.svg" alt="icon">
                                     Вихідний
                                  </p>
                               </td>
                               <td>
-                                 <p>
+                                 <p class="open-leadinfo">
                                     Передзвонити
                                  </p>
                               </td>
@@ -2130,15 +2133,15 @@
                            </tr>
                            <tr class="leads__row">
                               <td>
-                                 <input class="lead_row_input" type="checkbox" name="lead_row">
+                                 <input class="lead_row_input customcheсk" type="checkbox" name="lead_row">
                               </td>
                               <td>
-                                 <p>
+                                 <p class="open-leadinfo">
                                     23.06.23, 16:58
                                  </p>
                               </td>
                               <td>
-                                 <p class="lead_meeting">
+                                 <p class="lead_meeting open-leadinfo">
                                     <img src="img/svg_icons/lead_red_meeting.svg" alt="icon">
                                     Дзвінок
                                  </p>
@@ -2149,18 +2152,18 @@
                                  </p>
                               </td>
                               <td>
-                                 <p>
+                                 <p class="open-leadinfo">
                                     Роман Старовойтовський
                                  </p>
                               </td>
                               <td>
-                                 <p>
+                                 <p class="open-leadinfo">
                                     <img src="img/svg_icons/lead_not_call.svg" alt="icon">
                                     Не додзвонився
                                  </p>
                               </td>
                               <td>
-                                 <p>
+                                 <p class="open-leadinfo">
                                     Передзвонити
                                  </p>
                               </td>
@@ -2174,15 +2177,15 @@
                            </tr>
                            <tr class="leads__row">
                               <td>
-                                 <input class="lead_row_input" type="checkbox" name="lead_row">
+                                 <input class="lead_row_input customcheсk" type="checkbox" name="lead_row">
                               </td>
                               <td>
-                                 <p>
+                                 <p class="open-leadinfo">
                                     23.06.23, 16:58
                                  </p>
                               </td>
                               <td>
-                                 <p class="lead_task">
+                                 <p class="lead_task open-leadinfo">
                                     <img src="img/svg_icons/lead_green_task.svg" alt="icon">
                                     Задача
                                  </p>
@@ -2193,18 +2196,18 @@
                                  </p>
                               </td>
                               <td>
-                                 <p>
+                                 <p class="open-leadinfo">
                                     Роман Старовойтовський
                                  </p>
                               </td>
                               <td>
-                                 <p>
+                                 <p class="open-leadinfo">
                                     <img src="img/svg_icons/lead_incoming_call.svg" alt="icon">
                                     Вхідний
                                  </p>
                               </td>
                               <td>
-                                 <p>
+                                 <p class="open-leadinfo">
                                     Передзвонити
                                  </p>
                               </td>
@@ -2218,15 +2221,15 @@
                            </tr>
                            <tr class="leads__row">
                               <td>
-                                 <input class="lead_row_input" type="checkbox" name="lead_row">
+                                 <input class="lead_row_input customcheсk" type="checkbox" name="lead_row">
                               </td>
                               <td>
-                                 <p>
+                                 <p class="open-leadinfo">
                                     23.06.23, 16:58
                                  </p>
                               </td>
                               <td>
-                                 <p class="lead_call">
+                                 <p class="lead_call open-leadinfo">
                                     <img src="img/svg_icons/lead_green_phone.svg" alt="icon">
                                     Дзвінок
                                  </p>
@@ -2237,18 +2240,18 @@
                                  </p>
                               </td>
                               <td>
-                                 <p>
+                                 <p class="open-leadinfo">
                                     Роман Старовойтовський
                                  </p>
                               </td>
                               <td>
-                                 <p>
+                                 <p class="open-leadinfo">
                                     <img src="img/svg_icons/lead_outgoing_call.svg" alt="icon">
                                     Вихідний
                                  </p>
                               </td>
                               <td>
-                                 <p>
+                                 <p class="open-leadinfo">
                                     Передзвонити
                                  </p>
                               </td>
@@ -2262,15 +2265,15 @@
                            </tr>
                            <tr class="leads__row">
                               <td>
-                                 <input class="lead_row_input" type="checkbox" name="lead_row">
+                                 <input class="lead_row_input customcheсk" type="checkbox" name="lead_row">
                               </td>
                               <td>
-                                 <p>
+                                 <p class="open-leadinfo">
                                     23.06.23, 16:58
                                  </p>
                               </td>
                               <td>
-                                 <p class="lead_call">
+                                 <p class="lead_call open-leadinfo">
                                     <img src="img/svg_icons/lead_green_phone.svg" alt="icon">
                                     Дзвінок
                                  </p>
@@ -2281,18 +2284,18 @@
                                  </p>
                               </td>
                               <td>
-                                 <p>
+                                 <p class="open-leadinfo">
                                     Роман Старовойтовський
                                  </p>
                               </td>
                               <td>
-                                 <p>
+                                 <p class="open-leadinfo">
                                     <img src="img/svg_icons/lead_outgoing_call.svg" alt="icon">
                                     Вихідний
                                  </p>
                               </td>
                               <td>
-                                 <p>
+                                 <p class="open-leadinfo">
                                     Передзвонити
                                  </p>
                               </td>
@@ -2306,15 +2309,15 @@
                            </tr>
                            <tr class="leads__row">
                               <td>
-                                 <input class="lead_row_input" type="checkbox" name="lead_row">
+                                 <input class="lead_row_input customcheсk" type="checkbox" name="lead_row">
                               </td>
                               <td>
-                                 <p>
+                                 <p class="open-leadinfo">
                                     23.06.23, 16:58
                                  </p>
                               </td>
                               <td>
-                                 <p class="lead_call">
+                                 <p class="lead_call open-leadinfo">
                                     <img src="img/svg_icons/lead_green_phone.svg" alt="icon">
                                     Дзвінок
                                  </p>
@@ -2325,62 +2328,18 @@
                                  </p>
                               </td>
                               <td>
-                                 <p>
+                                 <p class="open-leadinfo">
                                     Роман Старовойтовський
-                                 </p>
-                              </td>
-                              <td>
-                                 <p>
-                                    <img src="img/svg_icons/lead_outgoing_call.svg" alt="icon">
-                                    Вихідний
-                                 </p>
-                              </td>
-                              <td>
-                                 <p>
-                                    Передзвонити
-                                 </p>
-                              </td>
-                              <td>
-                                 <p class="lead_settings open-leadinfo">
-                                    <span>
-                                       ...
-                                    </span>
-                                 </p>
-                              </td>
-                           </tr>
-                           <tr class="leads__row">
-                              <td>
-                                 <input class="lead_row_input" type="checkbox" name="lead_row">
-                              </td>
-                              <td>
-                                 <p>
-                                    23.06.23, 16:58
-                                 </p>
-                              </td>
-                              <td>
-                                 <p class="lead_call">
-                                    <img src="img/svg_icons/lead_green_phone.svg" alt="icon">
-                                    Дзвінок
                                  </p>
                               </td>
                               <td>
                                  <p class="open-leadinfo">
-                                    +380 67 567 45 29
-                                 </p>
-                              </td>
-                              <td>
-                                 <p>
-                                    Роман Старовойтовський
-                                 </p>
-                              </td>
-                              <td>
-                                 <p>
                                     <img src="img/svg_icons/lead_outgoing_call.svg" alt="icon">
                                     Вихідний
                                  </p>
                               </td>
                               <td>
-                                 <p>
+                                 <p class="open-leadinfo">
                                     Передзвонити
                                  </p>
                               </td>
@@ -2394,15 +2353,15 @@
                            </tr>
                            <tr class="leads__row">
                               <td>
-                                 <input class="lead_row_input" type="checkbox" name="lead_row">
+                                 <input class="lead_row_input customcheсk" type="checkbox" name="lead_row">
                               </td>
                               <td>
-                                 <p>
+                                 <p class="open-leadinfo">
                                     23.06.23, 16:58
                                  </p>
                               </td>
                               <td>
-                                 <p class="lead_meeting">
+                                 <p class="lead_meeting open-leadinfo">
                                     <img src="img/svg_icons/lead_red_meeting.svg" alt="icon">
                                     Дзвінок
                                  </p>
@@ -2413,18 +2372,18 @@
                                  </p>
                               </td>
                               <td>
-                                 <p>
+                                 <p class="open-leadinfo">
                                     Роман Старовойтовський
                                  </p>
                               </td>
                               <td>
-                                 <p>
+                                 <p class="open-leadinfo">
                                     <img src="img/svg_icons/lead_not_call.svg" alt="icon">
                                     Не додзвонився
                                  </p>
                               </td>
                               <td>
-                                 <p>
+                                 <p class="open-leadinfo">
                                     Передзвонити
                                  </p>
                               </td>
@@ -2438,15 +2397,15 @@
                            </tr>
                            <tr class="leads__row">
                               <td>
-                                 <input class="lead_row_input" type="checkbox" name="lead_row">
+                                 <input class="lead_row_input customcheсk" type="checkbox" name="lead_row">
                               </td>
                               <td>
-                                 <p>
+                                 <p class="open-leadinfo">
                                     23.06.23, 16:58
                                  </p>
                               </td>
                               <td>
-                                 <p class="lead_task">
+                                 <p class="lead_task open-leadinfo">
                                     <img src="img/svg_icons/lead_green_task.svg" alt="icon">
                                     Задача
                                  </p>
@@ -2457,18 +2416,18 @@
                                  </p>
                               </td>
                               <td>
-                                 <p>
+                                 <p class="open-leadinfo">
                                     Роман Старовойтовський
                                  </p>
                               </td>
                               <td>
-                                 <p>
+                                 <p class="open-leadinfo">
                                     <img src="img/svg_icons/lead_incoming_call.svg" alt="icon">
                                     Вхідний
                                  </p>
                               </td>
                               <td>
-                                 <p>
+                                 <p class="open-leadinfo">
                                     Передзвонити
                                  </p>
                               </td>
@@ -2482,15 +2441,15 @@
                            </tr>
                            <tr class="leads__row">
                               <td>
-                                 <input class="lead_row_input" type="checkbox" name="lead_row">
+                                 <input class="lead_row_input customcheсk" type="checkbox" name="lead_row">
                               </td>
                               <td>
-                                 <p>
+                                 <p class="open-leadinfo">
                                     23.06.23, 16:58
                                  </p>
                               </td>
                               <td>
-                                 <p class="lead_call">
+                                 <p class="lead_call open-leadinfo">
                                     <img src="img/svg_icons/lead_green_phone.svg" alt="icon">
                                     Дзвінок
                                  </p>
@@ -2501,18 +2460,18 @@
                                  </p>
                               </td>
                               <td>
-                                 <p>
+                                 <p class="open-leadinfo">
                                     Роман Старовойтовський
                                  </p>
                               </td>
                               <td>
-                                 <p>
+                                 <p class="open-leadinfo">
                                     <img src="img/svg_icons/lead_outgoing_call.svg" alt="icon">
                                     Вихідний
                                  </p>
                               </td>
                               <td>
-                                 <p>
+                                 <p class="open-leadinfo">
                                     Передзвонити
                                  </p>
                               </td>
@@ -2526,15 +2485,15 @@
                            </tr>
                            <tr class="leads__row">
                               <td>
-                                 <input class="lead_row_input" type="checkbox" name="lead_row">
+                                 <input class="lead_row_input customcheсk" type="checkbox" name="lead_row">
                               </td>
                               <td>
-                                 <p>
+                                 <p class="open-leadinfo">
                                     23.06.23, 16:58
                                  </p>
                               </td>
                               <td>
-                                 <p class="lead_call">
+                                 <p class="lead_call open-leadinfo">
                                     <img src="img/svg_icons/lead_green_phone.svg" alt="icon">
                                     Дзвінок
                                  </p>
@@ -2545,18 +2504,18 @@
                                  </p>
                               </td>
                               <td>
-                                 <p>
+                                 <p class="open-leadinfo">
                                     Роман Старовойтовський
                                  </p>
                               </td>
                               <td>
-                                 <p>
+                                 <p class="open-leadinfo">
                                     <img src="img/svg_icons/lead_outgoing_call.svg" alt="icon">
                                     Вихідний
                                  </p>
                               </td>
                               <td>
-                                 <p>
+                                 <p class="open-leadinfo">
                                     Передзвонити
                                  </p>
                               </td>
@@ -2570,15 +2529,15 @@
                            </tr>
                            <tr class="leads__row">
                               <td>
-                                 <input class="lead_row_input" type="checkbox" name="lead_row">
+                                 <input class="lead_row_input customcheсk" type="checkbox" name="lead_row">
                               </td>
                               <td>
-                                 <p>
+                                 <p class="open-leadinfo">
                                     23.06.23, 16:58
                                  </p>
                               </td>
                               <td>
-                                 <p class="lead_call">
+                                 <p class="lead_call open-leadinfo">
                                     <img src="img/svg_icons/lead_green_phone.svg" alt="icon">
                                     Дзвінок
                                  </p>
@@ -2589,62 +2548,18 @@
                                  </p>
                               </td>
                               <td>
-                                 <p>
+                                 <p class="open-leadinfo">
                                     Роман Старовойтовський
-                                 </p>
-                              </td>
-                              <td>
-                                 <p>
-                                    <img src="img/svg_icons/lead_outgoing_call.svg" alt="icon">
-                                    Вихідний
-                                 </p>
-                              </td>
-                              <td>
-                                 <p>
-                                    Передзвонити
-                                 </p>
-                              </td>
-                              <td>
-                                 <p class="lead_settings open-leadinfo">
-                                    <span>
-                                       ...
-                                    </span>
-                                 </p>
-                              </td>
-                           </tr>
-                           <tr class="leads__row">
-                              <td>
-                                 <input class="lead_row_input" type="checkbox" name="lead_row">
-                              </td>
-                              <td>
-                                 <p>
-                                    23.06.23, 16:58
-                                 </p>
-                              </td>
-                              <td>
-                                 <p class="lead_call">
-                                    <img src="img/svg_icons/lead_green_phone.svg" alt="icon">
-                                    Дзвінок
                                  </p>
                               </td>
                               <td>
                                  <p class="open-leadinfo">
-                                    +380 67 567 45 29
-                                 </p>
-                              </td>
-                              <td>
-                                 <p>
-                                    Роман Старовойтовський
-                                 </p>
-                              </td>
-                              <td>
-                                 <p>
                                     <img src="img/svg_icons/lead_outgoing_call.svg" alt="icon">
                                     Вихідний
                                  </p>
                               </td>
                               <td>
-                                 <p>
+                                 <p class="open-leadinfo">
                                     Передзвонити
                                  </p>
                               </td>
@@ -2658,15 +2573,15 @@
                            </tr>
                            <tr class="leads__row">
                               <td>
-                                 <input class="lead_row_input" type="checkbox" name="lead_row">
+                                 <input class="lead_row_input customcheсk" type="checkbox" name="lead_row">
                               </td>
                               <td>
-                                 <p>
+                                 <p class="open-leadinfo">
                                     23.06.23, 16:58
                                  </p>
                               </td>
                               <td>
-                                 <p class="lead_meeting">
+                                 <p class="lead_meeting open-leadinfo">
                                     <img src="img/svg_icons/lead_red_meeting.svg" alt="icon">
                                     Дзвінок
                                  </p>
@@ -2677,18 +2592,18 @@
                                  </p>
                               </td>
                               <td>
-                                 <p>
+                                 <p class="open-leadinfo">
                                     Роман Старовойтовський
                                  </p>
                               </td>
                               <td>
-                                 <p>
+                                 <p class="open-leadinfo">
                                     <img src="img/svg_icons/lead_not_call.svg" alt="icon">
                                     Не додзвонився
                                  </p>
                               </td>
                               <td>
-                                 <p>
+                                 <p class="open-leadinfo">
                                     Передзвонити
                                  </p>
                               </td>
@@ -2702,15 +2617,15 @@
                            </tr>
                            <tr class="leads__row">
                               <td>
-                                 <input class="lead_row_input" type="checkbox" name="lead_row">
+                                 <input class="lead_row_input customcheсk" type="checkbox" name="lead_row">
                               </td>
                               <td>
-                                 <p>
+                                 <p class="open-leadinfo">
                                     23.06.23, 16:58
                                  </p>
                               </td>
                               <td>
-                                 <p class="lead_task">
+                                 <p class="lead_task open-leadinfo">
                                     <img src="img/svg_icons/lead_green_task.svg" alt="icon">
                                     Задача
                                  </p>
@@ -2721,18 +2636,18 @@
                                  </p>
                               </td>
                               <td>
-                                 <p>
+                                 <p class="open-leadinfo">
                                     Роман Старовойтовський
                                  </p>
                               </td>
                               <td>
-                                 <p>
+                                 <p class="open-leadinfo">
                                     <img src="img/svg_icons/lead_incoming_call.svg" alt="icon">
                                     Вхідний
                                  </p>
                               </td>
                               <td>
-                                 <p>
+                                 <p class="open-leadinfo">
                                     Передзвонити
                                  </p>
                               </td>
@@ -2746,15 +2661,15 @@
                            </tr>
                            <tr class="leads__row">
                               <td>
-                                 <input class="lead_row_input" type="checkbox" name="lead_row">
+                                 <input class="lead_row_input customcheсk" type="checkbox" name="lead_row">
                               </td>
                               <td>
-                                 <p>
+                                 <p class="open-leadinfo">
                                     23.06.23, 16:58
                                  </p>
                               </td>
                               <td>
-                                 <p class="lead_call">
+                                 <p class="lead_call open-leadinfo">
                                     <img src="img/svg_icons/lead_green_phone.svg" alt="icon">
                                     Дзвінок
                                  </p>
@@ -2765,18 +2680,18 @@
                                  </p>
                               </td>
                               <td>
-                                 <p>
+                                 <p class="open-leadinfo">
                                     Роман Старовойтовський
                                  </p>
                               </td>
                               <td>
-                                 <p>
+                                 <p class="open-leadinfo">
                                     <img src="img/svg_icons/lead_outgoing_call.svg" alt="icon">
                                     Вихідний
                                  </p>
                               </td>
                               <td>
-                                 <p>
+                                 <p class="open-leadinfo">
                                     Передзвонити
                                  </p>
                               </td>
@@ -2790,15 +2705,103 @@
                            </tr>
                            <tr class="leads__row">
                               <td>
-                                 <input class="lead_row_input" type="checkbox" name="lead_row">
+                                 <input class="lead_row_input customcheсk" type="checkbox" name="lead_row">
                               </td>
                               <td>
-                                 <p>
+                                 <p class="open-leadinfo">
                                     23.06.23, 16:58
                                  </p>
                               </td>
                               <td>
-                                 <p class="lead_call">
+                                 <p class="lead_meeting open-leadinfo">
+                                    <img src="img/svg_icons/lead_red_meeting.svg" alt="icon">
+                                    Дзвінок
+                                 </p>
+                              </td>
+                              <td>
+                                 <p class="open-leadinfo">
+                                    +380 67 567 45 29
+                                 </p>
+                              </td>
+                              <td>
+                                 <p class="open-leadinfo">
+                                    Роман Старовойтовський
+                                 </p>
+                              </td>
+                              <td>
+                                 <p class="open-leadinfo">
+                                    <img src="img/svg_icons/lead_not_call.svg" alt="icon">
+                                    Не додзвонився
+                                 </p>
+                              </td>
+                              <td>
+                                 <p class="open-leadinfo">
+                                    Передзвонити
+                                 </p>
+                              </td>
+                              <td>
+                                 <p class="lead_settings open-leadinfo">
+                                    <span>
+                                       ...
+                                    </span>
+                                 </p>
+                              </td>
+                           </tr>
+                           <tr class="leads__row">
+                              <td>
+                                 <input class="lead_row_input customcheсk" type="checkbox" name="lead_row">
+                              </td>
+                              <td>
+                                 <p class="open-leadinfo">
+                                    23.06.23, 16:58
+                                 </p>
+                              </td>
+                              <td>
+                                 <p class="lead_task open-leadinfo">
+                                    <img src="img/svg_icons/lead_green_task.svg" alt="icon">
+                                    Задача
+                                 </p>
+                              </td>
+                              <td>
+                                 <p class="open-leadinfo">
+                                    +380 67 567 45 29
+                                 </p>
+                              </td>
+                              <td>
+                                 <p class="open-leadinfo">
+                                    Роман Старовойтовський
+                                 </p>
+                              </td>
+                              <td>
+                                 <p class="open-leadinfo">
+                                    <img src="img/svg_icons/lead_incoming_call.svg" alt="icon">
+                                    Вхідний
+                                 </p>
+                              </td>
+                              <td>
+                                 <p class="open-leadinfo">
+                                    Передзвонити
+                                 </p>
+                              </td>
+                              <td>
+                                 <p class="lead_settings open-leadinfo">
+                                    <span>
+                                       ...
+                                    </span>
+                                 </p>
+                              </td>
+                           </tr>
+                           <tr class="leads__row">
+                              <td>
+                                 <input class="lead_row_input customcheсk" type="checkbox" name="lead_row">
+                              </td>
+                              <td>
+                                 <p class="open-leadinfo">
+                                    23.06.23, 16:58
+                                 </p>
+                              </td>
+                              <td>
+                                 <p class="lead_call open-leadinfo">
                                     <img src="img/svg_icons/lead_green_phone.svg" alt="icon">
                                     Дзвінок
                                  </p>
@@ -2809,18 +2812,238 @@
                                  </p>
                               </td>
                               <td>
-                                 <p>
+                                 <p class="open-leadinfo">
                                     Роман Старовойтовський
                                  </p>
                               </td>
                               <td>
-                                 <p>
+                                 <p class="open-leadinfo">
                                     <img src="img/svg_icons/lead_outgoing_call.svg" alt="icon">
                                     Вихідний
                                  </p>
                               </td>
                               <td>
-                                 <p>
+                                 <p class="open-leadinfo">
+                                    Передзвонити
+                                 </p>
+                              </td>
+                              <td>
+                                 <p class="lead_settings open-leadinfo">
+                                    <span>
+                                       ...
+                                    </span>
+                                 </p>
+                              </td>
+                           </tr>
+                           <tr class="leads__row">
+                              <td>
+                                 <input class="lead_row_input customcheсk" type="checkbox" name="lead_row">
+                              </td>
+                              <td>
+                                 <p class="open-leadinfo">
+                                    23.06.23, 16:58
+                                 </p>
+                              </td>
+                              <td>
+                                 <p class="lead_call open-leadinfo">
+                                    <img src="img/svg_icons/lead_green_phone.svg" alt="icon">
+                                    Дзвінок
+                                 </p>
+                              </td>
+                              <td>
+                                 <p class="open-leadinfo">
+                                    +380 67 567 45 29
+                                 </p>
+                              </td>
+                              <td>
+                                 <p class="open-leadinfo">
+                                    Роман Старовойтовський
+                                 </p>
+                              </td>
+                              <td>
+                                 <p class="open-leadinfo">
+                                    <img src="img/svg_icons/lead_outgoing_call.svg" alt="icon">
+                                    Вихідний
+                                 </p>
+                              </td>
+                              <td>
+                                 <p class="open-leadinfo">
+                                    Передзвонити
+                                 </p>
+                              </td>
+                              <td>
+                                 <p class="lead_settings open-leadinfo">
+                                    <span>
+                                       ...
+                                    </span>
+                                 </p>
+                              </td>
+                           </tr>
+                           <tr class="leads__row">
+                              <td>
+                                 <input class="lead_row_input customcheсk" type="checkbox" name="lead_row">
+                              </td>
+                              <td>
+                                 <p class="open-leadinfo">
+                                    23.06.23, 16:58
+                                 </p>
+                              </td>
+                              <td>
+                                 <p class="lead_call open-leadinfo">
+                                    <img src="img/svg_icons/lead_green_phone.svg" alt="icon">
+                                    Дзвінок
+                                 </p>
+                              </td>
+                              <td>
+                                 <p class="open-leadinfo">
+                                    +380 67 567 45 29
+                                 </p>
+                              </td>
+                              <td>
+                                 <p class="open-leadinfo">
+                                    Роман Старовойтовський
+                                 </p>
+                              </td>
+                              <td>
+                                 <p class="open-leadinfo">
+                                    <img src="img/svg_icons/lead_outgoing_call.svg" alt="icon">
+                                    Вихідний
+                                 </p>
+                              </td>
+                              <td>
+                                 <p class="open-leadinfo">
+                                    Передзвонити
+                                 </p>
+                              </td>
+                              <td>
+                                 <p class="lead_settings open-leadinfo">
+                                    <span>
+                                       ...
+                                    </span>
+                                 </p>
+                              </td>
+                           </tr>
+                           <tr class="leads__row">
+                              <td>
+                                 <input class="lead_row_input customcheсk" type="checkbox" name="lead_row">
+                              </td>
+                              <td>
+                                 <p class="open-leadinfo">
+                                    23.06.23, 16:58
+                                 </p>
+                              </td>
+                              <td>
+                                 <p class="lead_meeting open-leadinfo">
+                                    <img src="img/svg_icons/lead_red_meeting.svg" alt="icon">
+                                    Дзвінок
+                                 </p>
+                              </td>
+                              <td>
+                                 <p class="open-leadinfo">
+                                    +380 67 567 45 29
+                                 </p>
+                              </td>
+                              <td>
+                                 <p class="open-leadinfo">
+                                    Роман Старовойтовський
+                                 </p>
+                              </td>
+                              <td>
+                                 <p class="open-leadinfo">
+                                    <img src="img/svg_icons/lead_not_call.svg" alt="icon">
+                                    Не додзвонився
+                                 </p>
+                              </td>
+                              <td>
+                                 <p class="open-leadinfo">
+                                    Передзвонити
+                                 </p>
+                              </td>
+                              <td>
+                                 <p class="lead_settings open-leadinfo">
+                                    <span>
+                                       ...
+                                    </span>
+                                 </p>
+                              </td>
+                           </tr>
+                           <tr class="leads__row">
+                              <td>
+                                 <input class="lead_row_input customcheсk" type="checkbox" name="lead_row">
+                              </td>
+                              <td>
+                                 <p class="open-leadinfo">
+                                    23.06.23, 16:58
+                                 </p>
+                              </td>
+                              <td>
+                                 <p class="lead_task open-leadinfo">
+                                    <img src="img/svg_icons/lead_green_task.svg" alt="icon">
+                                    Задача
+                                 </p>
+                              </td>
+                              <td>
+                                 <p class="open-leadinfo">
+                                    +380 67 567 45 29
+                                 </p>
+                              </td>
+                              <td>
+                                 <p class="open-leadinfo">
+                                    Роман Старовойтовський
+                                 </p>
+                              </td>
+                              <td>
+                                 <p class="open-leadinfo">
+                                    <img src="img/svg_icons/lead_incoming_call.svg" alt="icon">
+                                    Вхідний
+                                 </p>
+                              </td>
+                              <td>
+                                 <p class="open-leadinfo">
+                                    Передзвонити
+                                 </p>
+                              </td>
+                              <td>
+                                 <p class="lead_settings open-leadinfo">
+                                    <span>
+                                       ...
+                                    </span>
+                                 </p>
+                              </td>
+                           </tr>
+                           <tr class="leads__row">
+                              <td>
+                                 <input class="lead_row_input customcheсk" type="checkbox" name="lead_row">
+                              </td>
+                              <td>
+                                 <p class="open-leadinfo">
+                                    23.06.23, 16:58
+                                 </p>
+                              </td>
+                              <td>
+                                 <p class="lead_call open-leadinfo">
+                                    <img src="img/svg_icons/lead_green_phone.svg" alt="icon">
+                                    Дзвінок
+                                 </p>
+                              </td>
+                              <td>
+                                 <p class="open-leadinfo">
+                                    +380 67 567 45 29
+                                 </p>
+                              </td>
+                              <td>
+                                 <p class="open-leadinfo">
+                                    Роман Старовойтовський
+                                 </p>
+                              </td>
+                              <td>
+                                 <p class="open-leadinfo">
+                                    <img src="img/svg_icons/lead_outgoing_call.svg" alt="icon">
+                                    Вихідний
+                                 </p>
+                              </td>
+                              <td>
+                                 <p class="open-leadinfo">
                                     Передзвонити
                                  </p>
                               </td>
@@ -2835,9 +3058,7 @@
 
                         </table>
                      </div>
-
                   </div>
-
 
                   <div class="leads__info">
                      <div class="leads__info-wrapper">
@@ -3145,7 +3366,8 @@
                                              14.05.2023 о 9:30
                                           </span>
                                           <div class="leads__rightblock-note">
-                                             <p>Lorem ipsum dolor. Dis morbi dictum in pretium amet pellentesque sem nunc in.</p>
+                                             <p>Lorem ipsum dolor. Dis morbi dictum in pretium amet pellentesque sem
+                                                nunc in.</p>
                                           </div>
                                           <div class="note-edit">
                                              <div class="btns">
@@ -3183,7 +3405,8 @@
                                              14.05.2023 о 9:30
                                           </span>
                                           <div class="leads__rightblock-note">
-                                             <p>Lorem ipsum dolor. Dis morbi dictum in pretium amet pellentesque sem nunc in.</p>
+                                             <p>Lorem ipsum dolor. Dis morbi dictum in pretium amet pellentesque sem
+                                                nunc in.</p>
                                           </div>
                                           <div class="note-edit">
                                              <div class="btns">
@@ -3244,7 +3467,8 @@
                                              14.05.2023 о 9:30
                                           </span>
                                           <div class="leads__rightblock-note">
-                                             <p>Lorem ipsum dolor. Dis morbi dictum in pretium amet pellentesque sem nunc in.</p>
+                                             <p>Lorem ipsum dolor. Dis morbi dictum in pretium amet pellentesque sem
+                                                nunc in.</p>
                                           </div>
                                           <div class="note-edit">
                                              <div class="btns">
@@ -3292,7 +3516,8 @@
                                              14.05.2023 о 9:30
                                           </span>
                                           <div class="leads__rightblock-note">
-                                             <p>Lorem ipsum dolor. Dis morbi dictum in pretium amet pellentesque sem nunc in.</p>
+                                             <p>Lorem ipsum dolor. Dis morbi dictum in pretium amet pellentesque sem
+                                                nunc in.</p>
                                           </div>
                                           <div class="note-edit">
                                              <div class="btns">
@@ -3347,7 +3572,8 @@
                                              14.05.2023 о 9:30
                                           </span>
                                           <div class="leads__rightblock-note">
-                                             <p>Lorem ipsum dolor. Dis morbi dictum in pretium amet pellentesque sem nunc in.</p>
+                                             <p>Lorem ipsum dolor. Dis morbi dictum in pretium amet pellentesque sem
+                                                nunc in.</p>
                                           </div>
                                           <div class="note-edit">
                                              <div class="btns">

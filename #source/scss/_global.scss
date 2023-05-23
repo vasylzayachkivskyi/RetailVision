@@ -95,6 +95,33 @@ body {
     margin: 0 auto;
 }
 
+.customcheсk {
+
+    &.jq-checkbox,
+    &.jq-radio {
+        width: 18px;
+        height: 18px;
+        border: 1px solid #adb5bd;
+        border-radius: 5px;
+        margin: 0 10px 0 0;
+        background: #fbfbfb;
+        box-shadow: none;
+    }
+
+    &.jq-checkbox.checked {
+        background: #3670F0;
+        border: 1px solid #3670F0;
+
+        .jq-checkbox__div {
+            width: 11px;
+            height: 6px;
+            border-bottom: 2px solid #fbfbfb;
+            border-left: 2px solid #fbfbfb;
+        }
+    }
+
+}
+
 @media (min-width:1440.8px) {
     .customcontainer {
         padding: 0 30px;
