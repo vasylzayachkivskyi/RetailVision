@@ -4,7 +4,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 78px;
+    height: 72px;
     width: 100%;
     position: fixed;
     z-index: 40;
@@ -19,7 +19,7 @@
         left: 0;
         width: 100%;
         height: 100%;
-        overflow: hidden;
+        visibility: hidden;
         z-index: -1;
         opacity: 0;
         background-color: rgba(0, 0, 0, .3);
@@ -28,9 +28,9 @@
 
     &.darkened {
         &:after {
-            overflow: visible;
+            visibility: visible;
             transition: .3s;
-            z-index: 1;
+            z-index: 99;
             opacity: 1;
         }
 
@@ -75,7 +75,7 @@
         background: #FBFBFB;
         border: none;
         border-radius: 50px;
-        padding: 15px 30px 15px 61px;
+        padding: 14px 30px 14px 61px;
         position: relative;
         font-weight: 500;
         font-size: 16px;
@@ -186,11 +186,12 @@
 .header__info {
     display: flex;
     align-items: center;
+    justify-content: flex-end;
 }
 
 .header__notification {
-    width: 54px;
-    height: 54px;
+    width: 48px;
+    height: 48px;
     background: #fff;
     border-radius: 50%;
     position: relative;
@@ -206,17 +207,17 @@
 
     .number {
         position: absolute;
-        height: 28px;
-        width: 28px;
+        height: 31px;
+        width: 31px;
         border-radius: 50%;
         display: flex;
         align-items: center;
         justify-content: center;
-        top: -7px;
-        right: -7px;
+        top: -2px;
+        right: -15px;
         font-family: 'Inter';
         font-style: normal;
-        font-weight: 700;
+        font-weight: 500;
         font-size: 14px;
         line-height: 17px;
         color: #FFFFFF;
@@ -230,8 +231,8 @@
 
     img {
         border-radius: 50%;
-        width: 56px;
-        height: 54px;
+        width: 48px;
+        height: 48px;
         background-size: cover;
     }
 }
@@ -244,10 +245,7 @@
     }
 }
 @media(max-width:1199.8px) {
-    .header__info{
-        width: 100%;
-        justify-content: flex-end;
-    }
+
     .header__user {
         margin-left: 30px;
     }

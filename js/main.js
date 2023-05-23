@@ -12,7 +12,7 @@ $(document).ready(function () {
     $(document).on('click', function (event) {
         var target = $(event.target);
 
-        if (!target.closest('.notification, .header__notification, .open-leadinfo, .leads__info, .header__search, .lead__popup').length) {
+        if (!target.closest('.notification, .header__notification, .header__search').length) {
             fkt();
         }
     });
@@ -146,13 +146,9 @@ $(document).ready(function () {
     // lead info -------- //
     $('.open-leadinfo').on('click', function () {
         $('.leads__info').addClass('show');
-        $('.header').addClass('darkened');
-        $('.mainsect').addClass('darkened');
     });
     $('.close-leadinfo').on('click', function () {
         $('.leads__info').removeClass('show');
-        $('.header').removeClass('darkened');
-        $('.mainsect').removeClass('darkened');
     });
 
 
