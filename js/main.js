@@ -172,7 +172,7 @@ $(document).ready(function () {
     
             $('.done-edit').on('click', function (e) {
                 e.preventDefault();
-                var textEl = $(this).closest('.leads__rightblock-note').find('textarea');
+                var textEl = $(this).closest('.leads__rightblock-content').find('.leads__rightblock-note textarea');
                 var editedValue = textEl.val().trim();
                 // Замінюємо textarea на оновлене значення
                 textEl.replaceWith('<p>' + editedValue + '</p>');
