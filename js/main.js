@@ -93,10 +93,21 @@ $(document).ready(function () {
         // close dropdown-element if click not this element-------- //
         $(document).on('click', function (event) {
             var target = $(event.target);
-            if (!target.closest('.select input[type="text"], .dropdown-response').length) {
-                $('.select').find('.dropdown-response').slideUp();
-            }
+            var selectElements = $('.select');
+        
+            selectElements.each(function() {
+                var selectElement = $(this);
+                var checkboxesAndRadios = selectElement.find('input[type=checkbox]:checked, input[type=radio]:checked');
+                var dropdownResponse = selectElement.find('.dropdown-response');
+        
+                if (dropdownResponse.is(':visible') && checkboxesAndRadios.length === 0) {
+                    if (!target.closest(selectElement).length) {
+                        dropdownResponse.slideUp();
+                    }
+                }
+            });
         });
+        
     });
     $('.dropdown-btn').on('click', function (event) {
         event.preventDefault();
@@ -457,11 +468,9 @@ $(document).ready(function () {
         if ($(this).prop('checked')) {
             checkboxes.prop('checked', true);
             checkboxes.closest('.leads__row').addClass('active');
-            $('.leads__row').find('.jq-checkbox').addClass('checked');
         } else {
             checkboxes.prop('checked', false);
             checkboxes.closest('.leads__row').removeClass('active');
-            $('.leads__row').find('.jq-checkbox').removeClass('checked');
         }
     });
     $('.leads__row input[type="checkbox"]').click(function () {

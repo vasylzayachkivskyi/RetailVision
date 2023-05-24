@@ -65,28 +65,28 @@
         cursor: pointer;
     }
 
-    &.leads-filter{
+    &.leads-filter {
         .dropdown-response {
             width: 266px;
-    
+
             .dropdown-btn {
                 width: 119px;
             }
-    
+
             .dropdown-wrapper {
                 width: 45%;
             }
-    
+
             .dropdown-row {
                 width: 100%;
             }
         }
-    
+
         &:last-of-type {
             .dropdown-wrapper {
                 width: 56%;
             }
-    
+
             .dropdown-response {
                 width: 365px
             }
@@ -121,6 +121,43 @@
             margin-right: 10px;
         }
     }
+}
+
+.leads__row-checkbox {
+    >input {
+        position: absolute;
+        z-index: -1;
+        opacity: 0;
+    }
+
+    /* создание в label псевдоэлемента before со следующими стилями */
+    >span::before {
+        content: '';
+        display: inline-block;
+        width: 18px;
+        height: 18px;
+        border: 1px solid #D9D9D9;
+        border-radius: 3px;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: 90%;
+    }
+
+    /* стили при наведении курсора на checkbox */
+    >input:not(:disabled):not(:checked)+span:hover::before {
+        background-image: url(../img/svg_icons/check_arrow.svg);
+        border: 1px solid #5C6476;
+        background-color: #5C6476;
+    }
+
+
+    /* стили для чекбокса, находящегося в состоянии checked */
+    >input:checked+span::before {
+        border-color: #3670F0;
+        background-color: #3670F0;
+        background-image: url(../img/svg_icons/check_arrow.svg);
+    }
+
 }
 
 .leads__table {
@@ -1031,7 +1068,8 @@
             }
         }
     }
-    .leads__rightblock-note{
+
+    .leads__rightblock-note {
 
         textarea {
             font-weight: 600;
@@ -2004,10 +2042,11 @@ span.flatpickr-weekday,
     .leads__callblock-col {
         width: 35%;
         margin-bottom: 10px;
+
         &:first-child,
         &:nth-child(2),
         &:nth-child(5),
-        &:nth-child(4){
+        &:nth-child(4) {
             width: 30%;
         }
     }
