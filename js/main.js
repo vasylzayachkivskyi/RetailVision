@@ -1,6 +1,8 @@
 
 $(document).ready(function () {
 
+    //  ----------------- HEADER (NOTIFICATION, SEARCH) --------------------------------------------- //
+
     // open notification -------- //
     $('.header__notification').on('click', function () {
         $('.notification').toggleClass('active');
@@ -23,6 +25,26 @@ $(document).ready(function () {
         $('.header__search-dropdown').slideUp();
         $('.header__search').removeClass('active');
     }
+
+
+    // notification items z-index from last to first  -------- //
+    function assignZIndex() {
+        var items = $('.notification-box__item');
+        var total = items.length;
+        items.each(function (index) {
+            var zIndex = total - index;
+            $(this).css('z-index', zIndex);
+        });
+    }
+    assignZIndex();
+
+
+    // notification items collapsing  -------- //
+    $('.notification-box__item').on('click', function () {
+        var elementTarget = $(this).parent('.notification-box__wrapper').find('.notification-box__item:not(:first-child)');
+        $(elementTarget).find('.notification-item__wrapper').slideToggle();
+        $(elementTarget).toggleClass('active');
+    });
 
     //  header search open ----------------- //
     $('.hsbtn').on('click', function () {
@@ -49,6 +71,8 @@ $(document).ready(function () {
         return false;
     });
 
+    //  ------------------- SIDEBAR ------------------------- //
+
     // sidebar category swither -------- //
     $('.tab-sidebar').on('click', function () {
         var dataClass = $(this).attr('data-tab');
@@ -64,6 +88,10 @@ $(document).ready(function () {
         $('.contacts').removeClass('active');
         $('.sidebar__contacts').removeClass('active');
         $('.agreements').toggleClass('active');
+        if ($(this).hasClass('active')) {
+            $('.submenu__header').removeClass('active');
+            $('.submenu__inner').removeClass('active');
+        }
         $(this).toggleClass('active');
     });
 
@@ -72,19 +100,20 @@ $(document).ready(function () {
         $('.agreements').removeClass('active');
         $('.sidebar__agreements').removeClass('active');
         $('.contacts').toggleClass('active');
+        if ($(this).hasClass('active')) {
+            $('.submenu__header').removeClass('active');
+            $('.submenu__inner').removeClass('active');
+        }
         $(this).toggleClass('active');
     });
 
-    //  radiobutton form select menu ----------------- //
-    $('.select input').on('click', function () {
-        $(this).next('.dropdown').slideDown();
-    });
-    $('.dropdown .dropdown-row').on('click', function () {
-        $(this).parent('.dropdown').slideUp();
-        const $select = $(this).closest('.select');
-        const selectedValue = $(this).find('input[type=radio]').val();
-        $select.find('input[type=text]').val(selectedValue);
-    });
+
+
+
+
+
+    // --------------------------- DROPDOWN, CHECKBOX, RUDIOBUTTON --------------------------------------- //
+
 
     //  checkbox form select menu ----------------- //
     $('.select input[type="text"]').on('click', function () {
@@ -94,37 +123,119 @@ $(document).ready(function () {
         $(document).on('click', function (event) {
             var target = $(event.target);
             var selectElements = $('.select');
-        
-            selectElements.each(function() {
+
+            selectElements.each(function () {
                 var selectElement = $(this);
-                var checkboxesAndRadios = selectElement.find('input[type=checkbox]:checked, input[type=radio]:checked');
                 var dropdownResponse = selectElement.find('.dropdown-response');
-        
-                if (dropdownResponse.is(':visible') && checkboxesAndRadios.length === 0) {
-                    if (!target.closest(selectElement).length) {
-                        dropdownResponse.slideUp();
-                    }
+
+
+                if (!target.closest(selectElement).length) {
+                    dropdownResponse.slideUp();
+
                 }
             });
         });
-        
-    });
-    $('.dropdown-btn').on('click', function (event) {
-        event.preventDefault();
-        $(this).parent('.dropdown-response').slideUp();
-        const $select = $(this).closest('.select');
-        const selectedValue = $(this).parent('.dropdown-response').find('input[type=checkbox]:checked,input[type=radio]:checked').val();
-        var maxLength = 10; // Максимальна довжина для скороченого тексту
 
-        if (selectedValue.length > maxLength) {
-            var shortText = selectedValue.substring(0, maxLength) + '...'; // Скорочений текст з трикрапкою
-            $select.find('input[type=text]').val(shortText);
-        } else {
-            $select.find('input[type=text]').val(selectedValue);
+    });
+
+    // click on select dropdown item
+
+    // $('.select').each(function () {
+    //     var select = $(this);
+    //     var commoninput = select.find('.commoninput');
+    //     var originalText = commoninput.val();
+    //     commoninput.data('original-text', originalText);
+
+    //     select.find('.dropdown-row').on('click', function () {
+    //         var dropdownRows = select.find('.dropdown-row');
+    //         var activeCheckboxes = dropdownRows.find('input:checked:not(:first)');
+    //         var newText = originalText;
+
+    //         dropdownRows.each(function (index) {
+    //             if (index === 0) {
+    //                 newText += ' ' + $(this).find('input:checked').val();
+    //             } else if ($(this).find('input:checked').length > 0) {
+    //                 newText += '1';
+    //             }
+    //         });
+
+    //         var count = activeCheckboxes.length;
+    //         if (count > 0) {
+    //             newText += '+' + count;
+    //         }
+
+    //         commoninput.val(newText);
+    //     });
+    // });
+
+
+    $('.dropdown-row').on('click', function() {
+        var $select = $(this).closest('.select ').find('.commoninput');
+        var $checkboxes = $(this).closest('.dropdown-response').find('.customcheck');
+    
+        // Отримати значення першого активного чекбокса
+        var firstValue = $checkboxes.filter(':checked').first().val();
+    
+        // Передати значення в commoninput
+        $select.val(firstValue);
+    
+        // Кількість активних чекбоксів, крім першого
+        var activeCount = $checkboxes.filter(':checked').not(':first').length;
+    
+        // Додати +n до значення першого активного чекбокса
+        if (activeCount > 0) {
+          $select.val($select.val() + ' +' + activeCount);
+        }
+      });
+
+
+
+
+
+
+
+    
+
+
+
+    //   slice input placeholder 
+    $(document).ready(function () {
+        $(".commoninput").each(function () {
+
+            var input = $(this);
+            var placeholder = input.attr("placeholder");
+            if (placeholder.length > 12) {
+                var shortenedPlaceholder = placeholder.substring(0, 12) + "...";
+                input.attr("placeholder", shortenedPlaceholder);
+            }
+        })
+    });
+
+
+
+
+    // ----------- DROPDOWN -------- //
+    $('.dropdown-element p').on('click', function () {
+        $(this).parent('.dropdown-element').find('ul').slideToggle('fast');
+    });
+    $('.dropdown-element li').on('click', function () {
+        $(this).closest('ul').slideUp('fast');
+        const select = $(this).parent('ul');
+        const selectedValue = $(this).text();
+        select.prev('.dropdown-element p').text(selectedValue);
+    });
+    // close dropdown-element if click not this element-------- //
+    $(document).on('click', function (event) {
+        var target = $(event.target);
+        if (!target.closest('.dropdown-element p').length) {
+            $('.dropdown-element').find('ul').slideUp('fast');
         }
     });
 
 
+
+
+    // ------------------------  ESTATE TAB ------------------------------------- //
 
     // estate image slider --------------------- // 
     var swiper = new Swiper(".estate-slider", {
@@ -146,22 +257,18 @@ $(document).ready(function () {
 
 
 
-    //  leads__row active
-    $('.leads__row .lead_row_input').on('click', function () {
+
+    // ------------------------  LEADS TAB ------------------------------------- //
+    //  table__row active
+    $('.table__row .table__row-input').on('click', function () {
         $(this).toggleClass('active');
     });
 
-
     // lead row settings -------- //
-    $('.lead-row-dropdown').on('click', function () {
+    $('.lead-block-dropdown').on('click', function () {
         $(this).slideUp();
-        $(this).closest('.leads__row').removeClass('active');
+        // $(this).closest('.table__row').removeClass('active');
     });
-
-    $('.leads__rightblock-settings').on('click', function () {
-        $(this).next('.lead-row-dropdown').slideToggle();
-    });
-
 
     // lead info open/close-------- //
     $('.open-leadinfo').on('click', function () {
@@ -169,6 +276,11 @@ $(document).ready(function () {
     });
     $('.close-leadinfo').on('click', function () {
         $('.leads__info').removeClass('show');
+    });
+
+    // lead rightblock settings -------- //
+    $('.leads__rightblock-settings').on('click', function () {
+        $(this).next('.lead-block-dropdown').slideToggle();
     });
 
 
@@ -229,10 +341,6 @@ $(document).ready(function () {
     });
 
 
-
-
-
-
     // lead task name -------- //
     $('.leads__task-name').on('click', function () {
         $(this).next('.task-name__list').slideToggle('fast');
@@ -254,45 +362,13 @@ $(document).ready(function () {
         $(this).closest('.leads__task-type').find('p').html(selectedValue);
     });
 
-    // lead-note choise
+    // lead task/note choise
     $('.lead-note').on('click', function () {
         $('.leads__task-headinfo').hide();
     });
     $('.lead-task').on('click', function () {
         $('.leads__task-headinfo').show();
     });
-
-    // dropdown-element -------- //
-    $('.dropdown-element p').on('click', function () {
-        $(this).parent('.dropdown-element').find('ul').slideToggle('fast');
-    });
-    $('.dropdown-element li').on('click', function () {
-        $(this).closest('ul').slideUp('fast');
-        const select = $(this).parent('ul');
-        const selectedValue = $(this).text();
-        select.prev('.dropdown-element p').text(selectedValue);
-    });
-    // close dropdown-element if click not this element-------- //
-    $(document).on('click', function (event) {
-        var target = $(event.target);
-        if (!target.closest('.dropdown-element p').length) {
-            $('.dropdown-element').find('ul').slideUp('fast');
-        }
-    });
-
-
-    // POPUP ---------------------------------------------- //
-    $('.popup__btn').on('click', function () {
-        var indexPopup = $(this).attr('data-popup');
-        $('.popup__window').removeClass('active');
-        $('.' + indexPopup).addClass('active');
-        return false;
-    });
-
-    $('.popup__close').on('click', function () {
-        $('.popup__window').removeClass('active');
-    });
-
 
     // lead form select ---------------------------------------------- //
     $('.select').on('click', function () {
@@ -303,7 +379,7 @@ $(document).ready(function () {
         const $select = $(this).closest('.select');
         const selectedValue = $(this).find('input[type=radio]').val();
         $select.find('input[type=text]').val(selectedValue);
-        var maxLength = 15; // Максимальна довжина для скороченого тексту
+        var maxLength = 12; // Максимальна довжина для скороченого тексту
 
         if (selectedValue.length > maxLength) {
             var shortText = selectedValue.substring(0, maxLength) + '...'; // Скорочений текст з трикрапкою
@@ -376,14 +452,19 @@ $(document).ready(function () {
         $('.lead-element-edit').on('input', function () {
             var editedValue = $(this).val().trim();
 
-            // Видаляємо всі символи, крім цифр
-            editedValue = editedValue.replace(/\D/g, '');
+            if ($(this).closest('.edit-element').hasClass('price')) {
+                // Видаляємо всі символи, крім цифр
+                editedValue = editedValue.replace(/\D/g, '');
 
-            // Обмежуємо значення до 4 символів
-            editedValue = editedValue.slice(0, 4);
+                // Обмежуємо значення до 4 символів
+                editedValue = editedValue.slice(0, 4);
 
-            // Додаємо знак долара на останнє місце
-            editedValue = '$' + editedValue;
+                // Додаємо знак долара на останнє місце
+                editedValue = '$' + editedValue;
+            } else if ($(this).closest('.edit-element').hasClass('number')) {
+                // Видаляємо всі символи, крім цифр
+                editedValue = editedValue.replace(/[^0-9+]/g, '');
+            }
 
             // Оновлюємо значення input
             $(this).val(editedValue);
@@ -402,31 +483,128 @@ $(document).ready(function () {
     });
 
 
+    // lead row checkbox ------------ //
+    $('.head_table_check').click(function () {
+        var name = $(this).attr('name');
+        var checkboxes = $('input[type="checkbox"][name="' + name + '"]');
 
-
-
-
-    // notification items z-index from last to first  -------- //
-    function assignZIndex() {
-        var items = $('.notification-box__item');
-        var total = items.length;
-        items.each(function (index) {
-            var zIndex = total - index;
-            $(this).css('z-index', zIndex);
-        });
-    }
-    assignZIndex();
-
-
-    // notification items collapsing  -------- //
-    $('.notification-box__item').on('click', function () {
-        var elementTarget = $(this).parent('.notification-box__wrapper').find('.notification-box__item:not(:first-child)');
-        $(elementTarget).find('.notification-item__wrapper').slideToggle();
-        $(elementTarget).toggleClass('active');
+        if ($(this).prop('checked')) {
+            checkboxes.prop('checked', true);
+            checkboxes.closest('.table__row').addClass('active');
+        } else {
+            checkboxes.prop('checked', false);
+            checkboxes.closest('.table__row').removeClass('active');
+        }
+    });
+    $('.table__row input[type="checkbox"]').click(function () {
+        $(this).closest('.table__row').toggleClass('active');
     });
 
 
-    //datepicker
+
+
+
+
+
+
+    //  ------------------------ AGREEMENTS TAB ---------------------------------- //
+
+    //  active submenu item 
+    $('.submenu__inner-item').on('click', function () {
+        $('.submenu__inner-item').removeClass('active');
+        $(this).toggleClass('active');
+    });
+
+    // click on burger submenu
+    $('.burger-btn').on('click', function () {
+        $(this).closest('.submenu__header').next('.submenu__inner').toggleClass('active');
+    });
+
+    // show saleowner table instruments
+    $('.saleowner__table .table__row-input').on('change', function () {
+        var checkedCount = $('.table__row-input:checked').length;
+
+        if (checkedCount >= 1) {
+            $('.saleowner__table').addClass('active-instruments');
+        } else {
+            $('.saleowner__table').removeClass('active-instruments');
+        }
+    });
+
+    // hide saleowner table instruments
+    $('.table__instruments-check').on('click', function () {
+        $('.table__row-input').prop('checked', false);
+        $('.saleowner__table').removeClass('active-instruments');
+        $('.table__row').removeClass('active');
+    });
+
+
+
+
+    // table/kanban switcher
+    $('.saleowner__head-tabs p').on('click', function () {
+        $('.saleowner__head-tabs p').removeClass('active')
+        $(this).addClass('active');
+
+        if ($(this).hasClass('kanban-tab')) {
+            $('.saleowner__table').hide();
+            $('.saleowner__kanban').show();
+
+        } else if ($(this).hasClass('table-tab')) {
+            $('.saleowner__kanban').hide();
+            $('.saleowner__table').show();
+        }
+    });
+
+    // saleowner head filter
+    $('.saleowner__head-filterbtn').on('click', function () {
+        $(this).toggleClass('active');
+        $('.saleowner__filter').slideToggle();
+        $('.saleowner__table').toggleClass('active');
+        $('.saleowner__kanban').toggleClass('active');
+    });
+
+    // saleowner info open/close-------- //
+    $('.open-saleownerinfo').on('click', function () {
+        $('.saleowner__info').addClass('show');
+    });
+    $('.close-saleownerinfo').on('click', function () {
+        $('.saleowner__info').removeClass('show');
+    });
+
+    // info category swither -------- //
+    $('.info-righthead__tab').on('click', function () {
+        var dataClass = $(this).attr('data-tab');
+        $('.info-righthead__box').removeClass('active-box').hide();
+        $('.info-righthead__tab').removeClass('active');
+        $(this).addClass('active');
+        $('.' + dataClass).addClass('active-box').fadeIn(500);
+        return false;
+    });
+
+
+
+
+
+
+
+
+    // -------------------- POPUP ------------------------ //
+    $('.popup__btn').on('click', function () {
+        var indexPopup = $(this).attr('data-popup');
+        $('.popup__window').removeClass('active');
+        $('.' + indexPopup).addClass('active');
+        return false;
+    });
+
+    $('.popup__close').on('click', function () {
+        $('.popup__window').removeClass('active');
+    });
+
+
+
+
+    // ---------------- DATE TIME PICKER ------------------------- //
     $('.datepicker').on('click', function () {
         console.log('click')
         $('.datepicker').addClass('width-active');
@@ -453,31 +631,90 @@ $(document).ready(function () {
         }
     });
 
-    // init select style
+    // ----------  INIT CUSTOM INPUTS ------------------- //
     $(function () {
-        $('.customselect, .customradio, .customcheсk').styler();
+        $('.customselect, .customradio, .customcheck, .downloadinput').styler();
     });
 
 
 
-    // lead row checkbox ------------ //
-    $('.head_lead_check').click(function () {
-        var name = $(this).attr('name');
-        var checkboxes = $('input[type="checkbox"][name="' + name + '"]');
+    // ---------- SHOW UPLOAD IMAGE ------------------- //
+    $('.downloadinput').on('change', function (e) {
+        var file = e.target.files[0];
+        var reader = new FileReader();
+        var $downloadfield = $(this).closest('.downloadfield');
+        var $col3 = $downloadfield.closest('.uploadblock');
+        var $row = $col3.closest('.row');
+        var imageName = $downloadfield.find('span').text().trim();
+        var imageContainerId = 'image-container-' + imageName;
+        var $imageContainer = $('#' + imageContainerId);
 
-        if ($(this).prop('checked')) {
-            checkboxes.prop('checked', true);
-            checkboxes.closest('.leads__row').addClass('active');
-        } else {
-            checkboxes.prop('checked', false);
-            checkboxes.closest('.leads__row').removeClass('active');
+        if ($imageContainer.length === 0) {
+            $imageContainer = $('<div>').addClass('image-container row').attr('id', imageContainerId);
+            $row.after($imageContainer);
+            var $heading = $('<h3>').text(imageName);
+            $imageContainer.append($heading);
+        }
+
+        reader.onload = function (e) {
+            var image = $('<img>').attr('src', e.target.result);
+            var buttonl = $('<button>').addClass('imagebtnl')
+            var buttonr = $('<button>').addClass('imagebtnr')
+            var imagewrap = $('<div>').addClass('imagewrapper').append(image, buttonr, buttonl);
+            var $imageCol = $('<div>').addClass('col-xl-3 col-6').append(imagewrap);
+            $imageContainer.append($imageCol);
+        };
+
+        reader.readAsDataURL(file);
+    });
+
+
+    // buttons on upload image ---------- //
+    $(document).on('click', '.imagebtnr', function () {
+        var col3 = $(this).closest('.col-xl-3');
+        var imageContainer = $(this).closest('.image-container');
+        var col3Count = imageContainer.find('.col-xl-3').length;
+
+        col3.remove(); // Видалення col-3, що містить кнопку
+
+        if (col3Count <= 1) {
+            imageContainer.remove(); // Видалення image-container, якщо в ньому немає col-3
         }
     });
-    $('.leads__row input[type="checkbox"]').click(function () {
-        $(this).closest('.leads__row').toggleClass('active');
+
+    $(document).on('click', '.imagebtnl', function() {
+        var block = $(this).closest('.col-xl-3').find('img');
+        var currentRotation = block.data('rotation') || 0;
+        var newRotation = currentRotation - 90;
+        var wrapper = $(this).closest('.col-xl-3').find('.imagewrapper');
+        wrapper.toggleClass('high');
+        block.css('transform', 'rotate(' + newRotation + 'deg)');
+        block.data('rotation', newRotation);
+      });
+
+
+
+
+
+
+    // -------------------- TOOLTIP------------------------ //
+    // document.addEventListener('mousemove', function (e) {
+    $(document).on('mousemove', function (e) {
+        var tooltipText = document.querySelector('.tooltip-text');
+        tooltipText.style.top = e.clientY + 'px';
+        tooltipText.style.left = e.clientX + 12 + 'px';
     });
+
+
+
+
+
+
+
+
 
 
 
 
 });
+
