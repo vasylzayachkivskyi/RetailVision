@@ -140,35 +140,6 @@ $(document).ready(function () {
 
     // click on select dropdown item
 
-    // $('.select').each(function () {
-    //     var select = $(this);
-    //     var commoninput = select.find('.commoninput');
-    //     var originalText = commoninput.val();
-    //     commoninput.data('original-text', originalText);
-
-    //     select.find('.dropdown-row').on('click', function () {
-    //         var dropdownRows = select.find('.dropdown-row');
-    //         var activeCheckboxes = dropdownRows.find('input:checked:not(:first)');
-    //         var newText = originalText;
-
-    //         dropdownRows.each(function (index) {
-    //             if (index === 0) {
-    //                 newText += ' ' + $(this).find('input:checked').val();
-    //             } else if ($(this).find('input:checked').length > 0) {
-    //                 newText += '1';
-    //             }
-    //         });
-
-    //         var count = activeCheckboxes.length;
-    //         if (count > 0) {
-    //             newText += '+' + count;
-    //         }
-
-    //         commoninput.val(newText);
-    //     });
-    // });
-
-
     $('.dropdown-row').on('click', function() {
         var $select = $(this).closest('.select ').find('.commoninput');
         var $checkboxes = $(this).closest('.dropdown-response').find('.customcheck');
@@ -187,8 +158,6 @@ $(document).ready(function () {
           $select.val($select.val() + ' +' + activeCount);
         }
       });
-
-
 
 
 
@@ -698,12 +667,33 @@ $(document).ready(function () {
 
 
     // -------------------- TOOLTIP------------------------ //
-    // document.addEventListener('mousemove', function (e) {
-    $(document).on('mousemove', function (e) {
-        var tooltipText = document.querySelector('.tooltip-text');
-        tooltipText.style.top = e.clientY + 'px';
-        tooltipText.style.left = e.clientX + 12 + 'px';
-    });
+
+    $('.tooltip-common').hover(
+        function() {
+          var tooltipText = $(this).find('.tooltip-text');
+          tooltipText.css({
+            top: event.clientY + 'px',
+            left: event.clientX + 12 + 'px',
+            visibility: 'visible',
+            opacity: 1
+          });
+        },
+        function() {
+          var tooltipText = $(this).find('.tooltip-text');
+          tooltipText.css({
+            visibility: 'hidden',
+            opacity: 0
+          });
+        }
+      );
+      
+      $(document).mousemove(function(event) {
+        var tooltipText = $('.tooltip-common:hover .tooltip-text');
+        tooltipText.css({
+          top: event.clientY + 'px',
+          left: event.clientX + 12 + 'px'
+        });
+      });
 
 
 

@@ -348,9 +348,7 @@ body {
 
     .table__headrow-thumbnail {
         text-align: center;
-        p{
-            margin: 0!important;
-        }
+        margin: 0!important;
         img {
             margin: 0!important;
         }
@@ -390,7 +388,6 @@ body {
 
 .tooltip-common {
     position: relative;
-    z-index: 2;
 }
 
 .tooltip-text {
@@ -403,6 +400,7 @@ body {
     text-align: center;
     padding: 4px;
     position: fixed;
+    z-index: 2;
     bottom: 150%;
     font-weight: 500;
     font-size: 14px;

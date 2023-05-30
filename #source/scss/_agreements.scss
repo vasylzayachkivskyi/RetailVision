@@ -176,8 +176,6 @@
         padding: 16px 24px;
     }
 
-    .dropdown-wrapper {}
-
     .dropdown-row {
         width: 50%
     }
@@ -223,6 +221,11 @@
 
 
         td:nth-child(2) {
+            p{
+                text-align: center;
+                margin: 0;
+                padding: 0 5px;
+            }
             img {
                 margin: 0;
             }
