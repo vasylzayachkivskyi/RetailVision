@@ -568,6 +568,12 @@ $(document).ready(function () {
     });
 
 
+    // KANBAN instruments show/hide
+
+    
+    $('.btn-bottom-instruments').on('click', function () {
+        $('.saleowner__bottom').toggleClass('active');
+    });
 
 
 
