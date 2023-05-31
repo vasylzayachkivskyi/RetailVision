@@ -348,9 +348,10 @@ body {
 
     .table__headrow-thumbnail {
         text-align: center;
-        margin: 0!important;
+        margin: 0 !important;
+
         img {
-            margin: 0!important;
+            margin: 0 !important;
         }
     }
 
@@ -531,19 +532,29 @@ body {
             align-items: center;
             padding: 8px 16px;
         }
+        .customradio.jq-radio {
+            transition: .3s;
+        }
 
         li {
             width: 100%;
-            font-weight: 600;
+            font-weight: 500;
             font-size: 14px;
             line-height: 20px;
             letter-spacing: 0.25px;
-            color: #3670F0;
+            color: #383D54;
             transition: .3s;
             border-radius: 4px;
 
             &:hover {
                 background: rgba(59, 110, 223, 0.1);
+                label{
+                    color: #3670F0;
+                }
+
+                .customradio.jq-radio {
+                    border-color: #3670F0;
+                }
             }
         }
     }
@@ -616,7 +627,8 @@ body {
         overflow-x: scroll;
         overflow-y: hidden;
         height: 100vh;
-        .customcontainer{
+
+        .customcontainer {
             width: 1300px;
             max-width: none;
         }
@@ -626,6 +638,7 @@ body {
         &::-webkit-scrollbar {
             width: initial;
         }
+
         &::-webkit-scrollbar {
             width: 100%;
             cursor: pointer;
