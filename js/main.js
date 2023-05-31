@@ -358,6 +358,22 @@ $(document).ready(function () {
         }
     });
 
+
+    $('.leads-filter .dropdown-row').on('click', function () {
+        const $select = $(this).closest('.select');
+        const selectedValue = $(this).find('input[type=checkbox]').val();
+        $select.find('input[type=text]').val(selectedValue);
+        var maxLength = 10; // Максимальна довжина для скороченого тексту
+
+        if (selectedValue.length > maxLength) {
+            var shortText = selectedValue.substring(0, maxLength) + '...'; // Скорочений текст з трикрапкою
+            $select.find('input[type=text]').val(shortText);
+        } else {
+            $select.find('input[type=text]').val(selectedValue);
+        }
+    });
+
+
     // action to element on lead left block
     $('.hover-elevent li').on('click', function () {
         var action = $(this).text().trim();
