@@ -237,6 +237,31 @@
     }
 }
 
+
+.header__search{
+    position: relative;
+    z-index: 99;
+    &:after{
+        content: '';
+        width: 100%;
+        height: 100vh;
+        position: fixed;
+        left: 0;
+        top: 0;
+        z-index: -1;
+        background-color: rgba(0, 0, 0, .3);
+        visibility: hidden;
+        opacity: 0;
+        transition:.3s;
+    }
+    &.active{
+        &:after{
+            visibility: visible;
+            opacity: 1;
+        }
+    }
+}
+
 // RESPONSIVE ---------- //
 
 @media(max-width:1400px) {

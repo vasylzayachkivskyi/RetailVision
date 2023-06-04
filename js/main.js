@@ -1,7 +1,7 @@
 
 $(document).ready(function () {
 
-    //  ----------------- HEADER (NOTIFICATION, SEARCH) --------------------------------------------- //
+    //  --------------------------------------------- HEADER (NOTIFICATION, SEARCH) ------------------------------------------------------------------- //
 
     // open notification -------- //
     $('.header__notification').on('click', function () {
@@ -49,9 +49,11 @@ $(document).ready(function () {
     //  header search open ----------------- //
     $('.hsbtn').on('click', function () {
         $('.header__search-dropdown').slideDown();
-        $('.header').addClass('darkened');
-        $('.mainsect').addClass('darkened');
+        // $('.header').addClass('darkened');
+        // $('.mainsect').addClass('darkened');
         $('.header__search').addClass('active');
+        $('.submenu__header').removeClass('active');
+        $('.submenu__inner').removeClass('active');
     });
 
     $('.header__search .close, .search-inner__wrapper a').on('click', function () {
@@ -71,7 +73,7 @@ $(document).ready(function () {
         return false;
     });
 
-    //  ------------------- SIDEBAR ------------------------- //
+    //  ------------------------------------------------------ SIDEBAR --------------------------------------------------------- //
 
     // sidebar category swither -------- //
     $('.tab-sidebar').on('click', function () {
@@ -80,6 +82,11 @@ $(document).ready(function () {
         $('.tab-sidebar').removeClass('active');
         $(this).addClass('active');
         $('.' + dataClass).addClass('active-box').fadeIn(500);
+
+        $('.submenu__header').removeClass('active');
+        $('.submenu__inner').removeClass('active');
+        $('.sidebar__agreements').removeClass('active');
+        $('.sidebar__contacts').removeClass('active');
         return false;
     });
 
@@ -112,7 +119,13 @@ $(document).ready(function () {
 
 
 
-    // --------------------------- DROPDOWN, CHECKBOX, RUDIOBUTTON --------------------------------------- //
+    // -------------------------------------------- DROPDOWN, CHECKBOX, RUDIOBUTTON ---------------------------------------------------------------------- //
+
+    // click label
+    $('label').click(function () {
+        $('label').removeClass('active');
+        $(this).addClass('active');
+    });
 
 
     //  checkbox form select menu ----------------- //
@@ -140,30 +153,30 @@ $(document).ready(function () {
 
     // click on select dropdown item
 
-    $('.dropdown-row').on('click', function() {
+    $('.dropdown-row').on('click', function () {
         var $select = $(this).closest('.select ').find('.commoninput');
         var $checkboxes = $(this).closest('.dropdown-response').find('.customcheck');
-    
+
         // Отримати значення першого активного чекбокса
         var firstValue = $checkboxes.filter(':checked').first().val();
-    
+
         // Передати значення в commoninput
         $select.val(firstValue);
-    
+
         // Кількість активних чекбоксів, крім першого
         var activeCount = $checkboxes.filter(':checked').not(':first').length;
-    
+
         // Додати +n до значення першого активного чекбокса
         if (activeCount > 0) {
-          $select.val($select.val() + ' +' + activeCount);
+            $select.val($select.val() + ' +' + activeCount);
         }
-      });
+    });
 
 
 
 
 
-    
+
 
 
 
@@ -181,15 +194,49 @@ $(document).ready(function () {
     });
 
 
+    // select dropdown ---------------------------------------------- //
+    $('.select').on('click', function () {
+        $(this).find('ul').slideToggle();
+    });
+
+    $('.select li').on('click', function () {
+        const $select = $(this).closest('.select');
+        const selectedValue = $(this).find('input[type=radio]').val();
+        $select.find('input[type=text]').val(selectedValue);
+        var maxLength = 12; // Максимальна довжина для скороченого тексту
+
+        if (selectedValue.length > maxLength) {
+            var shortText = selectedValue.substring(0, maxLength) + '...'; // Скорочений текст з трикрапкою
+            $select.find('input[type=text]').val(shortText);
+        } else {
+            $select.find('input[type=text]').val(selectedValue);
+        }
+    });
+
+    // close dropdown if click not this element-------- //
+    $(document).on('click', function (event) {
+        var target = $(event.target);
+        var selectElements = $('.select');
+
+        selectElements.each(function () {
+            var selectElement = $(this);
+            var dropdownResponse = selectElement.find('ul');
 
 
-    // ----------- DROPDOWN -------- //
+            if (!target.closest(selectElement).length) {
+                dropdownResponse.slideUp();
+
+            }
+        });
+    });
+
+    // ----------- DROPDOWN ELEMENT -------- //
     $('.dropdown-element p').on('click', function () {
-        $(this).parent('.dropdown-element').find('ul').slideToggle('fast');
+        $(this).parent('.dropdown-element').find('.dropdownwrap').slideToggle('fast');
     });
     $('.dropdown-element li').on('click', function () {
-        $(this).closest('ul').slideUp('fast');
-        const select = $(this).parent('ul');
+        $(this).closest('.dropdownwrap').slideUp('fast');
+        const select = $(this).closest('.dropdownwrap');
         const selectedValue = $(this).text();
         select.prev('.dropdown-element p').text(selectedValue);
     });
@@ -197,7 +244,7 @@ $(document).ready(function () {
     $(document).on('click', function (event) {
         var target = $(event.target);
         if (!target.closest('.dropdown-element p').length) {
-            $('.dropdown-element').find('ul').slideUp('fast');
+            $('.dropdown-element').find('dropdownwrap').slideUp('fast');
         }
     });
 
@@ -322,13 +369,13 @@ $(document).ready(function () {
     });
 
     // lead task type -------- //
-    $('.leads__task-type').on('click', function () {
+    $('.tasktype').on('click', function () {
         $(this).find('ul').slideToggle('fast');
     });
-    $('.leads__task-type li').on('click', function () {
+    $('.tasktype li').on('click', function () {
         const selectedValue = $(this).html();
         console.log(selectedValue);
-        $(this).closest('.leads__task-type').find('p').html(selectedValue);
+        $(this).closest('.tasktype').find('p').html(selectedValue);
     });
 
     // lead task/note choise
@@ -337,40 +384,6 @@ $(document).ready(function () {
     });
     $('.lead-task').on('click', function () {
         $('.leads__task-headinfo').show();
-    });
-
-    // lead form select ---------------------------------------------- //
-    $('.select').on('click', function () {
-        $(this).find('ul').slideToggle();
-    });
-
-    $('.select li').on('click', function () {
-        const $select = $(this).closest('.select');
-        const selectedValue = $(this).find('input[type=radio]').val();
-        $select.find('input[type=text]').val(selectedValue);
-        var maxLength = 12; // Максимальна довжина для скороченого тексту
-
-        if (selectedValue.length > maxLength) {
-            var shortText = selectedValue.substring(0, maxLength) + '...'; // Скорочений текст з трикрапкою
-            $select.find('input[type=text]').val(shortText);
-        } else {
-            $select.find('input[type=text]').val(selectedValue);
-        }
-    });
-
-
-    $('.leads-filter .dropdown-row').on('click', function () {
-        const $select = $(this).closest('.select');
-        const selectedValue = $(this).find('input[type=checkbox]').val();
-        $select.find('input[type=text]').val(selectedValue);
-        var maxLength = 10; // Максимальна довжина для скороченого тексту
-
-        if (selectedValue.length > maxLength) {
-            var shortText = selectedValue.substring(0, maxLength) + '...'; // Скорочений текст з трикрапкою
-            $select.find('input[type=text]').val(shortText);
-        } else {
-            $select.find('input[type=text]').val(selectedValue);
-        }
     });
 
 
@@ -485,6 +498,21 @@ $(document).ready(function () {
         $(this).closest('.table__row').toggleClass('active');
     });
 
+    // leads-filter slice text
+    $('.leads-filter .dropdown-row').on('click', function () {
+        const $select = $(this).closest('.select');
+        const selectedValue = $(this).find('input[type=checkbox]').val();
+        $select.find('input[type=text]').val(selectedValue);
+        var maxLength = 10; // Максимальна довжина для скороченого тексту
+
+        if (selectedValue.length > maxLength) {
+            var shortText = selectedValue.substring(0, maxLength) + '...'; // Скорочений текст з трикрапкою
+            $select.find('input[type=text]').val(shortText);
+        } else {
+            $select.find('input[type=text]').val(selectedValue);
+        }
+    });
+
 
 
 
@@ -569,10 +597,37 @@ $(document).ready(function () {
 
 
     // KANBAN instruments show/hide
-
-    
     $('.btn-bottom-instruments').on('click', function () {
         $('.saleowner__bottom').toggleClass('active');
+    });
+
+
+    // info search tabs swither -------- //
+    $('.tab-infosearch').on('click', function () {
+        var dataClass = $(this).attr('data-tab');
+        $('.infosearch-box').removeClass('active-box').hide();
+        $('.tab-infosearch').removeClass('active');
+        $(this).addClass('active');
+        $('.' + dataClass).addClass('active-box').fadeIn(500);
+        return false;
+    });
+
+    // info search tabs swither -------- //
+    $('.tab-infolisting').on('click', function () {
+        var dataClass = $(this).attr('data-tab');
+        $('.infolisting-box').removeClass('active-box').hide();
+        $('.tab-infolisting').removeClass('active');
+        $(this).addClass('active');
+        $('.' + dataClass).addClass('active-box').fadeIn(500);
+        return false;
+    });
+
+
+    // open/hide map ------
+
+    $('.map_btn').on('click', function (e) {
+        e.preventDefault;
+        $('.info-specifications__map').slideToggle();
     });
 
 
@@ -590,6 +645,29 @@ $(document).ready(function () {
 
     $('.popup__close').on('click', function () {
         $('.popup__window').removeClass('active');
+    });
+
+
+    // popup from popup
+    $('.popup__wrapper input[type="radio"]').click(function () {
+        var selectedValue = $(this).data('value');
+        $(this).closest('.popup__wrapper').find('.popup__btn').attr('data-popup', selectedValue);
+    });
+
+    // popup hide area
+
+    $('.hide-area textarea').hide();
+
+    $('.hide-area label').click(function () {
+        var textarea = $(this).siblings('textarea');
+
+        if (textarea.is(':hidden')) {
+            textarea.show();
+        }
+    });
+
+    $('label:not(.hide-area label)').click(function () {
+        $('.hide-area textarea').hide();
     });
 
 
@@ -673,7 +751,7 @@ $(document).ready(function () {
         }
     });
 
-    $(document).on('click', '.imagebtnl', function() {
+    $(document).on('click', '.imagebtnl', function () {
         var block = $(this).closest('.col-xl-3').find('img');
         var currentRotation = block.data('rotation') || 0;
         var newRotation = currentRotation - 90;
@@ -681,7 +759,7 @@ $(document).ready(function () {
         wrapper.toggleClass('high');
         block.css('transform', 'rotate(' + newRotation + 'deg)');
         block.data('rotation', newRotation);
-      });
+    });
 
 
 
@@ -691,31 +769,49 @@ $(document).ready(function () {
     // -------------------- TOOLTIP------------------------ //
 
     $('.tooltip-common').hover(
-        function() {
-          var tooltipText = $(this).find('.tooltip-text');
-          tooltipText.css({
-            top: event.clientY + 'px',
-            left: event.clientX + 12 + 'px',
-            visibility: 'visible',
-            opacity: 1
-          });
+        function () {
+            var tooltipText = $(this).find('.tooltip-text');
+            tooltipText.css({
+                top: event.clientY + 'px',
+                left: event.clientX + 12 + 'px',
+                visibility: 'visible',
+                opacity: 1
+            });
         },
-        function() {
-          var tooltipText = $(this).find('.tooltip-text');
-          tooltipText.css({
-            visibility: 'hidden',
-            opacity: 0
-          });
+        function () {
+            var tooltipText = $(this).find('.tooltip-text');
+            tooltipText.css({
+                visibility: 'hidden',
+                opacity: 0
+            });
         }
-      );
-      
-      $(document).mousemove(function(event) {
+    );
+
+    $(document).mousemove(function (event) {
         var tooltipText = $('.tooltip-common:hover .tooltip-text');
         tooltipText.css({
-          top: event.clientY + 'px',
-          left: event.clientX + 12 + 'px'
+            top: event.clientY + 'px',
+            left: event.clientX + 12 + 'px'
         });
-      });
+    });
+
+
+    //  enter numbers -------------
+    $('.numberonly').on('input', function () {
+        // Отримуємо значення введеного числа
+        let value = $(this).val();
+
+        // Замінюємо всі символи, крім цифр, на порожній рядок
+        value = value.replace(/[^\d]/g, '');
+
+        // Форматуємо число, додаючи пробіли між тисячними
+        value = Number(value).toLocaleString();
+
+        // Оновлюємо значення в полі вводу
+        $(this).val(value);
+    });
+
+
 
 
 
