@@ -715,7 +715,8 @@ $(document).ready(function () {
         var $col3 = $downloadfield.closest('.uploadblock');
         var $row = $col3.closest('.row');
         var imageName = $downloadfield.find('span').text().trim();
-        var imageContainerId = 'image-container-' + imageName;
+        var imageId = $downloadfield.attr('data-block');
+        var imageContainerId = 'image-container-' + imageId;
         var $imageContainer = $('#' + imageContainerId);
 
         if ($imageContainer.length === 0) {
