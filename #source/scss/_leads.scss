@@ -266,7 +266,7 @@
     margin-bottom: 8px;
 
     h2 {
-        font-weight: 600;
+        font-weight: 500;
         font-size: 14px;
         line-height: 18px;
         color: #3670F0;
@@ -297,7 +297,7 @@
     }
 
     dt {
-        font-weight: 600;
+        font-weight: 500;
         width: 30%;
         font-size: 12px;
         line-height: 15px;
@@ -307,12 +307,12 @@
 
     dd {
         margin: 0 0 0 16px;
-        font-weight: 600;
+        font-weight: 500;
         font-size: 14px;
         color: #22232A;
 
         a {
-            font-weight: 600;
+            font-weight: 500;
             font-size: 14px;
             line-height: 18px;
             text-decoration-line: underline;
@@ -328,7 +328,7 @@
 
     p {
         display: inline-block;
-        font-weight: 600;
+        font-weight: 500;
         font-size: 14px;
         line-height: 18px;
         color: #22232A;
@@ -670,7 +670,7 @@
     }
 
     p {
-        font-weight: 600;
+        font-weight: 500;
         font-size: 13px;
         line-height: 13px;
         color: #5C6476;
@@ -819,7 +819,7 @@
     align-items: center;
 
     h3 {
-        font-weight: 600;
+        font-weight: 500;
         font-size: 14px;
         line-height: 18px;
 
@@ -999,7 +999,7 @@
     .dropdown-element {
         p {
             color: #3670F0;
-            font-weight: 600;
+            font-weight: 500;
             font-size: 14px;
             line-height: 18px;
             margin-right: 9px;
@@ -1010,7 +1010,7 @@
 
     input {
         margin-left: 9px;
-        font-weight: 600;
+        font-weight: 500;
         font-size: 14px;
         line-height: 18px;
         border: none;
@@ -1084,7 +1084,7 @@
     .leads__task-type {
         position: relative;
         margin-left: 10px;
-        font-weight: 600;
+        font-weight: 500;
         font-size: 14px;
         line-height: 18px;
         display: flex;
@@ -1752,11 +1752,6 @@ span.flatpickr-weekday,
         left: initial;
         padding: 14px 25px;
     }
-
-    // .leads__leftblock-input p {
-    //     max-width: 180px;
-    // }
-
 
     .leads__info-callblock {
         flex-wrap: wrap;
