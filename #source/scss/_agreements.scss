@@ -993,6 +993,20 @@
 
     .downloadfield {
         margin-top: 24px;
+        span {
+    
+            &:before {
+                content: '';
+                position: absolute;
+                left: -26px;
+                top: 50%;
+                transform: translateY(-50%);
+                background-image: url(../img/svg_icons/camera_icon_blue.svg);
+                width: 16px;
+                height: 16px;
+                background-size: cover;
+            }
+        }
     }
 }
 
