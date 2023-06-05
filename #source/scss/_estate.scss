@@ -129,16 +129,6 @@
       display: none;
 
 
-      .dropdown-row {
-         height: 25px;
-         display: flex;
-         align-items: center;
-
-         &+.dropdown-row {
-            margin-top: 5px;
-         }
-      }
-
       label {
          cursor: pointer;
       }
@@ -195,11 +185,6 @@
          width: 100%;
       }
 
-      .dropdown-btn {
-         display: inline-block;
-         vertical-align: bottom;
-      }
-
 
       .dropdown-row {
          width: 33%;
@@ -207,6 +192,11 @@
          display: flex;
          align-items: center;
          margin-top: 10px;
+         label{
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 20px;
+         }
       }
 
       label {
@@ -239,21 +229,6 @@
          background-color: #3670F0;
          background-image: url(../img/svg_icons/check_arrow.svg);
          background-size: 70%;
-      }
-
-      .dropdown-btn {
-         width: 130px;
-         height: 40px;
-         font-weight: 700;
-         font-size: 14px;
-         line-height: 114%;
-         color: #FFFFFF;
-         background: #3670F0;
-         border-radius: 8px;
-         border: none;
-         display: inline-flex;
-         align-items: center;
-         justify-content: center;
       }
 
    }
