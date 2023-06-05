@@ -700,6 +700,30 @@ $(document).ready(function () {
         }
     });
 
+    $('.onlydatepicker').flatpickr({
+        time_24hr: true,
+        dateFormat: "d.m.Y",
+        ariaDateFormat: "d.m.Y",
+        altFormat: "d.m.Y",
+        enableTime: false,
+        minDate: "Завтра",
+        minuteIncrement: 30,
+        disableMobile: "true",
+        locale: {
+            firstDayOfWeek: 1, // Встановлюємо перший день тижня на понеділок
+            months: {
+                shorthand: ['Січ', 'Лют', 'Бер', 'Кві', 'Тра', 'Чер', 'Лип', 'Сер', 'Вер', 'Жов', 'Лис', 'Гру'],
+                longhand: ['Січень', 'Лютий', 'Березень', 'Квітень', 'Травень', 'Червень', 'Липень', 'Серпень', 'Вересень', 'Жовтень', 'Листопад', 'Грудень']
+            },
+            weekdays: {
+                shorthand: ['Нд', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'],
+                longhand: ["Неділя", "Понеділок", "Вівторок", "Середа", "Четвер", "П'ятниця", "Субота"]
+            }
+        }
+    });
+
+
+
     // ----------  INIT CUSTOM INPUTS ------------------- //
     $(function () {
         $('.customselect, .customradio, .customcheck, .downloadinput').styler();
