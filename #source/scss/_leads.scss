@@ -523,6 +523,11 @@
 .edit-element {
     cursor: pointer;
 }
+.lead-element{
+    border-bottom: 1px solid #3670F0;
+    color: #3670F0;
+    display: inline-block;
+}
 
 .noteditcontent {
     >p {
