@@ -131,6 +131,7 @@ $(document).ready(function () {
     //  checkbox form select menu ----------------- //
     $('.select input[type="text"]').on('click', function () {
         $(this).closest('.select').find('.dropdown-response').slideToggle();
+        // $(this).closest('.select').find('ul').slideToggle();
 
         // close dropdown-element if click not this element-------- //
         $(document).on('click', function (event) {
@@ -239,13 +240,23 @@ $(document).ready(function () {
         const select = $(this).closest('.dropdownwrap');
         const selectedValue = $(this).text();
         select.prev('.dropdown-element p').text(selectedValue);
+        select.closest('.dropdown-element').addClass('filled');
     });
-    // close dropdown-element if click not this element-------- //
+
     $(document).on('click', function (event) {
         var target = $(event.target);
-        if (!target.closest('.dropdown-element p').length) {
-            $('.dropdown-element').find('dropdownwrap').slideUp('fast');
-        }
+        var selectElements = $('.dropdown-element');
+
+        selectElements.each(function () {
+            var selectElement = $(this);
+            var dropdownResponse = selectElement.find('.dropdownwrap');
+
+
+            if (!target.closest(selectElement).length) {
+                dropdownResponse.slideUp('fast');
+
+            }
+        });
     });
 
 
@@ -438,7 +449,7 @@ $(document).ready(function () {
     // edit element on click ------------------ //
     $('.edit-element').on('click', function () {
         var leadElement = $(this).find('p');
-        var currentValue = leadElement.text();
+        $(this).addClass('filled');
 
         // Замінюємо елемент на input для редагування
         leadElement.replaceWith('<input type="text" class="lead-element-edit">');
@@ -580,9 +591,11 @@ $(document).ready(function () {
     // saleowner info open/close-------- //
     $('.open-saleownerinfo').on('click', function () {
         $('.saleowner__info').addClass('show');
+        $('.saleowner__info-breadcrumbs').addClass('active');
     });
     $('.close-saleownerinfo').on('click', function () {
         $('.saleowner__info').removeClass('show');
+        $('.saleowner__info-breadcrumbs').removeClass('active');
     });
 
     // info category swither -------- //
