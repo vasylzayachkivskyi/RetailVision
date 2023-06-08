@@ -12,6 +12,7 @@
    <link rel="stylesheet" href="css/lib/jquery.formstyler.theme.css">
    <link rel="stylesheet" href="css/lib/swiper-bundle.min.css">
    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+   <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
    <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -2837,7 +2838,7 @@
                                                 <dt>
                                                    <p>Веб-сайт</p>
                                                 </dt>
-                                                <dd class="leads__leftblock-action hover-elevent">
+                                                <dd class="leads__leftblock-action hover-element">
                                                    <p class="lead-element">https://google.com.ua</p>
                                                    <ul>
                                                       <li>
@@ -2861,7 +2862,7 @@
 
                                  </div>
 
-                                 <div class="leads__info-agreement">
+                                 <div class="leads__info-agreement inactive">
                                     <a href="#" class="leads-trashed close-leadinfo">
                                        <img src="img/svg_icons/trash_blue.svg" alt="trash">
                                     </a>
@@ -6555,7 +6556,7 @@
 
 
 
-                  <div class="saleowner__info ">
+                  <div class="saleowner__info">
                      <div class="leads__info-wrapper">
                         <div class="row">
                            <div class="col-xl-4 col-4 col">
@@ -6682,16 +6683,36 @@
                                                 <dt>
                                                    <p>ID об’єкту</p>
                                                 </dt>
-                                                <dd class="leads__leftblock-input noteditcontent">
+                                                <dd class="leads__leftblock-action noteditcontent hover-element">
                                                    <p>2345r4892hyd</p>
+                                                   <ul>
+                                                      <li>
+                                                         <img src="img/svg_icons/follow_icon_black.svg" alt="icon">
+                                                         Перейти
+                                                      </li>
+                                                      <li>
+                                                         <img src="img/svg_icons/copy_icon_black.svg" alt="icon">
+                                                         Скопіювати
+                                                      </li>
+                                                   </ul>
                                                 </dd>
                                              </dl>
                                              <dl>
                                                 <dt>
                                                    <p>Картка об’єкту</p>
                                                 </dt>
-                                                <dd class="leads__leftblock-input noteditcontent">
+                                                <dd class="leads__leftblock-action noteditcontent hover-element">
                                                    <p>https://www.ksajhdgj</p>
+                                                   <ul>
+                                                      <li>
+                                                         <img src="img/svg_icons/follow_icon_black.svg" alt="icon">
+                                                         Перейти
+                                                      </li>
+                                                      <li>
+                                                         <img src="img/svg_icons/copy_icon_black.svg" alt="icon">
+                                                         Скопіювати
+                                                      </li>
+                                                   </ul>
                                                 </dd>
                                              </dl>
                                           </div>
@@ -6728,21 +6749,67 @@
                                           <div class="leads__leftblock-content">
                                              <dl>
                                                 <dt>ПІБ</dt>
-                                                <dd class="edit-element not-filled dropdown-element">
-                                                   <p>Андрій Старовойтовський</p>
+                                                <dd class="leads__leftblock-input not-filled multiselect">
+                                                   <img src="img/svg_icons/Loading_icon.svg" alt="load" class="loading">
+                                                   <input class="black" type="text" placeholder="Каріна Стрілековська">
+                                                   <div class="dropdownwrap dropdownscroll">
+                                                      <ul>
+                                                         <li>Каріна Стрілековська</li>
+                                                         <li>Ольга Стрілековська</li>
+                                                         <li>Іванна Стрілековська</li>
+                                                         <li>Олена Стрілековська</li>
+                                                         <li>Каріна Стрілековська</li>
+                                                         <li>Каріна Стрілековська</li>
+                                                         <li>Каріна Стрілековська</li>
+                                                         <li>Каріна Стрілековська</li>
+                                                      </ul>
+                                                      <div class="dropdownwrap-bottom">
+                                                         <img src="img/svg_icons/plus_circle_blue.svg" alt="img">
+                                                         Додати ‘<span> </span>’ як новий контакт
+                                                      </div>
+                                                   </div>
                                                 </dd>
-                                                
                                              </dl>
                                              <dl>
                                                 <dt>Телефон</dt>
-                                                <dd class="edit-element not-filled number dropdown-element">
-                                                   <p>+380 76 768 67 43</p>
+                                                <dd class="leads__leftblock-input not-filled number multiselect">
+                                                   <img src="img/svg_icons/Loading_icon.svg" alt="load" class="loading">
+                                                   <img class="add-icon" src="img/svg_icons/plus_circle_grey.svg" alt="icon">
+                                                   <input type="text" placeholder="+380 76 768 67 43">
+                                                   <div class="dropdownwrap dropdownscroll">
+                                                      <ul>
+                                                         <li>+380 76 343</li>
+                                                         <li>+380 76 7343</li>
+                                                         <li>+380 76 7343</li>
+                                                         <li>+380 7345343</li>
+                                                         <li>+380 454545454343</li>
+                                                      </ul>
+                                                      <div class="dropdownwrap-bottom">
+                                                         <img src="img/svg_icons/plus_circle_blue.svg" alt="img">
+                                                         Додати ‘<span> </span>’ як новий номер
+                                                      </div>
+                                                   </div>
                                                 </dd>
                                              </dl>
                                              <dl>
                                                 <dt>Email</dt>
-                                                <dd class="leads__leftblock-input edit-element not-filled dropdown-element">
-                                                   <p>aksjgdgsdgfhj@gmail.com</p>
+                                                <dd class="leads__leftblock-input not-filled multiselect">
+                                                   <img src="img/svg_icons/Loading_icon.svg" alt="load" class="loading">
+                                                   <img class="add-icon" src="img/svg_icons/plus_circle_grey.svg" alt="icon">
+                                                   <input class="black" type="text" placeholder="mail@email.com">
+                                                   <div class="dropdownwrap dropdownscroll">
+                                                      <ul>
+                                                         <li>msdail@email.com</li>
+                                                         <li>masdil@email.com</li>
+                                                         <li>maasdil@email.com</li>
+                                                         <li>masdil@email.com</li>
+                                                         <li>masdasil@email.com</li>
+                                                      </ul>
+                                                      <div class="dropdownwrap-bottom">
+                                                         <img src="img/svg_icons/plus_circle_blue.svg" alt="img">
+                                                         Додати ‘<span> </span>’ як новий емейл
+                                                      </div>
+                                                   </div>
                                                 </dd>
                                              </dl>
                                              <dl>
@@ -6753,11 +6820,12 @@
                                                       <ul>
                                                          <li>Власник</li>
                                                          <li>Брокер</li>
+                                                         <li>Помічник власника</li>
                                                       </ul>
                                                    </div>
                                                 </dd>
                                              </dl>
-                                             <dl>
+                                             <dl class="source-client">
                                                 <dt>Джерело клієнта</dt>
                                                 <dd class="leads__leftblock-input dropdown-element not-filled">
                                                    <p>Оберіть варіант</p>
@@ -6766,10 +6834,12 @@
                                                          <li>Facebook</li>
                                                          <li>Twitter</li>
                                                          <li>Текст</li>
+                                                         <li class="open-area">Інше(написати нижче)</li>
                                                       </ul>
                                                    </div>
                                                 </dd>
                                              </dl>
+                                             <input class="dropdown-area" placeholder="Напишіть джерело клієнта"></input>
                                           </div>
                                        </div>
                                     </div>
@@ -6779,30 +6849,97 @@
                                           <h2>
                                              КОНТАКТ
                                           </h2>
+                                          <div class="leads__leftblock-settings">
+                                             <img src="img/svg_icons/dots_icon.svg" alt="icon">
+                                             <ul>
+                                                <li>
+                                                   <img class="static-icon" src="img/svg_icons/follow_icon_black.svg" alt="icon">
+                                                   <img class="active-icon" src="img/svg_icons/follow_icon_blue.svg" alt="icon">
+                                                   Перейти
+                                                </li>
+                                                <li>
+                                                   <img class="static-icon" src="img/svg_icons/star_icon.svg" alt="icon">
+                                                   <img class="active-icon" src="img/svg_icons/star_icon_blue.svg" alt="icon">
+                                                   Зробити основним
+                                                </li>
+                                                <li>
+                                                   <img class="static-icon" src="img/svg_icons/tabler_link_off_icon.svg" alt="icon">
+                                                   <img class="active-icon" src="img/svg_icons/tabler_link_off_icon_blue.svg" alt="icon">
+                                                   Відкріпити контакт
+                                                </li>
+                                             </ul>
+                                          </div>
                                        </div>
                                        <div class="leads__leftblock-inner">
                                           <div class="leads__leftblock-content">
                                              <dl>
                                                 <dt>ПІБ</dt>
-                                                <dd class="edit-element">
-                                                   <p>Андрій Старовойтовський</p>
+                                                <dd class="leads__leftblock-input not-filled multiselect">
+                                                   <img src="img/svg_icons/Loading_icon.svg" alt="load" class="loading">
+                                                   <input class="black" type="text" placeholder="Каріна Стрілековська">
+                                                   <div class="dropdownwrap dropdownscroll">
+                                                      <ul>
+                                                         <li>Каріна Стрілековська</li>
+                                                         <li>Ольга Стрілековська</li>
+                                                         <li>Іванна Стрілековська</li>
+                                                         <li>Олена Стрілековська</li>
+                                                         <li>Каріна Стрілековська</li>
+                                                         <li>Каріна Стрілековська</li>
+                                                         <li>Каріна Стрілековська</li>
+                                                         <li>Каріна Стрілековська</li>
+                                                      </ul>
+                                                      <div class="dropdownwrap-bottom">
+                                                         <img src="img/svg_icons/plus_circle_blue.svg" alt="img">
+                                                         Додати ‘<span> </span>’ як новий контакт
+                                                      </div>
+                                                   </div>
                                                 </dd>
                                              </dl>
                                              <dl>
                                                 <dt>Телефон</dt>
-                                                <dd class="edit-element number">
-                                                   <p>+380 76 768 67 43</p>
+                                                <dd class="leads__leftblock-input not-filled number multiselect">
+                                                   <img src="img/svg_icons/Loading_icon.svg" alt="load" class="loading">
+                                                   <img class="add-icon" src="img/svg_icons/plus_circle_grey.svg" alt="icon">
+                                                   <input type="text" placeholder="+380 76 768 67 43">
+                                                   <div class="dropdownwrap dropdownscroll">
+                                                      <ul>
+                                                         <li>+380 76 343</li>
+                                                         <li>+380 76 7343</li>
+                                                         <li>+380 76 7343</li>
+                                                         <li>+380 7345343</li>
+                                                         <li>+380 454545454343</li>
+                                                      </ul>
+                                                      <div class="dropdownwrap-bottom">
+                                                         <img src="img/svg_icons/plus_circle_blue.svg" alt="img">
+                                                         Додати ‘<span> </span>’ як новий номер
+                                                      </div>
+                                                   </div>
                                                 </dd>
                                              </dl>
                                              <dl>
                                                 <dt>Email</dt>
-                                                <dd class="edit-element">
-                                                   <p>aksjgdgsdgfhj@gmail.com</p>
+                                                <dd class="leads__leftblock-input not-filled multiselect">
+                                                   <img src="img/svg_icons/Loading_icon.svg" alt="load" class="loading">
+                                                   <img class="add-icon" src="img/svg_icons/plus_circle_grey.svg" alt="icon">
+                                                   <input class="black" type="text" placeholder="mail@email.com">
+                                                   <div class="dropdownwrap dropdownscroll">
+                                                      <ul>
+                                                         <li>msdail@email.com</li>
+                                                         <li>masdil@email.com</li>
+                                                         <li>maasdil@email.com</li>
+                                                         <li>masdil@email.com</li>
+                                                         <li>masdasil@email.com</li>
+                                                      </ul>
+                                                      <div class="dropdownwrap-bottom">
+                                                         <img src="img/svg_icons/plus_circle_blue.svg" alt="img">
+                                                         Додати ‘<span> </span>’ як новий емейл
+                                                      </div>
+                                                   </div>
                                                 </dd>
                                              </dl>
                                              <dl>
                                                 <dt>Посада</dt>
-                                                <dd class="leads__leftblock-input dropdown-element">
+                                                <dd class="leads__leftblock-input dropdown-element not-filled">
                                                    <p>Власник</p>
                                                    <div class="dropdownwrap">
                                                       <ul>
@@ -6813,19 +6950,21 @@
                                                    </div>
                                                 </dd>
                                              </dl>
-                                             <dl>
-                                                <dt>Звідки</dt>
-                                                <dd class="leads__leftblock-input dropdown-element">
-                                                   <p>Facebook</p>
+                                             <dl class="source-client">
+                                                <dt>Джерело клієнта</dt>
+                                                <dd class="leads__leftblock-input dropdown-element not-filled">
+                                                   <p>Оберіть варіант</p>
                                                    <div class="dropdownwrap">
                                                       <ul>
                                                          <li>Facebook</li>
                                                          <li>Twitter</li>
                                                          <li>Текст</li>
+                                                         <li class="open-area">Інше(написати нижче)</li>
                                                       </ul>
                                                    </div>
                                                 </dd>
                                              </dl>
+                                             <input class="dropdown-area" placeholder="Напишіть джерело клієнта"></input>
                                           </div>
                                        </div>
                                     </div>
@@ -6850,8 +6989,26 @@
                                                 <dt>
                                                    <img src="img/svg_icons/lead_block_row_icon.svg" alt="icon">
                                                 </dt>
-                                                <dd class="edit-element not-filled">
-                                                   <p>Аптека Доброго Дня</p>
+                                                <dd class="leads__leftblock-input not-filled multiselect">
+                                                   <img src="img/svg_icons/Loading_icon.svg" alt="load" class="loading">
+                                                   <input class="black" type="text" placeholder="Оберіть варіант">
+                                                   <div class="dropdownwrap dropdownscroll">
+                                                      <ul>
+                                                         <li>Аптека Доброго Дня</li>
+                                                         <li>Аптека Подорожник</li>
+                                                         <li>Аптека Копійка</li>
+                                                         <li>Аптека Доброго Дня</li>
+                                                         <li>Аптека Подорожник</li>
+                                                         <li>Аптека Копійка</li>
+                                                         <li>Аптека Доброго Дня</li>
+                                                         <li>Аптека Подорожник</li>
+                                                         <li>Аптека Копійка</li>
+                                                      </ul>
+                                                      <div class="dropdownwrap-bottom popup__btn" data-popup="lead__popup">
+                                                         <img src="img/svg_icons/plus_circle_blue.svg" alt="img">
+                                                         Додати ‘<span> </span>’ як нову організацію
+                                                      </div>
+                                                   </div>
                                                 </dd>
                                              </dl>
                                              <dl>
@@ -6894,7 +7051,7 @@
                                                 <dt>
                                                    <p>Веб-сайт</p>
                                                 </dt>
-                                                <dd class="leads__leftblock-action hover-elevent not-filled">
+                                                <dd class="leads__leftblock-action hover-element not-filled">
                                                    <p class="lead-element">https://www....</p>
                                                    <ul>
                                                       <li>
@@ -6924,11 +7081,11 @@
                                     </a>
 
                                  </div>
-                                 <div class="leads__info-agreement">
-                                    <a href="#" class="leads-agreement close-leadinfo">
+                                 <div class="leads__info-agreement inactive">
+                                    <a href="#" class="leads-agreement close-saleownerinfo">
                                        Зберегти
                                     </a>
-                                    <a href="#" class="leads-archived close-leadinfo">
+                                    <a href="#" class="leads-archived close-saleownerinfo">
                                        Скасувати
                                     </a>
                                  </div>
@@ -11551,6 +11708,7 @@
 
 
    <script src="js/lib/jquery.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
    <script src="js/lib/jquery.formstyler.min.js"></script>
    <script src="js/lib/swiper-bundle.min.js"></script>

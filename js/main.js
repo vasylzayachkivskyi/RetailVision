@@ -261,6 +261,57 @@ $(document).ready(function () {
 
 
 
+    // -----------MULTISELECT-------- //
+    $('.multiselect input').on('click', function () {
+        $(this).parent('.multiselect').find('.dropdownwrap').slideToggle('fast');
+        $(this).parent('.multiselect').find('input[type="text"]').val('')
+        $(this).closest('.multiselect').find('.loading').addClass('active');
+        $('.dropdownwrap-bottom').hide();
+        $('.dropdownwrap-bottom span').text('');
+    });
+
+    $('.dropdownwrap-bottom').on('click', function () {
+        $(this).closest('.multiselect').find('.dropdownwrap').slideToggle('fast');
+        $(this).closest('.multiselect').find('.loading').removeClass('active');
+    });
+
+
+
+    $('.multiselect li').on('click', function () {
+        $(this).closest('.multiselect').find('.loading').removeClass('active');
+        const select = $(this).closest('.dropdownwrap');
+        const selectedValue = $(this).text();
+        select.slideUp('fast');
+        select.prev('.multiselect input').val(selectedValue);
+        select.closest('.multiselect').addClass('filled');
+    });
+
+    $('.multiselect input[type="text"]').on('input', function () {
+        var text = $(this).val();
+        $('.dropdownwrap-bottom').show();
+        $('.dropdownwrap-bottom span').text(text);
+    });
+
+    $(document).on('click', function (event) {
+        var target = $(event.target);
+        var selectElements = $('.multiselect');
+
+        selectElements.each(function () {
+            var selectElement = $(this);
+            var dropdownResponse = selectElement.find('.dropdownwrap');
+
+
+            if (!target.closest(selectElement).length) {
+                dropdownResponse.slideUp('fast');
+
+            }
+        });
+    })
+
+
+
+
+
 
     // ------------------------  ESTATE TAB ------------------------------------- //
 
@@ -399,7 +450,7 @@ $(document).ready(function () {
 
 
     // action to element on lead left block
-    $('.hover-elevent li').on('click', function () {
+    $('.hover-element li').on('click', function () {
         var action = $(this).text().trim();
         var leadElement = $(this).closest('.leads__leftblock-action').find('.lead-element');
 
@@ -441,10 +492,10 @@ $(document).ready(function () {
 
 
     // copy input element ---------------------------------------------- //
-    $('.addinput-btn').click(function () {
-        var inputField = $(this).prev('.inputfield').clone();
-        $(this).before(inputField);
-    });
+    // $('.addinput-btn').click(function () {
+    //     var inputField = $(this).prev('.inputfield').clone();
+    //     $(this).before(inputField);
+    // });
 
     // edit element on click ------------------ //
     $('.edit-element').on('click', function () {
@@ -532,6 +583,11 @@ $(document).ready(function () {
 
 
     //  ------------------------ AGREEMENTS TAB ---------------------------------- //
+
+    // switch icon on sidebar
+    // $('.agreements').on('click', function () {
+    //     $('.sidebar__agreements').addClass('active');
+    // });
 
     //  active submenu item 
     $('.submenu__inner-item').on('click', function () {
@@ -647,6 +703,33 @@ $(document).ready(function () {
 
 
 
+    // active bottom block buttons
+
+    $('.leads__info-leftblock').on('click', function () {
+        $('.leads__info-agreement').removeClass('inactive');
+    })
+
+
+    // show textarea when source client is other
+
+
+    
+      $('.source-client ul li').click(function() {
+        var parentElement = $(this).closest('.source-client');
+        if ($(this).hasClass('open-area')) {
+          parentElement.next('.dropdown-area').addClass('active');
+        } else {
+          parentElement.next('.dropdown-area').removeClass('active');
+        }
+      });
+
+
+
+
+
+
+
+
 
     // -------------------- POPUP ------------------------ //
     $('.popup__btn').on('click', function () {
@@ -738,9 +821,13 @@ $(document).ready(function () {
 
 
     // ----------  INIT CUSTOM INPUTS ------------------- //
+    // formstyler
     $(function () {
-        $('.customselect, .customradio, .customcheck, .downloadinput').styler();
+        $('.customradio, .customcheck, .downloadinput').styler();
     });
+
+    // select 2
+    $('.customselect').select2();
 
 
 
