@@ -679,6 +679,7 @@
 .saleowner__info {
     .leads__info-agreement {
         justify-content: flex-start;
+        width: 100%;
 
         .leads-agreement {
             width: 99px;
@@ -692,7 +693,7 @@
     }
 
     .leads__left-wrapper {
-        height: calc(100vh - 108px);
+        height: calc(100vh - 100px);
         padding-bottom: 70px;
         overflow-y: scroll;
         position: relative;
@@ -1676,6 +1677,7 @@
         }
     }
 }
+
 
 
 
