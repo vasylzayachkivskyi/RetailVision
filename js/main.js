@@ -52,7 +52,7 @@ $(document).ready(function () {
         // $('.header').addClass('darkened');
         // $('.mainsect').addClass('darkened');
         $('.header__search').addClass('active');
-        $('.submenu__header').removeClass('active');
+        // $('.submenu__header').removeClass('active');
         $('.submenu__inner').removeClass('active');
     });
 
@@ -83,7 +83,7 @@ $(document).ready(function () {
         $(this).addClass('active');
         $('.' + dataClass).addClass('active-box').fadeIn(500);
 
-        $('.submenu__header').removeClass('active');
+        // $('.submenu__header').removeClass('active');
         $('.submenu__inner').removeClass('active');
         $('.sidebar__agreements').removeClass('active');
         $('.sidebar__contacts').removeClass('active');
@@ -96,7 +96,7 @@ $(document).ready(function () {
         $('.sidebar__contacts').removeClass('active');
         $('.agreements').toggleClass('active');
         if ($(this).hasClass('active')) {
-            $('.submenu__header').removeClass('active');
+            // $('.submenu__header').removeClass('active');
             $('.submenu__inner').removeClass('active');
         }
         $(this).toggleClass('active');
@@ -108,7 +108,7 @@ $(document).ready(function () {
         $('.sidebar__agreements').removeClass('active');
         $('.contacts').toggleClass('active');
         if ($(this).hasClass('active')) {
-            $('.submenu__header').removeClass('active');
+            // $('.submenu__header').removeClass('active');
             $('.submenu__inner').removeClass('active');
         }
         $(this).toggleClass('active');
@@ -176,23 +176,20 @@ $(document).ready(function () {
 
 
 
-
-
-
-
-
     //   slice input placeholder 
-    $(document).ready(function () {
-        $(".commoninput").each(function () {
-
-            var input = $(this);
-            var placeholder = input.attr("placeholder");
-            if (placeholder.length > 12) {
-                var shortenedPlaceholder = placeholder.substring(0, 12) + "...";
+    $(".commoninput").each(function () {
+        var input = $(this);
+        var placeholder = input.attr("placeholder");
+        if (placeholder) { // Перевіряємо, чи існує атрибут "placeholder"
+            var placeholderLength = placeholder.length;
+            if (placeholderLength > 8) {
+                var shortenedPlaceholder = placeholder.substring(0, 8) + "...";
                 input.attr("placeholder", shortenedPlaceholder);
             }
-        })
+        }
     });
+
+
 
 
     // select dropdown ---------------------------------------------- //
@@ -266,7 +263,7 @@ $(document).ready(function () {
         $(this).parent('.multiselect').find('.dropdownwrap').slideToggle('fast');
         $(this).parent('.multiselect').find('input[type="text"]').val('')
         $(this).closest('.multiselect').find('.loading').addClass('active');
-        $('.dropdownwrap-bottom').hide();
+        $('.dropdownwrap-bottom').removeClass('active');
         $('.dropdownwrap-bottom span').text('');
     });
 
@@ -288,7 +285,7 @@ $(document).ready(function () {
 
     $('.multiselect input[type="text"]').on('input', function () {
         var text = $(this).val();
-        $('.dropdownwrap-bottom').show();
+        $('.dropdownwrap-bottom').addClass('active');
         $('.dropdownwrap-bottom span').text(text);
     });
 
@@ -436,8 +433,10 @@ $(document).ready(function () {
     });
     $('.tasktype li').on('click', function () {
         const selectedValue = $(this).html();
-        console.log(selectedValue);
         $(this).closest('.tasktype').find('p').html(selectedValue);
+        var color = $(this).attr('data-color');
+        $(this).closest('.tasktype').removeClass('blue grey green');
+        $(this).closest('.tasktype').addClass(color);
     });
 
     // lead task/note choise
@@ -584,11 +583,6 @@ $(document).ready(function () {
 
     //  ------------------------ AGREEMENTS TAB ---------------------------------- //
 
-    // switch icon on sidebar
-    // $('.agreements').on('click', function () {
-    //     $('.sidebar__agreements').addClass('active');
-    // });
-
     //  active submenu item 
     $('.submenu__inner-item').on('click', function () {
         $('.submenu__inner-item').removeClass('active');
@@ -596,8 +590,12 @@ $(document).ready(function () {
     });
 
     // click on burger submenu
-    $('.burger-btn').on('click', function () {
-        $(this).closest('.submenu__header').next('.submenu__inner').toggleClass('active');
+    $('.burger-agreements').on('click', function () {
+        $('.agreements').toggleClass('active');
+    });
+
+    $('.burger-contacts').on('click', function () {
+        $('.submenu__inner .contacts').toggleClass('active');
     });
 
     // show saleowner table instruments
@@ -639,7 +637,7 @@ $(document).ready(function () {
     // saleowner head filter
     $('.saleowner__head-filterbtn').on('click', function () {
         $(this).toggleClass('active');
-        $('.saleowner__filter').slideToggle();
+        $('.form__filter').slideToggle();
         $('.saleowner__table').toggleClass('active');
         $('.saleowner__kanban').toggleClass('active');
     });
@@ -707,21 +705,45 @@ $(document).ready(function () {
 
     $('.leads__info-leftblock').on('click', function () {
         $('.leads__info-agreement').removeClass('inactive');
-    })
+    });
 
 
     // show textarea when source client is other
 
-
-    
-      $('.source-client ul li').click(function() {
+    $('.source-client ul li').click(function () {
         var parentElement = $(this).closest('.source-client');
         if ($(this).hasClass('open-area')) {
-          parentElement.next('.dropdown-area').addClass('active');
+            parentElement.next('.dropdown-area').addClass('active');
         } else {
-          parentElement.next('.dropdown-area').removeClass('active');
+            parentElement.next('.dropdown-area').removeClass('active');
         }
-      });
+    });
+
+
+    // open/hide map popup form
+    $('.dynamic-map').on('click', function () {
+        $('.map__form').toggleClass('active');
+    });
+
+    // show buttons on map popup form
+    $('.commoninput').on('input', function () {
+        var inputValue = $(this).val().trim();
+        var formBottom = $('.map__form-bottom');
+
+        if (inputValue !== '') {
+            formBottom.removeClass('disabled');
+        } else {
+            formBottom.addClass('disabled');
+        }
+    });
+
+    //   click copy on client listing block 
+
+    $('.copyblock').on('click', function () {
+        $(this).addClass('active');
+        var copiedText = $(this).find('span');
+        copiedText.fadeIn(0).fadeOut(600);
+    });
 
 
 
@@ -771,7 +793,6 @@ $(document).ready(function () {
 
     // ---------------- DATE TIME PICKER ------------------------- //
     $('.datepicker').on('click', function () {
-        console.log('click')
         $('.datepicker').addClass('width-active');
     });
     $('.datepicker').flatpickr({

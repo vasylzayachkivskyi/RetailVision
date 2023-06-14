@@ -537,9 +537,13 @@
     font-size: 14px;
     line-height: 18px;
     color: #3670F0;
-    padding: 8px 24px;
+    padding: 10px 24px 0;
     cursor: pointer;
     display: none;
+    &.active{
+        display: flex;
+        align-items: center;
+    }
 
     img {
         margin-right: 8px;

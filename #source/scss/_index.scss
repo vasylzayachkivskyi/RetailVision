@@ -97,10 +97,11 @@
 
    .sidebar__logo {
       margin-bottom: 53px;
-     img{
-      width: 40px;
-      height: 40px;
-     }
+
+      img {
+         width: 40px;
+         height: 40px;
+      }
    }
 
    .sidebar__estate {
@@ -139,26 +140,11 @@
    width: 350px;
    height: 72px;
    transition: .4s;
-   position: fixed;
-   top: 0;
-   left: 56px;
-   z-index: -1;
-   visibility: hidden;
-   opacity: 0;
-   transform: translateX(-20%);
-
-   &.active {
-      z-index: 50;
-      visibility: visible;
-      opacity: 1;
-      transform: translateX(0%);
-   }
 
    ul {
       transition: .4s;
       width: 100%;
       height: 100%;
-      padding-left: 16px;
       display: flex;
       align-items: center;
 
@@ -172,10 +158,12 @@
       display: flex;
       align-items: center;
       transition: .4s;
-      a{
+
+      a {
          color: #5C6476;
       }
-      span{
+
+      span {
          color: #383D54;
       }
 
@@ -234,7 +222,7 @@
    transform: translateX(-20%);
 
    &.active {
-      z-index:50;
+      z-index: 50;
       visibility: visible;
       opacity: 1;
       transform: translateX(0%);
@@ -629,25 +617,38 @@
 
    .submenu__header {
       width: 300px;
-  }
-  .submenu__header .burger-btn img {
-   width: 24px;
-}
-.submenu__header li+li:before {
-   font-size: 16px;
-   line-height: 18px;
-   top: 50%;
-   left: -12px;
-}
-  .submenu__header li {
-   font-size: 16px;
-   line-height: 18px;
-}
+   }
+
+   .submenu__header .burger-btn img {
+      width: 24px;
+   }
+
+   .submenu__header li+li:before {
+      font-size: 16px;
+      line-height: 18px;
+      top: 50%;
+      left: -12px;
+   }
+
+   .submenu__header li {
+      font-size: 16px;
+      line-height: 18px;
+   }
 
    .newsfeed__wrapper {
       margin-left: calc(25% - 60px);
    }
 
+}
+
+@media(max-width:1200px) {
+   .submenu__header li {
+      font-size: 14px;
+      line-height: 17px;
+   }
+   .submenu__header .burger-btn img {
+      width: 20px;
+   }
 }
 
 @media(max-width:992px) {
@@ -666,8 +667,8 @@
 
 
 @media(max-width:768px) {
-.mainsect {
-   width: fit-content;
-}
-}
 
+   .mainsect {
+      width: fit-content;
+   }
+}
