@@ -49,10 +49,7 @@ $(document).ready(function () {
     //  header search open ----------------- //
     $('.hsbtn').on('click', function () {
         $('.header__search-dropdown').slideDown();
-        // $('.header').addClass('darkened');
-        // $('.mainsect').addClass('darkened');
         $('.header__search').addClass('active');
-        // $('.submenu__header').removeClass('active');
         $('.submenu__inner').removeClass('active');
     });
 
@@ -82,8 +79,6 @@ $(document).ready(function () {
         $('.tab-sidebar').removeClass('active');
         $(this).addClass('active');
         $('.' + dataClass).addClass('active-box').fadeIn(500);
-
-        // $('.submenu__header').removeClass('active');
         $('.submenu__inner').removeClass('active');
         $('.sidebar__agreements').removeClass('active');
         $('.sidebar__contacts').removeClass('active');
@@ -95,10 +90,8 @@ $(document).ready(function () {
         $('.contacts').removeClass('active');
         $('.sidebar__contacts').removeClass('active');
         $('.agreements').toggleClass('active');
-        if ($(this).hasClass('active')) {
-            // $('.submenu__header').removeClass('active');
-            $('.submenu__inner').removeClass('active');
-        }
+        $('.submenu__header').removeClass('active-box').fadeOut();
+        $('.submenu__header.saleowner-tab').addClass('active-box').fadeIn(500);
         $(this).toggleClass('active');
     });
 
@@ -107,10 +100,8 @@ $(document).ready(function () {
         $('.agreements').removeClass('active');
         $('.sidebar__agreements').removeClass('active');
         $('.contacts').toggleClass('active');
-        if ($(this).hasClass('active')) {
-            // $('.submenu__header').removeClass('active');
-            $('.submenu__inner').removeClass('active');
-        }
+        $('.submenu__header').removeClass('active-box').fadeOut();
+        $('.submenu__header.contact-tab').addClass('active-box').fadeIn(500);
         $(this).toggleClass('active');
     });
 
@@ -142,7 +133,6 @@ $(document).ready(function () {
                 var selectElement = $(this);
                 var dropdownResponse = selectElement.find('.dropdown-response');
 
-
                 if (!target.closest(selectElement).length) {
                     dropdownResponse.slideUp();
 
@@ -172,8 +162,6 @@ $(document).ready(function () {
             $select.val($select.val() + ' +' + activeCount);
         }
     });
-
-
 
 
     //   slice input placeholder 
@@ -248,7 +236,6 @@ $(document).ready(function () {
             var selectElement = $(this);
             var dropdownResponse = selectElement.find('.dropdownwrap');
 
-
             if (!target.closest(selectElement).length) {
                 dropdownResponse.slideUp('fast');
 
@@ -271,8 +258,6 @@ $(document).ready(function () {
         $(this).closest('.multiselect').find('.dropdownwrap').slideToggle('fast');
         $(this).closest('.multiselect').find('.loading').removeClass('active');
     });
-
-
 
     $('.multiselect li').on('click', function () {
         $(this).closest('.multiselect').find('.loading').removeClass('active');
@@ -304,10 +289,6 @@ $(document).ready(function () {
             }
         });
     })
-
-
-
-
 
 
     // ------------------------  ESTATE TAB ------------------------------------- //
@@ -488,14 +469,6 @@ $(document).ready(function () {
         tempInput.remove();
     }
 
-
-
-    // copy input element ---------------------------------------------- //
-    // $('.addinput-btn').click(function () {
-    //     var inputField = $(this).prev('.inputfield').clone();
-    //     $(this).before(inputField);
-    // });
-
     // edit element on click ------------------ //
     $('.edit-element').on('click', function () {
         var leadElement = $(this).find('p');
@@ -564,10 +537,10 @@ $(document).ready(function () {
         const $select = $(this).closest('.select');
         const selectedValue = $(this).find('input[type=checkbox]').val();
         $select.find('input[type=text]').val(selectedValue);
-        var maxLength = 10; // Максимальна довжина для скороченого тексту
+        var maxLength = 10;
 
         if (selectedValue.length > maxLength) {
-            var shortText = selectedValue.substring(0, maxLength) + '...'; // Скорочений текст з трикрапкою
+            var shortText = selectedValue.substring(0, maxLength) + '...'; 
             $select.find('input[type=text]').val(shortText);
         } else {
             $select.find('input[type=text]').val(selectedValue);
@@ -595,7 +568,7 @@ $(document).ready(function () {
     });
 
     $('.burger-contacts').on('click', function () {
-        $('.submenu__inner .contacts').toggleClass('active');
+        $('.contacts').toggleClass('active');
     });
 
     // show saleowner table instruments
