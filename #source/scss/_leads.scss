@@ -635,10 +635,12 @@
     padding: 10px 24px 0;
     cursor: pointer;
     display: none;
+    overflow-x: hidden;
 
     &.active {
         display: flex;
-        align-items: center;
+        // align-items: center;
+        align-items: flex-start;
     }
 
     img {
