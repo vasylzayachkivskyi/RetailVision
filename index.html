@@ -1945,19 +1945,11 @@
                                     </p>
                                  </a>
                               </div>
-                              <div class="table__instruments-item popup__btn" data-popup="change-stage__popup">
+                              <div class="table__instruments-item popup__btn" data-popup="select-pipe__popup">
                                  <a href="#">
-                                    <img src="img/svg_icons/change_etap_icon.svg" alt="icon">
+                                    <img src="img/svg_icons/pipe_icon.svg" alt="icon">
                                     <p>
-                                       Змінити етап
-                                    </p>
-                                 </a>
-                              </div>
-                              <div class="table__instruments-item">
-                                 <a href="#">
-                                    <img src="img/svg_icons/dublicate_obj_icon.svg" alt="icon">
-                                    <p>
-                                       Дублювати об’єкт
+                                       Обрати воронку
                                     </p>
                                  </a>
                               </div>
@@ -18386,10 +18378,106 @@
                <a href="#" class="close-leadinfo close-saleownerinfo popup__close">Вийти без збереження</a>
             </div>
          </div>
-
       </div>
    </div>
 
+      <!-- POPUP LEAD SELECT PIPE -->
+      <div class="popup__window select-pipe__popup">
+         <div class="popup__wrapper">
+            <div class="popup__inner agreements__popup-inner">
+               <div class="agreements__popup-head">
+                  <p>
+                     Обрати воронку
+                  </p>
+                  <img class="popup__close" src="img/svg_icons/close_icon2.svg" alt="close">
+               </div>
+               <div class="agreements__popup-body">
+                  <form>
+                     <label>
+                        <input class="customradio" name="select-pipe" type="radio" value="Об’єкт продаж">
+                        Об’єкт продаж
+                     </label>
+                     <label>
+                        <input class="customradio" name="select-pipe" type="radio" value="Кваліфікація об’єкту">
+                        Об’єкт оренда
+                     </label>
+                     <label>
+                        <input class="customradio" name="select-pipe" type="radio" value="Домовляємось за умови продажу">
+                        Заявка продаж
+                     </label>
+                     <label>
+                        <input class="customradio" name="select-pipe" type="radio" value="Пошук клієнтів">
+                        Заявка оренда
+                     </label>
+                     <label>
+                        <input class="customradio" name="select-pipe" type="radio" value="Назначена загальна зустріч">
+                        База
+                     </label>
+                     <div class="formbottom">
+                        <a class="textbtn popup__close">Скасувати</a>
+                        <a class="bluebtn popup__btn" data-popup="lead-stage__popup">Зберегти</a>
+                     </div>
+                  </form>
+               </div>
+            </div>
+         </div>
+      </div>
+
+   <!-- POPUP LEAD CHANGE STAGE -->
+   <div class="popup__window lead-stage__popup">
+      <div class="popup__wrapper">
+         <div class="popup__inner agreements__popup-inner">
+            <div class="agreements__popup-head">
+               <p>
+                  Обрати етап
+               </p>
+               <img class="popup__close" src="img/svg_icons/close_icon2.svg" alt="close">
+            </div>
+            <div class="agreements__popup-body">
+               <form>
+                  <label>
+                     <input class="customradio" name="change-stage" type="radio" value="Розібрати">
+                     Розібрати
+                  </label>
+                  <label>
+                     <input class="customradio" name="change-stage" type="radio" value="Кваліфікація об’єкту">
+                     Кваліфікація об’єкту
+                  </label>
+                  <label>
+                     <input class="customradio" name="change-stage" type="radio" value="Домовляємось за умови продажу">
+                     Домовляємось за умови продажу
+                  </label>
+                  <label>
+                     <input class="customradio" name="change-stage" type="radio" value="Пошук клієнтів">
+                     Пошук клієнтів
+                  </label>
+                  <label>
+                     <input class="customradio" name="change-stage" type="radio" value="Назначена загальна зустріч">
+                     Назначена загальна зустріч
+                  </label>
+                  <label>
+                     <input class="customradio" name="change-stage" type="radio" value="Назначений завдаток/угода">
+                     Назначений завдаток/угода
+                  </label>
+                  <label>
+                     <input class="customradio" name="change-stage" type="radio" value="Не реалізовано"
+                        data-value="not-realize">
+                     Не реалізовано
+                  </label>
+                  <label>
+                     <input class="customradio" name="change-stage" type="radio" value="Успішно реалізовано"
+                        data-value="realize">
+                     Успішно реалізовано
+                  </label>
+                  <div class="formbottom">
+                     <a class="textbtn popup__close">Скасувати</a>
+                     <a class="bluebtn popup__btn" data-popup="">Зберегти</a>
+                  </div>
+               </form>
+            </div>
+         </div>
+      </div>
+   </div>
 
    <!-- POPUP AGREEMENTS CHANGE STAGE -->
    <div class="popup__window change-stage__popup">
