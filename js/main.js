@@ -911,6 +911,21 @@ $(document).ready(function () {
         $(this).val(value);
     });
 
+    // phone mask
+
+    $('.phonemask input[type="text"]').on('input', function(e) {
+        var inputValue = $(this).val();
+        var numericValue = inputValue.replace(/\D/g, '');
+        
+        if (numericValue.startsWith('38')) {
+          numericValue = '+38' + numericValue.substring(2);
+        } else {
+          numericValue = '+38' + numericValue;
+        }
+        
+        $(this).val(numericValue);
+      });
+
 
 
 
