@@ -532,25 +532,6 @@ $(document).ready(function () {
         $(this).closest('.table__row').toggleClass('active');
     });
 
-    // leads-filter slice text
-    $('.leads-filter .dropdown-row').on('click', function () {
-        const $select = $(this).closest('.select');
-        const selectedValue = $(this).find('input[type=checkbox]').val();
-        $select.find('input[type=text]').val(selectedValue);
-        var maxLength = 10;
-
-        if (selectedValue.length > maxLength) {
-            var shortText = selectedValue.substring(0, maxLength) + '...'; 
-            $select.find('input[type=text]').val(shortText);
-        } else {
-            $select.find('input[type=text]').val(selectedValue);
-        }
-    });
-
-
-
-
-
 
 
 
