@@ -685,23 +685,25 @@
 }
 
 .saleowner__info {
-    &:after {
-        content: "";
-        width: 100%;
-        height: 100vh;
-        position: fixed;
-        left: 0;
-        top: 0;
-        z-index: -1;
-        background-color: rgba(0,0,0,0.3);
-        visibility: hidden;
-        opacity: 0;
-    }
-    &.active:after{
-        visibility: visible;
-        opacity: 1;
-        z-index: 99;
-    }
+    // &:after {
+    //     content: "";
+    //     width: 100%;
+    //     height: 100vh;
+    //     position: absolute;
+    //     left: 0;
+    //     top: 0;
+    //     z-index: -1;
+    //     background-color: rgba(0,0,0,0.3);
+    //     visibility: hidden;
+    //     opacity: 0;
+    //     transition: .2s;
+    // }
+    // &.active:after{
+    //     visibility: visible;
+    //     opacity: 1;
+    //     z-index: 99;
+    //     transition: .2s;
+    // }
     .leads__info-agreement {
         justify-content: flex-start;
         width: 100%;
@@ -729,7 +731,7 @@
     height: calc(100vh - 72px);
     width: 100%;
     position: fixed;
-    z-index: 30;
+    z-index: 20;
     top: 72px;
     right: 0;
     transform: translateX(100%);
@@ -839,7 +841,6 @@
     align-items: center;
     visibility: hidden;
     opacity: 0;
-    transition: .3s;
     font-size: 16px;
     line-height: 20px;
     font-weight: 600;

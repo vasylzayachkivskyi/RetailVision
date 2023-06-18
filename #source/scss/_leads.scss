@@ -148,20 +148,24 @@
     span {
         font-family: 'Inter';
         font-style: normal;
-        font-weight: 600;
+        font-weight: 500;
         font-size: 14px;
-        line-height: 17px;
+        line-height: 16px;
         color: #FBFBFB;
         display: inline-block;
         background: #22232A;
         position: absolute;
+        left: 85%;
+        top: 25%;
         box-shadow: 2px 0px 3px rgba(0, 0, 0, 0.08), 0px 3px 3px rgba(0, 0, 0, 0.08);
         border-radius: 4px;
-        padding: 4px 14px;
-        width: 150px;
+        padding: 4px 13px;
+        width: 145px;
+        height: 25px;
         visibility: hidden;
         z-index: -1;
         opacity: 0;
+        transition: opacity .4s;
     }
 
     &:hover {
@@ -201,10 +205,14 @@
             font-weight: 600;
             font-size: 14px;
             line-height: 18px;
-            color: #5C6476;
+            transition: .3s;
             opacity: .4;
 
             &.current {
+                color: #22232A;
+                opacity: 1;
+            }
+            &:hover{
                 color: #22232A;
                 opacity: 1;
             }
@@ -235,7 +243,7 @@
             }
 
             &:hover {
-                opacity: .5;
+                opacity: .7;
             }
 
             &.disabled {
@@ -596,7 +604,7 @@
         right: 0;
 
         ul {
-            height: 200px;
+            max-height: 250px;
             overflow-y: scroll;
 
             &::-webkit-scrollbar {
