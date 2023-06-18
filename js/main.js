@@ -8,6 +8,7 @@ $(document).ready(function () {
         $('.notification').toggleClass('active');
         $('.header').toggleClass('darkened');
         $('.mainsect').toggleClass('darkened');
+        $('.saleowner__info').toggleClass('active');
     });
 
     // close notification -------- //
@@ -24,6 +25,7 @@ $(document).ready(function () {
         $('.notification').removeClass('active');
         $('.header__search-dropdown').slideUp();
         $('.header__search').removeClass('active');
+        $('.saleowner__info').removeClass('active');
     }
 
 
