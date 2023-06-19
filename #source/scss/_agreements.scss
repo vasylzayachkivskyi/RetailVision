@@ -685,25 +685,6 @@
 }
 
 .saleowner__info {
-    // &:after {
-    //     content: "";
-    //     width: 100%;
-    //     height: 100vh;
-    //     position: absolute;
-    //     left: 0;
-    //     top: 0;
-    //     z-index: -1;
-    //     background-color: rgba(0,0,0,0.3);
-    //     visibility: hidden;
-    //     opacity: 0;
-    //     transition: .2s;
-    // }
-    // &.active:after{
-    //     visibility: visible;
-    //     opacity: 1;
-    //     z-index: 99;
-    //     transition: .2s;
-    // }
     .leads__info-agreement {
         justify-content: flex-start;
         width: 100%;
@@ -1492,6 +1473,7 @@
 
 
 .client-table {
+
     &.saleowner__table.commontable td:nth-child(2) p,
     &.saleowner__table.commontable td:nth-child(5) p,
     &.saleowner__table.commontable td:nth-child(6) p {
@@ -2529,6 +2511,77 @@
                 border-radius: 8px;
             }
         }
+    }
+}
+
+
+
+
+//  APPLICATION RENT -------------- //
+.form__filter.apprent__filter {
+    form {
+        justify-content: start;
+    }
+    button{
+        width: 116px;
+        margin: 0 0 0 auto;
+    }
+}
+
+.apprent__forminput {
+    margin-right: 8px;
+
+    p {
+        display: inline-block;
+    }
+}
+
+.apprent__forminput:nth-child(1) {
+    width: 136px;
+
+    input {
+        width: 100%;
+    }
+    .dropdown-response {
+        width: 200px;
+        background: #FbFbFb;
+    }
+}
+
+.apprent__forminput:nth-child(2) {
+    width: auto;
+
+    input {
+        width: 100px;
+    }
+}
+
+.apprent__forminput:nth-child(3) {
+    width: auto;
+
+    input {
+        width: 72px;
+    }
+}
+
+.apprent__forminput:nth-child(4) {
+    width: 176px;
+
+    input {
+        width: 100%;
+    }
+    .dropdown-response {
+        width: 300px;
+        background: #FbFbFb;
+    }
+}
+
+.apprent__info{
+    .client-block .info-block__col:nth-child(1) {
+        margin-right: 20px;
+    }
+    .client-block .info-block__col:nth-child(3) {
+        margin: 0 40px 0 auto;
     }
 }
 

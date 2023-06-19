@@ -26,7 +26,6 @@ $(document).ready(function () {
         $('.header__search').removeClass('active');
     }
 
-
     // notification items z-index from last to first  -------- //
     function assignZIndex() {
         var items = $('.notification-box__item');
@@ -645,7 +644,6 @@ $(document).ready(function () {
 
 
     // open/hide map ------
-
     $('.map_btn').on('click', function (e) {
         e.preventDefault;
         $('.info-specifications__map').slideToggle();
@@ -656,14 +654,12 @@ $(document).ready(function () {
 
 
     // active bottom block buttons
-
     $('.leads__info-leftblock').on('click', function () {
         $('.leads__info-agreement').removeClass('inactive');
     });
 
 
     // show textarea when source client is other
-
     $('.source-client ul li').click(function () {
         var parentElement = $(this).closest('.source-client');
         if ($(this).hasClass('open-area')) {
@@ -692,17 +688,11 @@ $(document).ready(function () {
     });
 
     //   click copy on client listing block 
-
     $('.copyblock').on('click', function () {
         $(this).addClass('active');
         var copiedText = $(this).find('span');
         copiedText.fadeIn(0).fadeOut(600);
     });
-
-
-
-
-
 
 
 
@@ -741,8 +731,6 @@ $(document).ready(function () {
     $('label:not(.hide-area label)').click(function () {
         $('.hide-area textarea').hide();
     });
-
-
 
 
     // ---------------- DATE TIME PICKER ------------------------- //
