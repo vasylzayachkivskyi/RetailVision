@@ -92,14 +92,12 @@
 }
 
 .leads__table.saleowner__table {
-    // height: calc(100vh - 155px);
     height: calc(100vh - 235px);
     margin-bottom: 80px;
     transition: 0s;
 }
 
 .leads__table.saleowner__table.active {
-    // height: calc(100vh - 243px);
     height: calc(100vh - 323px);
     margin-bottom: 80px;
     transition: 0.2s .2s;
@@ -2158,6 +2156,5 @@ span.flatpickr-weekday,
 
     .leads {
         width: fit-content;
-        overflow: initial;
     }
 }
