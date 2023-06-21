@@ -322,7 +322,6 @@ $(document).ready(function () {
     // lead row settings -------- //
     $('.lead-block-dropdown').on('click', function () {
         $(this).slideUp();
-        // $(this).closest('.table__row').removeClass('active');
     });
 
     // lead info open/close-------- //
@@ -578,12 +577,12 @@ $(document).ready(function () {
         $(this).addClass('active');
 
         if ($(this).hasClass('kanban-tab')) {
-            $('.saleowner__table').hide();
+            $('.table-wrapper').hide();
             $('.saleowner__kanban').show();
 
         } else if ($(this).hasClass('table-tab')) {
             $('.saleowner__kanban').hide();
-            $('.saleowner__table').show();
+            $('.table-wrapper').show();
         }
     });
 
