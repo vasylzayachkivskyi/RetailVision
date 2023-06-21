@@ -579,10 +579,12 @@ $(document).ready(function () {
         if ($(this).hasClass('kanban-tab')) {
             $('.table-wrapper').hide();
             $('.saleowner__kanban').show();
+            $('.kanban-tab').addClass('active');
 
         } else if ($(this).hasClass('table-tab')) {
             $('.saleowner__kanban').hide();
             $('.table-wrapper').show();
+            $('.table-tab').addClass('active');
         }
     });
 
