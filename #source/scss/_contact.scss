@@ -1,0 +1,97 @@
+// contact / contact ---------------------- //
+
+.contact__table {
+    &.commontable p {
+        margin-left: 8px;
+    }
+
+    th:nth-child(8) {
+        p {
+            text-overflow: ellipsis;
+            max-width: 80px;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+    }
+
+    td:nth-child(4) {
+        p {
+            text-overflow: ellipsis;
+            max-width: 108px;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+    }
+
+    td:nth-child(6) {
+        p {
+            text-align: center;
+            margin: 0;
+        }
+    }
+
+    td:nth-child(7) {
+        p {
+            text-overflow: ellipsis;
+            max-width: 100px;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+    }
+
+    td:nth-child(10) {
+        text-align: center;
+
+        p {
+            margin: 0;
+        }
+    }
+}
+
+.contact-filter.form__filter {
+    form {
+        justify-content: flex-start;
+    }
+
+    button {
+        margin: 0 0 0 auto;
+    }
+}
+
+.contact__forminput {
+    margin-right: 8px;
+
+    input {
+        width: 100%;
+    }
+}
+
+.contact__forminput:nth-child(1) {
+    input {
+        width: 110px;
+    }
+}
+
+.contact__forminput:nth-child(2) {
+    width: 206px;
+
+    .dropdown-response {
+        width: 250px;
+    }
+}
+
+.contact__forminput:nth-child(3) {
+    width: 176px;
+    .dropdown-response {
+        width: 189px;
+    }
+}
+
+.contact__forminput:nth-child(4) {
+    width: 266px;
+    .dropdown-response {
+        width: 301px;
+    }
+}
+
+// contact / company ---------------------- //

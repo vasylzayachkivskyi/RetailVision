@@ -1,6 +1,5 @@
 // SALEOWNER -------------------------------------------------- //
 
-
 .saleowner {
     position: relative;
     height: calc(100vh - 72px);
@@ -293,7 +292,7 @@
     border-radius: 1px 1px 0px 0px;
 }
 
-.saleowner__table.active-instruments {
+.commontable.active-instruments {
     .saleowner__table-instruments {
         display: block;
     }
@@ -2667,15 +2666,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
 // RESPONSIVE ----------------------------- //
 
 @media (max-width: 1440px) {
@@ -2973,11 +2963,8 @@
 }
 
 @media (max-width: 768px) {
-
-
     .saleowner {
         width: fit-content;
     }
-
 
 }

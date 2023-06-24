@@ -105,6 +105,18 @@ $(document).ready(function () {
     });
 
 
+    // active sidebar icon when open own sub menu
+    $('.agreements .submenu__inner-item, .sidebar__agreements').on('click', function () {
+        $('.sidebar__agreements').addClass('active');
+        $('.sidebar .tab-sidebar').removeClass('active');
+    });
+
+    $('.contacts .submenu__inner-item, .sidebar__contacts').on('click', function () {
+        $('.sidebar__contacts').addClass('active');
+        $('.sidebar>.tab-sidebar').removeClass('active');
+    });
+    
+
 
 
 
@@ -142,7 +154,6 @@ $(document).ready(function () {
     });
 
     // click on select dropdown item
-
     $('.dropdown-row').on('click', function () {
         var $select = $(this).closest('.select ').find('.commoninput');
         var $checkboxes = $(this).closest('.dropdown-response').find('.customcheck');
@@ -536,28 +547,24 @@ $(document).ready(function () {
     //  ------------------------ AGREEMENTS TAB ---------------------------------- //
 
     //  active submenu item 
-    $('.submenu__inner-item').on('click', function () {
-        $('.submenu__inner-item').removeClass('active');
-        $(this).toggleClass('active');
-    });
+    // $('.submenu__inner-item').on('click', function () {
+    //     $('.submenu__inner-item').removeClass('active');
+    //     $(this).toggleClass('active');
+    // });
 
     // click on burger submenu
     $('.burger-agreements').on('click', function () {
         $('.agreements').toggleClass('active');
     });
 
-    $('.burger-contacts').on('click', function () {
-        $('.contacts').toggleClass('active');
-    });
-
     // show saleowner table instruments
-    $('.saleowner__table .table__row-input').on('change', function () {
+    $('.commontable .table__row-input').on('change', function () {
         var checkedCount = $('.table__row-input:checked').length;
 
         if (checkedCount >= 1) {
-            $('.saleowner__table').addClass('active-instruments');
+            $('.commontable').addClass('active-instruments');
         } else {
-            $('.saleowner__table').removeClass('active-instruments');
+            $('.commontable').removeClass('active-instruments');
         }
     });
 
@@ -643,22 +650,16 @@ $(document).ready(function () {
         return false;
     });
 
-
     // open/hide map ------
     $('.map_btn').on('click', function (e) {
         e.preventDefault;
         $('.info-specifications__map').slideToggle();
     });
 
-
-
-
-
     // active bottom block buttons
     $('.leads__info-leftblock').on('click', function () {
         $('.leads__info-agreement').removeClass('inactive');
     });
-
 
     // show textarea when source client is other
     $('.source-client ul li').click(function () {
@@ -669,7 +670,6 @@ $(document).ready(function () {
             parentElement.next('.dropdown-area').removeClass('active');
         }
     });
-
 
     // open/hide map popup form
     $('.dynamic-map').on('click', function () {
@@ -697,6 +697,13 @@ $(document).ready(function () {
 
 
 
+    // ------------------ CONTACT TAB ---------------------- //
+
+    // burger contacts
+    $('.burger-contacts').on('click', function () {
+        $('.contacts').toggleClass('active');
+    });
+    
 
     // -------------------- POPUP ------------------------ //
     $('.popup__btn').on('click', function () {
@@ -710,7 +717,6 @@ $(document).ready(function () {
         $('.popup__window').removeClass('active');
     });
 
-
     // popup from popup
     $('.popup__wrapper input[type="radio"]').click(function () {
         var selectedValue = $(this).data('value');
@@ -718,7 +724,6 @@ $(document).ready(function () {
     });
 
     // popup hide area
-
     $('.hide-area textarea').hide();
 
     $('.hide-area label').click(function () {
@@ -793,8 +798,6 @@ $(document).ready(function () {
     // select 2
     $('.customselect').select2();
 
-
-
     // ---------- SHOW UPLOAD IMAGE ------------------- //
     $('.downloadinput').on('change', function (e) {
         var file = e.target.files[0];
@@ -832,9 +835,7 @@ $(document).ready(function () {
         var col3 = $(this).closest('.col-xl-3');
         var imageContainer = $(this).closest('.image-container');
         var col3Count = imageContainer.find('.col-xl-3').length;
-
         col3.remove(); // Видалення col-3, що містить кнопку
-
         if (col3Count <= 1) {
             imageContainer.remove(); // Видалення image-container, якщо в ньому немає col-3
         }
@@ -855,8 +856,7 @@ $(document).ready(function () {
 
 
 
-    // -------------------- TOOLTIP------------------------ //
-
+    //  tooltip -------- //
     $('.tooltip-common').hover(
         function () {
             var tooltipText = $(this).find('.tooltip-text');
@@ -885,7 +885,7 @@ $(document).ready(function () {
     });
 
 
-    //  enter numbers -------------
+    //  enter numbers ------------- //
     $('.numberonly').on('input', function () {
         // Отримуємо значення введеного числа
         let value = $(this).val();
@@ -900,20 +900,19 @@ $(document).ready(function () {
         $(this).val(value);
     });
 
-    // phone mask
-
-    $('.phonemask input[type="text"]').on('input', function(e) {
+    // phone mask------------------ //
+    $('.phonemask input[type="text"]').on('input', function (e) {
         var inputValue = $(this).val();
         var numericValue = inputValue.replace(/\D/g, '');
-        
+
         if (numericValue.startsWith('38')) {
-          numericValue = '+38' + numericValue.substring(2);
+            numericValue = '+38' + numericValue.substring(2);
         } else {
-          numericValue = '+38' + numericValue;
+            numericValue = '+38' + numericValue;
         }
-        
+
         $(this).val(numericValue);
-      });
+    });
 
 
 
