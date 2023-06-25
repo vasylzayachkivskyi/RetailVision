@@ -762,7 +762,7 @@
     .leads__info-wrapper {
         width: calc(100% - 56px);
         border-radius: 0;
-        padding: 24px 54px 0;
+        padding: 24px 0px 0;
     }
 
     &.show {
@@ -827,7 +827,7 @@
 }
 
 .saleowner__info-breadcrumbs {
-    display: flex;
+    display: inline-flex;
     align-items: center;
     visibility: hidden;
     opacity: 0;
@@ -856,9 +856,9 @@
 
     a {
         margin-right: 4px;
-        cursor: pointer;
         transition: .3s;
         color: #5C6476;
+        cursor: pointer;
 
         &:hover {
             color: #383D54;
@@ -867,6 +867,7 @@
 
     span {
         color: #383D54;
+        cursor: pointer;
     }
 }
 
@@ -2680,7 +2681,7 @@
     }
 
     .saleowner__info .leads__info-wrapper {
-        padding: 24px 20px 0;
+        padding: 24px 0px 0;
     }
 
     .saleowner__forminput:nth-child(1) {
@@ -2857,7 +2858,7 @@
     }
 
     .saleowner__info .leads__info-wrapper {
-        width: 1344px;
+        width: 1300px;
     }
 
     .table__instruments-item {
@@ -2953,7 +2954,7 @@
     }
 
     .saleowner__info .leads__info-wrapper {
-        padding: 24px 10px 0;
+        padding: 24px 0px 0;
     }
 
     .saleowner__info .col-6 {

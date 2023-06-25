@@ -798,6 +798,12 @@ body {
     }
 }
 
+@media (max-width:992px) {
+    .popup__wrapper {
+        overflow-x: scroll;
+    }
+}
+
 
 @media (max-width:768px) {
     .pagewrapper {

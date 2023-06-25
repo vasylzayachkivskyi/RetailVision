@@ -546,12 +546,6 @@ $(document).ready(function () {
 
     //  ------------------------ AGREEMENTS TAB ---------------------------------- //
 
-    //  active submenu item 
-    // $('.submenu__inner-item').on('click', function () {
-    //     $('.submenu__inner-item').removeClass('active');
-    //     $(this).toggleClass('active');
-    // });
-
     // click on burger submenu
     $('.burger-agreements').on('click', function () {
         $('.agreements').toggleClass('active');
@@ -562,7 +556,7 @@ $(document).ready(function () {
         var checkedCount = $('.table__row-input:checked').length;
 
         if (checkedCount >= 1) {
-            $('.commontable').addClass('active-instruments');
+            $(this).closest('.commontable').addClass('active-instruments');
         } else {
             $('.commontable').removeClass('active-instruments');
         }
@@ -571,7 +565,7 @@ $(document).ready(function () {
     // hide saleowner table instruments
     $('.table__instruments-check').on('click', function () {
         $('.table__row-input').prop('checked', false);
-        $('.saleowner__table').removeClass('active-instruments');
+        $('.commontable').removeClass('active-instruments');
         $('.table__row').removeClass('active');
     });
 
@@ -703,6 +697,14 @@ $(document).ready(function () {
     $('.burger-contacts').on('click', function () {
         $('.contacts').toggleClass('active');
     });
+
+    // contact agreements show more
+    $('.contact__agreements-more').on('click', function () {
+        $(this).toggleClass('active');
+        $('.contact__agreements-wrap').slideToggle();
+    });
+
+
     
 
     // -------------------- POPUP ------------------------ //
