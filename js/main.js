@@ -89,8 +89,8 @@ $(document).ready(function () {
         $('.contacts').removeClass('active');
         $('.sidebar__contacts').removeClass('active');
         $('.agreements').toggleClass('active');
-        $('.submenu__header').removeClass('active-box').fadeOut();
-        $('.submenu__header.saleowner-tab').addClass('active-box').fadeIn(500);
+        // $('.submenu__header').removeClass('active-box').fadeOut();
+        // $('.submenu__header.saleowner-tab').addClass('active-box').fadeIn(500);
         $(this).toggleClass('active');
     });
 
@@ -99,8 +99,8 @@ $(document).ready(function () {
         $('.agreements').removeClass('active');
         $('.sidebar__agreements').removeClass('active');
         $('.contacts').toggleClass('active');
-        $('.submenu__header').removeClass('active-box').fadeOut();
-        $('.submenu__header.contact-tab').addClass('active-box').fadeIn(500);
+        // $('.submenu__header').removeClass('active-box').fadeOut();
+        // $('.submenu__header.contact-tab').addClass('active-box').fadeIn(500);
         $(this).toggleClass('active');
     });
 
@@ -569,9 +569,6 @@ $(document).ready(function () {
         $('.table__row').removeClass('active');
     });
 
-
-
-
     // table/kanban switcher
     $('.saleowner__head-tabs p').on('click', function () {
         $('.saleowner__head-tabs p').removeClass('active')
@@ -701,7 +698,7 @@ $(document).ready(function () {
     // contact agreements show more
     $('.contact__agreements-more').on('click', function () {
         $(this).toggleClass('active');
-        $('.contact__agreements-wrap').slideToggle();
+        $(this).prev('.contact__agreements-wrap').slideToggle();
     });
 
 
