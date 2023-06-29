@@ -597,18 +597,18 @@ $(document).ready(function () {
 
     // table/kanban switcher
     $('.saleowner__head-tabs p').on('click', function () {
-        $('.saleowner__head-tabs p').removeClass('active')
+        $(this).closest('.saleowner__head-tabs').find('p').removeClass('active')
         $(this).addClass('active');
 
         if ($(this).hasClass('kanban-tab')) {
-            $('.table-wrapper').hide();
-            $('.saleowner__kanban').show();
-            $('.kanban-tab').addClass('active');
+            $(this).closest('.sidebar-box').find('.table-wrapper').hide();
+            $(this).closest('.sidebar-box').find('.saleowner__kanban').show();
+            $(this).closest('.sidebar-box').find('.kanban-tab').addClass('active');
 
         } else if ($(this).hasClass('table-tab')) {
-            $('.saleowner__kanban').hide();
-            $('.table-wrapper').show();
-            $('.table-tab').addClass('active');
+            $(this).closest('.sidebar-box').find('.saleowner__kanban').hide();
+            $(this).closest('.sidebar-box').find('.table-wrapper').show();
+            $(this).closest('.sidebar-box').find('.table-tab').addClass('active');
         }
     });
 
@@ -730,22 +730,22 @@ $(document).ready(function () {
     // upload image
     $('.imageUpload').change(function () {
         var input = this;
-        $(this).closest('.uploaded-image').addClass('uploaded');
+        $(this).closest('.avatar-container').addClass('uploaded');
 
         if (input.files && input.files[0]) {
             var reader = new FileReader();
 
             reader.onload = function (e) {
-                $(input).closest('.uploaded-image').find('img').attr('src', e.target.result);
+                $(input).closest('.avatar-container').find('img').attr('src', e.target.result);
             }
             reader.readAsDataURL(input.files[0]);
         }
     });
 
     // delete uploaded img
-
     $('.delete-button').click(function () {
-        var image = $(this).siblings('.uploaded-image').find('img');
+        var image = $(this).closest('.avatar-container').find('img');
+        $('.avatar-container').removeClass('uploaded');
 
         // Очищаємо значення атрибута "src" зображення
         // image.attr('src', '');
