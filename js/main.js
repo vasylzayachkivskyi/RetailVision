@@ -81,26 +81,37 @@ $(document).ready(function () {
         $('.submenu__inner').removeClass('active');
         $('.sidebar__agreements').removeClass('active');
         $('.sidebar__contacts').removeClass('active');
+        $('.sidebar__settings').removeClass('active');
         return false;
     });
 
     //  sidebar agreements open ----------------- //
     $('.sidebar__agreements').on('click', function () {
         $('.contacts').removeClass('active');
+        $('.settings').removeClass('active');
         $('.sidebar__contacts').removeClass('active');
+        $('.sidebar__settings').removeClass('active');
         $('.agreements').toggleClass('active');
-        // $('.submenu__header').removeClass('active-box').fadeOut();
-        // $('.submenu__header.saleowner-tab').addClass('active-box').fadeIn(500);
         $(this).toggleClass('active');
     });
 
     //  sidebar contacts open ----------------- //
     $('.sidebar__contacts').on('click', function () {
         $('.agreements').removeClass('active');
+        $('.settings').removeClass('active');
         $('.sidebar__agreements').removeClass('active');
+        $('.sidebar__settings').removeClass('active');
         $('.contacts').toggleClass('active');
-        // $('.submenu__header').removeClass('active-box').fadeOut();
-        // $('.submenu__header.contact-tab').addClass('active-box').fadeIn(500);
+        $(this).toggleClass('active');
+    });
+
+    //  sidebar settings open ----------------- //
+    $('.sidebar__settings').on('click', function () {
+        $('.agreements').removeClass('active');
+        $('.contacts').removeClass('active');
+        $('.sidebar__agreements').removeClass('active');
+        $('.sidebar__contacts').removeClass('active');
+        $('.settings').toggleClass('active');
         $(this).toggleClass('active');
     });
 
@@ -115,7 +126,22 @@ $(document).ready(function () {
         $('.sidebar__contacts').addClass('active');
         $('.sidebar>.tab-sidebar').removeClass('active');
     });
-    
+
+    $('.settings .submenu__inner-item, .sidebar__settings').on('click', function () {
+        $('.sidebar__settings').addClass('active');
+        $('.sidebar>.tab-sidebar').removeClass('active');
+    });
+
+
+    // close sidebar when click not submenu -------- //
+    $(document).on('click', function (event) {
+        var target = $(event.target);
+
+        if (!target.closest('.submenu__inner, .sidebar__settings, .sidebar__contacts, .sidebar__agreements, .submenu__header').length) {
+            $('.submenu__inner').removeClass('active');
+        }
+    });
+
 
 
 
@@ -175,7 +201,7 @@ $(document).ready(function () {
 
 
     //   slice input placeholder 
-    $(".commoninput").each(function () {
+    $(".short-field").each(function () {
         var input = $(this);
         var placeholder = input.attr("placeholder");
         if (placeholder) { // Перевіряємо, чи існує атрибут "placeholder"
@@ -552,7 +578,7 @@ $(document).ready(function () {
     });
 
     // show saleowner table instruments
-    $('.commontable .table__row-input').on('change', function () {
+    $('.table-with-menu .table__row-input').on('change', function () {
         var checkedCount = $('.table__row-input:checked').length;
 
         if (checkedCount >= 1) {
@@ -701,8 +727,74 @@ $(document).ready(function () {
         $(this).prev('.contact__agreements-wrap').slideToggle();
     });
 
+    // upload image
+    $('.imageUpload').change(function () {
+        var input = this;
+        $(this).closest('.uploaded-image').addClass('uploaded');
 
-    
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                $(input).closest('.uploaded-image').find('img').attr('src', e.target.result);
+            }
+            reader.readAsDataURL(input.files[0]);
+        }
+    });
+
+    // delete uploaded img
+
+    $('.delete-button').click(function () {
+        var image = $(this).siblings('.uploaded-image').find('img');
+
+        // Очищаємо значення атрибута "src" зображення
+        // image.attr('src', '');
+
+        // Якщо потрібно встановити пустий шлях до зображення:
+        // image.prop('src', '');
+
+        // Якщо потрібно встановити альтернативний шлях до зображення після видалення:
+        image.attr('src', 'img/user_avatar_choise.png');
+    });
+
+
+
+
+    // --------------------------- SETTINGS TAB ------------------------------ //
+    // checks fields are filled
+    $('.user__popup-right input').on('input', function () {
+        $('.user__popup-bottom').removeClass('inactive');
+        $('.user__inner-bottom').removeClass('inactive');
+    });
+
+    // user info open/close-------- //
+    $('.open-usercard').on('click', function () {
+        $('.user__card').addClass('show');
+        $('.user__card-breadcrumbs').addClass('active');
+    });
+    $('.close-usercard').on('click', function () {
+        $('.user__card').removeClass('show');
+        $('.user__card-breadcrumbs').removeClass('active');
+    });
+
+    // show/hide password ------------------ //
+
+    $('.inputfield.password .showpass').on('click', function () {
+        $(this).toggleClass('hide');
+
+        var inputField = $(this).siblings('input');
+        var inputType = inputField.attr('type');
+        if (inputType === 'password') {
+            inputField.attr('type', 'text');
+        } else {
+            inputField.attr('type', 'password');
+        }
+    });
+
+
+
+
+
 
     // -------------------- POPUP ------------------------ //
     $('.popup__btn').on('click', function () {
@@ -714,6 +806,15 @@ $(document).ready(function () {
 
     $('.popup__close').on('click', function () {
         $('.popup__window').removeClass('active');
+    });
+
+    // close popup -------- //
+    $(document).on('click', function (event) {
+        var target = $(event.target);
+
+        if (!target.closest('.popup__inner ').length) {
+            $('.popup__window').removeClass('active');
+        }
     });
 
     // popup from popup

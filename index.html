@@ -22,13 +22,15 @@
          <div class="customcontainer">
             <div class="row justify-content-between">
                <div class="col-3 d-flex align-items-center">
-
                   <div class="tab-header">
                      <div class="saleowner__info-breadcrumbs popup__btn" data-popup="lead-warning__popup">
                         <img src="img/svg_icons/arrow_back.svg" alt="back">
                         <span>Назад</span>
                      </div>
-
+                     <div class="user__card-breadcrumbs popup__btn" data-popup="lead-warning__popup">
+                        <img src="img/svg_icons/arrow_back.svg" alt="back">
+                        <span>Назад</span>
+                     </div>
                      <div class="submenu__header sidebar-box sideestate-tab">
                         <ul>
                            <li>
@@ -59,7 +61,7 @@
                            </li>
                            <li>
                               <span>
-                                 Власник продаж
+                                 Об'єкт продаж
                               </span>
                            </li>
                         </ul>
@@ -76,7 +78,7 @@
                            </li>
                            <li>
                               <span>
-                                 Власник оренда
+                                 Об'єкт оренда
                               </span>
                            </li>
                         </ul>
@@ -145,6 +147,40 @@
                            <li>
                               <span>
                                  Компанія
+                              </span>
+                           </li>
+                        </ul>
+                     </div>
+                     <div class="submenu__header sidebar-box users-tab">
+                        <ul>
+                           <li>
+                              <div class="burger-btn burger-settings">
+                                 <img src="img/svg_icons/burger_black.svg" alt="arrow">
+                              </div>
+                              <a href="#">
+                                 Налаштування
+                              </a>
+                           </li>
+                           <li>
+                              <span>
+                                 Користуачі
+                              </span>
+                           </li>
+                        </ul>
+                     </div>
+                     <div class="submenu__header sidebar-box profile-tab">
+                        <ul>
+                           <li>
+                              <div class="burger-btn burger-settings">
+                                 <img src="img/svg_icons/burger_black.svg" alt="arrow">
+                              </div>
+                              <a href="#">
+                                 Налаштування
+                              </a>
+                           </li>
+                           <li>
+                              <span>
+                                 Профіль
                               </span>
                            </li>
                         </ul>
@@ -289,8 +325,17 @@
                            4
                         </span>
                      </a>
-                     <a href="#" class="header__user">
+                     <a href="#" class="header__user open-usercard">
                         <img src="img/avatar.png" alt="avatar">
+                        <div class="user-dropdown">
+                           <p class="name">
+                              Олександр Філіпович
+                           </p>
+                           <p class="logout-btn">
+                              <img src="img/svg_icons/logout_icon.svg" alt="logout">
+                              Вийти
+                           </p>
+                        </div>
                      </a>
                   </div>
                </div>
@@ -359,7 +404,7 @@
                   </div>
                </div>
             </a>
-            <a href="#" class="sidebar__contacts active">
+            <a href="#" class="sidebar__contacts">
                <img src="img/svg_icons/aside_contacts.svg" alt="contacts">
                <img class="hover-item" src="img/svg_icons/aside_contacts_hover.svg" alt="contacts">
                <div class="sidebar-name">
@@ -368,7 +413,7 @@
                   </div>
                </div>
             </a>
-            <a href="#" class="sidebar__settings">
+            <a href="#" class="sidebar__settings active">
                <img src="img/svg_icons/aside_settings.svg" alt="settings">
                <img class="hover-item" src="img/svg_icons/aside_settings_hover.svg" alt="settings">
                <div class="sidebar-name">
@@ -436,7 +481,7 @@
 
          <!-- CONTACTS MENU(ПІДМЕНЮ КОНТАКТИ)-->
          <div class="contacts submenu__inner">
-            <div class="submenu__inner-item tab-sidebar active" data-tab="contact-tab">
+            <div class="submenu__inner-item tab-sidebar" data-tab="contact-tab">
                <div class="submenu__inner-img">
                   <img class="submenu__inner-img--static" src="img/svg_icons/agreements_icon1.svg" alt="icon">
                   <img class="submenu__inner-img--hover" src="img/svg_icons/agreements_icon1_hover.svg" alt="icon">
@@ -454,6 +499,30 @@
                </div>
                <a href="#">
                   Компанії
+               </a>
+            </div>
+         </div>
+
+         <!-- SETTINGS MENU(ПІДМЕНЮ НАЛАШТУВАННЯ)-->
+         <div class="settings submenu__inner">
+            <div class="submenu__inner-item tab-sidebar active" data-tab="users-tab">
+               <div class="submenu__inner-img">
+                  <img class="submenu__inner-img--static" src="img/svg_icons/settings_icon1.svg" alt="icon">
+                  <img class="submenu__inner-img--hover" src="img/svg_icons/settings_icon1_hover.svg" alt="icon">
+                  <img class="submenu__inner-img--active" src="img/svg_icons/settings_icon1_active.svg" alt="icon">
+               </div>
+               <a href="#">
+                  Користуачі
+               </a>
+            </div>
+            <div class="submenu__inner-item tab-sidebar" data-tab="profile-tab">
+               <div class="submenu__inner-img">
+                  <img class="submenu__inner-img--static" src="img/svg_icons/settings_icon2.svg" alt="icon">
+                  <img class="submenu__inner-img--hover" src="img/svg_icons/settings_icon2_hover.svg" alt="icon">
+                  <img class="submenu__inner-img--active" src="img/svg_icons/settings_icon2_active.svg" alt="icon">
+               </div>
+               <a href="#">
+                  Профіль
                </a>
             </div>
          </div>
@@ -1978,7 +2047,7 @@
                            </button>
                         </form>
                      </div>
-                     <div class="leads__table saleowner__table commontable">
+                     <div class="leads__table saleowner__table commontable table-with-menu">
                         <div class="saleowner__table-instruments">
                            <div class="table__instruments">
                               <div class="table__instruments-item">
@@ -3977,7 +4046,7 @@
                                     <path d="M13 1L7 7L1 1" stroke="#383D54" stroke-width="2" stroke-linecap="round"
                                        stroke-linejoin="round" />
                                  </svg>
-                                 <input class="commoninput" type="text" placeholder="Торгівельна" readonly>
+                                 <input class="commoninput short-field" type="text" placeholder="Торгівельна" readonly>
                               </label>
                               <div class="dropdown-response">
                                  <div class="dropdown-wrapper">
@@ -4027,8 +4096,8 @@
                                     <path d="M13 1L7 7L1 1" stroke="#383D54" stroke-width="2" stroke-linecap="round"
                                        stroke-linejoin="round" />
                                  </svg>
-                                 <input class="commoninput" type="text" placeholder="Домовляємось за умови продажу"
-                                    readonly>
+                                 <input class="commoninput short-field" type="text"
+                                    placeholder="Домовляємось за умови продажу" readonly>
                               </label>
                               <div class="dropdown-response">
                                  <div class="dropdown-wrapper">
@@ -4092,7 +4161,7 @@
                                     <path d="M13 1L7 7L1 1" stroke="#383D54" stroke-width="2" stroke-linecap="round"
                                        stroke-linejoin="round" />
                                  </svg>
-                                 <input class="commoninput" type="text" placeholder="Торгівельна" readonly>
+                                 <input class="commoninput short-field" type="text" placeholder="Торгівельна" readonly>
                               </label>
                               <div class="dropdown-response">
                                  <div class="dropdown-wrapper dropdownscroll">
@@ -4159,7 +4228,7 @@
                         </form>
                      </div>
                      <div class="table-wrapper">
-                        <div class="saleowner__table commontable">
+                        <div class="saleowner__table commontable table-with-menu">
                            <div class="saleowner__table-instruments">
                               <div class="table__instruments">
                                  <div class="table__instruments-item">
@@ -4201,7 +4270,6 @@
                                  </div>
                               </div>
                            </div>
-
                            <table>
                               <tr class="table__headrow">
                                  <th>
@@ -6212,7 +6280,6 @@
                                  </td>
                               </tr>
                            </table>
-
                         </div>
                         <div class="pagination">
                            <ul>
@@ -11966,7 +12033,6 @@
                            <span class="open">Сховати фільтр</span>
                         </a>
                      </div>
-
                      <div class="form__filter obrent__filter">
                         <form>
                            <div class="obrent__forminput select inputfield">
@@ -12150,9 +12216,8 @@
                            </button>
                         </form>
                      </div>
-
                      <div class="table-wrapper">
-                        <div class="saleowner__table commontable obrent-table">
+                        <div class="saleowner__table commontable obrent-table table-with-menu">
                            <div class="saleowner__table-instruments">
                               <div class="table__instruments">
                                  <div class="table__instruments-item">
@@ -12943,7 +13008,6 @@
                            </ul>
                         </div>
                      </div>
-
                      <div class="saleowner__kanban">
                         <div class="kanban__wrapper">
                            <div class="kanban__col">
@@ -12982,7 +13046,7 @@
                                        $556 600
                                     </div>
                                     <div class="kanban__item-priceblock">
-                                       $300K
+                                       ₴300K
                                     </div>
                                     <div class="kanban__item-area">
                                        3 650 м<sup>2</sup>
@@ -13020,7 +13084,7 @@
                                        $556 600
                                     </div>
                                     <div class="kanban__item-priceblock">
-                                       $300K
+                                       ₴300K
                                     </div>
                                     <div class="kanban__item-area">
                                        3 650 м<sup>2</sup>
@@ -13058,7 +13122,7 @@
                                        $556 600
                                     </div>
                                     <div class="kanban__item-priceblock">
-                                       $300K
+                                       ₴300K
                                     </div>
                                     <div class="kanban__item-area">
                                        3 650 м<sup>2</sup>
@@ -13096,7 +13160,7 @@
                                        $556 600
                                     </div>
                                     <div class="kanban__item-priceblock">
-                                       $300K
+                                       ₴300K
                                     </div>
                                     <div class="kanban__item-area">
                                        3 650 м<sup>2</sup>
@@ -13134,7 +13198,7 @@
                                        $556 600
                                     </div>
                                     <div class="kanban__item-priceblock">
-                                       $300K
+                                       ₴300K
                                     </div>
                                     <div class="kanban__item-area">
                                        3 650 м<sup>2</sup>
@@ -13172,7 +13236,7 @@
                                        $556 600
                                     </div>
                                     <div class="kanban__item-priceblock">
-                                       $300K
+                                       ₴300K
                                     </div>
                                     <div class="kanban__item-area">
                                        3 650 м<sup>2</sup>
@@ -13210,7 +13274,7 @@
                                        $556 600
                                     </div>
                                     <div class="kanban__item-priceblock">
-                                       $300K
+                                       ₴300K
                                     </div>
                                     <div class="kanban__item-area">
                                        3 650 м<sup>2</sup>
@@ -13248,7 +13312,7 @@
                                        $556 600
                                     </div>
                                     <div class="kanban__item-priceblock">
-                                       $300K
+                                       ₴300K
                                     </div>
                                     <div class="kanban__item-area">
                                        3 650 м<sup>2</sup>
@@ -13297,7 +13361,7 @@
                                        $556 600
                                     </div>
                                     <div class="kanban__item-priceblock">
-                                       $300K
+                                       ₴300K
                                     </div>
                                     <div class="kanban__item-area">
                                        3 650 м<sup>2</sup>
@@ -13335,7 +13399,7 @@
                                        $556 600
                                     </div>
                                     <div class="kanban__item-priceblock">
-                                       $300K
+                                       ₴300K
                                     </div>
                                     <div class="kanban__item-area">
                                        3 650 м<sup>2</sup>
@@ -13373,7 +13437,7 @@
                                        $556 600
                                     </div>
                                     <div class="kanban__item-priceblock">
-                                       $300K
+                                       ₴300K
                                     </div>
                                     <div class="kanban__item-area">
                                        3 650 м<sup>2</sup>
@@ -13422,7 +13486,7 @@
                                        $556 600
                                     </div>
                                     <div class="kanban__item-priceblock">
-                                       $300K
+                                       ₴300K
                                     </div>
                                     <div class="kanban__item-area">
                                        3 650 м<sup>2</sup>
@@ -13460,7 +13524,7 @@
                                        $556 600
                                     </div>
                                     <div class="kanban__item-priceblock">
-                                       $300K
+                                       ₴300K
                                     </div>
                                     <div class="kanban__item-area">
                                        3 650 м<sup>2</sup>
@@ -13498,7 +13562,7 @@
                                        $556 600
                                     </div>
                                     <div class="kanban__item-priceblock">
-                                       $300K
+                                       ₴300K
                                     </div>
                                     <div class="kanban__item-area">
                                        3 650 м<sup>2</sup>
@@ -13547,7 +13611,7 @@
                                        $556 600
                                     </div>
                                     <div class="kanban__item-priceblock">
-                                       $300K
+                                       ₴300K
                                     </div>
                                     <div class="kanban__item-area">
                                        3 650 м<sup>2</sup>
@@ -13585,7 +13649,7 @@
                                        $556 600
                                     </div>
                                     <div class="kanban__item-priceblock">
-                                       $300K
+                                       ₴300K
                                     </div>
                                     <div class="kanban__item-area">
                                        3 650 м<sup>2</sup>
@@ -13633,7 +13697,7 @@
                                        $556 600
                                     </div>
                                     <div class="kanban__item-priceblock">
-                                       $300K
+                                       ₴300K
                                     </div>
                                     <div class="kanban__item-area">
                                        3 650 м<sup>2</sup>
@@ -13671,7 +13735,7 @@
                                        $556 600
                                     </div>
                                     <div class="kanban__item-priceblock">
-                                       $300K
+                                       ₴300K
                                     </div>
                                     <div class="kanban__item-area">
                                        3 650 м<sup>2</sup>
@@ -13709,7 +13773,7 @@
                                        $556 600
                                     </div>
                                     <div class="kanban__item-priceblock">
-                                       $300K
+                                       ₴300K
                                     </div>
                                     <div class="kanban__item-area">
                                        3 650 м<sup>2</sup>
@@ -13747,7 +13811,7 @@
                                        $556 600
                                     </div>
                                     <div class="kanban__item-priceblock">
-                                       $300K
+                                       ₴300K
                                     </div>
                                     <div class="kanban__item-area">
                                        3 650 м<sup>2</sup>
@@ -17566,7 +17630,7 @@
                                     <path d="M13 1L7 7L1 1" stroke="#383D54" stroke-width="2" stroke-linecap="round"
                                        stroke-linejoin="round" />
                                  </svg>
-                                 <input class="commoninput" type="text" placeholder="Торгівельна" readonly>
+                                 <input class="commoninput short-field" type="text" placeholder="Торгівельна" readonly>
                               </label>
                               <div class="dropdown-response">
                                  <div class="dropdown-wrapper">
@@ -17799,7 +17863,7 @@
                         </form>
                      </div>
                      <div class="table-wrapper">
-                        <div class="saleowner__table commontable client-table">
+                        <div class="saleowner__table commontable client-table table-with-menu">
                            <div class="saleowner__table-instruments">
                               <div class="table__instruments">
                                  <div class="table__instruments-item">
@@ -23962,7 +24026,7 @@
                      </div>
 
                      <div class="table-wrapper">
-                        <div class="saleowner__table commontable client-table">
+                        <div class="saleowner__table commontable client-table table-with-menu">
                            <div class="saleowner__table-instruments">
                               <div class="table__instruments">
                                  <div class="table__instruments-item">
@@ -24998,7 +25062,8 @@
                         </div>
                         <div class="pagination">
                            <ul>
-                              <li><span class="prev disabled"><img src="img/svg_icons/pagination__arrow.svg" alt="prev"></span></li>
+                              <li><span class="prev disabled"><img src="img/svg_icons/pagination__arrow.svg"
+                                       alt="prev"></span></li>
                               <li><a class="current" href="#">1</a></li>
                               <li><a href="#">2</a></li>
                               <li><a href="#">3</a></li>
@@ -25042,7 +25107,7 @@
                                        $556 600
                                     </div>
                                     <div class="kanban__item-priceblock">
-                                       300К-900К
+                                       ₴300К-900К
                                     </div>
                                     <div class="kanban__item-area">
                                        22 000 м<sup>2</sup>
@@ -25074,7 +25139,7 @@
                                        $556 600
                                     </div>
                                     <div class="kanban__item-priceblock">
-                                       300К-900К
+                                       ₴300К-900К
                                     </div>
                                     <div class="kanban__item-area">
                                        22 000 м<sup>2</sup>
@@ -25106,7 +25171,7 @@
                                        $556 600
                                     </div>
                                     <div class="kanban__item-priceblock">
-                                       300К-900К
+                                       ₴300К-900К
                                     </div>
                                     <div class="kanban__item-area">
                                        22 000 м<sup>2</sup>
@@ -25138,7 +25203,7 @@
                                        $556 600
                                     </div>
                                     <div class="kanban__item-priceblock">
-                                       300К-900К
+                                       ₴300К-900К
                                     </div>
                                     <div class="kanban__item-area">
                                        22 000 м<sup>2</sup>
@@ -25170,7 +25235,7 @@
                                        $556 600
                                     </div>
                                     <div class="kanban__item-priceblock">
-                                       300К-900К
+                                       ₴300К-900К
                                     </div>
                                     <div class="kanban__item-area">
                                        22 000 м<sup>2</sup>
@@ -25213,7 +25278,7 @@
                                        $556 600
                                     </div>
                                     <div class="kanban__item-priceblock">
-                                       300К-900К
+                                       ₴300К-900К
                                     </div>
                                     <div class="kanban__item-area">
                                        22 000 м<sup>2</sup>
@@ -25245,7 +25310,7 @@
                                        $556 600
                                     </div>
                                     <div class="kanban__item-priceblock">
-                                       300К-900К
+                                       ₴300К-900К
                                     </div>
                                     <div class="kanban__item-area">
                                        22 000 м<sup>2</sup>
@@ -25277,7 +25342,7 @@
                                        $556 600
                                     </div>
                                     <div class="kanban__item-priceblock">
-                                       300К-900К
+                                       ₴300К-900К
                                     </div>
                                     <div class="kanban__item-area">
                                        22 000 м<sup>2</sup>
@@ -25309,7 +25374,7 @@
                                        $556 600
                                     </div>
                                     <div class="kanban__item-priceblock">
-                                       300К-900К
+                                       ₴300К-900К
                                     </div>
                                     <div class="kanban__item-area">
                                        22 000 м<sup>2</sup>
@@ -25352,7 +25417,7 @@
                                        $556 600
                                     </div>
                                     <div class="kanban__item-priceblock">
-                                       300К-900К
+                                       ₴300К-900К
                                     </div>
                                     <div class="kanban__item-area">
                                        22 000 м<sup>2</sup>
@@ -25384,7 +25449,7 @@
                                        $556 600
                                     </div>
                                     <div class="kanban__item-priceblock">
-                                       300К-900К
+                                       ₴300К-900К
                                     </div>
                                     <div class="kanban__item-area">
                                        22 000 м<sup>2</sup>
@@ -25416,7 +25481,7 @@
                                        $556 600
                                     </div>
                                     <div class="kanban__item-priceblock">
-                                       300К-900К
+                                       ₴300К-900К
                                     </div>
                                     <div class="kanban__item-area">
                                        22 000 м<sup>2</sup>
@@ -25459,7 +25524,7 @@
                                        $556 600
                                     </div>
                                     <div class="kanban__item-priceblock">
-                                       300К-900К
+                                       ₴300К-900К
                                     </div>
                                     <div class="kanban__item-area">
                                        22 000 м<sup>2</sup>
@@ -25503,7 +25568,7 @@
                                        $556 600
                                     </div>
                                     <div class="kanban__item-priceblock">
-                                       300К-900К
+                                       ₴300К-900К
                                     </div>
                                     <div class="kanban__item-area">
                                        22 000 м<sup>2</sup>
@@ -25535,7 +25600,7 @@
                                        $556 600
                                     </div>
                                     <div class="kanban__item-priceblock">
-                                       300К-900К
+                                       ₴300К-900К
                                     </div>
                                     <div class="kanban__item-area">
                                        22 000 м<sup>2</sup>
@@ -25567,7 +25632,7 @@
                                        $556 600
                                     </div>
                                     <div class="kanban__item-priceblock">
-                                       300К-900К
+                                       ₴300К-900К
                                     </div>
                                     <div class="kanban__item-area">
                                        22 000 м<sup>2</sup>
@@ -28557,13 +28622,13 @@
             <!------------------------------------- CONTACTS(КОНТАКТИ) ------------------------------->
 
             <!-- CONTACT(КОНТАКТИ) -->
-            <div class="sidebar-box contact-tab active-box">
+            <div class="sidebar-box contact-tab">
                <div class="saleowner">
                   <div class="customcontainer">
                      <div class="saleowner__head">
                         <a href="#" class="saleowner__head-addbtn bluebtn open-saleownerinfo">
                            <img src="img/svg_icons/plus_white.svg" alt="plus">
-                           Додати об’єкт
+                           Додати контакт
                         </a>
                         <a href="#" class="saleowner__head-filterbtn whitebtn">
                            <img src="img/svg_icons/filter_icon.svg" alt="filter">
@@ -28776,7 +28841,7 @@
                         </form>
                      </div>
                      <div class="table-wrapper">
-                        <div class="contact__table commontable">
+                        <div class="contact__table commontable table-with-menu">
                            <div class="saleowner__table-instruments">
                               <div class="table__instruments">
                                  <div class="table__instruments-item">
@@ -29312,7 +29377,10 @@
                         <div class="customcontainer">
                            <div class="contact__head">
                               <div class="contact__head-left">
-                                 <img src="img/avatar_contact.png" alt="icon">
+                                 <div class="uploaded-image">
+                                    <img src="img/avatar_contact.png" alt="icon">
+                                    <input type="file" class="imageUpload">
+                                 </div>
                                  <p>
                                     Андрій Старовойтовський
                                  </p>
@@ -29633,22 +29701,21 @@
                                                 </h4>
                                                 <dl>
                                                    <dt>
-                                                      <p>Етап</p>
-                                                   </dt>
-                                                   <dd>
-                                                      <p class="contact__agreements-stage orange">
-                                                         <img src="img/svg_icons/contact_box_icon1.svg" alt="icon">
-                                                         Назначений завдаток/угода
-                                                      </p>
-                                                   </dd>
-                                                </dl>
-                                                <dl>
-                                                   <dt>
                                                       <p>Воронка:</p>
                                                    </dt>
                                                    <dd>
                                                       <p>
                                                          Об’єкт продаж
+                                                      </p>
+                                                   </dd>
+                                                </dl>
+                                                <dl>
+                                                   <dt>
+                                                      <p>Етап</p>
+                                                   </dt>
+                                                   <dd>
+                                                      <p>
+                                                         Назначений завдаток
                                                       </p>
                                                    </dd>
                                                 </dl>
@@ -29669,22 +29736,21 @@
                                                 </h4>
                                                 <dl>
                                                    <dt>
-                                                      <p>Етап</p>
-                                                   </dt>
-                                                   <dd>
-                                                      <p class="contact__agreements-stage grey">
-                                                         <img src="img/svg_icons/contact_box_icon2.svg" alt="icon">
-                                                         Кваліфікація об’єкту
-                                                      </p>
-                                                   </dd>
-                                                </dl>
-                                                <dl>
-                                                   <dt>
                                                       <p>Воронка:</p>
                                                    </dt>
                                                    <dd>
                                                       <p>
                                                          Об’єкт продаж
+                                                      </p>
+                                                   </dd>
+                                                </dl>
+                                                <dl>
+                                                   <dt>
+                                                      <p>Етап</p>
+                                                   </dt>
+                                                   <dd>
+                                                      <p>
+                                                         Кваліфікація об’єкту
                                                       </p>
                                                    </dd>
                                                 </dl>
@@ -29707,22 +29773,21 @@
                                                    </h4>
                                                    <dl>
                                                       <dt>
-                                                         <p>Етап</p>
-                                                      </dt>
-                                                      <dd>
-                                                         <p class="contact__agreements-stage orange">
-                                                            <img src="img/svg_icons/contact_box_icon1.svg" alt="icon">
-                                                            Назначений завдаток/угода
-                                                         </p>
-                                                      </dd>
-                                                   </dl>
-                                                   <dl>
-                                                      <dt>
                                                          <p>Воронка:</p>
                                                       </dt>
                                                       <dd>
                                                          <p>
                                                             Об’єкт продаж
+                                                         </p>
+                                                      </dd>
+                                                   </dl>
+                                                   <dl>
+                                                      <dt>
+                                                         <p>Етап</p>
+                                                      </dt>
+                                                      <dd>
+                                                         <p>
+                                                            Назначений завдаток
                                                          </p>
                                                       </dd>
                                                    </dl>
@@ -29743,22 +29808,21 @@
                                                    </h4>
                                                    <dl>
                                                       <dt>
-                                                         <p>Етап</p>
-                                                      </dt>
-                                                      <dd>
-                                                         <p class="contact__agreements-stage grey">
-                                                            <img src="img/svg_icons/contact_box_icon2.svg" alt="icon">
-                                                            Кваліфікація об’єкту
-                                                         </p>
-                                                      </dd>
-                                                   </dl>
-                                                   <dl>
-                                                      <dt>
                                                          <p>Воронка:</p>
                                                       </dt>
                                                       <dd>
                                                          <p>
                                                             Об’єкт продаж
+                                                         </p>
+                                                      </dd>
+                                                   </dl>
+                                                   <dl>
+                                                      <dt>
+                                                         <p>Етап</p>
+                                                      </dt>
+                                                      <dd>
+                                                         <p>
+                                                            Кваліфікація об’єкту
                                                          </p>
                                                       </dd>
                                                    </dl>
@@ -29786,7 +29850,7 @@
                                              </div>
 
                                              <p>
-                                                Закриті угоди угоди (3)
+                                                Закриті угоди (3)
                                              </p>
 
                                              <div class="contact__agreements-statistic">
@@ -29796,7 +29860,7 @@
                                                 <ul>
                                                    <li>
                                                       <p class="successful">
-                                                         Успішні
+                                                         Успішно реалізовано
                                                       </p>
                                                    </li>
                                                    <li>
@@ -29813,7 +29877,7 @@
                                                 <ul>
                                                    <li>
                                                       <p class="failed">
-                                                         Не склались
+                                                         Не реалізовано
                                                       </p>
                                                    </li>
                                                    <li>
@@ -29837,6 +29901,14 @@
 
                                           </div>
                                        </div>
+                                    </div>
+                                    <div class="leads__info-agreement inactive">
+                                       <a href="#" class="leads-agreement close-saleownerinfo">
+                                          Зберегти
+                                       </a>
+                                       <a href="#" class="leads-archived close-saleownerinfo">
+                                          Скасувати
+                                       </a>
                                     </div>
                                  </div>
                               </div>
@@ -30172,13 +30244,13 @@
             </div>
 
             <!-- COMPANY(КОМПАНІЇ) -->
-            <div class="sidebar-box company-tab">
+            <div class="sidebar-box company-tab active-box">
                <div class="saleowner">
                   <div class="customcontainer">
                      <div class="saleowner__head">
                         <a href="#" class="saleowner__head-addbtn bluebtn open-saleownerinfo">
                            <img src="img/svg_icons/plus_white.svg" alt="plus">
-                           Додати об’єкт
+                           Додати компанію
                         </a>
                         <a href="#" class="saleowner__head-filterbtn whitebtn">
                            <img src="img/svg_icons/filter_icon.svg" alt="filter">
@@ -30349,7 +30421,7 @@
                         </form>
                      </div>
                      <div class="table-wrapper">
-                        <div class="company__table commontable">
+                        <div class="company__table commontable table-with-menu">
                            <div class="saleowner__table-instruments">
                               <div class="table__instruments">
                                  <div class="table__instruments-item">
@@ -30855,9 +30927,12 @@
                         <div class="customcontainer">
                            <div class="contact__head">
                               <div class="contact__head-left">
-                                 <img src="img/avatar_contact.png" alt="icon">
+                                 <div class="uploaded-image">
+                                    <img src="img/svg_icons/lead_block_row_icon.svg" alt="icon">
+                                    <input type="file" class="imageUpload">
+                                 </div>
                                  <p>
-                                    Андрій Старовойтовський
+                                    Аптека Доброго Дня
                                  </p>
                               </div>
                               <div class="contact__head-right">
@@ -30887,266 +30962,6 @@
                               <div class="col-4">
                                  <div class="leads__info-left">
                                     <div class="leads__left-wrapper">
-                                       <div class="leads__info-leftblock contact-info">
-                                          <div class="leads__leftblock-header">
-                                             <h2>
-                                                КОНТАКТ
-                                             </h2>
-                                             <div class="leads__leftblock-plus">
-                                                <img src="img/svg_icons/Plus.svg" alt="plus">
-                                             </div>
-                                          </div>
-
-                                          <div class="leads__leftblock-inner">
-                                             <div class="leads__leftblock-content">
-                                                <div class="contact__agreements-box">
-                                                   <div class="leads__leftblock-header">
-                                                      <h4>
-                                                         Петро Хвиць
-                                                      </h4>
-                                                      <div class="leads__leftblock-settings">
-                                                         <img src="img/svg_icons/dots_icon.svg" alt="icon">
-                                                         <ul>
-                                                            <li>
-                                                               <img class="static-icon"
-                                                                  src="img/svg_icons/follow_icon_black.svg" alt="icon">
-                                                               <img class="active-icon"
-                                                                  src="img/svg_icons/follow_icon_blue.svg" alt="icon">
-                                                               Перейти
-                                                            </li>
-                                                            <li>
-                                                               <img class="static-icon"
-                                                                  src="img/svg_icons/star_icon.svg" alt="icon">
-                                                               <img class="active-icon"
-                                                                  src="img/svg_icons/star_icon_blue.svg" alt="icon">
-                                                               Зробити основним
-                                                            </li>
-                                                            <li>
-                                                               <img class="static-icon"
-                                                                  src="img/svg_icons/tabler_link_off_icon.svg"
-                                                                  alt="icon">
-                                                               <img class="active-icon"
-                                                                  src="img/svg_icons/tabler_link_off_icon_blue.svg"
-                                                                  alt="icon">
-                                                               Відкріпити контакт
-                                                            </li>
-                                                         </ul>
-                                                      </div>
-                                                   </div>
-                                                   <dl>
-                                                      <dt>Телефон</dt>
-                                                      <dd
-                                                         class="leads__leftblock-input not-filled phonemask multiselect">
-                                                         <img src="img/svg_icons/Loading_icon.svg" alt="load"
-                                                            class="loading">
-                                                         <img class="add-icon" src="img/svg_icons/plus_circle_grey.svg"
-                                                            alt="icon">
-                                                         <input type="text" placeholder="+380 76 768 67 43">
-                                                         <div class="dropdownwrap dropdownscroll">
-                                                            <ul>
-                                                               <li>+380 76 343434343</li>
-                                                               <li>+380 76 734343143</li>
-                                                               <li>+380 76 733414443</li>
-                                                               <li>+380 734533423443</li>
-                                                               <li>+380 454545454343</li>
-                                                            </ul>
-                                                            <div class="dropdownwrap-bottom">
-                                                               <img src="img/svg_icons/plus_circle_blue.svg" alt="img">
-                                                               <div>
-                                                                  Додати ‘<span> </span>’ як новий номер
-                                                               </div>
-                                                            </div>
-                                                         </div>
-                                                      </dd>
-                                                   </dl>
-                                                   <dl>
-                                                      <dt>Тип контакта</dt>
-                                                      <dd class="leads__leftblock-input dropdown-element not-filled">
-                                                         <p>Власник</p>
-                                                         <div class="dropdownwrap">
-                                                            <ul>
-                                                               <li>Представник власника</li>
-                                                               <li>Брокер</li>
-                                                               <li>Власник</li>
-                                                            </ul>
-                                                         </div>
-                                                      </dd>
-                                                   </dl>
-                                                </div>
-                                                <div class="contact__agreements-box">
-                                                   <div class="leads__leftblock-header">
-                                                      <h4>
-                                                         Крістіна Феофілактова
-                                                      </h4>
-                                                      <div class="leads__leftblock-settings">
-                                                         <img src="img/svg_icons/dots_icon.svg" alt="icon">
-                                                         <ul>
-                                                            <li>
-                                                               <img class="static-icon"
-                                                                  src="img/svg_icons/follow_icon_black.svg" alt="icon">
-                                                               <img class="active-icon"
-                                                                  src="img/svg_icons/follow_icon_blue.svg" alt="icon">
-                                                               Перейти
-                                                            </li>
-                                                            <li>
-                                                               <img class="static-icon"
-                                                                  src="img/svg_icons/star_icon.svg" alt="icon">
-                                                               <img class="active-icon"
-                                                                  src="img/svg_icons/star_icon_blue.svg" alt="icon">
-                                                               Зробити основним
-                                                            </li>
-                                                            <li>
-                                                               <img class="static-icon"
-                                                                  src="img/svg_icons/tabler_link_off_icon.svg"
-                                                                  alt="icon">
-                                                               <img class="active-icon"
-                                                                  src="img/svg_icons/tabler_link_off_icon_blue.svg"
-                                                                  alt="icon">
-                                                               Відкріпити контакт
-                                                            </li>
-                                                         </ul>
-                                                      </div>
-                                                   </div>
-                                                   <dl>
-                                                      <dt>Телефон</dt>
-                                                      <dd
-                                                         class="leads__leftblock-input not-filled phonemask multiselect">
-                                                         <img src="img/svg_icons/Loading_icon.svg" alt="load"
-                                                            class="loading">
-                                                         <img class="add-icon" src="img/svg_icons/plus_circle_grey.svg"
-                                                            alt="icon">
-                                                         <input type="text" placeholder="+380 76 768 67 43">
-                                                         <div class="dropdownwrap dropdownscroll">
-                                                            <ul>
-                                                               <li>+380 76 343</li>
-                                                               <li>+380 76 7343</li>
-                                                               <li>+380 76 7343</li>
-                                                               <li>+380 7345343</li>
-                                                               <li>+380 454545454343</li>
-                                                            </ul>
-                                                            <div class="dropdownwrap-bottom">
-                                                               <img src="img/svg_icons/plus_circle_blue.svg" alt="img">
-                                                               <div>
-                                                                  Додати ‘<span> </span>’ як новий номер
-                                                               </div>
-                                                            </div>
-                                                         </div>
-                                                      </dd>
-                                                   </dl>
-                                                   <dl>
-                                                      <dt>Тип контакта</dt>
-                                                      <dd class="leads__leftblock-input dropdown-element not-filled">
-                                                         <p>Брокер</p>
-                                                         <div class="dropdownwrap">
-                                                            <ul>
-                                                               <li>Представник власника</li>
-                                                               <li>Брокер</li>
-                                                               <li>Власник</li>
-                                                            </ul>
-                                                         </div>
-                                                      </dd>
-                                                   </dl>
-                                                </div>
-
-                                                <div class="contact__agreements-wrap">
-                                                   <div class="contact__agreements-box">
-                                                      <div class="leads__leftblock-header">
-                                                         <h4>
-                                                            Олександр Мирошніченков
-                                                         </h4>
-                                                         <div class="leads__leftblock-settings">
-                                                            <img src="img/svg_icons/dots_icon.svg" alt="icon">
-                                                            <ul>
-                                                               <li>
-                                                                  <img class="static-icon"
-                                                                     src="img/svg_icons/follow_icon_black.svg"
-                                                                     alt="icon">
-                                                                  <img class="active-icon"
-                                                                     src="img/svg_icons/follow_icon_blue.svg"
-                                                                     alt="icon">
-                                                                  Перейти
-                                                               </li>
-                                                               <li>
-                                                                  <img class="static-icon"
-                                                                     src="img/svg_icons/star_icon.svg" alt="icon">
-                                                                  <img class="active-icon"
-                                                                     src="img/svg_icons/star_icon_blue.svg" alt="icon">
-                                                                  Зробити основним
-                                                               </li>
-                                                               <li>
-                                                                  <img class="static-icon"
-                                                                     src="img/svg_icons/tabler_link_off_icon.svg"
-                                                                     alt="icon">
-                                                                  <img class="active-icon"
-                                                                     src="img/svg_icons/tabler_link_off_icon_blue.svg"
-                                                                     alt="icon">
-                                                                  Відкріпити контакт
-                                                               </li>
-                                                            </ul>
-                                                         </div>
-                                                      </div>
-
-                                                      <dl>
-                                                         <dt>Телефон</dt>
-                                                         <dd
-                                                            class="leads__leftblock-input not-filled phonemask multiselect">
-                                                            <img src="img/svg_icons/Loading_icon.svg" alt="load"
-                                                               class="loading">
-                                                            <img class="add-icon"
-                                                               src="img/svg_icons/plus_circle_grey.svg" alt="icon">
-                                                            <input type="text" placeholder="+380 76 768 67 43">
-                                                            <div class="dropdownwrap dropdownscroll">
-                                                               <ul>
-                                                                  <li>+380 76 343</li>
-                                                                  <li>+380 76 7343</li>
-                                                                  <li>+380 76 7343</li>
-                                                                  <li>+380 7345343</li>
-                                                                  <li>+380 454545454343</li>
-                                                               </ul>
-                                                               <div class="dropdownwrap-bottom">
-                                                                  <img src="img/svg_icons/plus_circle_blue.svg"
-                                                                     alt="img">
-                                                                  <div>
-                                                                     Додати ‘<span> </span>’ як новий номер
-                                                                  </div>
-                                                               </div>
-                                                            </div>
-                                                         </dd>
-                                                      </dl>
-                                                      <dl>
-                                                         <dt>Тип контакта</dt>
-                                                         <dd class="leads__leftblock-input dropdown-element not-filled">
-                                                            <p>Брокер</p>
-                                                            <div class="dropdownwrap">
-                                                               <ul>
-                                                                  <li>Представник власника</li>
-                                                                  <li>Брокер</li>
-                                                                  <li>Власник</li>
-                                                               </ul>
-                                                            </div>
-                                                         </dd>
-                                                      </dl>
-                                                   </div>
-                                                </div>
-
-                                                <div class="contact__agreements-more">
-                                                   <p class="show-more">
-                                                      Розгорнути
-                                                   </p>
-                                                   <p class="show-less">
-                                                      Згорнути
-                                                   </p>
-                                                   <img src="img/svg_icons/arrow_down.svg" alt="arrow">
-                                                </div>
-                                                <div class="contact__agreements-btn whitebtn popup__btn"
-                                                   data-popup="company_contact__popup">
-                                                   Подивитись всі контакти
-                                                </div>
-
-                                             </div>
-                                          </div>
-                                       </div>
-
                                        <div class="leads__info-leftblock organization-info">
                                           <div class="leads__leftblock-header">
                                              <h2>
@@ -31276,6 +31091,185 @@
                                        <div class="leads__info-leftblock contact-info">
                                           <div class="leads__leftblock-header">
                                              <h2>
+                                                КОНТАКТ
+                                             </h2>
+                                             <div class="leads__leftblock-plus">
+                                                <img src="img/svg_icons/Plus.svg" alt="plus">
+                                             </div>
+                                          </div>
+                                          <div class="leads__leftblock-inner">
+                                             <div class="leads__leftblock-content">
+                                                <div class="contact__agreements-box">
+                                                   <div class="leads__leftblock-header">
+                                                      <h4>
+                                                         Петро Хвиць
+                                                      </h4>
+                                                      <div class="leads__leftblock-settings">
+                                                         <img src="img/svg_icons/dots_icon.svg" alt="icon">
+                                                         <ul>
+                                                            <li>
+                                                               <img class="static-icon"
+                                                                  src="img/svg_icons/follow_icon_black.svg" alt="icon">
+                                                               <img class="active-icon"
+                                                                  src="img/svg_icons/follow_icon_blue.svg" alt="icon">
+                                                               Перейти
+                                                            </li>
+                                                            <li>
+                                                               <img class="static-icon"
+                                                                  src="img/svg_icons/star_icon.svg" alt="icon">
+                                                               <img class="active-icon"
+                                                                  src="img/svg_icons/star_icon_blue.svg" alt="icon">
+                                                               Зробити основним
+                                                            </li>
+                                                            <li>
+                                                               <img class="static-icon"
+                                                                  src="img/svg_icons/tabler_link_off_icon.svg"
+                                                                  alt="icon">
+                                                               <img class="active-icon"
+                                                                  src="img/svg_icons/tabler_link_off_icon_blue.svg"
+                                                                  alt="icon">
+                                                               Відкріпити контакт
+                                                            </li>
+                                                         </ul>
+                                                      </div>
+                                                   </div>
+                                                   <dl>
+                                                      <dt>Телефон</dt>
+                                                      <dd>
+                                                         <p>
+                                                            +380939454358
+                                                         </p>
+                                                      </dd>
+                                                   </dl>
+                                                   <dl>
+                                                      <dt>Тип контакта</dt>
+                                                      <dd>
+                                                         <p>Власник</p>
+                                                      </dd>
+                                                   </dl>
+                                                </div>
+                                                <div class="contact__agreements-box">
+                                                   <div class="leads__leftblock-header">
+                                                      <h4>
+                                                         Крістіна Феофілактова
+                                                      </h4>
+                                                      <div class="leads__leftblock-settings">
+                                                         <img src="img/svg_icons/dots_icon.svg" alt="icon">
+                                                         <ul>
+                                                            <li>
+                                                               <img class="static-icon"
+                                                                  src="img/svg_icons/follow_icon_black.svg" alt="icon">
+                                                               <img class="active-icon"
+                                                                  src="img/svg_icons/follow_icon_blue.svg" alt="icon">
+                                                               Перейти
+                                                            </li>
+                                                            <li>
+                                                               <img class="static-icon"
+                                                                  src="img/svg_icons/star_icon.svg" alt="icon">
+                                                               <img class="active-icon"
+                                                                  src="img/svg_icons/star_icon_blue.svg" alt="icon">
+                                                               Зробити основним
+                                                            </li>
+                                                            <li>
+                                                               <img class="static-icon"
+                                                                  src="img/svg_icons/tabler_link_off_icon.svg"
+                                                                  alt="icon">
+                                                               <img class="active-icon"
+                                                                  src="img/svg_icons/tabler_link_off_icon_blue.svg"
+                                                                  alt="icon">
+                                                               Відкріпити контакт
+                                                            </li>
+                                                         </ul>
+                                                      </div>
+                                                   </div>
+                                                   <dl>
+                                                      <dt>Телефон</dt>
+                                                      <dd>
+                                                          <p>+3808768343</p>
+                                                      </dd>
+                                                   </dl>
+                                                   <dl>
+                                                      <dt>Тип контакта</dt>
+                                                      <dd>
+                                                         <p>Брокер</p>
+                                                      </dd>
+                                                   </dl>
+                                                </div>
+
+                                                <div class="contact__agreements-wrap">
+                                                   <div class="contact__agreements-box">
+                                                      <div class="leads__leftblock-header">
+                                                         <h4>
+                                                            Олександр Мирошніченков
+                                                         </h4>
+                                                         <div class="leads__leftblock-settings">
+                                                            <img src="img/svg_icons/dots_icon.svg" alt="icon">
+                                                            <ul>
+                                                               <li>
+                                                                  <img class="static-icon"
+                                                                     src="img/svg_icons/follow_icon_black.svg"
+                                                                     alt="icon">
+                                                                  <img class="active-icon"
+                                                                     src="img/svg_icons/follow_icon_blue.svg"
+                                                                     alt="icon">
+                                                                  Перейти
+                                                               </li>
+                                                               <li>
+                                                                  <img class="static-icon"
+                                                                     src="img/svg_icons/star_icon.svg" alt="icon">
+                                                                  <img class="active-icon"
+                                                                     src="img/svg_icons/star_icon_blue.svg" alt="icon">
+                                                                  Зробити основним
+                                                               </li>
+                                                               <li>
+                                                                  <img class="static-icon"
+                                                                     src="img/svg_icons/tabler_link_off_icon.svg"
+                                                                     alt="icon">
+                                                                  <img class="active-icon"
+                                                                     src="img/svg_icons/tabler_link_off_icon_blue.svg"
+                                                                     alt="icon">
+                                                                  Відкріпити контакт
+                                                               </li>
+                                                            </ul>
+                                                         </div>
+                                                      </div>
+
+                                                      <dl>
+                                                         <dt>Телефон</dt>
+                                                         <dd>
+                                                            <p>+3800760343</p>
+                                                         </dd>
+                                                      </dl>
+                                                      <dl>
+                                                         <dt>Тип контакта</dt>
+                                                         <dd>
+                                                            <p>Брокер</p>
+                                                         </dd>
+                                                      </dl>
+                                                   </div>
+                                                </div>
+
+                                                <div class="contact__agreements-more">
+                                                   <p class="show-more">
+                                                      Розгорнути
+                                                   </p>
+                                                   <p class="show-less">
+                                                      Згорнути
+                                                   </p>
+                                                   <img src="img/svg_icons/arrow_down.svg" alt="arrow">
+                                                </div>
+                                                <div class="contact__agreements-btn whitebtn popup__btn"
+                                                   data-popup="company_contact__popup">
+                                                   Подивитись всі контакти
+                                                </div>
+
+                                             </div>
+                                          </div>
+                                       </div>
+
+                                       <div class="leads__info-leftblock contact-info">
+                                          <div class="leads__leftblock-header">
+                                             <h2>
                                                 УГОДИ
                                              </h2>
                                              <div class="leads__leftblock-plus">
@@ -31292,22 +31286,21 @@
                                                 </h4>
                                                 <dl>
                                                    <dt>
-                                                      <p>Етап</p>
-                                                   </dt>
-                                                   <dd>
-                                                      <p class="contact__agreements-stage orange">
-                                                         <img src="img/svg_icons/contact_box_icon1.svg" alt="icon">
-                                                         Назначений завдаток/угода
-                                                      </p>
-                                                   </dd>
-                                                </dl>
-                                                <dl>
-                                                   <dt>
                                                       <p>Воронка:</p>
                                                    </dt>
                                                    <dd>
                                                       <p>
                                                          Об’єкт продаж
+                                                      </p>
+                                                   </dd>
+                                                </dl>
+                                                <dl>
+                                                   <dt>
+                                                      <p>Етап</p>
+                                                   </dt>
+                                                   <dd>
+                                                      <p>
+                                                         Назначений завдаток
                                                       </p>
                                                    </dd>
                                                 </dl>
@@ -31328,22 +31321,21 @@
                                                 </h4>
                                                 <dl>
                                                    <dt>
-                                                      <p>Етап</p>
-                                                   </dt>
-                                                   <dd>
-                                                      <p class="contact__agreements-stage grey">
-                                                         <img src="img/svg_icons/contact_box_icon2.svg" alt="icon">
-                                                         Кваліфікація об’єкту
-                                                      </p>
-                                                   </dd>
-                                                </dl>
-                                                <dl>
-                                                   <dt>
                                                       <p>Воронка:</p>
                                                    </dt>
                                                    <dd>
                                                       <p>
                                                          Об’єкт продаж
+                                                      </p>
+                                                   </dd>
+                                                </dl>
+                                                <dl>
+                                                   <dt>
+                                                      <p>Етап</p>
+                                                   </dt>
+                                                   <dd>
+                                                      <p>
+                                                         Кваліфікація об’єкту
                                                       </p>
                                                    </dd>
                                                 </dl>
@@ -31366,22 +31358,21 @@
                                                    </h4>
                                                    <dl>
                                                       <dt>
-                                                         <p>Етап</p>
-                                                      </dt>
-                                                      <dd>
-                                                         <p class="contact__agreements-stage orange">
-                                                            <img src="img/svg_icons/contact_box_icon1.svg" alt="icon">
-                                                            Назначений завдаток/угода
-                                                         </p>
-                                                      </dd>
-                                                   </dl>
-                                                   <dl>
-                                                      <dt>
                                                          <p>Воронка:</p>
                                                       </dt>
                                                       <dd>
                                                          <p>
                                                             Об’єкт продаж
+                                                         </p>
+                                                      </dd>
+                                                   </dl>
+                                                   <dl>
+                                                      <dt>
+                                                         <p>Етап</p>
+                                                      </dt>
+                                                      <dd>
+                                                         <p>
+                                                            Назначений завдаток
                                                          </p>
                                                       </dd>
                                                    </dl>
@@ -31402,22 +31393,21 @@
                                                    </h4>
                                                    <dl>
                                                       <dt>
-                                                         <p>Етап</p>
-                                                      </dt>
-                                                      <dd>
-                                                         <p class="contact__agreements-stage grey">
-                                                            <img src="img/svg_icons/contact_box_icon2.svg" alt="icon">
-                                                            Кваліфікація об’єкту
-                                                         </p>
-                                                      </dd>
-                                                   </dl>
-                                                   <dl>
-                                                      <dt>
                                                          <p>Воронка:</p>
                                                       </dt>
                                                       <dd>
                                                          <p>
                                                             Об’єкт продаж
+                                                         </p>
+                                                      </dd>
+                                                   </dl>
+                                                   <dl>
+                                                      <dt>
+                                                         <p>Етап</p>
+                                                      </dt>
+                                                      <dd>
+                                                         <p>
+                                                            Кваліфікація об’єкту
                                                          </p>
                                                       </dd>
                                                    </dl>
@@ -31445,7 +31435,7 @@
                                              </div>
 
                                              <p>
-                                                Закриті угоди угоди (3)
+                                                Закриті угоди (3)
                                              </p>
 
                                              <div class="contact__agreements-statistic">
@@ -31455,7 +31445,7 @@
                                                 <ul>
                                                    <li>
                                                       <p class="successful">
-                                                         Успішні
+                                                         Успішно реалізовано
                                                       </p>
                                                    </li>
                                                    <li>
@@ -31472,7 +31462,7 @@
                                                 <ul>
                                                    <li>
                                                       <p class="failed">
-                                                         Не склались
+                                                         Не реалізовано
                                                       </p>
                                                    </li>
                                                    <li>
@@ -31493,9 +31483,16 @@
                                                 Подивитись всі угоди
                                              </div>
 
-
                                           </div>
                                        </div>
+                                    </div>
+                                    <div class="leads__info-agreement inactive">
+                                       <a href="#" class="leads-agreement close-saleownerinfo">
+                                          Зберегти
+                                       </a>
+                                       <a href="#" class="leads-archived close-saleownerinfo">
+                                          Скасувати
+                                       </a>
                                     </div>
                                  </div>
                               </div>
@@ -31827,9 +31824,704 @@
                </div>
             </div>
 
+            <!------------------------------------- SETTINGS(КОНТАКТИ) ------------------------------->
+
+            <!-- USERS(КОРИСТУВАЧІ) -->
+            <div class="sidebar-box users-tab ">
+               <div class="saleowner">
+                  <div class="customcontainer">
+                     <div class="saleowner__head">
+                        <a href="#" class="saleowner__head-addbtn bluebtn popup__btn" data-popup="add_user_popup">
+                           <img src="img/svg_icons/plus_white.svg" alt="plus">
+                           Додати користувача
+                        </a>
+                        <a href="#" class="saleowner__head-filterbtn whitebtn disabled">
+                           <img src="img/svg_icons/filter_icon.svg" alt="filter">
+                           <span class="hide">Фільтр</span>
+                           <span class="open">Сховати фільтр</span>
+                        </a>
+                     </div>
+                     <div class="table-wrapper">
+                        <div class="user__table commontable">
+                           <table>
+                              <tr class="table__headrow">
+                                 <th>
+                                    <label class="table__row-checkbox">
+                                       <input class="table__row-input row-input head_table_check" type="checkbox"
+                                          name="saleowner_row">
+                                       <span></span>
+                                    </label>
+                                 </th>
+                                 <th>
+                                    <p class="table__headrow-thumbnail">
+                                       <img src="img/svg_icons/photocamera_icon.svg" alt="icon">
+                                    </p>
+                                 </th>
+                                 <th>
+                                    <p>
+                                       Ім’я та Прізвище
+                                    </p>
+                                 </th>
+                                 <th>
+                                    <p>
+                                       Відділ
+                                    </p>
+                                 </th>
+                                 <th>
+                                    <p>
+                                       Пошта
+                                    </p>
+                                 </th>
+                                 <th>
+                                    <p>
+                                       Номер телефону
+                                    </p>
+                                 </th>
+                                 <th>
+                                    <p>
+                                       Пароль
+                                    </p>
+                                 </th>
+                                 <th>
+                                    <p>
+                                       Тип
+                                    </p>
+                                 </th>
+                                 <th>
+                                    <p>
+                                       Статус
+                                    </p>
+                                 </th>
+                                 <th>
+                                    <p>
+                                       Отанній вхід
+                                    </p>
+                                 </th>
+                                 <th>
+                                    <p>
+                                       <img src="img/svg_icons/lead_settings_icon.svg" alt="icon">
+                                    </p>
+                                 </th>
+                              </tr>
+                              <tr class="table__row">
+                                 <td>
+                                    <label class="table__row-checkbox">
+                                       <input class="table__row-input" type="checkbox" name="saleowner_row">
+                                       <span></span>
+                                    </label>
+                                 </td>
+                                 <td>
+                                    <p class="open-usercard">
+                                       <img class="table_user" src="img/user_avatar_3.png" alt="thumbnail">
+                                    </p>
+                                 </td>
+                                 <td>
+                                    <p class="open-usercard">
+                                       Єлизавета Феофілактова
+                                    </p>
+                                 </td>
+                                 <td>
+                                    <p class="open-usercard">
+                                       Продаж - Оренда
+                                    </p>
+                                 </td>
+                                 <td>
+                                    <p class="open-usercard">
+                                       switskaholu@gmail.com
+                                    </p>
+                                 </td>
+                                 <td>
+                                    <p class="open-usercard">
+                                       +380 67 987 65 75
+                                    </p>
+                                 </td>
+                                 <td>
+                                    <p class="short-field open-usercard">
+                                       qwerty123jhk6
+                                    </p>
+                                 </td>
+                                 <td>
+                                    <p class="open-usercard">
+                                       Співробітник
+                                    </p>
+                                 </td>
+                                 <td>
+                                    <p class="open-usercard">
+                                       Заблоковано
+                                    </p>
+                                 </td>
+                                 <td>
+                                    <p class="open-usercard">
+                                       23.06.23, 16:58
+                                    </p>
+                                 </td>
+                                 <td>
+                                    <p class="table_settings open-usercard">
+                                       <span>
+                                          ...
+                                       </span>
+                                    </p>
+                                 </td>
+                              </tr>
+                              <tr class="table__row">
+                                 <td>
+                                    <label class="table__row-checkbox">
+                                       <input class="table__row-input" type="checkbox" name="saleowner_row">
+                                       <span></span>
+                                    </label>
+                                 </td>
+                                 <td>
+                                    <p class="open-saleownerinfo">
+                                       <img class="table_user" src="img/user_avatar2.png" alt="thumbnail">
+                                    </p>
+                                 </td>
+                                 <td>
+                                    <p class="open-usercard">
+                                       Єлизавета Феофілактова
+                                    </p>
+                                 </td>
+                                 <td>
+                                    <p class="open-usercard">
+                                       Продаж - Оренда
+                                    </p>
+                                 </td>
+                                 <td>
+                                    <p class="open-usercard">
+                                       switskaholu@gmail.com
+                                    </p>
+                                 </td>
+                                 <td>
+                                    <p class="open-usercard">
+                                       +380 67 987 65 75
+                                    </p>
+                                 </td>
+                                 <td>
+                                    <p class="open-usercard">
+                                       qwerty123jhk6
+                                    </p>
+                                 </td>
+                                 <td>
+                                    <p class="open-usercard">
+                                       Співробітник
+                                    </p>
+                                 </td>
+                                 <td>
+                                    <p class="open-usercard">
+                                       Заблоковано
+                                    </p>
+                                 </td>
+                                 <td>
+                                    <p class="open-usercard">
+                                       23.06.23, 16:58
+                                    </p>
+                                 </td>
+                                 <td>
+                                    <p class="table_settings open-usercard">
+                                       <span>
+                                          ...
+                                       </span>
+                                    </p>
+                                 </td>
+                              </tr>
+                              <tr class="table__row">
+                                 <td>
+                                    <label class="table__row-checkbox">
+                                       <input class="table__row-input" type="checkbox" name="saleowner_row">
+                                       <span></span>
+                                    </label>
+                                 </td>
+                                 <td>
+                                    <p class="open-saleownerinfo">
+                                       <img class="table_user" src="img/user_avatar.png" alt="thumbnail">
+                                    </p>
+                                 </td>
+                                 <td>
+                                    <p class="open-usercard">
+                                       Єлизавета Феофілактова
+                                    </p>
+                                 </td>
+                                 <td>
+                                    <p class="open-usercard">
+                                       Продаж - Оренда
+                                    </p>
+                                 </td>
+                                 <td>
+                                    <p class="open-usercard">
+                                       switskaholu@gmail.com
+                                    </p>
+                                 </td>
+                                 <td>
+                                    <p class="open-usercard">
+                                       +380 67 987 65 75
+                                    </p>
+                                 </td>
+                                 <td>
+                                    <p class="open-usercard">
+                                       qwerty123jhk6
+                                    </p>
+                                 </td>
+                                 <td>
+                                    <p class="open-usercard">
+                                       Співробітник
+                                    </p>
+                                 </td>
+                                 <td>
+                                    <p class="open-usercard">
+                                       Заблоковано
+                                    </p>
+                                 </td>
+                                 <td>
+                                    <p class="open-usercard">
+                                       23.06.23, 16:58
+                                    </p>
+                                 </td>
+                                 <td>
+                                    <p class="table_settings open-usercard">
+                                       <span>
+                                          ...
+                                       </span>
+                                    </p>
+                                 </td>
+                              </tr>
+                              <tr class="table__row">
+                                 <td>
+                                    <label class="table__row-checkbox">
+                                       <input class="table__row-input" type="checkbox" name="saleowner_row">
+                                       <span></span>
+                                    </label>
+                                 </td>
+                                 <td>
+                                    <p class="open-saleownerinfo">
+                                       <img class="table_user" src="img/user_avatar_3.png" alt="thumbnail">
+                                    </p>
+                                 </td>
+                                 <td>
+                                    <p class="open-usercard">
+                                       Єлизавета Феофілактова
+                                    </p>
+                                 </td>
+                                 <td>
+                                    <p class="open-usercard">
+                                       Продаж - Оренда
+                                    </p>
+                                 </td>
+                                 <td>
+                                    <p class="open-usercard">
+                                       switskaholu@gmail.com
+                                    </p>
+                                 </td>
+                                 <td>
+                                    <p class="open-usercard">
+                                       +380 67 987 65 75
+                                    </p>
+                                 </td>
+                                 <td>
+                                    <p class="open-usercard">
+                                       qwerty123jhk6
+                                    </p>
+                                 </td>
+                                 <td>
+                                    <p class="open-usercard">
+                                       Співробітник
+                                    </p>
+                                 </td>
+                                 <td>
+                                    <p class="open-usercard">
+                                       Заблоковано
+                                    </p>
+                                 </td>
+                                 <td>
+                                    <p class="open-usercard">
+                                       23.06.23, 16:58
+                                    </p>
+                                 </td>
+                                 <td>
+                                    <p class="table_settings open-usercard">
+                                       <span>
+                                          ...
+                                       </span>
+                                    </p>
+                                 </td>
+                              </tr>
+                              <tr class="table__row">
+                                 <td>
+                                    <label class="table__row-checkbox">
+                                       <input class="table__row-input" type="checkbox" name="saleowner_row">
+                                       <span></span>
+                                    </label>
+                                 </td>
+                                 <td>
+                                    <p class="open-usercard">
+                                       <img class="table_user" src="img/user_avatar_3.png" alt="thumbnail">
+                                    </p>
+                                 </td>
+                                 <td>
+                                    <p class="open-usercard">
+                                       Єлизавета Феофілактова
+                                    </p>
+                                 </td>
+                                 <td>
+                                    <p class="open-usercard">
+                                       Продаж - Оренда
+                                    </p>
+                                 </td>
+                                 <td>
+                                    <p class="open-usercard">
+                                       switskaholu@gmail.com
+                                    </p>
+                                 </td>
+                                 <td>
+                                    <p class="open-usercard">
+                                       +380 67 987 65 75
+                                    </p>
+                                 </td>
+                                 <td>
+                                    <p class="short-field open-usercard">
+                                       qwerty123jhk6
+                                    </p>
+                                 </td>
+                                 <td>
+                                    <p class="open-usercard">
+                                       Співробітник
+                                    </p>
+                                 </td>
+                                 <td>
+                                    <p class="open-usercard">
+                                       Заблоковано
+                                    </p>
+                                 </td>
+                                 <td>
+                                    <p class="open-usercard">
+                                       23.06.23, 16:58
+                                    </p>
+                                 </td>
+                                 <td>
+                                    <p class="table_settings open-usercard">
+                                       <span>
+                                          ...
+                                       </span>
+                                    </p>
+                                 </td>
+                              </tr>
+                              <tr class="table__row">
+                                 <td>
+                                    <label class="table__row-checkbox">
+                                       <input class="table__row-input" type="checkbox" name="saleowner_row">
+                                       <span></span>
+                                    </label>
+                                 </td>
+                                 <td>
+                                    <p class="open-saleownerinfo">
+                                       <img class="table_user" src="img/user_avatar2.png" alt="thumbnail">
+                                    </p>
+                                 </td>
+                                 <td>
+                                    <p class="open-usercard">
+                                       Єлизавета Феофілактова
+                                    </p>
+                                 </td>
+                                 <td>
+                                    <p class="open-usercard">
+                                       Продаж - Оренда
+                                    </p>
+                                 </td>
+                                 <td>
+                                    <p class="open-usercard">
+                                       switskaholu@gmail.com
+                                    </p>
+                                 </td>
+                                 <td>
+                                    <p class="open-usercard">
+                                       +380 67 987 65 75
+                                    </p>
+                                 </td>
+                                 <td>
+                                    <p class="open-usercard">
+                                       qwerty123jhk6
+                                    </p>
+                                 </td>
+                                 <td>
+                                    <p class="open-usercard">
+                                       Співробітник
+                                    </p>
+                                 </td>
+                                 <td>
+                                    <p class="open-usercard">
+                                       Заблоковано
+                                    </p>
+                                 </td>
+                                 <td>
+                                    <p class="open-usercard">
+                                       23.06.23, 16:58
+                                    </p>
+                                 </td>
+                                 <td>
+                                    <p class="table_settings open-usercard">
+                                       <span>
+                                          ...
+                                       </span>
+                                    </p>
+                                 </td>
+                              </tr>
+                              <tr class="table__row">
+                                 <td>
+                                    <label class="table__row-checkbox">
+                                       <input class="table__row-input" type="checkbox" name="saleowner_row">
+                                       <span></span>
+                                    </label>
+                                 </td>
+                                 <td>
+                                    <p class="open-saleownerinfo">
+                                       <img class="table_user" src="img/user_avatar.png" alt="thumbnail">
+                                    </p>
+                                 </td>
+                                 <td>
+                                    <p class="open-usercard">
+                                       Єлизавета Феофілактова
+                                    </p>
+                                 </td>
+                                 <td>
+                                    <p class="open-usercard">
+                                       Продаж - Оренда
+                                    </p>
+                                 </td>
+                                 <td>
+                                    <p class="open-usercard">
+                                       switskaholu@gmail.com
+                                    </p>
+                                 </td>
+                                 <td>
+                                    <p class="open-usercard">
+                                       +380 67 987 65 75
+                                    </p>
+                                 </td>
+                                 <td>
+                                    <p class="open-usercard">
+                                       qwerty123jhk6
+                                    </p>
+                                 </td>
+                                 <td>
+                                    <p class="open-usercard">
+                                       Співробітник
+                                    </p>
+                                 </td>
+                                 <td>
+                                    <p class="open-usercard">
+                                       Заблоковано
+                                    </p>
+                                 </td>
+                                 <td>
+                                    <p class="open-usercard">
+                                       23.06.23, 16:58
+                                    </p>
+                                 </td>
+                                 <td>
+                                    <p class="table_settings open-usercard">
+                                       <span>
+                                          ...
+                                       </span>
+                                    </p>
+                                 </td>
+                              </tr>
+                              <tr class="table__row">
+                                 <td>
+                                    <label class="table__row-checkbox">
+                                       <input class="table__row-input" type="checkbox" name="saleowner_row">
+                                       <span></span>
+                                    </label>
+                                 </td>
+                                 <td>
+                                    <p class="open-saleownerinfo">
+                                       <img class="table_user" src="img/user_avatar_3.png" alt="thumbnail">
+                                    </p>
+                                 </td>
+                                 <td>
+                                    <p class="open-usercard">
+                                       Єлизавета Феофілактова
+                                    </p>
+                                 </td>
+                                 <td>
+                                    <p class="open-usercard">
+                                       Продаж - Оренда
+                                    </p>
+                                 </td>
+                                 <td>
+                                    <p class="open-usercard">
+                                       switskaholu@gmail.com
+                                    </p>
+                                 </td>
+                                 <td>
+                                    <p class="open-usercard">
+                                       +380 67 987 65 75
+                                    </p>
+                                 </td>
+                                 <td>
+                                    <p class="open-usercard">
+                                       qwerty123jhk6
+                                    </p>
+                                 </td>
+                                 <td>
+                                    <p class="open-usercard">
+                                       Співробітник
+                                    </p>
+                                 </td>
+                                 <td>
+                                    <p class="open-usercard">
+                                       Заблоковано
+                                    </p>
+                                 </td>
+                                 <td>
+                                    <p class="open-usercard">
+                                       23.06.23, 16:58
+                                    </p>
+                                 </td>
+                                 <td>
+                                    <p class="table_settings open-usercard">
+                                       <span>
+                                          ...
+                                       </span>
+                                    </p>
+                                 </td>
+                              </tr>
+                           </table>
+                        </div>
+                        <div class="pagination">
+                           <ul>
+                              <li><span class="prev disabled"><img src="img/svg_icons/pagination__arrow.svg"
+                                       alt="prev"></span></li>
+                              <li><a class="current" href="#">1</a></li>
+                              <li><a href="#">2</a></li>
+                              <li><a href="#">3</a></li>
+                              <li><a class="dots" href="#">...</a></li>
+                              <li><a href="#">34</a></li>
+                              <li><span class="next"><img src="img/svg_icons/pagination__arrow.svg" alt="next"></span>
+                              </li>
+                           </ul>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="user__card">
+                     <div class="leads__info-wrapper">
+                        <div class="customcontainer">
+                           <div class="user__card-wrapper">
+                              <div class="user__card-title">
+                                 <h3>
+                                    ПЕРСОНАЛЬНА ІНФОРМАЦІЯ
+                                 </h3>
+                              </div>
+                              <div class="user__inner">
+                                 <div class="user__popup-left">
+                                    <div class="user__popup-avatar">
+                                       <div class="avatar-container">
+                                          <div class="uploaded-image">
+                                             <img src="img/user_avatar_choise.png" alt="avatar">
+                                             <input type="file" class="imageUpload">
+                                             <div class="uploaded-frame"></div>
+                                          </div>
+                                          <a href="#" class="delete-button">
+                                             Видалити фото
+                                          </a>
+                                       </div>
+                                    </div>
+                                    <div class="user__popup-socials inactive">
+                                       <a href="#">
+                                          <img src="img/svg_icons/instagram_grey_icon.svg" alt="instagram">
+                                       </a>
+                                       <a href="#">
+                                          <img src="img/svg_icons/facebook_grey_icon.svg" alt="facebook">
+                                       </a>
+                                    </div>
+                                 </div>
+                                 <div class="user__popup-right">
+                                    <div class="inputfield">
+                                       <label>
+                                          <span>Ім’я</span>
+                                          <input class="commoninput" type="text" placeholder="Олександра">
+                                       </label>
+                                    </div>
+                                    <div class="inputfield">
+                                       <label>
+                                          <span>Прізвище</span>
+                                          <input class="commoninput" type="text" placeholder="Олександрівна">
+                                       </label>
+                                    </div>
+                                    <div class="inputfield">
+                                       <label class="phonemask">
+                                          <span>Телефон</span>
+                                          <input class="commoninput numberonly" type="text" placeholder="+380">
+                                       </label>
+                                       <div class="addinput-btn">
+                                          <img src="img/svg_icons/plus_circle_grey.svg" alt="plus">
+                                          <p>Додати телефон</p>
+                                       </div>
+                                    </div>
+                                    <div class="inputfield">
+                                       <label>
+                                          <span>Електрона пошта</span>
+                                          <input class="commoninput" type="text" placeholder="email@gmal.com">
+                                       </label>
+                                       <div class="addinput-btn">
+                                          <img src="img/svg_icons/plus_circle_grey.svg" alt="plus">
+                                          <p>Додати адрес ел. пошти</p>
+                                       </div>
+                                    </div>
+                                    <div class="inputfield">
+                                       <label>
+                                          <span>Логін</span>
+                                          <input class="commoninput" type="text" placeholder="Наприклад, Oleksandrа">
+                                       </label>
+                                       <span class="description">
+                                          *Логін має містити латинські букви
+                                       </span>
+                                    </div>
+                                    <div class="inputfield password">
+                                       <label>
+                                          <span>Пароль</span>
+                                          <input class="commoninput" type="password" placeholder="password78" >
+                                          <i class="showpass"></i>
+                                       </label>
+                                       <span class="description">
+                                          *Пароль має містити латинські літери, щонайменш 8 символів з яких
+                                          прийнаймні 2
+                                          цифри
+                                       </span>
+                                    </div>
+                                    <div class="inputfield socials">
+                                       <label>
+                                          <span>Instagram</span>
+                                          <input class="commoninput" type="text" placeholder="email@gmal.com">
+                                       </label>
+                                    </div>
+                                    <div class="inputfield socials">
+                                       <label>
+                                          <span>Facebook</span>
+                                          <input class="commoninput" type="text" placeholder="email@gmal.com">
+                                       </label>
+                                    </div>
+                                    <div class="inputfield">
+                                       <label>
+                                          <span>Про себе</span>
+                                          <textarea placeholder="Напишіть про себе"></textarea>
+                                       </label>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="user__inner-bottom inactive">
+                                 <a href="#" class="popup__close whitebtn">
+                                    Скасувати
+                                 </a>
+                                 <a href="#" class="popup__close bluebtn">
+                                    Закрити
+                                 </a>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
 
          </div>
-
 
          <!-- NOTIFICATION(ПОВІДОМЛЕННЯ) -->
          <aside class="notification">
@@ -32005,7 +32697,6 @@
             </div>
          </aside>
 
-
          <!-- POPUP LEAD FORM -->
          <!-- <div class="popup__window lead__popup">
             <div class="popup__wrapper">
@@ -32142,8 +32833,10 @@
                      Ви не зберегли внесені данні. Зберегти і закрити або вийти без збереження?
                   </p>
                   <div class="lead-warning__popup-bottom">
-                     <a class="bluebtn close-leadinfo close-saleownerinfo popup__close " href="#">Зберегти</a>
-                     <a href="#" class="close-leadinfo close-saleownerinfo popup__close">Вийти без збереження</a>
+                     <a class="bluebtn close-leadinfo close-saleownerinfo popup__close close-usercard"
+                        href="#">Зберегти</a>
+                     <a href="#" class="close-leadinfo close-saleownerinfo popup__close close-usercard">Вийти без
+                        збереження</a>
                   </div>
                </div>
             </div>
@@ -32582,7 +33275,7 @@
             </div>
          </div>
 
-         <!-- CONTACT TABLE -->
+         <!-- CONTACT TABLE POPUP-->
          <div class="popup__window contact_agreements__popup">
             <div class="popup__wrapper">
                <div class="popup__inner contact_agreements__popup-inner">
@@ -32622,132 +33315,198 @@
                               </th>
                            </tr>
                            <tr>
-                              <td>
+                              <td class="popup__close">
                                  <p>
                                     Угода Аптека Доброго Дня
                                  </p>
                               </td>
-                              <td>
+                              <td class="popup__close">
                                  <p>
                                     Об’єкт продаж
                                  </p>
                               </td>
-                              <td>
+                              <td class="popup__close">
                                  <p>
                                     Назначений завдаток/угода
                                  </p>
                               </td>
-                              <td>
+                              <td class="popup__close">
                                  <p>
                                     Єлизавета Феофілактова
                                  </p>
                               </td>
                            </tr>
                            <tr>
-                              <td>
+                              <td class="popup__close">
                                  <p>
                                     Угода Аптека Доброго Дня
                                  </p>
                               </td>
-                              <td>
+                              <td class="popup__close">
                                  <p>
                                     Об’єкт продаж
                                  </p>
                               </td>
-                              <td>
+                              <td class="popup__close">
                                  <p>
                                     Назначений завдаток/угода
                                  </p>
                               </td>
-                              <td>
+                              <td class="popup__close">
                                  <p>
                                     Єлизавета Феофілактова
                                  </p>
                               </td>
                            </tr>
                            <tr>
-                              <td>
+                              <td class="popup__close">
                                  <p>
                                     Угода Аптека Доброго Дня
                                  </p>
                               </td>
-                              <td>
+                              <td class="popup__close">
                                  <p>
                                     Об’єкт продаж
                                  </p>
                               </td>
-                              <td>
+                              <td class="popup__close">
                                  <p>
                                     Назначений завдаток/угода
                                  </p>
                               </td>
-                              <td>
+                              <td class="popup__close">
+                                 <p>
+                                    Єлизавета Феофілактова
+                                 </p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="popup__close">
+                                 <p>
+                                    Угода Аптека Доброго Дня
+                                 </p>
+                              </td>
+                              <td class="popup__close">
+                                 <p>
+                                    Об’єкт продаж
+                                 </p>
+                              </td>
+                              <td class="popup__close">
+                                 <p>
+                                    Назначений завдаток/угода
+                                 </p>
+                              </td>
+                              <td class="popup__close">
+                                 <p>
+                                    Єлизавета Феофілактова
+                                 </p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="popup__close">
+                                 <p>
+                                    Угода Аптека Доброго Дня
+                                 </p>
+                              </td>
+                              <td class="popup__close">
+                                 <p>
+                                    Об’єкт продаж
+                                 </p>
+                              </td>
+                              <td class="popup__close">
+                                 <p>
+                                    Назначений завдаток/угода
+                                 </p>
+                              </td>
+                              <td class="popup__close">
+                                 <p>
+                                    Єлизавета Феофілактова
+                                 </p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="popup__close">
+                                 <p>
+                                    Угода Аптека Доброго Дня
+                                 </p>
+                              </td>
+                              <td class="popup__close">
+                                 <p>
+                                    Об’єкт продаж
+                                 </p>
+                              </td>
+                              <td class="popup__close">
+                                 <p>
+                                    Назначений завдаток/угода
+                                 </p>
+                              </td>
+                              <td class="popup__close">
                                  <p>
                                     Єлизавета Феофілактова
                                  </p>
                               </td>
                            </tr>
                            <tr class="green">
-                              <td>
+                              <td class="popup__close">
                                  <p>
                                     Угода Аптека Доброго Дня
                                  </p>
                               </td>
-                              <td>
+                              <td class="popup__close">
                                  <p>
                                     Об’єкт продаж
                                  </p>
                               </td>
-                              <td>
+                              <td class="popup__close">
                                  <p>
                                     Назначений завдаток/угода
                                  </p>
                               </td>
-                              <td>
+                              <td class="popup__close">
                                  <p>
                                     Єлизавета Феофілактова
                                  </p>
                               </td>
                            </tr>
                            <tr class="green">
-                              <td>
+                              <td class="popup__close">
                                  <p>
                                     Угода Аптека Доброго Дня
                                  </p>
                               </td>
-                              <td>
+                              <td class="popup__close">
                                  <p>
                                     Об’єкт продаж
                                  </p>
                               </td>
-                              <td>
+                              <td class="popup__close">
                                  <p>
                                     Назначений завдаток/угода
                                  </p>
                               </td>
-                              <td>
+                              <td class="popup__close">
                                  <p>
                                     Єлизавета Феофілактова
                                  </p>
                               </td>
                            </tr>
                            <tr class="red">
-                              <td>
+                              <td class="popup__close">
                                  <p>
                                     Угода Аптека Доброго Дня
                                  </p>
                               </td>
-                              <td>
+                              <td class="popup__close">
                                  <p>
                                     Об’єкт продаж
                                  </p>
                               </td>
-                              <td>
+                              <td class="popup__close">
                                  <p>
                                     Назначений завдаток/угода
                                  </p>
                               </td>
-                              <td>
+                              <td class="popup__close">
                                  <p>
                                     Єлизавета Феофілактова
                                  </p>
@@ -32765,7 +33524,7 @@
             </div>
          </div>
 
-         <!-- CONTACT/COMPANY TABLE -->
+         <!-- CONTACT/COMPANY TABLE POPUP-->
          <div class="popup__window company_contact__popup">
             <div class="popup__wrapper">
                <div class="popup__inner contact_agreements__popup-inner">
@@ -32815,192 +33574,256 @@
                               </th>
                            </tr>
                            <tr>
-                              <td>
+                              <td class="popup__close">
                                  <p>
                                     Єлизавета Феофілактова
                                  </p>
                               </td>
-                              <td>
+                              <td class="popup__close">
                                  <p>
                                     +380 67 987 65 75
                                  </p>
                               </td>
-                              <td>
+                              <td class="popup__close">
                                  <p>
                                     Представник власника власника
                                  </p>
                               </td>
-                              <td>
+                              <td class="popup__close">
                                  <p>
                                     Аптека Доброго Дня
                                  </p>
                               </td>
-                              <td>
+                              <td class="popup__close">
                                  <p>
                                     2
                                  </p>
                               </td>
-                              <td>
+                              <td class="popup__close">
                                  <p>
                                     Олександр Мирошніченко
                                  </p>
                               </td>
                            </tr>
                            <tr>
-                              <td>
+                              <td class="popup__close">
                                  <p>
                                     Єлизавета Феофілактова
                                  </p>
                               </td>
-                              <td>
+                              <td class="popup__close">
                                  <p>
                                     +380 67 987 65 75
                                  </p>
                               </td>
-                              <td>
+                              <td class="popup__close">
                                  <p>
                                     Представник власника власника
                                  </p>
                               </td>
-                              <td>
+                              <td class="popup__close">
                                  <p>
                                     Аптека Доброго Дня
                                  </p>
                               </td>
-                              <td>
+                              <td class="popup__close">
                                  <p>
                                     2
                                  </p>
                               </td>
-                              <td>
+                              <td class="popup__close">
                                  <p>
                                     Олександр Мирошніченко
                                  </p>
                               </td>
                            </tr>
                            <tr>
-                              <td>
+                              <td class="popup__close">
                                  <p>
                                     Єлизавета Феофілактова
                                  </p>
                               </td>
-                              <td>
+                              <td class="popup__close">
                                  <p>
                                     +380 67 987 65 75
                                  </p>
                               </td>
-                              <td>
+                              <td class="popup__close">
                                  <p>
                                     Представник власника власника
                                  </p>
                               </td>
-                              <td>
+                              <td class="popup__close">
                                  <p>
                                     Аптека Доброго Дня
                                  </p>
                               </td>
-                              <td>
+                              <td class="popup__close">
                                  <p>
                                     2
                                  </p>
                               </td>
-                              <td>
+                              <td class="popup__close">
                                  <p>
                                     Олександр Мирошніченко
                                  </p>
                               </td>
                            </tr>
-                           <tr class="green">
-                              <td>
+                           <tr>
+                              <td class="popup__close">
                                  <p>
                                     Єлизавета Феофілактова
                                  </p>
                               </td>
-                              <td>
+                              <td class="popup__close">
                                  <p>
                                     +380 67 987 65 75
                                  </p>
                               </td>
-                              <td>
+                              <td class="popup__close">
                                  <p>
                                     Представник власника власника
                                  </p>
                               </td>
-                              <td>
+                              <td class="popup__close">
                                  <p>
                                     Аптека Доброго Дня
                                  </p>
                               </td>
-                              <td>
+                              <td class="popup__close">
                                  <p>
                                     2
                                  </p>
                               </td>
-                              <td>
+                              <td class="popup__close">
                                  <p>
                                     Олександр Мирошніченко
                                  </p>
                               </td>
                            </tr>
-                           <tr class="green">
-                              <td>
+                           <tr>
+                              <td class="popup__close">
                                  <p>
                                     Єлизавета Феофілактова
                                  </p>
                               </td>
-                              <td>
+                              <td class="popup__close">
                                  <p>
                                     +380 67 987 65 75
                                  </p>
                               </td>
-                              <td>
+                              <td class="popup__close">
                                  <p>
                                     Представник власника власника
                                  </p>
                               </td>
-                              <td>
+                              <td class="popup__close">
                                  <p>
                                     Аптека Доброго Дня
                                  </p>
                               </td>
-                              <td>
+                              <td class="popup__close">
                                  <p>
                                     2
                                  </p>
                               </td>
-                              <td>
+                              <td class="popup__close">
                                  <p>
                                     Олександр Мирошніченко
                                  </p>
                               </td>
                            </tr>
-                           <tr class="red">
-                              <td>
+                           <tr>
+                              <td class="popup__close">
                                  <p>
                                     Єлизавета Феофілактова
                                  </p>
                               </td>
-                              <td>
+                              <td class="popup__close">
                                  <p>
                                     +380 67 987 65 75
                                  </p>
                               </td>
-                              <td>
+                              <td class="popup__close">
                                  <p>
                                     Представник власника власника
                                  </p>
                               </td>
-                              <td>
+                              <td class="popup__close">
                                  <p>
                                     Аптека Доброго Дня
                                  </p>
                               </td>
-                              <td>
+                              <td class="popup__close">
                                  <p>
                                     2
                                  </p>
                               </td>
-                              <td>
+                              <td class="popup__close">
+                                 <p>
+                                    Олександр Мирошніченко
+                                 </p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="popup__close">
+                                 <p>
+                                    Єлизавета Феофілактова
+                                 </p>
+                              </td>
+                              <td class="popup__close">
+                                 <p>
+                                    +380 67 987 65 75
+                                 </p>
+                              </td>
+                              <td class="popup__close">
+                                 <p>
+                                    Представник власника власника
+                                 </p>
+                              </td>
+                              <td class="popup__close">
+                                 <p>
+                                    Аптека Доброго Дня
+                                 </p>
+                              </td>
+                              <td class="popup__close">
+                                 <p>
+                                    2
+                                 </p>
+                              </td>
+                              <td class="popup__close">
+                                 <p>
+                                    Олександр Мирошніченко
+                                 </p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="popup__close">
+                                 <p>
+                                    Єлизавета Феофілактова
+                                 </p>
+                              </td>
+                              <td class="popup__close">
+                                 <p>
+                                    +380 67 987 65 75
+                                 </p>
+                              </td>
+                              <td class="popup__close">
+                                 <p>
+                                    Представник власника власника
+                                 </p>
+                              </td>
+                              <td class="popup__close">
+                                 <p>
+                                    Аптека Доброго Дня
+                                 </p>
+                              </td>
+                              <td class="popup__close">
+                                 <p>
+                                    2
+                                 </p>
+                              </td>
+                              <td class="popup__close">
                                  <p>
                                     Олександр Мирошніченко
                                  </p>
@@ -33010,6 +33833,187 @@
                      </div>
                   </div>
                   <div class="contact-popup__btn">
+                     <a href="#" class="popup__close bluebtn">
+                        Закрити
+                     </a>
+                  </div>
+               </div>
+            </div>
+         </div>
+
+         <!-- ADD NEW USER POPUP-->
+         <div class="popup__window add_user_popup">
+            <div class="popup__wrapper">
+               <div class="popup__inner user__popup-inner">
+                  <div class="user__popup-head">
+                     <h3>Додати користувача</h3>
+                     <img class="popup__close" src="img/svg_icons/close.svg" alt="close">
+                  </div>
+                  <div class="user__popup-body">
+                     <div class="user__popup-left">
+                        <div class="user__popup-avatar">
+                           <div class="uploaded-image">
+                              <img src="img/user_avatar_choise.png" alt="avatar">
+                              <input type="file" class="imageUpload">
+                              <div class="uploaded-frame"></div>
+                           </div>
+                           <a href="#" class="delete-button">
+                              Видалити фото
+                           </a>
+                        </div>
+                        <div class="user__popup-socials inactive">
+                           <a href="#">
+                              <img src="img/svg_icons/instagram_grey_icon.svg" alt="instagram">
+                           </a>
+                           <a href="#">
+                              <img src="img/svg_icons/facebook_grey_icon.svg" alt="facebook">
+                           </a>
+                        </div>
+
+                     </div>
+                     <div class="user__popup-right">
+                        <div class="inputfield">
+                           <label>
+                              <span>Ім’я</span>
+                              <input class="commoninput" type="text" placeholder="Олександра">
+                           </label>
+                        </div>
+                        <div class="inputfield">
+                           <label>
+                              <span>Прізвище</span>
+                              <input class="commoninput" type="text" placeholder="Олександрівна">
+                           </label>
+                        </div>
+                        <div class="inputfield">
+                           <label class="phonemask">
+                              <span>Телефон</span>
+                              <input class="commoninput numberonly" type="text" placeholder="+380">
+                           </label>
+                           <label>
+                              <input class="commoninput numberonly" type="text" placeholder="+380">
+                              <img class="delete-field" src="../img/svg_icons/trash-black.svg" alt="">
+                           </label>
+                           <div class="addinput-btn">
+                              <img src="img/svg_icons/plus_circle_grey.svg" alt="plus">
+                              <p>Додати телефон</p>
+                           </div>
+                        </div>
+                        <div class="inputfield">
+                           <label>
+                              <span>Електрона пошта</span>
+                              <input class="commoninput" type="text" placeholder="email@gmal.com">
+                           </label>
+                           <label>
+                              <input class="commoninput" type="text" placeholder="email@gmal.com">
+                              <img class="delete-field" src="../img/svg_icons/trash-black.svg" alt="">
+                           </label>
+                           <div class="addinput-btn">
+                              <img src="img/svg_icons/plus_circle_grey.svg" alt="plus">
+                              <p>Додати адрес ел. пошти</p>
+                           </div>
+                        </div>
+                        <div class="inputfield password">
+                           <label>
+                              <span>Пароль</span>
+                              <input class="commoninput" type="text" placeholder="password78">
+                           </label>
+                           <span class="description">
+                              *Пароль має містити латинські літери, щонайменш 8 символів з яких прийнаймні 2 цифри
+                           </span>
+                        </div>
+                        <div class="inputfield select">
+                           <label>
+                              <span>Тип</span>
+                              <input class="commoninput" type="text" placeholder="Обрати" readonly>
+                              <svg width="14" height="8" viewBox="0 0 14 8" fill="none"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                 <path d="M13 1L7 7L1 1" stroke="#383D54" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                              </svg>
+                           </label>
+                           <ul>
+                              <li>
+                                 <label>
+                                    <input class="customradio" name="user-type" type="radio"
+                                       value="Співробітник">Співробітник
+                                 </label>
+                              </li>
+                              <li>
+                                 <label>
+                                    <input class="customradio" name="user-type" type="radio" value="Партнер">Партнер
+                                 </label>
+                              </li>
+                              <li>
+                                 <label>
+                                    <input class="customradio" name="user-type" type="radio" value="Орендар">Орендар
+                                 </label>
+                              </li>
+                           </ul>
+                        </div>
+                        <div class="inputfield select">
+                           <label>
+                              <span>Відділ</span>
+                              <input class="commoninput" type="text" placeholder="Обрати" readonly>
+                              <svg width="14" height="8" viewBox="0 0 14 8" fill="none"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                 <path d="M13 1L7 7L1 1" stroke="#383D54" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                              </svg>
+                           </label>
+                           <ul>
+                              <li>
+                                 <label>
+                                    <input class="customradio" name="user-type" type="radio" value="Продаж">Продаж
+                                 </label>
+                              </li>
+                              <li>
+                                 <label>
+                                    <input class="customradio" name="user-type" type="radio" value="Оренда">Оренда
+                                 </label>
+                              </li>
+                              <li>
+                                 <label>
+                                    <input class="customradio" name="user-type" type="radio"
+                                       value="Продаж - Оренда">Продаж - Оренда
+                                 </label>
+                              </li>
+                           </ul>
+                        </div>
+                        <div class="inputfield select">
+                           <label>
+                              <span>Статус</span>
+                              <input class="commoninput" type="text" placeholder="Обрати" readonly>
+                              <svg width="14" height="8" viewBox="0 0 14 8" fill="none"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                 <path d="M13 1L7 7L1 1" stroke="#383D54" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                              </svg>
+                           </label>
+                           <ul>
+                              <li>
+                                 <label>
+                                    <input class="customradio" name="user-status" type="radio" value="Активний">Активний
+                                 </label>
+                              </li>
+                              <li>
+                                 <label>
+                                    <input class="customradio" name="user-status" type="radio"
+                                       value="Заблоковано">Заблоковано
+                                 </label>
+                              </li>
+                              <li>
+                                 <label>
+                                    <input class="customradio" name="user-status" type="radio" value="Орендар">Орендар
+                                 </label>
+                              </li>
+                           </ul>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="user__popup-bottom inactive">
+                     <a href="#" class="popup__close whitebtn">
+                        Скасувати
+                     </a>
                      <a href="#" class="popup__close bluebtn">
                         Закрити
                      </a>
