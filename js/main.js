@@ -82,6 +82,8 @@ $(document).ready(function () {
         $('.sidebar__agreements').removeClass('active');
         $('.sidebar__contacts').removeClass('active');
         $('.sidebar__settings').removeClass('active');
+        $('.profile__card').removeClass('show');
+        $('.user__card-breadcrumbs').removeClass('active');
         return false;
     });
 
