@@ -144,13 +144,14 @@
         font-weight: 600;
         line-height: 16px;
     }
+
     .uploaded-image {
         position: relative;
         width: 164px;
         height: 164px;
         border-radius: 50%;
         overflow: hidden;
-    
+
         img {
             width: 100%;
             height: 100%;
@@ -158,7 +159,8 @@
             object-position: center;
             border-radius: 50%;
         }
-        .uploaded-frame{
+
+        .uploaded-frame {
             position: absolute;
             left: 0;
             bottom: 0;
@@ -173,13 +175,13 @@
     }
 }
 
-.avatar-container.uploaded{
+.avatar-container.uploaded {
     .delete-button {
         color: #3670F0;
     }
 }
 
-.avatar-container.uploaded .uploaded-frame{
+.avatar-container.uploaded .uploaded-frame {
     background-image: url(../img/svg_icons/edit_pen.svg);
 }
 
@@ -232,15 +234,19 @@
         margin-bottom: 24px;
         height: fit-content;
 
+        &.select>ul {
+            background-color: #fbfbfb;
+        }
+
         label {
             position: relative;
-            &+label{
+
+            &+label {
                 margin-top: 8px;
             }
         }
 
         input {
-            background-color: #F5F5F5;
             width: 100%;
 
             &::placeholder {
@@ -311,7 +317,8 @@
         font-weight: 600;
     }
 }
-.delete-field{
+
+.delete-field {
     position: absolute;
     top: 35%;
     right: 8px;
@@ -404,7 +411,7 @@
         .inputfield {
             width: 368px;
 
-            label+label{
+            label+label {
                 margin-top: 8px;
             }
 
@@ -534,7 +541,7 @@
     }
 }
 
-@media (max-width: 1400px){
+@media (max-width: 1400px) {
     .user__card {
         overflow-x: scroll;
         width: calc(100vw - 56px);
@@ -557,6 +564,7 @@
             border: 3px solid #d9d9d9;
         }
     }
+
     .user__card .leads__info-wrapper {
         width: 1328px;
     }
