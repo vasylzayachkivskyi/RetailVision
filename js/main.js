@@ -769,16 +769,28 @@ $(document).ready(function () {
 
     // user info open/close-------- //
     $('.open-usercard').on('click', function () {
-        $('.user__card').addClass('show');
+        $('.personal__card').addClass('show');
         $('.user__card-breadcrumbs').addClass('active');
     });
     $('.close-usercard').on('click', function () {
-        $('.user__card').removeClass('show');
+        $('.personal__card').removeClass('show');
         $('.user__card-breadcrumbs').removeClass('active');
     });
 
-    // show/hide password ------------------ //
+    // user info open/close-------- //
+    $('.open-profilecard').on('click', function () {
+        $('.profile__card').addClass('show');
+        $('.user__card-breadcrumbs').addClass('active');
+    });
+    $('.close-profilecard').on('click', function () {
+        $('.profile__card').removeClass('show');
+        $('.user__card-breadcrumbs').removeClass('active');
+    });
 
+
+
+
+    // show/hide password ------------------ //
     $('.inputfield.password .showpass').on('click', function () {
         $(this).toggleClass('hide');
 

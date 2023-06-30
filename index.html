@@ -326,12 +326,12 @@
                         </span>
                      </a>
                      <a href="#" class="header__user">
-                        <img class="open-usercard" src="img/avatar.png" alt="avatar">
+                        <img class="open-profilecard" src="img/avatar.png" alt="avatar">
                         <div class="user-dropdown">
                            <p class="name">
                               Олександр Філіпович
                            </p>
-                           <p class="logout-btn close-usercard">
+                           <p class="logout-btn close-profilecard">
                               <img src="img/svg_icons/logout_icon.svg" alt="logout">
                               Вийти
                            </p>
@@ -515,7 +515,7 @@
                   Користуачі
                </a>
             </div>
-            <div class="submenu__inner-item tab-sidebar open-usercard" data-tab="users-tab">
+            <div class="submenu__inner-item tab-sidebar open-profilecard" data-tab="users-tab">
                <div class="submenu__inner-img">
                   <img class="submenu__inner-img--static" src="img/svg_icons/settings_icon2.svg" alt="icon">
                   <img class="submenu__inner-img--hover" src="img/svg_icons/settings_icon2_hover.svg" alt="icon">
@@ -32750,7 +32750,221 @@
                </div>
             </div>
 
-            <div class="user__card">
+            <div class="user__card personal__card">
+               <div class="leads__info-wrapper">
+                  <div class="customcontainer">
+                     <div class="user__card-wrapper">
+                        <div class="user__card-title">
+                           <h3>
+                              ПЕРСОНАЛЬНА ІНФОРМАЦІЯ
+                           </h3>
+                        </div>
+                        <div class="user__inner">
+                           <div class="user__popup-left">
+                              <div class="user__popup-avatar">
+                                 <div class="avatar-container">
+                                    <div class="uploaded-image">
+                                       <img src="img/user_avatar_choise.png" alt="avatar">
+                                       <input type="file" class="imageUpload">
+                                       <div class="uploaded-frame"></div>
+                                    </div>
+                                    <a href="#" class="delete-button">
+                                       Видалити фото
+                                    </a>
+                                 </div>
+                              </div>
+                              <div class="user__popup-socials">
+                                 <a href="#">
+                                    <img src="img/svg_icons/instagram_grey_icon.svg" alt="instagram">
+                                 </a>
+                                 <a href="#">
+                                    <img src="img/svg_icons/facebook_grey_icon.svg" alt="facebook">
+                                 </a>
+                              </div>
+                           </div>
+                           <div class="user__popup-right">
+                              <div class="inputfield">
+                                 <label>
+                                    <span>Ім’я</span>
+                                    <input class="commoninput" type="text" placeholder="Олександра">
+                                 </label>
+                              </div>
+                              <div class="inputfield">
+                                 <label>
+                                    <span>Прізвище</span>
+                                    <input class="commoninput" type="text" placeholder="Олександрівна">
+                                 </label>
+                              </div>
+                              <div class="inputfield">
+                                 <label class="phonemask">
+                                    <span>Телефон</span>
+                                    <input class="commoninput numberonly" type="text" placeholder="+380">
+                                 </label>
+                                 <label>
+                                    <input class="commoninput numberonly" type="text" placeholder="+380">
+                                    <img class="delete-field" src="img/svg_icons/trash-black.svg" alt="">
+                                 </label>
+                                 <div class="addinput-btn">
+                                    <img src="img/svg_icons/plus_circle_grey.svg" alt="plus">
+                                    <p>Додати телефон</p>
+                                 </div>
+                              </div>
+                              <div class="inputfield">
+                                 <label>
+                                    <span>Електрона пошта</span>
+                                    <input class="commoninput" type="text" placeholder="email@gmal.com">
+                                 </label>
+                                 <label>
+                                    <input class="commoninput" type="text" placeholder="email@gmal.com">
+                                    <img class="delete-field" src="img/svg_icons/trash-black.svg" alt="">
+                                 </label>
+                                 <div class="addinput-btn">
+                                    <img src="img/svg_icons/plus_circle_grey.svg" alt="plus">
+                                    <p>Додати адрес ел. пошти</p>
+                                 </div>
+                              </div>
+                              <div class="inputfield">
+                                 <label>
+                                    <span>Логін</span>
+                                    <input class="commoninput" type="text" placeholder="Наприклад, Oleksandrа">
+                                 </label>
+                                 <span class="description">
+                                    *Логін має містити латинські букви
+                                 </span>
+                              </div>
+                              <div class="inputfield password">
+                                 <label>
+                                    <span>Пароль</span>
+                                    <input class="commoninput" type="text" placeholder="password78">
+                                    <i class="showpass"></i>
+                                 </label>
+                                 <span class="description">
+                                    *Пароль має містити латинські літери, щонайменш 8 символів з яких
+                                    прийнаймні 2
+                                    цифри
+                                 </span>
+                              </div>
+                              <div class="inputfield select shortfield">
+                                 <label>
+                                    <span>Тип</span>
+                                    <input class="commoninput" type="text" placeholder="Обрати" readonly>
+                                    <svg width="14" height="8" viewBox="0 0 14 8" fill="none"
+                                       xmlns="http://www.w3.org/2000/svg">
+                                       <path d="M13 1L7 7L1 1" stroke="#383D54" stroke-width="2" stroke-linecap="round"
+                                          stroke-linejoin="round" />
+                                    </svg>
+                                 </label>
+                                 <ul>
+                                    <li>
+                                       <label>
+                                          <input class="customradio" name="user-type" type="radio"
+                                             value="Співробітник">Співробітник
+                                       </label>
+                                    </li>
+                                    <li>
+                                       <label>
+                                          <input class="customradio" name="user-type" type="radio" value="Партнер">Партнер
+                                       </label>
+                                    </li>
+                                    <li>
+                                       <label>
+                                          <input class="customradio" name="user-type" type="radio" value="Орендар">Орендар
+                                       </label>
+                                    </li>
+                                 </ul>
+                              </div>
+                              <div class="inputfield select shortfield">
+                                 <label>
+                                    <span>Відділ</span>
+                                    <input class="commoninput" type="text" placeholder="Обрати" readonly>
+                                    <svg width="14" height="8" viewBox="0 0 14 8" fill="none"
+                                       xmlns="http://www.w3.org/2000/svg">
+                                       <path d="M13 1L7 7L1 1" stroke="#383D54" stroke-width="2" stroke-linecap="round"
+                                          stroke-linejoin="round" />
+                                    </svg>
+                                 </label>
+                                 <ul>
+                                    <li>
+                                       <label>
+                                          <input class="customradio" name="user-type" type="radio" value="Продаж">Продаж
+                                       </label>
+                                    </li>
+                                    <li>
+                                       <label>
+                                          <input class="customradio" name="user-type" type="radio" value="Оренда">Оренда
+                                       </label>
+                                    </li>
+                                    <li>
+                                       <label>
+                                          <input class="customradio" name="user-type" type="radio"
+                                             value="Продаж - Оренда">Продаж - Оренда
+                                       </label>
+                                    </li>
+                                 </ul>
+                              </div>
+                              <div class="inputfield select shortfield">
+                                 <label>
+                                    <span>Статус</span>
+                                    <input class="commoninput" type="text" placeholder="Обрати" readonly>
+                                    <svg width="14" height="8" viewBox="0 0 14 8" fill="none"
+                                       xmlns="http://www.w3.org/2000/svg">
+                                       <path d="M13 1L7 7L1 1" stroke="#383D54" stroke-width="2" stroke-linecap="round"
+                                          stroke-linejoin="round" />
+                                    </svg>
+                                 </label>
+                                 <ul>
+                                    <li>
+                                       <label>
+                                          <input class="customradio" name="user-status" type="radio" value="Активний">Активний
+                                       </label>
+                                    </li>
+                                    <li>
+                                       <label>
+                                          <input class="customradio" name="user-status" type="radio"
+                                             value="Заблоковано">Заблоковано
+                                       </label>
+                                    </li>
+                                    <li>
+                                       <label>
+                                          <input class="customradio" name="user-status" type="radio" value="Орендар">Орендар
+                                       </label>
+                                    </li>
+                                 </ul>
+                              </div>
+                              <div class="inputfield socials">
+                                 <label>
+                                    <span>Instagram</span>
+                                    <input class="commoninput" type="text" placeholder="Вставте посилання">
+                                 </label>
+                              </div>
+                              <div class="inputfield socials">
+                                 <label>
+                                    <span>Facebook</span>
+                                    <input class="commoninput" type="text" placeholder="Вставте посилання">
+                                 </label>
+                              </div>
+                              <div class="inputfield">
+                                 <label>
+                                    <span>Про себе</span>
+                                    <textarea placeholder="Напишіть про себе"></textarea>
+                                 </label>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="user__inner-bottom inactive">
+                           <a href="#" class="whitebtn popup__btn" data-popup="lead-warning__popup">
+                              Скасувати
+                           </a>
+                           <a href="#" class="bluebtn popup__btn close-usercard">
+                              Зберегти
+                           </a>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+
+            <div class="user__card profile__card">
                <div class="leads__info-wrapper">
                   <div class="customcontainer">
                      <div class="user__card-wrapper">
@@ -32876,6 +33090,7 @@
                   </div>
                </div>
             </div>
+
 
          </div>
 
@@ -33066,9 +33281,9 @@
                      Ви не зберегли внесені данні. Зберегти і закрити або вийти без збереження?
                   </p>
                   <div class="lead-warning__popup-bottom">
-                     <a class="bluebtn close-leadinfo close-saleownerinfo popup__close close-usercard"
+                     <a class="bluebtn close-leadinfo close-saleownerinfo popup__close close-usercard close-profilecard"
                         href="#">Зберегти</a>
-                     <a href="#" class="close-leadinfo close-saleownerinfo popup__close close-usercard">Вийти без
+                     <a href="#" class="close-leadinfo close-saleownerinfo popup__close close-usercard close-profilecard">Вийти без
                         збереження</a>
                   </div>
                </div>

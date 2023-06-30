@@ -410,6 +410,12 @@
 
         .inputfield {
             width: 368px;
+            &.shortfield{
+                width: 31%;
+                &.select>ul {
+                    background-color: #f5f5f5;
+                }
+            }
 
             label+label {
                 margin-top: 8px;
