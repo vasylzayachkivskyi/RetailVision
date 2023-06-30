@@ -82,7 +82,7 @@ $(document).ready(function () {
         $('.sidebar__agreements').removeClass('active');
         $('.sidebar__contacts').removeClass('active');
         $('.sidebar__settings').removeClass('active');
-        $('.profile__card').removeClass('show');
+        $('.personal__card ').removeClass('show');
         $('.user__card-breadcrumbs').removeClass('active');
         return false;
     });
@@ -763,6 +763,10 @@ $(document).ready(function () {
 
 
     // --------------------------- SETTINGS TAB ------------------------------ //
+    // click on burger submenu
+    $('.burger-settings').on('click', function () {
+        $('.settings').toggleClass('active');
+    });
     // checks fields are filled
     $('.user__popup-right input').on('input', function () {
         $('.user__popup-bottom').removeClass('inactive');
@@ -778,18 +782,6 @@ $(document).ready(function () {
         $('.personal__card').removeClass('show');
         $('.user__card-breadcrumbs').removeClass('active');
     });
-
-    // user info open/close-------- //
-    $('.open-profilecard').on('click', function () {
-        $('.profile__card').addClass('show');
-        $('.user__card-breadcrumbs').addClass('active');
-    });
-    $('.close-profilecard').on('click', function () {
-        $('.profile__card').removeClass('show');
-        $('.user__card-breadcrumbs').removeClass('active');
-    });
-
-
 
 
     // show/hide password ------------------ //

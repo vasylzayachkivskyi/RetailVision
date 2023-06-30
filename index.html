@@ -326,12 +326,12 @@
                         </span>
                      </a>
                      <a href="#" class="header__user">
-                        <img class="open-profilecard" src="img/avatar.png" alt="avatar">
+                        <img class="tab-sidebar"  data-tab="profile-tab" src="img/avatar.png" alt="avatar">
                         <div class="user-dropdown">
                            <p class="name">
                               Олександр Філіпович
                            </p>
-                           <p class="logout-btn close-profilecard close-usercard">
+                           <p class="logout-btn close-usercard">
                               <img src="img/svg_icons/logout_icon.svg" alt="logout">
                               Вийти
                            </p>
@@ -515,7 +515,7 @@
                   Користуачі
                </a>
             </div>
-            <div class="submenu__inner-item tab-sidebar open-profilecard" data-tab="users-tab">
+            <div class="submenu__inner-item tab-sidebar open-profilecard" data-tab="profile-tab">
                <div class="submenu__inner-img">
                   <img class="submenu__inner-img--static" src="img/svg_icons/settings_icon2.svg" alt="icon">
                   <img class="submenu__inner-img--hover" src="img/svg_icons/settings_icon2_hover.svg" alt="icon">
@@ -31998,7 +31998,7 @@
                <div class="saleowner">
                   <div class="customcontainer">
                      <div class="saleowner__head">
-                        <a href="#" class="saleowner__head-addbtn bluebtn popup__btn" data-popup="add_user_popup">
+                        <a href="#" class="saleowner__head-addbtn bluebtn tab-sidebar" data-tab="profile-tab">
                            <img src="img/svg_icons/plus_white.svg" alt="plus">
                            Додати користувача
                         </a>
@@ -32863,12 +32863,14 @@
                                     </li>
                                     <li>
                                        <label>
-                                          <input class="customradio" name="user-type" type="radio" value="Партнер">Партнер
+                                          <input class="customradio" name="user-type" type="radio"
+                                             value="Партнер">Партнер
                                        </label>
                                     </li>
                                     <li>
                                        <label>
-                                          <input class="customradio" name="user-type" type="radio" value="Орендар">Орендар
+                                          <input class="customradio" name="user-type" type="radio"
+                                             value="Орендар">Орендар
                                        </label>
                                     </li>
                                  </ul>
@@ -32886,18 +32888,20 @@
                                  <ul>
                                     <li>
                                        <label>
-                                          <input class="customradio" name="user-type" type="radio" value="Продаж">Продаж
+                                          <input class="customradio" name="specifications1"
+                                             type="radio" value="Продаж">Продаж
                                        </label>
                                     </li>
                                     <li>
                                        <label>
-                                          <input class="customradio" name="user-type" type="radio" value="Оренда">Оренда
+                                          <input class="customradio" name="specifications1"
+                                             type="radio" value="Оренда">Оренда
                                        </label>
                                     </li>
                                     <li>
                                        <label>
-                                          <input class="customradio" name="user-type" type="radio"
-                                             value="Продаж - Оренда">Продаж - Оренда
+                                          <input class="customradio" name="specifications1"
+                                             type="radio" value="Продаж - Оренда">Продаж - Оренда
                                        </label>
                                     </li>
                                  </ul>
@@ -32915,7 +32919,8 @@
                                  <ul>
                                     <li>
                                        <label>
-                                          <input class="customradio" name="user-status" type="radio" value="Активний">Активний
+                                          <input class="customradio" name="user-status" type="radio"
+                                             value="Активний">Активний
                                        </label>
                                     </li>
                                     <li>
@@ -32926,7 +32931,8 @@
                                     </li>
                                     <li>
                                        <label>
-                                          <input class="customradio" name="user-status" type="radio" value="Орендар">Орендар
+                                          <input class="customradio" name="user-status" type="radio"
+                                             value="Орендар">Орендар
                                        </label>
                                     </li>
                                  </ul>
@@ -32964,8 +32970,8 @@
                </div>
             </div>
 
-            <div class="user__card profile__card">
-               <div class="leads__info-wrapper">
+            <!-- PROFILE(ПРОФІЛЬ) -->
+            <div class="sidebar-box profile-tab">
                   <div class="customcontainer">
                      <div class="user__card-wrapper">
                         <div class="user__card-title">
@@ -33088,8 +33094,8 @@
                         </div>
                      </div>
                   </div>
-               </div>
             </div>
+
 
 
          </div>
@@ -33283,7 +33289,9 @@
                   <div class="lead-warning__popup-bottom">
                      <a class="bluebtn close-leadinfo close-saleownerinfo popup__close close-usercard close-profilecard"
                         href="#">Зберегти</a>
-                     <a href="#" class="close-leadinfo close-saleownerinfo popup__close close-usercard close-profilecard">Вийти без
+                     <a href="#"
+                        class="close-leadinfo close-saleownerinfo popup__close close-usercard close-profilecard">Вийти
+                        без
                         збереження</a>
                   </div>
                </div>
@@ -34290,7 +34298,7 @@
          </div>
 
          <!-- ADD NEW USER POPUP-->
-         <div class="popup__window add_user_popup">
+         <!-- <div class="popup__window add_user_popup">
             <div class="popup__wrapper">
                <div class="popup__inner user__popup-inner">
                   <div class="user__popup-head">
@@ -34471,7 +34479,7 @@
                   </div>
                </div>
             </div>
-         </div>
+         </div> -->
 
 
 
