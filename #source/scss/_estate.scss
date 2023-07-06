@@ -34,14 +34,16 @@
    position: relative;
    margin-right: 26px;
    margin-bottom: 20px;
+
    &:nth-of-type(1),
-   &:nth-of-type(2){
-      &.select>ul{
-        left: initial;
-        right: 0;
+   &:nth-of-type(2) {
+      &.select>ul {
+         left: initial;
+         right: 0;
       }
    }
-   &.select>ul{
+
+   &.select>ul {
       width: auto;
       background: rgb(251, 251, 251);
    }
@@ -192,12 +194,14 @@
          display: flex;
          align-items: center;
          margin-top: 10px;
-         label{
+
+         label {
             font-weight: 500;
             font-size: 14px;
             line-height: 20px;
          }
-         &:first-child{
+
+         &:first-child {
             margin-top: 0;
          }
       }
@@ -400,6 +404,8 @@
 
 .estate__item-content {
    padding: 0 16px 20px;
+   display: block;
+   transition: .3s;
 }
 
 .estate__item-top {
@@ -479,6 +485,121 @@
       }
    }
 }
+
+
+
+.estcard {
+   height: calc(100vh - 72px);
+   width: calc(100% - 56px);
+   position: fixed;
+   z-index: 20;
+   top: 72px;
+   right: 0;
+   transition: .6s;
+   transform: translateX(100%);
+   background: #F0F2F5;
+   box-shadow: -1px 0px 2px 0px rgba(0, 0, 0, 0.08);
+   padding-top: 24px;
+
+   &.show {
+      transform: translateX(0%);
+   }
+}
+
+.estcard__head {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   border-radius: 8px;
+   border: 1px solid #D9D9D9;
+   background: #FBFBFB;
+   margin-bottom: 8px;
+   padding: 16px;
+
+   p {
+      color: #5C6476;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 130%;
+   }
+
+   .dot {
+      width: 4px;
+      height: 4px;
+      border-radius: 4px;
+      background-color: #5C6476;
+      margin: 0 7px;
+   }
+
+}
+
+.estate__card-headcheck {
+   color: #72AA00;
+   font-size: 14px;
+   font-style: normal;
+   font-weight: 600;
+   line-height: 130%;
+
+   img {
+      width: 16px;
+      height: 16px;
+      background-size: cover;
+      margin-right: 4px;
+   }
+}
+
+.estcard__head-left,
+.estcard__head-right {
+   display: flex;
+   align-items: center;
+}
+
+.estcard__box {
+   width: 100%;
+   padding: 16px 24px;
+   border-radius: 8px;
+   background: #FBFBFB;
+   margin-bottom: 16px;
+   h3{
+      color: #22232A;
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 130%;
+      margin-bottom: 24px;
+   }
+   p{
+      overflow: hidden;
+      color: rgba(34, 35, 42, 0.70);
+      text-overflow: ellipsis;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 140%;
+   }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 //  RESPONSIVE ------------------------- //
 
@@ -643,7 +764,8 @@
 @media(max-width:768px) {
    .estate {
       width: 1300px;
-  }
+   }
+
    .estate__inner-map {
       width: 50%;
    }

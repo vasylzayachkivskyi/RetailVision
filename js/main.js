@@ -350,6 +350,16 @@ $(document).ready(function () {
     });
 
 
+    // estate card show/hide -------------- //
+    $('.open-estcard').on('click', function () {
+        $('.estcard').addClass('show');
+        $('.estcard-breadcrumbs').addClass('active');
+    });
+    $('.close-estcard').on('click', function () {
+        $('.estcard').removeClass('show');
+        $('.estcard-breadcrumbs').removeClass('active');
+    });
+
 
 
     // ------------------------  LEADS TAB ------------------------------------- //
@@ -1020,6 +1030,52 @@ $(document).ready(function () {
         $(this).val(numericValue);
     });
 
+
+
+    // LOGIN ----------------------------------- //
+
+    // login-registration tabs -------------- //
+    $('.log-tab').on('click', function () {
+        var dataClass = $(this).attr('data-tab');
+        $('.log-tab').removeClass('active');
+        $(this).addClass('active');
+        $('.log-box').removeClass('active-box').hide();
+        $('.' + dataClass).addClass('active-box').fadeIn(500);
+        return false;
+    });
+
+    $('.forgot-password').on('click', function () {
+        $('.login__head-tabs').hide();
+    });
+
+    $('.restore-tabs .log-tab').on('click', function () {
+        $('.login__head-tabs').show();
+        if ($(this).attr('data-tab') == 'login-window') {
+            $('.login__head-tabs').find('[data-tab="login-window"]').addClass('active');
+        } else  {
+            $('.login__head-tabs').find('[data-tab="registration-window"]').addClass('active');
+        }
+    });
+
+
+    // check fields 
+    $('.log-box input').on('input', function () {
+        var $parentLogBox = $(this).closest('.log-box');
+        var allFieldsFilled = true;
+
+        $parentLogBox.find('input').each(function () {
+            if ($(this).val() === '') {
+                allFieldsFilled = false;
+                return false; // Перервати цикл, якщо знайдено незаповнене поле
+            }
+        });
+
+        if (allFieldsFilled) {
+            $parentLogBox.find('button').prop('disabled', false);
+        } else {
+            $parentLogBox.find('button').prop('disabled', true);
+        }
+    });
 
 
 

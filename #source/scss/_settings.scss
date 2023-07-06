@@ -268,34 +268,35 @@
             font-weight: 500;
         }
     }
+}
 
-    .password {
-        input {
-            padding-right: 30px;
-        }
-
-        .showpass {
-            content: '';
-            position: absolute;
-            top: 58%;
-            right: 16px;
-            background-image: url(../img/svg_icons/password_eye_icon.svg);
-            width: 14px;
-            height: 14px;
-            background-size: cover;
-            opacity: .4;
-            transition: .1s;
-
-            &.hide {
-                background-image: url(../img/svg_icons/password_eye_close_icon.svg);
-            }
-        }
-
-        label.active .showpass {
-            opacity: 1;
-        }
-
+.password {
+    position: relative;
+    input {
+        padding-right: 30px;
     }
+
+    .showpass {
+        content: '';
+        position: absolute;
+        top: 58%;
+        right: 16px;
+        background-image: url(../img/svg_icons/password_eye_icon.svg);
+        width: 14px;
+        height: 14px;
+        background-size: cover;
+        opacity: .4;
+        transition: .1s;
+
+        &.hide {
+            background-image: url(../img/svg_icons/password_eye_close_icon.svg);
+        }
+    }
+
+    label.active .showpass {
+        opacity: 1;
+    }
+
 }
 
 .addinput-btn {

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="img/favicon.png">
+    <link rel="stylesheet" href="css/lib/bootstrap.min.css">
+    <link rel="stylesheet" href="css/lib/jquery.formstyler.css">
+    <link rel="stylesheet" href="css/lib/jquery.formstyler.theme.css">
+    <link rel="stylesheet" href="css/lib/swiper-bundle.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css">
+    <title>Login</title>
+</head>
+
+<body>
+    <div class="pagewrapper">
+        <main>
+            <section class="login">
+                <div class="login__inner">
+                    <div class="login__head">
+                        <img src="img/svg_icons/login_logotype.svg" alt="logotype" class="login__head-logo">
+                        <div class="login__head-tabs">
+                            <p class="log-tab active" data-tab="login-window">
+                                Вхід
+                            </p>
+                            <p class="log-tab" data-tab="registration-window">
+                                Реєстрація
+                            </p>
+                        </div>
+                    </div>
+                    <div class="login__content">
+                        <div class="login-window log-box active-box">
+                            <form>
+                                <div class="inputfield">
+                                    <label>
+                                        <span>
+                                            Логін
+                                        </span>
+                                        <input class="commoninput" type="text" placeholder="Введіть логін">
+                                    </label>
+                                </div>
+                                <div class="inputfield password">
+                                    <label>
+                                        <span>
+                                            Пароль
+                                        </span>
+                                        <input class="commoninput" type="password" placeholder="Введіть пароль">
+                                        <i class="showpass hide"></i>
+                                    </label>
+                                </div>
+                                <div class="login-window__bottom">
+                                    <div class="inputfield">
+                                        <label>
+                                            <input class="customcheck" type="checkbox">
+                                            <span>
+                                                Запам’ятати мене
+                                            </span>
+                                        </label>
+                                    </div>
+                                    <div class="forgot-password log-tab" data-tab="restore-window">
+                                        Забули пароль?
+                                    </div>
+                                </div>
+                                <button disabled class="bluebtn">Увійти</button>
+                            </form>
+                        </div>
+
+                        <div class="registration-window log-box">
+                            <form>
+                                <div class="inputfield">
+                                    <label>
+                                        <span>
+                                            Логін
+                                        </span>
+                                        <input class="commoninput" type="text" placeholder="Наприклад, Oleksandrа">
+                                    </label>
+                                    <p class="text-hint">
+                                        *Логін має містити латинські букви
+                                    </p>
+                                </div>
+                                <div class="inputfield">
+                                    <label>
+                                        <span>
+                                            Електрона пошта
+                                        </span>
+                                        <input class="commoninput" type="text" placeholder="email@gmal.com">
+                                    </label>
+                                    <div class="addinput-btn">
+                                        <img src="img/svg_icons/plus_circle_grey.svg" alt="plus">
+                                        <p>Додати адрес ел. пошти</p>
+                                    </div>
+                                </div>
+                                <div class="inputfield">
+                                    <label class="phonemask">
+                                        <span>
+                                            Телефон
+                                        </span>
+                                        <input class="commoninput numberonly" type="text" placeholder="+380">
+                                    </label>
+                                    <div class="addinput-btn">
+                                        <img src="img/svg_icons/plus_circle_grey.svg" alt="plus">
+                                        <p>Додати телефон</p>
+                                    </div>
+                                </div>
+                                <div class="inputfield password">
+                                    <label>
+                                        <span>
+                                            Пароль
+                                        </span>
+                                        <input class="commoninput" type="text" placeholder="Наприклад, password78">
+                                        <i class="showpass"></i>
+                                    </label>
+                                    <p class="text-hint">
+                                        *Пароль має містити латинські літери, щонайменш 8 символів з яких прийнаймні 2
+                                        цифри
+                                    </p>
+                                </div>
+                                <button disabled class="bluebtn">Зареєструватись</button>
+                            </form>
+                        </div>
+
+                        <div class="restore-window log-box">
+                            <h3>
+                                Відновлення паролю
+                            </h3>
+                            <p>
+                                Напишіть свою електронну адресу, і ми надішлемо Вам кроки для його відновлення.
+                            </p>
+                            <form>
+                                <div class="inputfield">
+                                    <label>
+                                        <span>
+                                            Електрона пошта
+                                        </span>
+                                        <input class="commoninput" type="text" placeholder="email@gmal.com">
+                                    </label>
+                                </div>
+                                <button disabled class="bluebtn popup__btn" data-popup="restore-pass__popup">Отримати
+                                    новий пароль</button>
+                            </form>
+                            <div class="restore-tabs">
+                                <p class="log-tab" data-tab="registration-window">
+                                    Зареєструватись
+                                </p>
+                                <p class="log-tab active" data-tab="login-window">
+                                    Ввійти
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+
+            <div class="popup__window restore-pass__popup">
+                <div class="popup__wrapper">
+                    <img src="img/svg_icons/restore_pass_img.svg" alt="img">
+                    <h2>
+                        Перевірте свою поштову скриньку
+                    </h2>
+                    <p>
+                        Ми відправили Вам на пошту інструкції по зміні паролю на <br>вказану Вами електронну адресу.
+                    </p>
+                    <div class="restore-tabs">
+                        <p class="log-tab popup__close" data-tab="registration-window">
+                            Зареєструватись
+                        </p>
+                        <p class="log-tab active popup__close" data-tab="login-window">
+                            Ввійти
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="js/lib/jquery.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="js/lib/jquery.formstyler.min.js"></script>
+    <script src="js/lib/swiper-bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
