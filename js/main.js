@@ -361,6 +361,104 @@ $(document).ready(function () {
     });
 
 
+    // estate card slider -------------------------------------- //
+    var swiper = new Swiper(".estcard__slider", {
+        slidesPerView: "auto",
+        spaceBetween: 10,
+        loop: true,
+        pagination: {
+            el: ".swiper-pagination",
+            type: "fraction",
+        },
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+        keyboard: true,
+    });
+
+    // estate page slider -------------------------------------- //
+    var swiper = new Swiper(".estpage__slider", {
+        spaceBetween: 10,
+        loop: true,
+        pagination: {
+            el: ".swiper-pagination",
+            type: "fraction",
+        },
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+        keyboard: true,
+    });
+
+    //  gallery ----------- //
+    $('.swiper a').on('click', function () {
+        var classGallery = $(this).attr('data-fancybox');
+        Fancybox.bind(`[data-fancybox="${classGallery}"]`, {
+          
+            Thumbs: {
+                type: "classic",
+            },
+            buttons: true,
+        });
+    });
+
+// estate page card buttons
+    $('.estcard__buttons a').on('click', function () {
+        $(this).toggleClass('active');
+    });
+
+
+
+
+
+    // more/less text
+    $('.more-btn').on('click', function () {
+        $(this).toggleClass('active');
+        $(this).closest('.estcard__box').find('.estcard__box-moretext').slideToggle('active');
+        // var boxContent = $(this).closest('.estcard__box').find('.estcard__box-content');
+        // var maxHeight = boxContent.css('max-height');
+        // if (maxHeight === '200px') {
+        //     boxContent.animate({ 'max-height': '100%' }, 500);
+        // } else {
+        //     boxContent.animate({ 'max-height': '200px' }, 500);
+        // }
+    });
+
+
+    // estpage header buttons
+    $('.estheader__info-btn').on('click', function () {
+        $(this).toggleClass('active');
+    });
+
+    // estpage slider buttons
+    $('.estpage__slider-btns a').on('click', function (e) {
+        e.preventDefault();
+        $(this).toggleClass('active');
+    });
+
+
+    // estpage open objects
+    $('.estheader__info-btn.like').on('click', function () {
+        $('.objcard.deleted').removeClass('active');
+        $('.estheader__info-btn.delete').removeClass('active');
+        $('.objcard.saved').toggleClass('active');
+    });
+
+    $('.estheader__info-btn.delete').on('click', function () {
+        $('.estheader__info-btn.like').removeClass('active');
+        $('.objcard.saved').removeClass('active');
+        $('.objcard.deleted').toggleClass('active');
+    });
+
+
+
+
+
+
+
+
 
     // ------------------------  LEADS TAB ------------------------------------- //
     //  table__row active
@@ -681,7 +779,7 @@ $(document).ready(function () {
 
     // open/hide map ------
     $('.map_btn').on('click', function (e) {
-        e.preventDefault;
+        e.preventDefault();
         $('.info-specifications__map').slideToggle();
     });
 
@@ -1052,7 +1150,7 @@ $(document).ready(function () {
         $('.login__head-tabs').show();
         if ($(this).attr('data-tab') == 'login-window') {
             $('.login__head-tabs').find('[data-tab="login-window"]').addClass('active');
-        } else  {
+        } else {
             $('.login__head-tabs').find('[data-tab="registration-window"]').addClass('active');
         }
     });

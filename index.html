@@ -11,6 +11,8 @@
    <link rel="stylesheet" href="css/lib/jquery.formstyler.css">
    <link rel="stylesheet" href="css/lib/jquery.formstyler.theme.css">
    <link rel="stylesheet" href="css/lib/swiper-bundle.min.css">
+   <!-- <link rel="stylesheet" href="css/lib/fancybox.css"> -->
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css">
    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
    <link rel="stylesheet" href="css/style.css">
@@ -1035,7 +1037,6 @@
                         </div>
 
                         <div class="row">
-
                            <div class="col-lg-6 col-md-12 col-6">
                               <div class="estate__inner-item">
                                  <span class="time">9 годин тому</span>
@@ -1112,7 +1113,6 @@
                                  </a>
                               </div>
                            </div>
-
                            <div class="col-lg-6 col-md-12 col-6">
                               <div class="estate__inner-item">
                                  <span class="time">9 годин тому</span>
@@ -1152,7 +1152,7 @@
                                        <div class="swiper-pagination"></div>
                                     </div>
                                  </div>
-                                 <a href="#" class="estate__item-content">
+                                 <a href="#" class="estate__item-content open-estcard">
                                     <div class="estate__item-top">
                                        <p>
                                           Продаж
@@ -1189,7 +1189,6 @@
                                  </a>
                               </div>
                            </div>
-
                            <div class="col-lg-6 col-md-12 col-6">
                               <div class="estate__inner-item">
                                  <span class="time">9 годин тому</span>
@@ -1229,7 +1228,7 @@
                                        <div class="swiper-pagination"></div>
                                     </div>
                                  </div>
-                                 <a href="#" class="estate__item-content">
+                                 <a href="#" class="estate__item-content open-estcard">
                                     <div class="estate__item-top">
                                        <p>
                                           Продаж
@@ -1266,7 +1265,6 @@
                                  </a>
                               </div>
                            </div>
-
                            <div class="col-lg-6 col-md-12 col-6">
                               <div class="estate__inner-item">
                                  <span class="time">9 годин тому</span>
@@ -1306,7 +1304,7 @@
                                        <div class="swiper-pagination"></div>
                                     </div>
                                  </div>
-                                 <a href="#" class="estate__item-content">
+                                 <a href="#" class="estate__item-content open-estcard">
                                     <div class="estate__item-top">
                                        <p>
                                           Продаж
@@ -1343,7 +1341,6 @@
                                  </a>
                               </div>
                            </div>
-
                            <div class="col-lg-6 col-md-12 col-6">
                               <div class="estate__inner-item">
                                  <span class="time">9 годин тому</span>
@@ -1383,7 +1380,7 @@
                                        <div class="swiper-pagination"></div>
                                     </div>
                                  </div>
-                                 <a href="#" class="estate__item-content">
+                                 <a href="#" class="estate__item-content open-estcard">
                                     <div class="estate__item-top">
                                        <p>
                                           Продаж
@@ -1420,7 +1417,6 @@
                                  </a>
                               </div>
                            </div>
-
                            <div class="col-lg-6 col-md-12 col-6">
                               <div class="estate__inner-item">
                                  <span class="time">9 годин тому</span>
@@ -1460,7 +1456,7 @@
                                        <div class="swiper-pagination"></div>
                                     </div>
                                  </div>
-                                 <a href="#" class="estate__item-content">
+                                 <a href="#" class="estate__item-content open-estcard">
                                     <div class="estate__item-top">
                                        <p>
                                           Продаж
@@ -1528,6 +1524,49 @@
                            <div class="row">
                               <div class="col-9">
                                  <div class="estcard__content">
+
+                                    <div class="swiper estcard__slider">
+                                       <a href="img/estcard_img1.jpg" data-fancybox="gallery-1" class="full-view">
+                                          <img src="img/svg_icons/full-view.svg" alt="icon">
+                                       </a>
+                                       <a data-type="iframe" data-fancybox="gallery-1" data-src="https://youtu.be/aN9DH_GxqEo" href="" class="video-view">
+                                          Відео
+                                       </a>
+                                       <div class="swiper-wrapper">
+                                          <div class="swiper-slide">
+                                             <div class="estcard__slider-item">
+                                                <a href="img/estcard_img1.jpg" data-fancybox="gallery-1">
+                                                   <img src="img/estcard_img1.jpg" alt="image">
+                                                </a>
+                                             </div>
+                                          </div>
+                                          <div class="swiper-slide">
+                                             <div class="estcard__slider-item">
+                                                <a href="img/estcard_img2.jpg" data-fancybox="gallery-1">
+                                                   <img src="img/estcard_img2.jpg" alt="image">
+                                                </a>
+                                             </div>
+                                          </div>
+                                          <div class="swiper-slide">
+                                             <div class="estcard__slider-item">
+                                                <a data-type="iframe" data-fancybox="gallery-1" data-src="https://youtu.be/aN9DH_GxqEo" href="">
+                                                   <img src="img/estate_video.png" alt="image"> 
+                                                </a>
+                                             </div>
+                                          </div>
+                                          <div class="swiper-slide">
+                                             <div class="estcard__slider-item">
+                                                <a href="img/estcard_img3.jpg" data-fancybox="gallery-1">
+                                                   <img src="img/estcard_img3.jpg" alt="image">
+                                                </a>
+                                             </div>
+                                          </div>
+                                       </div>
+                                       <div class="swiper-button-next"></div>
+                                       <div class="swiper-button-prev"></div>
+                                       <div class="swiper-pagination"></div>
+                                    </div>
+
                                     <div class="estcard__box">
 
                                        <div class="estcard__box-head">
@@ -1594,6 +1633,12 @@
                                                    Потенційна окупність 7 років
                                                 </p>
                                              </li>
+                                             <li>
+                                                <img src="img/svg_icons/estcard_box_info_icon5.svg" alt="icon">
+                                                <p>
+                                                   Підписаний договір оренди до 20 вересня 2023
+                                                </p>
+                                             </li>
                                           </ul>
                                        </div>
 
@@ -1603,37 +1648,144 @@
                                        <h3>
                                           Опис
                                        </h3>
-                                       <p>
-                                          Ця торгівельна нерухомість знаходиться в близькості до популярного торгового
-                                          центру, що забезпечує велику кількість потенційних клієнтів.
-                                          Розміщення біля ТЦ забезпечує високий потік пішоходів, які мають значний
-                                          інтерес до покупок, що створює великий комерційний потенціал.
-                                          Присутність ТЦ поруч з торгівельною нерухомістю сприяє забезпеченню необхідної
-                                          інфраструктури, такої як парковки, транспортні зв'язки та інші зручності, які
-                                          полегшують доступ клієнтів.
-                                       </p>
-                                       <p>
-                                          Власність неподалік від ТЦ дозволяє використовувати його як магніт для
-                                          привернення покупців, оскільки клієнти, які відвідують ТЦ, будуть приваблені
-                                          іншими можливостями покупок в цьому районі.
-                                       </p>
-                                       <p>
-                                          Привабливий бізнес-середовище навколо ТЦ створює конкурентну перевагу для
-                                          власного бізнесу, оскільки існують великі можливості для співпраці, обміну
-                                          клієнтами та спільного маркетингу.
-                                          Наявність потоку клієнтів, які відвідують ТЦ, сприяє розповсюдженню реклами і
-                                          популяризації власного бізнесу.
-                                          Бізнес, розташований поруч з ТЦ, може використовувати його як додатковий
-                                          ресурс для реклами та просування продуктів або послуг.
-                                       </p>
+                                       <div class="estcard__box-content">
+                                          <p>
+                                             Ця торгівельна нерухомість знаходиться в близькості до популярного
+                                             торгового
+                                             центру, що забезпечує велику кількість потенційних клієнтів.
+                                             Розміщення біля ТЦ забезпечує високий потік пішоходів, які мають значний
+                                             інтерес до покупок, що створює великий комерційний потенціал.
+                                             Присутність ТЦ поруч з торгівельною нерухомістю сприяє забезпеченню
+                                             необхідної
+                                             інфраструктури, такої як парковки, транспортні зв'язки та інші зручності,
+                                             які
+                                             полегшують доступ клієнтів.
+                                          </p>
+                                          <p>
+                                             Власність неподалік від ТЦ дозволяє використовувати його як магніт для
+                                             привернення покупців, оскільки клієнти, які відвідують ТЦ, будуть
+                                             приваблені
+                                             іншими можливостями покупок в цьому районі.
+                                          </p>
+                                          <p>
+                                             Привабливий бізнес-середовище навколо ТЦ створює конкурентну перевагу для
+                                             власного бізнесу, оскільки існують великі можливості для співпраці, обміну
+                                             клієнтами та спільного маркетингу.
+                                             Наявність потоку клієнтів, які відвідують ТЦ, сприяє розповсюдженню реклами
+                                             і
+                                             популяризації власного бізнесу.
+                                             Бізнес, розташований поруч з ТЦ, може використовувати його як додатковий
+                                             ресурс для реклами та просування продуктів або послуг.
+                                          </p>
+                                          <div class="estcard__box-moretext">
+                                             <p>
+                                                Власність неподалік від ТЦ дозволяє використовувати його як магніт для
+                                                привернення покупців, оскільки клієнти, які відвідують ТЦ, будуть
+                                                приваблені
+                                                іншими можливостями покупок в цьому районі.
+                                             </p>
+                                             <p>
+                                                Привабливий бізнес-середовище навколо ТЦ створює конкурентну перевагу
+                                                для
+                                                власного бізнесу, оскільки існують великі можливості для співпраці,
+                                                обміну
+                                                клієнтами та спільного маркетингу.
+                                                Наявність потоку клієнтів, які відвідують ТЦ, сприяє розповсюдженню
+                                                реклами
+                                                і
+                                                популяризації власного бізнесу.
+                                                Бізнес, розташований поруч з ТЦ, може використовувати його як додатковий
+                                                ресурс для реклами та просування продуктів або послуг.
+                                             </p>
+                                          </div>
+                                       </div>
+
+                                       <div class="more-btn">
+                                          <img src="img/svg_icons/arrow_down_blue.svg" alt="icon">
+                                          <span class="more">Розгорнути</span>
+                                          <span class="less">Згорнути</span>
+                                       </div>
                                     </div>
 
+                                    <div class="estcard__box">
+                                       <h3>
+                                          Примітка для колег
+                                       </h3>
+                                       <div class="estcard__box-content">
+                                          <p>
+                                             Увага, колеги! При описі магазину для потенційних покупців, не забувайте згадати про можливі недоліки, але зверніть увагу на позитивні підказки та особливості, які можуть збільшити його привабливість. Підкресліть зручне розташування, доступність парковки, а також потенційні можливості для розширення або модернізації приміщення.
+                                          </p>
+
+                                          <div class="estcard__box-moretext">
+                                             <p>
+                                                Власність неподалік від ТЦ дозволяє використовувати його як магніт для
+                                                привернення покупців, оскільки клієнти, які відвідують ТЦ, будуть
+                                                приваблені
+                                                іншими можливостями покупок в цьому районі.
+                                             </p>
+                                             <p>
+                                                Привабливий бізнес-середовище навколо ТЦ створює конкурентну перевагу
+                                                для
+                                                власного бізнесу, оскільки існують великі можливості для співпраці,
+                                                обміну
+                                                клієнтами та спільного маркетингу.
+                                                Наявність потоку клієнтів, які відвідують ТЦ, сприяє розповсюдженню
+                                                реклами
+                                                і
+                                                популяризації власного бізнесу.
+                                                Бізнес, розташований поруч з ТЦ, може використовувати його як додатковий
+                                                ресурс для реклами та просування продуктів або послуг.
+                                             </p>
+                                          </div>
+                                       </div>
+
+                                       <div class="more-btn">
+                                          <img src="img/svg_icons/arrow_down_blue.svg" alt="icon">
+                                          <span class="more">Розгорнути</span>
+                                          <span class="less">Згорнути</span>
+                                       </div>
+                                    </div>
+
+                                    <div class="estcard__box">
+                                       <h3>
+                                          Параметри об’єкту
+                                       </h3>
+                                       <div class="estcard__box-parametres">
+                                          <ul>
+                                             <li>
+                                                3-й поверх
+                                             </li>
+                                             <li>
+                                                Потужність мережі 38 кВт
+                                             </li>
+                                             <li>
+                                                Окрема витяжка на дах
+                                             </li>
+                                             <li>
+                                                Висота стелі 5 м
+                                             </li>
+                                             <li>
+                                                Індивідуальне опалення
+                                             </li>
+                                             <li>
+                                                2 вхідні групи
+                                             </li>
+                                             <li>
+                                                Наявний санвузол
+                                             </li>
+                                          </ul>
+                                       </div>
+                                    </div>
                                     <div class="estcard__box">
                                        <h3>
                                           Розташування
                                        </h3>
                                        <div class="map">
                                           <img src="img/map_estate_card.png" alt="map">
+                                          <a target="_blank" class="street-view" href="https://goo.gl/maps/iPt2d53NjNjL1TCP6">
+                                             <img src="img/map_view.png" alt="map">
+                                             <span>Street View</span>
+                                          </a>
                                        </div>
                                     </div>
                                  </div>
@@ -1641,11 +1793,20 @@
                               <div class="col-3">
                                  <div class="estcard__planbox">
                                     <a href="#">
+                                       <span class="frame">
+                                          <img src="img/svg_icons/full-view.svg" alt="img">
+                                          Планування
+                                      </span>
                                        <img src="img/plan.png" alt="plan">
                                     </a>
                                  </div>
                                  <div class="estcard__mapbox">
-                                    <a href="#">
+                                    <a target="_blank" class="street-view" href="https://goo.gl/maps/iPt2d53NjNjL1TCP6">
+                                       <img src="img/map_view.png" alt="map">
+                                       <span>Street View</span>
+                                    </a>
+                                    <a target="_blank" href="https://goo.gl/maps/8pTB9p8zkkSq9FuL9">
+                                       <img src="img/svg_icons/full-view.svg" alt="img" class="full-view">
                                        <img src="img/map_box.png" alt="map">
                                     </a>
                                  </div>
@@ -34215,6 +34376,8 @@
    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
    <script src="js/lib/jquery.formstyler.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+   <!-- <script src="js/lib/fancybox.umd.js"></script> -->
    <script src="js/lib/swiper-bundle.min.js"></script>
    <script src="js/main.js"></script>
 </body>

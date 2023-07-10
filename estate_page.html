@@ -1,0 +1,1542 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retail Vision</title>
+    <link rel="icon" type="image/x-icon" href="img/favicon.png">
+    <link rel="stylesheet" href="css/lib/bootstrap.min.css">
+    <link rel="stylesheet" href="css/lib/jquery.formstyler.css">
+    <link rel="stylesheet" href="css/lib/jquery.formstyler.theme.css">
+    <link rel="stylesheet" href="css/lib/swiper-bundle.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="pagewrapper">
+        <header class="estheader">
+            <div class="customcontainer">
+                <div class="row justify-content-between">
+                    <div class="col-4 d-flex align-items-center">
+                        <div class="estheader__logo">
+                            <a href="estate_page.html">
+                                <img src="img/svg_icons/login_logotype.svg" alt="logotype">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-8">
+                        <div class="estheader__info">
+                            <div class="estheader__info-btn list">
+                                <span>
+                                    7
+                                </span>
+                                <img class="static" src="img/svg_icons/estpage_list_icon.svg" alt="icon">
+                                <img class="active" src="img/svg_icons/estpage_list_icon_active.svg" alt="icon">
+                            </div>
+                            <div class="estheader__info-btn like">
+                                <span>
+                                    4
+                                </span>
+                                <img class="static" src="img/svg_icons/estpage_like_icon.svg" alt="icon">
+                                <img class="active" src="img/svg_icons/estpage_like_icon_active.svg" alt="icon">
+                            </div>
+                            <div class="estheader__info-btn delete">
+                                <img class="static" src="img/svg_icons/estpage_delete_icon.svg" alt="icon">
+                                <img class="active" src="img/svg_icons/estpage_delete_icon_active.svg" alt="icon">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main class="main">
+
+            <section class="estpage">
+                <div class="customcontainer">
+                    <div class="estpage__top">
+                        <div class="row">
+                            <div class="col-7">
+                                <div class="estpage__top-left">
+                                    <h2>
+                                        Ми підібрали для<br>Вас 7 об’єктів
+                                    </h2>
+                                </div>
+                            </div>
+                            <div class="col-5 d-flex flex-column justify-content-between">
+                                <div class="estpage__top-right">
+                                    <h3>
+                                        Пoдобається об’єкт?
+                                    </h3>
+                                    <div class="estpage__top-descr">
+                                        <img src="img/svg_icons/estpage_liked_obj.svg" alt="icon">
+                                        <h5>
+                                            Тисніть вподобайку
+                                        </h5>
+                                        <p>
+                                            так ми зрозуміємо, що Вам подобається об’єкт і ми зможемо підібрати
+                                            найкращий варіант для Вас.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="estpage__top-right">
+                                    <h3>
+                                        Не пoдобається об’єкт?
+                                    </h3>
+                                    <div class="estpage__top-descr">
+                                        <img src="img/svg_icons/estpage_disliked_obj.svg" alt="icon">
+                                        <h5>
+                                            Додавайте в смітник
+                                        </h5>
+                                        <p>
+                                            так ми зрозуміємо, що Вам не підходить цей об’єкт і ми зосередимось на тому,
+                                            що сподобалось.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="estpage__inner">
+                        <div class="estpage__row">
+                            <div class="row">
+                                <div class="col-4">
+                                    <div class="swiper estpage__slider">
+                                        <div class="estpage__slider-btns">
+                                            <a href="#" class="like">
+                                                <img class="static" src="img/svg_icons/estpage_like_icon_white.svg"
+                                                    alt="like">
+                                                <img class="active"
+                                                    src="img/svg_icons/estpage_like_icon_white_active.svg" alt="like">
+                                            </a>
+                                            <a href="#" class="delete">
+                                                <img class="static" src="img/svg_icons/estpage_delete_icon_white.svg"
+                                                    alt="delete">
+                                                <img class="active"
+                                                    src="img/svg_icons/estpage_delete_icon_white_active.svg"
+                                                    alt="delete">
+                                            </a>
+                                        </div>
+                                        <div class="estpage__slider-widget">
+                                            <p>
+                                                Продаж
+                                            </p>
+                                            <p>
+                                                <img src="img/svg_icons/estpage_shield_check_icon.svg" alt="icon">
+                                                Перевірено нашими юристами
+                                            </p>
+                                        </div>
+                                        <div class="swiper-wrapper">
+                                            <div class="swiper-slide">
+                                                <div class="estpage__slider-item">
+                                                    <a href="img/estpage_slider_img.png"
+                                                        data-fancybox="gallery-estpage">
+                                                        <img src="img/estpage_slider_img.png" alt="image">
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <div class="estpage__slider-item">
+                                                    <a href="img/estcard_img1.jpg" data-fancybox="gallery-estpage">
+                                                        <img src="img/estcard_img1.jpg" alt="image">
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <div class="estpage__slider-item">
+                                                    <a href="img/estcard_img2.jpg" data-fancybox="gallery-estpage">
+                                                        <img src="img/estcard_img2.jpg" alt="image">
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-button-next"></div>
+                                        <div class="swiper-button-prev"></div>
+                                        <div class="swiper-pagination"></div>
+                                    </div>
+                                </div>
+                                <div class="col-8">
+                                    <div class="estpage__row-right">
+                                        <div class="estpage__row-col">
+                                            <div class="estpage__row-box">
+                                                <a href="#">
+                                                    <span class="frame">
+                                                        <img src="img/svg_icons/full-view.svg" alt="img">
+                                                        Планування
+                                                    </span>
+                                                    <img src="img/plan.png" alt="plan">
+                                                </a>
+                                            </div>
+                                            <div class="estpage__row-box">
+                                                <a target="_blank" href="https://goo.gl/maps/V7x35nj3LBHLaQZc6"
+                                                    class="estpage__mapwiew">
+                                                    <img src="img/map_view.png" alt="">
+                                                    <span>Street View</span>
+                                                </a>
+                                                <a href="#">
+                                                    <img src="img/svg_icons/full-view.svg" alt="img" class="full-view">
+                                                    <img src="img/map_box.png" alt="icon">
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="estpage__row-descr open-estcard">
+                                            <div class="estpage__row-head">
+                                                <b>
+                                                    $80 000 000
+                                                </b>
+                                                <p>
+                                                    $67 000 за м2
+                                                </p>
+                                                <span>
+                                                    Створено 20 червня 2023
+                                                </span>
+                                            </div>
+                                            <div class="estpage__row-title">
+                                                <h3>
+                                                    Торгівельна нерухомість під власний бізнес
+                                                </h3>
+                                                <p>
+                                                    вул. Сагайдачного 37, Дніпровський р-н, м. Київ
+                                                </p>
+                                            </div>
+                                            <div class="estpage__row-info">
+                                                <ul>
+                                                    <li>
+                                                        <img src="img/svg_icons/estcard_box_info_icon1.svg" alt="icon">
+                                                        <p>
+                                                            Площа1 320 м<sup>2</sup>
+                                                        </p>
+                                                        <p>
+                                                            Площа ділянки 300 сот.
+                                                        </p>
+                                                    </li>
+                                                    <li>
+                                                        <img src="img/svg_icons/estcard_box_info_icon4.svg" alt="icon">
+                                                        <p>
+                                                            Поточна окупність 8 років
+                                                        </p>
+                                                        <p>
+                                                            Потенційна окупність 7 років
+                                                        </p>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="estpage__row-content">
+                                                <p>
+                                                    Ця торгівельна нерухомість знаходиться в близькості до популярного
+                                                    торгового центру, що забезпечує велику кількість потенційних
+                                                    клієнтів.
+                                                    Розміщення біля ТЦ забезпечує високий потік пішоходів, які мають
+                                                    значний інтерес до покупок, що створює великий комерційний
+                                                    потенціал.
+                                                    Ця торгівельна нерухомість знаходиться в близькості до популярного
+                                                    торгового центру, що забезпечує велику кількість потенційних
+                                                    клієнтів.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="estpage__row">
+                            <div class="row">
+                                <div class="col-4">
+                                    <div class="swiper estpage__slider">
+                                        <div class="estpage__slider-btns">
+                                            <a href="#" class="like">
+                                                <img class="static" src="img/svg_icons/estpage_like_icon_white.svg"
+                                                    alt="like">
+                                                <img class="active"
+                                                    src="img/svg_icons/estpage_like_icon_white_active.svg" alt="like">
+                                            </a>
+                                            <a href="#" class="delete">
+                                                <img class="static" src="img/svg_icons/estpage_delete_icon_white.svg"
+                                                    alt="delete">
+                                                <img class="active"
+                                                    src="img/svg_icons/estpage_delete_icon_white_active.svg"
+                                                    alt="delete">
+                                            </a>
+                                        </div>
+                                        <div class="estpage__slider-widget">
+                                            <p>
+                                                Продаж
+                                            </p>
+                                            <p>
+                                                <img src="img/svg_icons/estpage_shield_check_icon.svg" alt="icon">
+                                                Перевірено нашими юристами
+                                            </p>
+                                        </div>
+                                        <div class="swiper-wrapper">
+                                            <div class="swiper-slide">
+                                                <div class="estpage__slider-item">
+                                                    <a href="img/estpage_slider_img.png"
+                                                        data-fancybox="gallery-estpage">
+                                                        <img src="img/estpage_slider_img.png" alt="image">
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <div class="estpage__slider-item">
+                                                    <a href="img/estcard_img1.jpg" data-fancybox="gallery-estpage">
+                                                        <img src="img/estcard_img1.jpg" alt="image">
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <div class="estpage__slider-item">
+                                                    <a href="img/estcard_img2.jpg" data-fancybox="gallery-estpage">
+                                                        <img src="img/estcard_img2.jpg" alt="image">
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-button-next"></div>
+                                        <div class="swiper-button-prev"></div>
+                                        <div class="swiper-pagination"></div>
+                                    </div>
+                                </div>
+                                <div class="col-8">
+                                    <div class="estpage__row-right">
+                                        <div class="estpage__row-col">
+                                            <div class="estpage__row-box">
+                                                <a href="#">
+                                                    <span class="frame">
+                                                        <img src="img/svg_icons/full-view.svg" alt="img">
+                                                        Планування
+                                                    </span>
+                                                    <img src="img/plan.png" alt="plan">
+                                                </a>
+                                            </div>
+                                            <div class="estpage__row-box">
+                                                <a target="_blank" href="https://goo.gl/maps/V7x35nj3LBHLaQZc6"
+                                                    class="estpage__mapwiew">
+                                                    <img src="img/map_view.png" alt="">
+                                                    <span>Street View</span>
+                                                </a>
+                                                <a href="#">
+                                                    <img src="img/svg_icons/full-view.svg" alt="img" class="full-view">
+                                                    <img src="img/map_box.png" alt="icon">
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="estpage__row-descr open-estcard">
+                                            <div class="estpage__row-head">
+                                                <b>
+                                                    $80 000 000
+                                                </b>
+                                                <p>
+                                                    $67 000 за м2
+                                                </p>
+                                                <span>
+                                                    Створено 20 червня 2023
+                                                </span>
+                                            </div>
+                                            <div class="estpage__row-title">
+                                                <h3>
+                                                    Торгівельна нерухомість під власний бізнес
+                                                </h3>
+                                                <p>
+                                                    вул. Сагайдачного 37, Дніпровський р-н, м. Київ
+                                                </p>
+                                            </div>
+                                            <div class="estpage__row-info">
+                                                <ul>
+                                                    <li>
+                                                        <img src="img/svg_icons/estcard_box_info_icon1.svg" alt="icon">
+                                                        <p>
+                                                            Площа1 320 м<sup>2</sup>
+                                                        </p>
+                                                        <p>
+                                                            Площа ділянки 300 сот.
+                                                        </p>
+                                                    </li>
+                                                    <li>
+                                                        <img src="img/svg_icons/estcard_box_info_icon4.svg" alt="icon">
+                                                        <p>
+                                                            Поточна окупність 8 років
+                                                        </p>
+                                                        <p>
+                                                            Потенційна окупність 7 років
+                                                        </p>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="estpage__row-content">
+                                                <p>
+                                                    Ця торгівельна нерухомість знаходиться в близькості до популярного
+                                                    торгового центру, що забезпечує велику кількість потенційних
+                                                    клієнтів.
+                                                    Розміщення біля ТЦ забезпечує високий потік пішоходів, які мають
+                                                    значний інтерес до покупок, що створює великий комерційний
+                                                    потенціал.
+                                                    Ця торгівельна нерухомість знаходиться в близькості до популярного
+                                                    торгового центру, що забезпечує велику кількість потенційних
+                                                    клієнтів.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="estcard pagecard">
+                    <div class="customcontainer">
+                        <div class="estcard__head">
+                            <div class="estcard__head-back close-estcard">
+                                <img src="img/svg_icons/arrow_back.svg" alt="back">
+                            </div>
+                            <div class="estcard__head-left">
+                                <p>
+                                    Продаж
+                                </p>
+                                <span class="dot"></span>
+                                <div class="estate__card-headcheck">
+                                    <img src="img/svg_icons/check_shield_icon.svg" alt="icon">
+                                    Перевірено нашими юристами
+                                </div>
+                            </div>
+                            <div class="estcard__head-right">
+                                <p>
+                                    Створено 20 червня 2023
+                                </p>
+                                <span class="dot"></span>
+                                <p>
+                                    ID 23175538
+                                </p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-9">
+                                <div class="estcard__content">
+
+                                    <div class="swiper estcard__slider">
+                                        <div class="swiper-wrapper">
+                                            <div class="swiper-slide">
+                                                <div class="estcard__slider-item">
+                                                    <a href="img/estcard_img1.jpg" data-fancybox="gallery-estate">
+                                                        <img src="img/estcard_img1.jpg" alt="image">
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <div class="estcard__slider-item">
+                                                    <a href="img/estcard_img2.jpg" data-fancybox="gallery-estate">
+                                                        <img src="img/estcard_img2.jpg" alt="image">
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <div class="estcard__slider-item">
+                                                    <a href="img/estcard_img3.jpg" data-fancybox="gallery-estate">
+                                                        <img src="img/estcard_img3.jpg" alt="image">
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <div class="estcard__slider-item">
+                                                    <a href="img/estcard_img2.jpg" data-fancybox="gallery-estate">
+                                                        <img src="img/estcard_img2.jpg" alt="image">
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-button-next"></div>
+                                        <div class="swiper-button-prev"></div>
+                                        <div class="swiper-pagination"></div>
+                                    </div>
+
+                                    <div class="estcard__box">
+
+                                        <div class="estcard__box-head">
+                                            <h2>
+                                                Торгівельна нерухомість під власний бізнес
+                                            </h2>
+                                            <span>
+                                                м. Київ, Дніпровський р-н, вул. Сагайдачного 37
+                                            </span>
+                                            <div class="estcard__box-row">
+                                                <b>
+                                                    $80 000 000
+                                                </b>
+                                                <p>
+                                                    3 200 000 000 грн
+                                                </p>
+                                                <p>
+                                                    $67 000 за м2
+                                                </p>
+                                                <a class="bluebtn" href="#" download>
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                        viewBox="0 0 16 16" fill="none">
+                                                        <path
+                                                            d="M4 14H12M8 2V11.3333M8 11.3333L11.3333 8M8 11.3333L4.66667 8"
+                                                            stroke="#FBFBFB" stroke-width="1.5" stroke-linecap="round"
+                                                            stroke-linejoin="round" />
+                                                    </svg>
+                                                    Завантажити презентацію
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="estcard__box-info">
+                                            <ul>
+                                                <li>
+                                                    <img src="img/svg_icons/estcard_box_info_icon1.svg" alt="icon">
+                                                    <p>
+                                                        Площа1 320 м<sup>2</sup>
+                                                    </p>
+                                                    <p>
+                                                        Площа ділянки 300 сот.
+                                                    </p>
+                                                </li>
+                                                <li>
+                                                    <img src="img/svg_icons/estcard_box_info_icon2.svg" alt="icon">
+                                                    <p>
+                                                        З орендарем
+                                                    </p>
+                                                    <p>
+                                                        Зданий до 20 вересня 2023
+                                                    </p>
+                                                </li>
+                                                <li>
+                                                    <img src="img/svg_icons/estcard_box_info_icon3.svg" alt="icon">
+                                                    <p>
+                                                        Дохід з орендаря $20 000
+                                                    </p>
+                                                </li>
+                                                <li>
+                                                    <img src="img/svg_icons/estcard_box_info_icon4.svg" alt="icon">
+                                                    <p>
+                                                        Поточна окупність 8 років
+                                                    </p>
+                                                    <p>
+                                                        Потенційна окупність 7 років
+                                                    </p>
+                                                </li>
+                                            </ul>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="estcard__box">
+                                        <h3>
+                                            Опис
+                                        </h3>
+                                        <div class="estcard__box-content">
+                                            <p>
+                                                Ця торгівельна нерухомість знаходиться в близькості до популярного
+                                                торгового
+                                                центру, що забезпечує велику кількість потенційних клієнтів.
+                                                Розміщення біля ТЦ забезпечує високий потік пішоходів, які мають значний
+                                                інтерес до покупок, що створює великий комерційний потенціал.
+                                                Присутність ТЦ поруч з торгівельною нерухомістю сприяє забезпеченню
+                                                необхідної
+                                                інфраструктури, такої як парковки, транспортні зв'язки та інші
+                                                зручності,
+                                                які
+                                                полегшують доступ клієнтів.
+                                            </p>
+                                            <p>
+                                                Власність неподалік від ТЦ дозволяє використовувати його як магніт для
+                                                привернення покупців, оскільки клієнти, які відвідують ТЦ, будуть
+                                                приваблені
+                                                іншими можливостями покупок в цьому районі.
+                                            </p>
+                                            <p>
+                                                Привабливий бізнес-середовище навколо ТЦ створює конкурентну перевагу
+                                                для
+                                                власного бізнесу, оскільки існують великі можливості для співпраці,
+                                                обміну
+                                                клієнтами та спільного маркетингу.
+                                                Наявність потоку клієнтів, які відвідують ТЦ, сприяє розповсюдженню
+                                                реклами
+                                                і
+                                                популяризації власного бізнесу.
+                                                Бізнес, розташований поруч з ТЦ, може використовувати його як додатковий
+                                                ресурс для реклами та просування продуктів або послуг.
+                                            </p>
+                                            <div class="estcard__box-moretext">
+                                                <p>
+                                                    Власність неподалік від ТЦ дозволяє використовувати його як магніт
+                                                    для
+                                                    привернення покупців, оскільки клієнти, які відвідують ТЦ, будуть
+                                                    приваблені
+                                                    іншими можливостями покупок в цьому районі.
+                                                </p>
+                                                <p>
+                                                    Привабливий бізнес-середовище навколо ТЦ створює конкурентну
+                                                    перевагу
+                                                    для
+                                                    власного бізнесу, оскільки існують великі можливості для співпраці,
+                                                    обміну
+                                                    клієнтами та спільного маркетингу.
+                                                    Наявність потоку клієнтів, які відвідують ТЦ, сприяє розповсюдженню
+                                                    реклами
+                                                    і
+                                                    популяризації власного бізнесу.
+                                                    Бізнес, розташований поруч з ТЦ, може використовувати його як
+                                                    додатковий
+                                                    ресурс для реклами та просування продуктів або послуг.
+                                                </p>
+                                            </div>
+                                        </div>
+
+                                        <div class="more-btn">
+                                            <img src="img/svg_icons/arrow_down_blue.svg" alt="icon">
+                                            <span class="more">Розгорнути</span>
+                                            <span class="less">Згорнути</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="estcard__box">
+                                        <h3>
+                                            Примітка для колег
+                                        </h3>
+                                        <div class="estcard__box-content">
+                                            <p>
+                                                Увага, колеги! При описі магазину для потенційних покупців, не забувайте
+                                                згадати про можливі недоліки, але зверніть увагу на позитивні підказки
+                                                та особливості, які можуть збільшити його привабливість. Підкресліть
+                                                зручне розташування, доступність парковки, а також потенційні можливості
+                                                для розширення або модернізації приміщення.
+                                            </p>
+
+                                            <div class="estcard__box-moretext">
+                                                <p>
+                                                    Власність неподалік від ТЦ дозволяє використовувати його як магніт
+                                                    для
+                                                    привернення покупців, оскільки клієнти, які відвідують ТЦ, будуть
+                                                    приваблені
+                                                    іншими можливостями покупок в цьому районі.
+                                                </p>
+                                                <p>
+                                                    Привабливий бізнес-середовище навколо ТЦ створює конкурентну
+                                                    перевагу
+                                                    для
+                                                    власного бізнесу, оскільки існують великі можливості для співпраці,
+                                                    обміну
+                                                    клієнтами та спільного маркетингу.
+                                                    Наявність потоку клієнтів, які відвідують ТЦ, сприяє розповсюдженню
+                                                    реклами
+                                                    і
+                                                    популяризації власного бізнесу.
+                                                    Бізнес, розташований поруч з ТЦ, може використовувати його як
+                                                    додатковий
+                                                    ресурс для реклами та просування продуктів або послуг.
+                                                </p>
+                                            </div>
+                                        </div>
+
+                                        <div class="more-btn">
+                                            <img src="img/svg_icons/arrow_down_blue.svg" alt="icon">
+                                            <span class="more">Розгорнути</span>
+                                            <span class="less">Згорнути</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="estcard__box">
+                                        <h3>
+                                            Параметри об’єкту
+                                        </h3>
+                                        <div class="estcard__box-parametres">
+                                            <ul>
+                                                <li>
+                                                    3-й поверх
+                                                </li>
+                                                <li>
+                                                    Потужність мережі 38 кВт
+                                                </li>
+                                                <li>
+                                                    Окрема витяжка на дах
+                                                </li>
+                                                <li>
+                                                    Висота стелі 5 м
+                                                </li>
+                                                <li>
+                                                    Індивідуальне опалення
+                                                </li>
+                                                <li>
+                                                    2 вхідні групи
+                                                </li>
+                                                <li>
+                                                    Наявний санвузол
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="estcard__box">
+                                        <h3>
+                                            Розташування
+                                        </h3>
+                                        <div class="map">
+                                            <img src="img/map_estate_card.png" alt="map">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <div class="estcard__planbox">
+                                    <a href="#">
+                                        <img src="img/plan.png" alt="plan">
+                                    </a>
+                                </div>
+                                <div class="estcard__mapbox">
+                                    <a href="#">
+                                        <img src="img/map_box.png" alt="map">
+                                    </a>
+                                </div>
+                                <div class="estcard__box">
+                                    <div class="estcard__user">
+                                        <div class="estcard__user-img">
+                                            <img src="img/user_broker.png" alt="broker">
+                                        </div>
+                                        <div class="estcard__user-info">
+                                            <p>
+                                                Відповідальний брокер
+                                            </p>
+                                            <h3>
+                                                Олександр Мирошніченков
+                                            </h3>
+                                        </div>
+                                    </div>
+                                    <a href="tel:+38 (067) 764 54 55" class="estcard__user-phone bluebtn">
+                                        +38 (067) 764 54 55
+                                    </a>
+                                </div>
+                                <div class="estcard__buttons">
+                                    <p>Як вам об’єкт?</p>
+                                    <div class="estcard__buttons-content">
+                                        <a href="#">
+                                            <img class="static" src="img/svg_icons/est_liked_blue.svg" alt="icon">
+                                            <img class="active" src="img/svg_icons/est_liked_blue_active.svg"
+                                                alt="icon">
+                                            В обране
+                                        </a>
+                                        <a href="#">
+                                            <img class="static" src="img/svg_icons/est_delete_blue.svg" alt="icon">
+                                            <img class="active" src="img/svg_icons/est_delete_blue_active.svg"
+                                                alt="icon">
+                                            В смітник
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="estcard-rent pagecard">
+                    <div class="customcontainer">
+                        <div class="estcard__head">
+                            <div class="estcard__head-back close-estcard">
+                                <img src="img/svg_icons/arrow_back.svg" alt="back">
+                            </div>
+                            <div class="estcard__head-left">
+                                <p>
+                                    Продаж
+                                </p>
+                                <span class="dot"></span>
+                                <div class="estate__card-headcheck">
+                                    <img src="img/svg_icons/check_shield_icon.svg" alt="icon">
+                                    Перевірено нашими юристами
+                                </div>
+                            </div>
+                            <div class="estcard__head-right">
+                                <p>
+                                    Створено 20 червня 2023
+                                </p>
+                                <span class="dot"></span>
+                                <p>
+                                    ID 23175538
+                                </p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-9">
+                                <div class="estcard__content">
+
+                                    <div class="swiper estcard__slider">
+                                        <div class="swiper-wrapper">
+                                            <div class="swiper-slide">
+                                                <div class="estcard__slider-item">
+                                                    <a href="img/estcard_img1.jpg" data-fancybox="gallery-estate">
+                                                        <img src="img/estcard_img1.jpg" alt="image">
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <div class="estcard__slider-item">
+                                                    <a href="img/estcard_img2.jpg" data-fancybox="gallery-estate">
+                                                        <img src="img/estcard_img2.jpg" alt="image">
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <div class="estcard__slider-item">
+                                                    <a href="img/estcard_img3.jpg" data-fancybox="gallery-estate">
+                                                        <img src="img/estcard_img3.jpg" alt="image">
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <div class="estcard__slider-item">
+                                                    <a href="img/estcard_img2.jpg" data-fancybox="gallery-estate">
+                                                        <img src="img/estcard_img2.jpg" alt="image">
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-button-next"></div>
+                                        <div class="swiper-button-prev"></div>
+                                        <div class="swiper-pagination"></div>
+                                    </div>
+
+                                    <div class="estcard__box">
+
+                                        <div class="estcard__box-head">
+                                            <h2>
+                                                Торгівельна нерухомість під власний бізнес
+                                            </h2>
+                                            <span>
+                                                м. Київ, Дніпровський р-н, вул. Сагайдачного 37
+                                            </span>
+                                            <div class="estcard__box-row">
+                                                <b>
+                                                    $80 000 000
+                                                </b>
+                                                <p>
+                                                    3 200 000 000 грн
+                                                </p>
+                                                <p>
+                                                    $67 000 за м2
+                                                </p>
+                                                <a class="bluebtn" href="#" download>
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                        viewBox="0 0 16 16" fill="none">
+                                                        <path
+                                                            d="M4 14H12M8 2V11.3333M8 11.3333L11.3333 8M8 11.3333L4.66667 8"
+                                                            stroke="#FBFBFB" stroke-width="1.5" stroke-linecap="round"
+                                                            stroke-linejoin="round" />
+                                                    </svg>
+                                                    Завантажити презентацію
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="estcard__box-info">
+                                            <ul>
+                                                <li>
+                                                    <img src="img/svg_icons/estcard_box_info_icon1.svg" alt="icon">
+                                                    <p>
+                                                        Площа1 320 м<sup>2</sup>
+                                                    </p>
+                                                    <p>
+                                                        Площа ділянки 300 сот.
+                                                    </p>
+                                                </li>
+                                                <li>
+                                                    <img src="img/svg_icons/estcard_box_info_icon2.svg" alt="icon">
+                                                    <p>
+                                                        З орендарем
+                                                    </p>
+                                                    <p>
+                                                        Зданий до 20 вересня 2023
+                                                    </p>
+                                                </li>
+                                                <li>
+                                                    <img src="img/svg_icons/estcard_box_info_icon3.svg" alt="icon">
+                                                    <p>
+                                                        Дохід з орендаря $20 000
+                                                    </p>
+                                                </li>
+                                                <li>
+                                                    <img src="img/svg_icons/estcard_box_info_icon4.svg" alt="icon">
+                                                    <p>
+                                                        Поточна окупність 8 років
+                                                    </p>
+                                                    <p>
+                                                        Потенційна окупність 7 років
+                                                    </p>
+                                                </li>
+                                            </ul>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="estcard__box">
+                                        <h3>
+                                            Опис
+                                        </h3>
+                                        <div class="estcard__box-content">
+                                            <p>
+                                                Ця торгівельна нерухомість знаходиться в близькості до популярного
+                                                торгового
+                                                центру, що забезпечує велику кількість потенційних клієнтів.
+                                                Розміщення біля ТЦ забезпечує високий потік пішоходів, які мають значний
+                                                інтерес до покупок, що створює великий комерційний потенціал.
+                                                Присутність ТЦ поруч з торгівельною нерухомістю сприяє забезпеченню
+                                                необхідної
+                                                інфраструктури, такої як парковки, транспортні зв'язки та інші
+                                                зручності,
+                                                які
+                                                полегшують доступ клієнтів.
+                                            </p>
+                                            <p>
+                                                Власність неподалік від ТЦ дозволяє використовувати його як магніт для
+                                                привернення покупців, оскільки клієнти, які відвідують ТЦ, будуть
+                                                приваблені
+                                                іншими можливостями покупок в цьому районі.
+                                            </p>
+                                            <p>
+                                                Привабливий бізнес-середовище навколо ТЦ створює конкурентну перевагу
+                                                для
+                                                власного бізнесу, оскільки існують великі можливості для співпраці,
+                                                обміну
+                                                клієнтами та спільного маркетингу.
+                                                Наявність потоку клієнтів, які відвідують ТЦ, сприяє розповсюдженню
+                                                реклами
+                                                і
+                                                популяризації власного бізнесу.
+                                                Бізнес, розташований поруч з ТЦ, може використовувати його як додатковий
+                                                ресурс для реклами та просування продуктів або послуг.
+                                            </p>
+                                            <div class="estcard__box-moretext">
+                                                <p>
+                                                    Власність неподалік від ТЦ дозволяє використовувати його як магніт
+                                                    для
+                                                    привернення покупців, оскільки клієнти, які відвідують ТЦ, будуть
+                                                    приваблені
+                                                    іншими можливостями покупок в цьому районі.
+                                                </p>
+                                                <p>
+                                                    Привабливий бізнес-середовище навколо ТЦ створює конкурентну
+                                                    перевагу
+                                                    для
+                                                    власного бізнесу, оскільки існують великі можливості для співпраці,
+                                                    обміну
+                                                    клієнтами та спільного маркетингу.
+                                                    Наявність потоку клієнтів, які відвідують ТЦ, сприяє розповсюдженню
+                                                    реклами
+                                                    і
+                                                    популяризації власного бізнесу.
+                                                    Бізнес, розташований поруч з ТЦ, може використовувати його як
+                                                    додатковий
+                                                    ресурс для реклами та просування продуктів або послуг.
+                                                </p>
+                                            </div>
+                                        </div>
+
+                                        <div class="more-btn">
+                                            <img src="img/svg_icons/arrow_down_blue.svg" alt="icon">
+                                            <span class="more">Розгорнути</span>
+                                            <span class="less">Згорнути</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="estcard__box">
+                                        <h3>
+                                            Примітка для колег
+                                        </h3>
+                                        <div class="estcard__box-content">
+                                            <p>
+                                                Увага, колеги! При описі магазину для потенційних покупців, не забувайте
+                                                згадати про можливі недоліки, але зверніть увагу на позитивні підказки
+                                                та особливості, які можуть збільшити його привабливість. Підкресліть
+                                                зручне розташування, доступність парковки, а також потенційні можливості
+                                                для розширення або модернізації приміщення.
+                                            </p>
+
+                                            <div class="estcard__box-moretext">
+                                                <p>
+                                                    Власність неподалік від ТЦ дозволяє використовувати його як магніт
+                                                    для
+                                                    привернення покупців, оскільки клієнти, які відвідують ТЦ, будуть
+                                                    приваблені
+                                                    іншими можливостями покупок в цьому районі.
+                                                </p>
+                                                <p>
+                                                    Привабливий бізнес-середовище навколо ТЦ створює конкурентну
+                                                    перевагу
+                                                    для
+                                                    власного бізнесу, оскільки існують великі можливості для співпраці,
+                                                    обміну
+                                                    клієнтами та спільного маркетингу.
+                                                    Наявність потоку клієнтів, які відвідують ТЦ, сприяє розповсюдженню
+                                                    реклами
+                                                    і
+                                                    популяризації власного бізнесу.
+                                                    Бізнес, розташований поруч з ТЦ, може використовувати його як
+                                                    додатковий
+                                                    ресурс для реклами та просування продуктів або послуг.
+                                                </p>
+                                            </div>
+                                        </div>
+
+                                        <div class="more-btn">
+                                            <img src="img/svg_icons/arrow_down_blue.svg" alt="icon">
+                                            <span class="more">Розгорнути</span>
+                                            <span class="less">Згорнути</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="estcard__box">
+                                        <h3>
+                                            Параметри об’єкту
+                                        </h3>
+                                        <div class="estcard__box-parametres">
+                                            <ul>
+                                                <li>
+                                                    3-й поверх
+                                                </li>
+                                                <li>
+                                                    Потужність мережі 38 кВт
+                                                </li>
+                                                <li>
+                                                    Окрема витяжка на дах
+                                                </li>
+                                                <li>
+                                                    Висота стелі 5 м
+                                                </li>
+                                                <li>
+                                                    Індивідуальне опалення
+                                                </li>
+                                                <li>
+                                                    2 вхідні групи
+                                                </li>
+                                                <li>
+                                                    Наявний санвузол
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="estcard__box">
+                                        <h3>
+                                            Розташування
+                                        </h3>
+                                        <div class="map">
+                                            <img src="img/map_estate_card.png" alt="map">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <div class="estcard__planbox">
+                                    <a href="#">
+                                        <img src="img/plan.png" alt="plan">
+                                    </a>
+                                </div>
+                                <div class="estcard__mapbox">
+                                    <a href="#">
+                                        <img src="img/map_box.png" alt="map">
+                                    </a>
+                                </div>
+                                <div class="estcard__box">
+                                    <div class="estcard__user">
+                                        <div class="estcard__user-img">
+                                            <img src="img/user_broker.png" alt="broker">
+                                        </div>
+                                        <div class="estcard__user-info">
+                                            <p>
+                                                Відповідальний брокер
+                                            </p>
+                                            <h3>
+                                                Олександр Мирошніченков
+                                            </h3>
+                                        </div>
+                                    </div>
+                                    <a href="tel:+38 (067) 764 54 55" class="estcard__user-phone bluebtn">
+                                        +38 (067) 764 54 55
+                                    </a>
+                                </div>
+                                <div class="estcard__buttons">
+                                    <p>Як вам об’єкт?</p>
+                                    <div class="estcard__buttons-content">
+                                        <a href="#">
+                                            <img class="static" src="img/svg_icons/est_liked_blue.svg" alt="icon">
+                                            <img class="active" src="img/svg_icons/est_liked_blue_active.svg"
+                                                alt="icon">
+                                            В обране
+                                        </a>
+                                        <a href="#">
+                                            <img class="static" src="img/svg_icons/est_delete_blue.svg" alt="icon">
+                                            <img class="active" src="img/svg_icons/est_delete_blue_active.svg"
+                                                alt="icon">
+                                            В смітник
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="objcard saved">
+                    <div class="customcontainer">
+                        <div class="objcard__inner">
+                            <h2>
+                                Збережені об’єкти
+                            </h2>
+                            <div class="estpage__row">
+                                <div class="row">
+                                    <div class="col-4">
+                                        <div class="swiper estpage__slider">
+                                            <div class="estpage__slider-btns">
+                                                <a href="#" class="like">
+                                                    <img class="static" src="img/svg_icons/estpage_like_icon_white.svg"
+                                                        alt="like">
+                                                    <img class="active"
+                                                        src="img/svg_icons/estpage_like_icon_white_active.svg" alt="like">
+                                                </a>
+                                                <a href="#" class="delete">
+                                                    <img class="static" src="img/svg_icons/estpage_delete_icon_white.svg"
+                                                        alt="delete">
+                                                    <img class="active"
+                                                        src="img/svg_icons/estpage_delete_icon_white_active.svg"
+                                                        alt="delete">
+                                                </a>
+                                            </div>
+                                            <div class="estpage__slider-widget">
+                                                <p>
+                                                    Продаж
+                                                </p>
+                                                <p>
+                                                    <img src="img/svg_icons/estpage_shield_check_icon.svg" alt="icon">
+                                                    Перевірено нашими юристами
+                                                </p>
+                                            </div>
+                                            <div class="swiper-wrapper">
+                                                <div class="swiper-slide">
+                                                    <div class="estpage__slider-item">
+                                                        <a href="img/estpage_slider_img.png"
+                                                            data-fancybox="gallery-estpage">
+                                                            <img src="img/estpage_slider_img.png" alt="image">
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <div class="estpage__slider-item">
+                                                        <a href="img/estcard_img1.jpg" data-fancybox="gallery-estpage">
+                                                            <img src="img/estcard_img1.jpg" alt="image">
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <div class="estpage__slider-item">
+                                                        <a href="img/estcard_img2.jpg" data-fancybox="gallery-estpage">
+                                                            <img src="img/estcard_img2.jpg" alt="image">
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="swiper-button-next"></div>
+                                            <div class="swiper-button-prev"></div>
+                                            <div class="swiper-pagination"></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-8">
+                                        <div class="estpage__row-right">
+                                            <div class="estpage__row-col">
+                                                <div class="estpage__row-box">
+                                                    <a href="#">
+                                                        <span class="frame">
+                                                            <img src="img/svg_icons/full-view.svg" alt="img">
+                                                            Планування
+                                                        </span>
+                                                        <img src="img/plan.png" alt="plan">
+                                                    </a>
+                                                </div>
+                                                <div class="estpage__row-box">
+                                                    <a target="_blank" href="https://goo.gl/maps/V7x35nj3LBHLaQZc6"
+                                                        class="estpage__mapwiew">
+                                                        <img src="img/map_view.png" alt="">
+                                                        <span>Street View</span>
+                                                    </a>
+                                                    <a href="#">
+                                                        <img src="img/svg_icons/full-view.svg" alt="img" class="full-view">
+                                                        <img src="img/map_box.png" alt="icon">
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="estpage__row-descr open-estcard">
+                                                <div class="estpage__row-head">
+                                                    <b>
+                                                        $80 000 000
+                                                    </b>
+                                                    <p>
+                                                        $67 000 за м2
+                                                    </p>
+                                                    <span>
+                                                        Створено 20 червня 2023
+                                                    </span>
+                                                </div>
+                                                <div class="estpage__row-title">
+                                                    <h3>
+                                                        Торгівельна нерухомість під власний бізнес
+                                                    </h3>
+                                                    <p>
+                                                        вул. Сагайдачного 37, Дніпровський р-н, м. Київ
+                                                    </p>
+                                                </div>
+                                                <div class="estpage__row-info">
+                                                    <ul>
+                                                        <li>
+                                                            <img src="img/svg_icons/estcard_box_info_icon1.svg" alt="icon">
+                                                            <p>
+                                                                Площа1 320 м<sup>2</sup>
+                                                            </p>
+                                                            <p>
+                                                                Площа ділянки 300 сот.
+                                                            </p>
+                                                        </li>
+                                                        <li>
+                                                            <img src="img/svg_icons/estcard_box_info_icon4.svg" alt="icon">
+                                                            <p>
+                                                                Поточна окупність 8 років
+                                                            </p>
+                                                            <p>
+                                                                Потенційна окупність 7 років
+                                                            </p>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="estpage__row-content">
+                                                    <p>
+                                                        Ця торгівельна нерухомість знаходиться в близькості до популярного
+                                                        торгового центру, що забезпечує велику кількість потенційних
+                                                        клієнтів.
+                                                        Розміщення біля ТЦ забезпечує високий потік пішоходів, які мають
+                                                        значний інтерес до покупок, що створює великий комерційний
+                                                        потенціал.
+                                                        Ця торгівельна нерухомість знаходиться в близькості до популярного
+                                                        торгового центру, що забезпечує велику кількість потенційних
+                                                        клієнтів.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="estpage__row">
+                                <div class="row">
+                                    <div class="col-4">
+                                        <div class="swiper estpage__slider">
+                                            <div class="estpage__slider-btns">
+                                                <a href="#" class="like">
+                                                    <img class="static" src="img/svg_icons/estpage_like_icon_white.svg"
+                                                        alt="like">
+                                                    <img class="active"
+                                                        src="img/svg_icons/estpage_like_icon_white_active.svg" alt="like">
+                                                </a>
+                                                <a href="#" class="delete">
+                                                    <img class="static" src="img/svg_icons/estpage_delete_icon_white.svg"
+                                                        alt="delete">
+                                                    <img class="active"
+                                                        src="img/svg_icons/estpage_delete_icon_white_active.svg"
+                                                        alt="delete">
+                                                </a>
+                                            </div>
+                                            <div class="estpage__slider-widget">
+                                                <p>
+                                                    Продаж
+                                                </p>
+                                                <p>
+                                                    <img src="img/svg_icons/estpage_shield_check_icon.svg" alt="icon">
+                                                    Перевірено нашими юристами
+                                                </p>
+                                            </div>
+                                            <div class="swiper-wrapper">
+                                                <div class="swiper-slide">
+                                                    <div class="estpage__slider-item">
+                                                        <a href="img/estpage_slider_img.png"
+                                                            data-fancybox="gallery-estpage">
+                                                            <img src="img/estpage_slider_img.png" alt="image">
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <div class="estpage__slider-item">
+                                                        <a href="img/estcard_img1.jpg" data-fancybox="gallery-estpage">
+                                                            <img src="img/estcard_img1.jpg" alt="image">
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <div class="estpage__slider-item">
+                                                        <a href="img/estcard_img2.jpg" data-fancybox="gallery-estpage">
+                                                            <img src="img/estcard_img2.jpg" alt="image">
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="swiper-button-next"></div>
+                                            <div class="swiper-button-prev"></div>
+                                            <div class="swiper-pagination"></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-8">
+                                        <div class="estpage__row-right">
+                                            <div class="estpage__row-col">
+                                                <div class="estpage__row-box">
+                                                    <a href="#">
+                                                        <span class="frame">
+                                                            <img src="img/svg_icons/full-view.svg" alt="img">
+                                                            Планування
+                                                        </span>
+                                                        <img src="img/plan.png" alt="plan">
+                                                    </a>
+                                                </div>
+                                                <div class="estpage__row-box">
+                                                    <a target="_blank" href="https://goo.gl/maps/V7x35nj3LBHLaQZc6"
+                                                        class="estpage__mapwiew">
+                                                        <img src="img/map_view.png" alt="">
+                                                        <span>Street View</span>
+                                                    </a>
+                                                    <a href="#">
+                                                        <img src="img/svg_icons/full-view.svg" alt="img" class="full-view">
+                                                        <img src="img/map_box.png" alt="icon">
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="estpage__row-descr open-estcard">
+                                                <div class="estpage__row-head">
+                                                    <b>
+                                                        $80 000 000
+                                                    </b>
+                                                    <p>
+                                                        $67 000 за м2
+                                                    </p>
+                                                    <span>
+                                                        Створено 20 червня 2023
+                                                    </span>
+                                                </div>
+                                                <div class="estpage__row-title">
+                                                    <h3>
+                                                        Торгівельна нерухомість під власний бізнес
+                                                    </h3>
+                                                    <p>
+                                                        вул. Сагайдачного 37, Дніпровський р-н, м. Київ
+                                                    </p>
+                                                </div>
+                                                <div class="estpage__row-info">
+                                                    <ul>
+                                                        <li>
+                                                            <img src="img/svg_icons/estcard_box_info_icon1.svg" alt="icon">
+                                                            <p>
+                                                                Площа1 320 м<sup>2</sup>
+                                                            </p>
+                                                            <p>
+                                                                Площа ділянки 300 сот.
+                                                            </p>
+                                                        </li>
+                                                        <li>
+                                                            <img src="img/svg_icons/estcard_box_info_icon4.svg" alt="icon">
+                                                            <p>
+                                                                Поточна окупність 8 років
+                                                            </p>
+                                                            <p>
+                                                                Потенційна окупність 7 років
+                                                            </p>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="estpage__row-content">
+                                                    <p>
+                                                        Ця торгівельна нерухомість знаходиться в близькості до популярного
+                                                        торгового центру, що забезпечує велику кількість потенційних
+                                                        клієнтів.
+                                                        Розміщення біля ТЦ забезпечує високий потік пішоходів, які мають
+                                                        значний інтерес до покупок, що створює великий комерційний
+                                                        потенціал.
+                                                        Ця торгівельна нерухомість знаходиться в близькості до популярного
+                                                        торгового центру, що забезпечує велику кількість потенційних
+                                                        клієнтів.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="objcard deleted">
+                    <div class="customcontainer">
+                        <div class="objcard__inner">
+                            <h2>
+                                Видалені об’єкти
+                            </h2>
+                            <div class="estpage__row">
+                                <div class="row">
+                                    <div class="col-4">
+                                        <div class="swiper estpage__slider">
+                                            <div class="estpage__slider-btns">
+                                                <a href="#" class="like">
+                                                    <img class="static" src="img/svg_icons/estpage_like_icon_white.svg"
+                                                        alt="like">
+                                                    <img class="active"
+                                                        src="img/svg_icons/estpage_like_icon_white_active.svg" alt="like">
+                                                </a>
+                                                <a href="#" class="delete">
+                                                    <img class="static" src="img/svg_icons/estpage_delete_icon_white.svg"
+                                                        alt="delete">
+                                                    <img class="active"
+                                                        src="img/svg_icons/estpage_delete_icon_white_active.svg"
+                                                        alt="delete">
+                                                </a>
+                                            </div>
+                                            <div class="estpage__slider-widget">
+                                                <p>
+                                                    Продаж
+                                                </p>
+                                                <p>
+                                                    <img src="img/svg_icons/estpage_shield_check_icon.svg" alt="icon">
+                                                    Перевірено нашими юристами
+                                                </p>
+                                            </div>
+                                            <div class="swiper-wrapper">
+                                                <div class="swiper-slide">
+                                                    <div class="estpage__slider-item">
+                                                        <a href="img/estpage_slider_img.png"
+                                                            data-fancybox="gallery-estpage">
+                                                            <img src="img/estpage_slider_img.png" alt="image">
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <div class="estpage__slider-item">
+                                                        <a href="img/estcard_img1.jpg" data-fancybox="gallery-estpage">
+                                                            <img src="img/estcard_img1.jpg" alt="image">
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <div class="estpage__slider-item">
+                                                        <a href="img/estcard_img2.jpg" data-fancybox="gallery-estpage">
+                                                            <img src="img/estcard_img2.jpg" alt="image">
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="swiper-button-next"></div>
+                                            <div class="swiper-button-prev"></div>
+                                            <div class="swiper-pagination"></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-8">
+                                        <div class="estpage__row-right">
+                                            <div class="estpage__row-col">
+                                                <div class="estpage__row-box">
+                                                    <a href="#">
+                                                        <span class="frame">
+                                                            <img src="img/svg_icons/full-view.svg" alt="img">
+                                                            Планування
+                                                        </span>
+                                                        <img src="img/plan.png" alt="plan">
+                                                    </a>
+                                                </div>
+                                                <div class="estpage__row-box">
+                                                    <a target="_blank" href="https://goo.gl/maps/V7x35nj3LBHLaQZc6"
+                                                        class="estpage__mapwiew">
+                                                        <img src="img/map_view.png" alt="">
+                                                        <span>Street View</span>
+                                                    </a>
+                                                    <a href="#">
+                                                        <img src="img/svg_icons/full-view.svg" alt="img" class="full-view">
+                                                        <img src="img/map_box.png" alt="icon">
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="estpage__row-descr open-estcard">
+                                                <div class="estpage__row-head">
+                                                    <b>
+                                                        $80 000 000
+                                                    </b>
+                                                    <p>
+                                                        $67 000 за м2
+                                                    </p>
+                                                    <span>
+                                                        Створено 20 червня 2023
+                                                    </span>
+                                                </div>
+                                                <div class="estpage__row-title">
+                                                    <h3>
+                                                        Торгівельна нерухомість під власний бізнес
+                                                    </h3>
+                                                    <p>
+                                                        вул. Сагайдачного 37, Дніпровський р-н, м. Київ
+                                                    </p>
+                                                </div>
+                                                <div class="estpage__row-info">
+                                                    <ul>
+                                                        <li>
+                                                            <img src="img/svg_icons/estcard_box_info_icon1.svg" alt="icon">
+                                                            <p>
+                                                                Площа1 320 м<sup>2</sup>
+                                                            </p>
+                                                            <p>
+                                                                Площа ділянки 300 сот.
+                                                            </p>
+                                                        </li>
+                                                        <li>
+                                                            <img src="img/svg_icons/estcard_box_info_icon4.svg" alt="icon">
+                                                            <p>
+                                                                Поточна окупність 8 років
+                                                            </p>
+                                                            <p>
+                                                                Потенційна окупність 7 років
+                                                            </p>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="estpage__row-content">
+                                                    <p>
+                                                        Ця торгівельна нерухомість знаходиться в близькості до популярного
+                                                        торгового центру, що забезпечує велику кількість потенційних
+                                                        клієнтів.
+                                                        Розміщення біля ТЦ забезпечує високий потік пішоходів, які мають
+                                                        значний інтерес до покупок, що створює великий комерційний
+                                                        потенціал.
+                                                        Ця торгівельна нерухомість знаходиться в близькості до популярного
+                                                        торгового центру, що забезпечує велику кількість потенційних
+                                                        клієнтів.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer>
+        </footer>
+
+    </div>
+
+    <script src="js/lib/jquery.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="js/lib/jquery.formstyler.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+    <script src="js/lib/swiper-bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

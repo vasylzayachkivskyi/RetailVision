@@ -509,14 +509,17 @@
 }
 
 .estcard__head {
+   position: relative;
    display: flex;
    align-items: center;
    justify-content: space-between;
+   height: 50px;
+   width: 100%;
    border-radius: 8px;
    border: 1px solid #D9D9D9;
    background: #FBFBFB;
    margin-bottom: 8px;
-   padding: 16px;
+   padding: 10px 16px;
 
    p {
       color: #5C6476;
@@ -557,6 +560,169 @@
    align-items: center;
 }
 
+
+
+// ESTCARD SLIDER --------------------------------------------- //
+
+.estcard__slider {
+   height: 480px;
+   width: 100%;
+   margin-bottom: 16px;
+
+
+   .swiper-button-prev,
+   .swiper-rtl .swiper-button-next,
+   .swiper-button-next,
+   .swiper-rtl .swiper-button-prev {
+      width: 40px;
+      height: 40px;
+      background-repeat: no-repeat;
+      outline: none;
+      transition: .3s;
+
+      &:hover {
+         filter: brightness(85%);
+      }
+
+      &:after {
+         display: none;
+      }
+   }
+
+
+   .swiper-button-next,
+   .swiper-rtl .swiper-button-prev {
+      background-image: url(../img/svg_icons/estacard_slider_arrow_next.svg);
+   }
+
+   .swiper-button-prev,
+   .swiper-rtl .swiper-button-next {
+      background-image: url(../img/svg_icons/estacard_slider_arrow_prev.svg);
+   }
+
+   .swiper-slide {
+      width: auto;
+   }
+
+   .swiper-pagination {
+      width: auto;
+      border-radius: 4px;
+      background: #FBFBFB;
+      padding: 8px;
+      color: #5C6476;
+      font-family: Mont;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+      left: 17px;
+      bottom: 16px;
+      text-align: left;
+      transition: .3s opacity;
+      transform: translate3d(0, 0, 0);
+      z-index: 10;
+
+      &:before {
+         content: 'ФОТО';
+         display: inline-block;
+         vertical-align: middle;
+         color: #5C6476;
+         text-align: center;
+         font-family: Mont;
+         font-size: 12px;
+         font-style: normal;
+         font-weight: 600;
+         line-height: normal;
+         margin-right: 18px;
+      }
+
+      &:after {
+         content: '';
+         position: absolute;
+         width: 2px;
+         height: 2px;
+         background-color: #5C6476;
+         border-radius: 50%;
+         top: calc(48% - 1px);
+         left: 57%;
+         display: inline-block;
+         vertical-align: middle;
+         color: #5C6476;
+         margin-right: 18px;
+      }
+   }
+
+}
+
+.estcard__slider-item {
+   border-radius: 8px;
+   height: 100%;
+   overflow: hidden;
+   display: inline-block;
+   width: auto;
+
+   a {
+      display: inline-block;
+      position: relative;
+      height: 100%;
+      width: auto;
+   }
+
+   img {
+      height: 100%;
+      background-size: cover;
+   }
+}
+
+.full-view {
+   position: absolute;
+   width: 40px;
+   height: 40px;
+   background-size: cover;
+   right: 16px;
+   bottom: 16px;
+   z-index: 9;
+   transition: .3s;
+
+   &:hover {
+      filter: brightness(85%);
+   }
+
+   img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+   }
+}
+
+.video-view {
+   position: absolute;
+   z-index: 9;
+   bottom: 16px;
+   right: 150px;
+   padding: 5px 40px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   height: 40px;
+   border-radius: 200px;
+   background: #FBFBFB;
+   color: #22232A;
+   font-size: 16px;
+   font-style: normal;
+   font-weight: 600;
+   line-height: 130%;
+   transition: .3s;
+
+   &:hover {
+      filter: brightness(85%);
+   }
+}
+
+
+
+
+
 .estcard__box {
    width: 100%;
    padding: 16px 24px;
@@ -570,6 +736,7 @@
       font-style: normal;
       font-weight: 700;
       line-height: 130%;
+      padding-top: 16px;
       margin-bottom: 24px;
    }
 
@@ -580,6 +747,7 @@
       font-size: 16px;
       font-weight: 500;
       line-height: 140%;
+      margin-bottom: 10px;
    }
 
    .map {
@@ -587,12 +755,98 @@
       border-radius: 10px;
       overflow: hidden;
       margin-bottom: 32px;
+      position: relative;
+
+      .street-view {
+         position: absolute;
+         bottom: 16px;
+         right: 16px;
+         width: 146px;
+         height: 84px;
+
+         span {
+            text-align: center;
+            bottom: 4px;
+            left: 50%;
+            transform: translateX(-50%);
+            position: absolute;
+            color: #FBFBFB;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            white-space: nowrap;
+         }
+
+         img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+         }
+      }
 
       img {
          width: 100%;
          background-size: cover;
       }
    }
+
+   .more-btn {
+      display: inline-block;
+      margin-top: 24px;
+      margin-bottom: 16px;
+      cursor: pointer;
+      transition: .3s;
+
+      &:hover {
+         opacity: 0.7;
+      }
+
+      img {
+         width: 16px;
+         height: 16px;
+         margin-right: 8px;
+         background-size: cover;
+      }
+
+      span {
+         color: #3670F0;
+         font-size: 14px;
+         font-style: normal;
+         font-weight: 700;
+         line-height: 16px;
+      }
+
+      .less {
+         display: none;
+      }
+
+      &.active {
+         .more {
+            display: none;
+         }
+
+         .less {
+            display: inline-block;
+         }
+
+         img {
+            transform: rotate(180deg);
+         }
+      }
+   }
+}
+
+.estcard__box-content {
+   display: -webkit-box;
+   -webkit-line-clamp: 3;
+   -webkit-box-orient: vertical;
+   overflow: hidden;
+   // max-height: 200px;
+}
+
+.estcard__box-moretext {
+   display: none;
 }
 
 .estcard__box-head {
@@ -691,6 +945,7 @@
             font-weight: 500;
             line-height: 130%;
             position: relative;
+            margin-bottom: 0;
 
             &+p {
                margin-left: 16px;
@@ -712,6 +967,35 @@
 
          &+li {
             margin-top: 24px;
+         }
+      }
+   }
+}
+
+.estcard__box-parametres {
+   ul {
+      display: flex;
+      max-width: 600px;
+      align-items: center;
+      flex-wrap: wrap;
+
+      li {
+         width: 250px;
+         margin-right: 40px;
+         margin-bottom: 24px;
+         position: relative;
+         padding-left: 36px;
+
+         &:before {
+            position: absolute;
+            content: '';
+            background-image: url(../img/svg_icons/check.svg);
+            width: 20px;
+            height: 20px;
+            background-size: cover;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
          }
       }
    }
@@ -764,12 +1048,36 @@
    margin-bottom: 20px;
    border-radius: 8px;
    overflow: hidden;
+   position: relative;
+
+   .frame {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      color: #FBFBFB;
+      text-align: center;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+
+      img {
+         width: 40px;
+         height: 40px;
+         background-size: cover;
+         margin: 0 auto 8px;
+         display: block;
+      }
+   }
 
    img {
       width: 100%;
       height: 100%;
       object-fit: cover;
    }
+
 }
 
 .estcard__mapbox {
@@ -778,6 +1086,42 @@
    margin-bottom: 20px;
    border-radius: 8px;
    overflow: hidden;
+   position: relative;
+   .full-view {
+      position: absolute;
+      width: 40px;
+      height: 40px;
+      top: 11px;
+      right: 9px;
+   }
+
+   .street-view {
+      position: absolute;
+      bottom: 16px;
+      right: 16px;
+      width: 142px;
+      height: 80px;
+
+      span {
+         text-align: center;
+         bottom: 4px;
+         left: 50%;
+         transform: translateX(-50%);
+         position: absolute;
+         color: #FBFBFB;
+         font-size: 16px;
+         font-style: normal;
+         font-weight: 700;
+         line-height: normal;
+         white-space: nowrap;
+      }
+
+      img {
+         width: 100%;
+         height: 100%;
+         object-fit: cover;
+      }
+   }
 
    img {
       width: 100%;
@@ -786,70 +1130,111 @@
    }
 }
 
+// fancybox --------------- //
+
+.fancybox__nav {
+   svg {
+      display: none;
+   }
+
+   .f-button {
+      width: 36px;
+      height: 36px;
+      background-size: cover;
+      background-repeat: no-repeat;
+   }
+
+   .f-button.is-prev {
+      background-image: url(../img/svg_icons/estacard_slider_arrow_prev.svg);
+      left: 5% !important;
+   }
+
+   .f-button.is-next {
+      background-image: url(../img/svg_icons/estacard_slider_arrow_next.svg);
+      right: 10% !important;
+   }
+}
+
+.fancybox-button {
+   opacity: 1 !important;
+   pointer-events: auto !important;
+}
+
+.fancybox__content {
+   max-width: 1000px;
+}
+
+.fancybox__container {}
+
+.fancybox__toolbar {
+
+   button {
+      display: none;
+
+      &[data-fancybox-close] {
+         display: flex;
+
+         &:before {
+            content: 'Назад';
+            color: #383D54;
+            font-family: Mont;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: normal;
+            position: fixed;
+            display: flex;
+            align-items: center;
+            padding: 15px 16px 15px 52px;
+            justify-content: end;
+            cursor: pointer;
+            width: 120px;
+            height: 52px;
+            top: 32px;
+            left: 40px;
+            border-radius: 4px;
+            background: #FBFBFB;
+            background-image: url(../img/svg_icons/gallery_back.svg);
+            background-repeat: no-repeat;
+            background-position: 18px 17px;
+            box-shadow: 0px 3px 9px 0px rgba(0, 0, 0, 0.05), 2px 0px 9px 0px rgba(0, 0, 0, 0.05);
+         }
+      }
+
+      svg {
+         display: none;
+      }
+
+      background-image: url(../img/svg_icons/close_gallery.svg);
+      width: 36px;
+      height: 36px;
+      background-size: cover;
+      background-repeat: no-repeat;
+      position: absolute;
+      top: 32px;
+      right: 10%;
+   }
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 // ------------- ADAPTIVE ------------------ //
 // ---------------------------------------- //
 
-@media (max-width: 1600px) {
-
-   .estcard__mapbox,
-   .estcard__planbox {
-      height: 230px;
-   }
-}
-
-@media (max-width: 1400px) {
-   .estcard .customcontainer {
-      max-width: 1440px;
-      width: 1340px;
-   }
-
-   .estcard {
-      &::-webkit-scrollbar {
-         width: 100%;
-         cursor: pointer;
-         height: 10px;
-     }
-
-     &::-webkit-scrollbar-track {
-         background: #d9d9d9;
-         cursor: pointer;
-     }
-
-     &::-webkit-scrollbar-thumb {
-         background-color: #3670F0;
-         cursor: pointer;
-         border-radius: 12px;
-         border: 3px solid #d9d9d9;
-     }
-      overflow-x: scroll;
-      width: calc(100vw - 56px);
-   }
-}
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//  RESPONSIVE ------------------------- //
 
 @media(max-width:1800px) {
 
@@ -858,6 +1243,14 @@
       padding: 11px 20px 11px;
    }
 
+}
+
+@media (max-width: 1600px) {
+
+   .estcard__mapbox,
+   .estcard__planbox {
+      height: 230px;
+   }
 }
 
 @media(max-width:1500px) {
@@ -878,6 +1271,34 @@
 
 
 @media(max-width:1400px) {
+
+   .estcard .customcontainer {
+      max-width: 1440px;
+      width: 1340px;
+   }
+
+   .estcard {
+      &::-webkit-scrollbar {
+         width: 100%;
+         cursor: pointer;
+         height: 10px;
+      }
+
+      &::-webkit-scrollbar-track {
+         background: #d9d9d9;
+         cursor: pointer;
+      }
+
+      &::-webkit-scrollbar-thumb {
+         background-color: #3670F0;
+         cursor: pointer;
+         border-radius: 12px;
+         border: 3px solid #d9d9d9;
+      }
+
+      overflow-x: scroll;
+      width: calc(100vw - 56px);
+   }
 
    .estate__inner-content {
       height: calc(100vh - 180px);
