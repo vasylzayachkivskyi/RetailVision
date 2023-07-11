@@ -763,6 +763,11 @@
          right: 16px;
          width: 146px;
          height: 84px;
+         transition: .3s;
+
+         &:hover {
+            filter: brightness(85%);
+         }
 
          span {
             text-align: center;
@@ -773,7 +778,7 @@
             color: #FBFBFB;
             font-size: 16px;
             font-style: normal;
-            font-weight: 700;
+            font-weight: 600;
             line-height: normal;
             white-space: nowrap;
          }
@@ -893,6 +898,7 @@
       margin-left: 20px;
       padding-left: 24px;
       position: relative;
+      margin-bottom: 0;
 
       &:before {
          content: '';
@@ -1062,6 +1068,28 @@
       font-style: normal;
       font-weight: 600;
       line-height: normal;
+      transition: .3s;
+
+      &:after {
+         content: '';
+         position: absolute;
+         bottom: 2px;
+         right: -15px;
+         background-image: url(../img/svg_icons/arrow_slide_next.svg);
+         width: 12px;
+         height: 19px;
+         background-size: cover;
+         background-repeat: no-repeat;
+         opacity: 0;
+         transition: .3s;
+      }
+
+      &:hover {
+         &:after {
+            opacity: 1;
+            right: -20px;
+         }
+      }
 
       img {
          width: 40px;
@@ -1087,6 +1115,7 @@
    border-radius: 8px;
    overflow: hidden;
    position: relative;
+
    .full-view {
       position: absolute;
       width: 40px;
@@ -1101,6 +1130,11 @@
       right: 16px;
       width: 142px;
       height: 80px;
+      transition: .3s;
+
+      &:hover {
+         filter: brightness(85%);
+      }
 
       span {
          text-align: center;

@@ -351,12 +351,23 @@ $(document).ready(function () {
 
 
     // estate card show/hide -------------- //
-    $('.open-estcard').on('click', function () {
-        $('.estcard').addClass('show');
+    // sell
+    $('.open-estcard-sell').on('click', function () {
+        $('.estcard-sell').addClass('show');
         $('.estcard-breadcrumbs').addClass('active');
     });
-    $('.close-estcard').on('click', function () {
-        $('.estcard').removeClass('show');
+    $('.close-estcard-sell').on('click', function () {
+        $('.estcard-sell').removeClass('show');
+        $('.estcard-breadcrumbs').removeClass('active');
+    });
+
+    // rent
+    $('.open-estcard-rent').on('click', function () {
+        $('.estcard-rent').addClass('show');
+        $('.estcard-breadcrumbs').addClass('active');
+    });
+    $('.close-estcard-rent').on('click', function () {
+        $('.estcard-rent').removeClass('show');
         $('.estcard-breadcrumbs').removeClass('active');
     });
 
@@ -450,6 +461,13 @@ $(document).ready(function () {
         $('.estheader__info-btn.like').removeClass('active');
         $('.objcard.saved').removeClass('active');
         $('.objcard.deleted').toggleClass('active');
+    });
+
+    $('.estheader__info-btn.list').on('click', function () {
+        $('.estheader__info-btn.like').removeClass('active');
+        $('.estheader__info-btn.delete').removeClass('active');
+        $('.objcard.saved').removeClass('active');
+        $('.objcard.deleted').removeClass('active');
     });
 
 
