@@ -11,7 +11,7 @@
    <link rel="stylesheet" href="css/lib/jquery.formstyler.css">
    <link rel="stylesheet" href="css/lib/jquery.formstyler.theme.css">
    <link rel="stylesheet" href="css/lib/swiper-bundle.min.css">
-   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css">
+   <link rel="stylesheet" href="css/lib/fancyapps_pen.css">
    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
    <link rel="stylesheet" href="css/style.css">
@@ -1220,38 +1220,36 @@
                                  <div class="estcard__content">
 
                                     <div class="swiper estcard__slider">
-                                       <a href="img/estcard_img1.jpg" data-fancybox="gallery-1" class="full-view">
-                                          <img src="img/svg_icons/full-view.svg" alt="icon">
-                                       </a>
-                                       <a data-type="iframe" data-fancybox="gallery-1" data-src="https://youtu.be/aN9DH_GxqEo" href="" class="video-view">
+                                       <a href="img/estcard_img1.jpg" data-fancybox="images1" class="full-view"></a>
+                                       <a data-type="iframe" data-fancybox="images1" data-src="https://www.youtube.com/embed/mgulkcaPMCY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen href="" class="video-view">
                                           Відео
                                        </a>
                                        <div class="swiper-wrapper">
                                           <div class="swiper-slide">
                                              <div class="estcard__slider-item">
-                                                <a href="img/estcard_img1.jpg" data-fancybox="gallery-1">
+                                                <a href="img/estcard_img1.jpg" data-fancybox="images1">
                                                    <img src="img/estcard_img1.jpg" alt="image">
                                                 </a>
                                              </div>
                                           </div>
                                           <div class="swiper-slide">
                                              <div class="estcard__slider-item">
-                                                <a href="img/estcard_img2.jpg" data-fancybox="gallery-1">
+                                                <a href="img/estcard_img2.jpg" data-fancybox="images1">
                                                    <img src="img/estcard_img2.jpg" alt="image">
                                                 </a>
                                              </div>
                                           </div>
                                           <div class="swiper-slide">
                                              <div class="estcard__slider-item">
-                                                <a data-type="iframe" data-fancybox="gallery-1" data-src="https://youtu.be/aN9DH_GxqEo" href="">
-                                                   <img src="img/estate_video.png" alt="image"> 
+                                                <a href="img/estcard_img3.jpg" data-fancybox="images1">
+                                                   <img src="img/estcard_img3.jpg" alt="image">
                                                 </a>
                                              </div>
                                           </div>
                                           <div class="swiper-slide">
                                              <div class="estcard__slider-item">
-                                                <a href="img/estcard_img3.jpg" data-fancybox="gallery-1">
-                                                   <img src="img/estcard_img3.jpg" alt="image">
+                                                <a data-type="iframe" data-fancybox="images1" data-src="https://www.youtube.com/embed/mgulkcaPMCY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen href="" >
+                                                   <img src="img/estate_video.png" alt="image"> 
                                                 </a>
                                              </div>
                                           </div>
@@ -1489,12 +1487,12 @@
                                     </a>
                                  </div>
                                  <div class="estcard__mapbox">
-                                    <a target="_blank" class="street-view" href="https://goo.gl/maps/iPt2d53NjNjL1TCP6">
+                                    <a class="street-view" data-type="iframe" data-fancybox="images1" data-src="https://www.google.com/maps/embed?pb=!4v1689106320708!6m8!1m7!1sCAoSLEFGMVFpcE9wa1lvVXJrcGlvcTRUQVlENEo3SWZZVUZ2cHhKNEhhb2h3LV9x!2m2!1d50.4620486!2d30.5199307!3f295.38!4f0.09999999999999432!5f0.7820865974627469" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" href="">
                                        <img src="img/map_view.png" alt="map">
                                        <span>Street View</span>
                                     </a>
-                                    <a target="_blank" href="https://goo.gl/maps/8pTB9p8zkkSq9FuL9">
-                                       <img src="img/svg_icons/full-view.svg" alt="img" class="full-view">
+                                    <a class="estcard__mapbox-map" data-type="iframe" data-fancybox="images1" data-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2539.878836487934!2d30.519883399999998!3d50.4619809!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4ce41156eb875%3A0xb9625525c6ba5f72!2z0YPQuy4g0J_QtdGC0YDQsCDQodCw0LPQsNC50LTQsNGH0L3QvtCz0L4sIDM3LCDQmtC40LXQsiwgMDQwNzA!5e0!3m2!1sru!2sua!4v1689106969149!5m2!1sru!2sua" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" href="">
+                                       <span class="full-view"></span>
                                        <img src="img/map_box.png" alt="map">
                                     </a>
                                  </div>
@@ -1547,40 +1545,44 @@
                            <div class="row">
                               <div class="col-9">
                                  <div class="estcard__content">
-
                                     <div class="swiper estcard__slider">
-                                       <a href="img/estcard_img1.jpg" data-fancybox="gallery-1" class="full-view">
-                                          <img src="img/svg_icons/full-view.svg" alt="icon">
-                                       </a>
-                                       <a data-type="iframe" data-fancybox="gallery-1" data-src="https://youtu.be/aN9DH_GxqEo" href="" class="video-view">
+                                       <a href="img/estcard_img1.jpg" data-fancybox="images2" class="full-view"></a>
+                                       <a data-type="iframe" data-fancybox="images2" data-src="https://www.youtube.com/embed/mgulkcaPMCY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen href="" class="video-view">
                                           Відео
                                        </a>
                                        <div class="swiper-wrapper">
                                           <div class="swiper-slide">
                                              <div class="estcard__slider-item">
-                                                <a href="img/estcard_img1.jpg" data-fancybox="gallery-1">
+                                                <a href="img/estcard_img1.jpg" data-fancybox="images2">
                                                    <img src="img/estcard_img1.jpg" alt="image">
                                                 </a>
                                              </div>
                                           </div>
                                           <div class="swiper-slide">
                                              <div class="estcard__slider-item">
-                                                <a href="img/estcard_img2.jpg" data-fancybox="gallery-1">
+                                                <a href="img/estcard_img2.jpg" data-fancybox="images2">
                                                    <img src="img/estcard_img2.jpg" alt="image">
                                                 </a>
                                              </div>
                                           </div>
                                           <div class="swiper-slide">
                                              <div class="estcard__slider-item">
-                                                <a data-type="iframe" data-fancybox="gallery-1" data-src="https://youtu.be/aN9DH_GxqEo" href="">
-                                                   <img src="img/estate_video.png" alt="image"> 
+                                                <a href="img/estcard_img3.jpg" data-fancybox="images2">
+                                                   <img src="img/estcard_img3.jpg" alt="image">
                                                 </a>
                                              </div>
                                           </div>
                                           <div class="swiper-slide">
                                              <div class="estcard__slider-item">
-                                                <a href="img/estcard_img3.jpg" data-fancybox="gallery-1">
-                                                   <img src="img/estcard_img3.jpg" alt="image">
+                                                <a href="img/estcard_img2.jpg" data-fancybox="images2">
+                                                   <img src="img/estcard_img2.jpg" alt="image">
+                                                </a>
+                                             </div>
+                                          </div>
+                                          <div class="swiper-slide">
+                                             <div class="estcard__slider-item">
+                                                <a data-type="iframe" data-fancybox="images2" data-src="https://www.youtube.com/embed/mgulkcaPMCY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen href="" >
+                                                   <img src="img/estate_video.png" alt="image"> 
                                                 </a>
                                              </div>
                                           </div>
@@ -1758,12 +1760,12 @@
                                     </a>
                                  </div>
                                  <div class="estcard__mapbox">
-                                    <a target="_blank" class="street-view" href="https://goo.gl/maps/iPt2d53NjNjL1TCP6">
+                                    <a class="street-view" data-type="iframe" data-fancybox="images2" data-src="https://www.google.com/maps/embed?pb=!4v1689106320708!6m8!1m7!1sCAoSLEFGMVFpcE9wa1lvVXJrcGlvcTRUQVlENEo3SWZZVUZ2cHhKNEhhb2h3LV9x!2m2!1d50.4620486!2d30.5199307!3f295.38!4f0.09999999999999432!5f0.7820865974627469" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" href="">
                                        <img src="img/map_view.png" alt="map">
                                        <span>Street View</span>
                                     </a>
-                                    <a target="_blank" href="https://goo.gl/maps/8pTB9p8zkkSq9FuL9">
-                                       <img src="img/svg_icons/full-view.svg" alt="img" class="full-view">
+                                    <a class="estcard__mapbox-map" data-type="iframe" data-fancybox="images2" data-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2539.878836487934!2d30.519883399999998!3d50.4619809!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4ce41156eb875%3A0xb9625525c6ba5f72!2z0YPQuy4g0J_QtdGC0YDQsCDQodCw0LPQsNC50LTQsNGH0L3QvtCz0L4sIDM3LCDQmtC40LXQsiwgMDQwNzA!5e0!3m2!1sru!2sua!4v1689106969149!5m2!1sru!2sua" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" href="">
+                                       <span class="full-view"></span>
                                        <img src="img/map_box.png" alt="map">
                                     </a>
                                  </div>
@@ -34333,7 +34335,7 @@
    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
    <script src="js/lib/jquery.formstyler.min.js"></script>
-   <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+   <script src="js/lib/fancyapps.js"></script>
    <script src="js/lib/swiper-bundle.min.js"></script>
    <script src="js/main.js"></script>
 </body>

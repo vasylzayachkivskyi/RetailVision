@@ -397,11 +397,14 @@
 }
 
 .estpage__row-box {
-    width: 198px;
-    height: 158px;
     border-radius: 8px;
     overflow: hidden;
     position: relative;
+    .estpage__row-plan,
+    .estcard__mapbox-map{
+        width: 198px;
+        height: 158px;
+    }
 
     .full-view {
         position: absolute;

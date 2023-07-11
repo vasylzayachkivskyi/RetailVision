@@ -376,7 +376,6 @@ $(document).ready(function () {
     var swiper = new Swiper(".estcard__slider", {
         slidesPerView: "auto",
         spaceBetween: 10,
-        loop: true,
         pagination: {
             el: ".swiper-pagination",
             type: "fraction",
@@ -404,23 +403,20 @@ $(document).ready(function () {
     });
 
     //  gallery ----------- //
-    $('.swiper a').on('click', function () {
-        var classGallery = $(this).attr('data-fancybox');
-        Fancybox.bind(`[data-fancybox="${classGallery}"]`, {
-          
-            Thumbs: {
-                type: "classic",
+    $('[data-fancybox^="images"]').each(function() {
+        var galleryType = $(this).data('fancybox');
+        
+        $(`[data-fancybox="${galleryType}"]`).fancybox({
+            thumbs: {
+                autoStart: true
             },
-            buttons: true,
         });
     });
 
-// estate page card buttons
+    // estate page card buttons
     $('.estcard__buttons a').on('click', function () {
         $(this).toggleClass('active');
     });
-
-
 
 
 
@@ -428,13 +424,6 @@ $(document).ready(function () {
     $('.more-btn').on('click', function () {
         $(this).toggleClass('active');
         $(this).closest('.estcard__box').find('.estcard__box-moretext').slideToggle('active');
-        // var boxContent = $(this).closest('.estcard__box').find('.estcard__box-content');
-        // var maxHeight = boxContent.css('max-height');
-        // if (maxHeight === '200px') {
-        //     boxContent.animate({ 'max-height': '100%' }, 500);
-        // } else {
-        //     boxContent.animate({ 'max-height': '200px' }, 500);
-        // }
     });
 
 
