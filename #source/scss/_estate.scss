@@ -673,6 +673,7 @@
       background-size: cover;
    }
 }
+
 // ----------------------------- //
 
 
@@ -682,6 +683,29 @@
    border-radius: 8px;
    background: #FBFBFB;
    margin-bottom: 16px;
+
+   &.note-colegue {
+      border: 2px solid #3670F0;
+      background: #ECF6FF;
+      img{
+         width: 26px;
+         height: 26px;
+         margin-right: 16px;
+      }
+      h3 {
+         color: #22232A;
+         font-size: 20px;
+         font-style: normal;
+         font-weight: 700;
+         line-height: 130%;
+      }
+      .estcard__note-head{
+         display: flex;
+         align-items: center;
+         padding-top: 16px;
+         margin-bottom: 24px;
+      }
+   }
 
    >h3 {
       color: #22232A;
@@ -873,6 +897,8 @@
       line-height: 16px;
       height: 40px;
       padding: 10px 16px;
+      display: flex;
+      align-items: center;
 
       svg {
          margin-right: 8px;
@@ -939,10 +965,15 @@
 
       li {
          width: 250px;
-         margin-right: 40px;
+         margin-right: 50px;
          margin-bottom: 24px;
          position: relative;
          padding-left: 36px;
+         color: #22232A;
+         font-size: 16px;
+         font-style: normal;
+         font-weight: 500;
+         line-height: 130%;
 
          &:before {
             position: absolute;
@@ -1060,7 +1091,7 @@
 
 }
 
-.estcard__mapbox-map{
+.estcard__mapbox-map {
    position: relative;
    display: block;
 }
@@ -1172,10 +1203,11 @@
 
 // fancybox --------------- //
 
-.fancybox-infobar{
-   opacity: 0!important;
+.fancybox-infobar {
+   opacity: 0 !important;
 }
-.fancybox-slide{
+
+.fancybox-slide {
    padding: 0;
 }
 

@@ -120,14 +120,14 @@
         align-items: flex-end;
         justify-content: space-between;
         padding: 0 0 25px;
+    }
 
-        button {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 114px;
-            height: 40px;
-        }
+    button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 114px;
+        height: 40px;
     }
 }
 
@@ -348,7 +348,6 @@
 
 
 // ----------------- KANBAN --------------------------- //
-
 
 .saleowner__kanban {
     overflow-y: scroll;
@@ -2673,6 +2672,104 @@
 }
 
 
+// BASE ------------------------ //
+.base {
+    .saleowner__head-filterbtn {
+        margin-top: 6px;
+    }
+}
+
+.base__tabs {
+    padding-top: 6px;
+    display: flex;
+    align-items: center;
+    margin-right: 24px;
+}
+
+.base__tab {
+    padding: 8px 32px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #5C6476;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 16px;
+    border: 1px solid #D9D9D9;
+    background: #FBFBFB;
+    cursor: pointer;
+    transition: .3s;
+
+    &:hover {
+        background: rgba(54, 112, 240, 0.04);
+    }
+
+    &:first-child {
+        border-radius: 8px 0px 0px 8px;
+    }
+
+    &:last-child {
+        border-radius: 0px 8px 8px 0px;
+    }
+
+    &.active {
+        border: 1px solid #3670F0;
+        color: #3670F0;
+        background: rgba(59, 110, 223, 0.10);
+    }
+}
+
+.base__window {
+    display: none;
+
+    &.show {
+        display: block;
+    }
+
+    .form__filter .form {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        padding: 0 0 25px;
+    }
+
+    .leads__filter.form__filter .form {
+        justify-content: flex-start;
+    }
+
+    .obrent__filter.form__filter .form {
+        justify-content: flex-start;
+
+        button {
+            margin: 0 0 0 auto;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2682,6 +2779,7 @@
 // RESPONSIVE ----------------------------- //
 
 @media (max-width: 1440px) {
+
     .infosearch-box__form.client-form .infosearch__forminput+.infosearch__forminput {
         margin-left: 10px;
     }
@@ -2818,6 +2916,37 @@
 }
 
 @media (max-width: 1400px) {
+
+    .base {
+        overflow-x: scroll;
+        width: calc(100vw - 56px);
+        .table-wrapper {
+            position: relative;
+            padding-bottom: 73px;
+        }
+
+        .customcontainer {
+            width: 1440px;
+        }
+
+        &::-webkit-scrollbar {
+            width: 100%;
+            cursor: pointer;
+            height: 10px;
+        }
+
+        &::-webkit-scrollbar-track {
+            background: #d9d9d9;
+            cursor: pointer;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background-color: #3670F0;
+            cursor: pointer;
+            border-radius: 12px;
+            border: 3px solid #d9d9d9;
+        }
+    }
 
     .infosearch-box__form.client-form {
 

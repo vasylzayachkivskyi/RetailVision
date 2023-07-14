@@ -385,6 +385,15 @@ $(document).ready(function () {
             prevEl: ".swiper-button-prev",
         },
         keyboard: true,
+        breakpoints: {
+            320: {
+                slidesPerView: 1,
+            },
+
+            768: {
+                slidesPerView: "auto",
+            },
+        },
     });
 
     // estate page slider -------------------------------------- //
@@ -400,6 +409,7 @@ $(document).ready(function () {
             prevEl: ".swiper-button-prev",
         },
         keyboard: true,
+        
     });
 
     //  gallery ----------- //
@@ -829,6 +839,19 @@ $(document).ready(function () {
         copiedText.fadeIn(0).fadeOut(600);
     });
 
+
+
+
+    // ------------------ BASE TAB -------------------------- //
+
+    $('.base__tab').on('click', function () {
+        var dataClass = $(this).attr('data-tab');
+        $('.base__window').removeClass('show').hide();
+        $('.base__tab').removeClass('active');
+        $(this).addClass('active');
+        $('.' + dataClass).addClass('show').fadeIn(500);
+        return false;
+    });
 
 
     // ------------------ CONTACT TAB ---------------------- //
