@@ -411,13 +411,6 @@
 
 
 // estpage row right -------------------- //
-// .estpage__row-right {
-//     display: flex;
-// }
-
-// .estpage__row-col {
-//     margin-right: 20px;
-// }
 
 .gm-style .place-card .place-name {
     display: none;
@@ -524,14 +517,16 @@
     }
 
     img {
-        // width: 100%;
-        // height: 100%;
         object-fit: cover;
     }
 
     &+.estpage__row-box {
         margin-top: 20px;
     }
+}
+
+.estcard__row-mobile {
+    display: none;
 }
 
 .estpage__row-head {
@@ -599,9 +594,6 @@
     }
 }
 
-.estpage__row-info--mobile {
-    display: none;
-}
 
 .estpage__row-info {
     border-bottom: 1px solid #D9D9D9;
@@ -648,6 +640,10 @@
     transition: .3s;
     cursor: pointer;
 
+}
+
+.estpage__row-info--mobile {
+    display: none;
 }
 
 .estpage__row-content {
@@ -823,6 +819,82 @@
 }
 
 @media (max-width: 1400px) {
+    .estcard__mapbox .street-view {
+        width: 120px;
+        height: 69px;
+    }
+
+    .estcard__buttons p {
+        font-size: 18px;
+    }
+
+    .estcard__planbox .frame img {
+        width: 35px;
+        height: 35px;
+    }
+
+    .estcard__mapbox .full-view {
+        width: 35px;
+        height: 35px;
+    }
+
+    .estcard__slider .swiper-button-next,
+    .estcard__slider .swiper-button-prev,
+    .estcard__slider .swiper-rtl .swiper-button-next,
+    .estcard__slider .swiper-rtl .swiper-button-prev {
+        width: 35px;
+        height: 35px;
+        background-size: cover;
+    }
+
+    .full-view {
+        width: 35px;
+        height: 35px;
+    }
+
+    .video-view {
+        height: 35px;
+        font-size: 14px;
+    }
+
+    .estcard__slider .swiper-pagination:before {
+        font-size: 10px;
+    }
+
+    .estcard__box-info ul li img {
+        width: 16px;
+    }
+
+    .estcard__box-info ul li p {
+        font-size: 14px;
+    }
+
+    .estcard__user-info h3 {
+        font-size: 14px;
+    }
+
+    .estcard__box-head h2 {
+        font-size: 28px;
+    }
+
+    .estcard__box-head span {
+        font-size: 14px;
+    }
+
+    .estcard__box-row b {
+        font-size: 28px;
+    }
+
+    .estcard__box-row p {
+        font-size: 16px;
+        margin-left: 16px;
+        padding-left: 20px;
+
+        &:before {
+            width: 3px;
+            height: 3px;
+        }
+    }
 
     .estpage {
         .estcard__slider {
@@ -842,6 +914,27 @@
 }
 
 @media (max-width: 1200px) {
+    .estcard__box-head h2 {
+        font-size: 24px;
+    }
+
+    .estcard__box-row {
+        flex-wrap: wrap;
+    }
+
+    .estcard__box-row p:nth-of-type(1) {
+        padding-left: 0;
+        margin-left: 0;
+
+        &:before {
+            display: none;
+        }
+    }
+
+    .estcard__box-row b {
+        width: 100%;
+    }
+
     .estpage {
         .estcard__slider {
             height: 400px;
@@ -924,6 +1017,17 @@
 }
 
 @media (max-width: 992px) {
+    .estcard__box-row b {
+        font-size: 22px;
+    }
+
+    .estcard__box-head h2 {
+        font-size: 20px;
+    }
+
+    .estcard__box-row a {
+        margin: 10px 30% 0 0;
+    }
 
     .estpage .estcard__slider {
         height: 310px;
@@ -938,7 +1042,7 @@
         .street-view {
             right: 16px;
             width: 90px;
-            height: 55px;
+            height: 52px;
 
             span {
                 font-size: 12px;
@@ -982,7 +1086,304 @@
 
 }
 
-@media (max-width: 768px) {
+
+
+
+
+@media (max-width: 767.8px) {
+    .estcard__buttons{
+        position: fixed;
+        width: 100%;
+        left: 0;
+        bottom: 0;
+        background: #f7f7f7;
+        padding: 8px;
+        p{
+            display: none;
+        }
+    }
+
+    .estpage .col-md-4 {
+        padding: 0;
+    }
+
+    .estcard__slider .swiper-button-next,
+    .estcard__slider .swiper-button-prev,
+    .estcard__slider .swiper-rtl .swiper-button-next,
+    .estcard__slider .swiper-rtl .swiper-button-prev {
+        width: 10px;
+        height: 18px;
+        background-size: cover;
+    }
+
+    .estcard__slider .swiper-button-next,
+    .estcard__slider .swiper-rtl .swiper-button-prev {
+        background-image: url(../img/svg_icons/arrow_slide_next.svg);
+        right: 5%;
+    }
+
+    .estcard__slider .swiper-button-prev,
+    .estcard__slider .swiper-rtl .swiper-button-next {
+        background-image: url(../img/svg_icons/arrow_slide_prev.svg);
+        left: 5%;
+    }
+
+    .estcard__back {
+        display: block;
+        position: absolute;
+        left: 16px;
+        top: 47px;
+        width: 32px;
+        height: 32px;
+        background-size: cover;
+        z-index: 10;
+    }
+
+    .estcard__user-info h3 {
+        font-size: 16px;
+    }
+
+    .estcard__box-parametres ul li {
+        width: 100%;
+        margin-right: 0px;
+        margin-bottom: 8px;
+        padding-left: 20px;
+        font-size: 14px;
+
+        &:before {
+            width: 12px;
+            height: 12px;
+        }
+    }
+
+    .estcard__box .more-btn {
+        margin-top: 10px;
+        margin-bottom: 10px;
+
+        span {
+            font-weight: 600;
+        }
+    }
+
+    .estcard__box-info--mobile {
+        display: block;
+
+        ul {
+            margin-bottom: 24px;
+        }
+
+        li {
+            display: flex;
+            align-items: center;
+            margin-top: 8px;
+        }
+
+        img {
+            margin-right: 8px;
+            width: 12px;
+            background-size: cover;
+        }
+
+        p {
+            color: #22232A;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+            margin: 0;
+        }
+
+        a {
+            width: 100%;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 6px;
+            border-radius: 8px;
+            border: 1px solid #3670F0;
+            color: #3670F0;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 16px;
+
+            svg {
+                margin-right: 8px;
+            }
+        }
+
+        .info {
+            margin-top: 24px;
+            display: flex;
+            align-items: center;
+            border-radius: 4px;
+            background: rgba(217, 217, 217, 0.20);
+            padding: 6px 16px;
+            height: 32px;
+            width: 100%;
+
+            p {
+                color: rgba(34, 35, 42, 0.50);
+                font-size: 12px;
+                font-style: normal;
+                font-weight: 600;
+                line-height: 130%;
+
+                &+p {
+                    margin-left: 10px;
+
+                    &:before {
+                        content: '';
+                        display: inline-block;
+                        vertical-align: middle;
+                        width: 2px;
+                        height: 2px;
+                        background: rgba(34, 35, 42, 0.50);
+                        margin-right: 8px;
+                    }
+                }
+            }
+        }
+    }
+
+    .estcard__box>h3 {
+        font-size: 18px;
+        padding-top: 16px;
+        margin-bottom: 16px;
+        padding-top: 0;
+    }
+
+    .estcard__box-info {
+        display: none;
+    }
+
+    .estcard__box-row p {
+        font-size: 12px;
+    }
+
+    .estcard__box p {
+        font-size: 14px;
+    }
+
+    .estcard__box-row p:before {
+        width: 2px;
+        height: 2px;
+        background-color: rgba(5, 10, 21, 0.50);
+    }
+
+    .estcard__box-head span {
+        order: 4;
+    }
+
+    .estcard__box-head {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .estcard__box-head h2 {
+        order: 2;
+        font-weight: 700;
+    }
+
+    .estcard__box-row a {
+        display: none;
+    }
+
+    .estcard__box-row b {
+        font-size: 20px;
+        order: -1;
+    }
+
+    .estcard__head {
+        display: none;
+    }
+
+    .estpage .estcard__slider {
+        margin-bottom: 0px;
+        height: 60vw;
+    }
+
+    .estcard__slider {
+
+        .video-view,
+        .full-view {
+            display: none;
+        }
+    }
+
+    .estcard__row-mobile {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 16px 16px 0px 0px;
+        background: #f4f4f4;
+        display: flex;
+        align-items: center;
+        padding: 8px;
+        margin-top: -16px;
+        position: relative;
+        z-index: 5;
+
+        .estate__card-headcheck {
+            font-size: 12px;
+        }
+
+        p {
+            color: #22232A;
+            font-size: 12px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 130%;
+            position: relative;
+            margin-right: 21px;
+            position: relative;
+
+            &:after {
+                content: '';
+                position: absolute;
+                top: 45%;
+                right: -13px;
+                width: 2px;
+                height: 2px;
+                background-color: #22232A;
+            }
+        }
+    }
+
+    .estcard__slider-item {
+        border-radius: 0;
+    }
+
+    .estpage__row {
+        padding: 0 12px;
+    }
+
+    .estcard__mapbox,
+    .estcard__planbox {
+        display: none;
+    }
+
+    .estpage .col-md-8 {
+        padding: 0;
+    }
+
+    .estcard__box {
+        margin-bottom: 0;
+        padding: 10px 24px;
+    }
+
+    .estcard__slider .swiper-pagination {
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 85%;
+        color: #FBFBFB;
+        background: transparent;
+
+        &:before {
+            display: none;
+        }
+    }
 
     .objcard__inner>h2 {
         font-size: 26px;
@@ -1270,6 +1671,20 @@
 }
 
 @media (max-width: 576px) {
+    .estcard__back {
+        top: 16px;
+    }
+    .estcard{
+        padding-top: 0;
+    }
+    .estcard__box>h3 {
+        font-size: 16px;
+    }
+
+    .estcard__box {
+        padding: 10px 16px;
+    }
+
     .objcard {
         padding-top: 70px;
     }
@@ -1278,7 +1693,8 @@
         font-size: 16px;
         margin-bottom: 16px;
         font-weight: 600;
-        span{
+
+        span {
             font-size: 16px;
             font-weight: 600;
         }
@@ -1299,7 +1715,8 @@
 
     .fancybox-button.fancybox-button--close {
         top: 15px;
-        right: 80%;
+        right: initial;
+        left: 5%;
     }
 
     .estpage__slider .swiper-button-next,
