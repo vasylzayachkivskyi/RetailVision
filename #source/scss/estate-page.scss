@@ -429,9 +429,11 @@
     border-radius: 8px;
     overflow: hidden;
     position: relative;
-    .estpage__row-plan{
+
+    .estpage__row-plan {
         cursor: pointer;
-        a{
+
+        a {
             display: none;
         }
     }
@@ -924,11 +926,12 @@
         .estcard__planbox {
             height: 215px;
         }
-    }
 
-    .estcard__head {
-        width: calc(100% - 60px);
-        margin: 0 0 8px auto;
+
+        .estcard__head {
+            width: calc(100% - 60px);
+            margin: 0 0 8px auto;
+        }
     }
 }
 
@@ -1126,7 +1129,8 @@
             background-size: cover;
             margin-right: 8px;
             background-image: url(../img/svg_icons/estpage_mobilepanel_video.svg);
-            iframe{
+
+            iframe {
                 display: none;
             }
         }
@@ -1136,7 +1140,8 @@
             height: 24px;
             background-size: cover;
             background-image: url(../img/svg_icons/estpage_mobilepanel_plan.svg);
-            img{
+
+            img {
                 display: none;
             }
         }
@@ -1147,7 +1152,8 @@
             background-size: cover;
             margin: 0 0 0 auto;
             background-image: url(../img/svg_icons/estpage_mobilepanel_location.svg);
-            iframe{
+
+            iframe {
                 display: none;
             }
         }

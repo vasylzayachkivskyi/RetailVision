@@ -82,6 +82,7 @@ $(document).ready(function () {
         $('.sidebar__agreements').removeClass('active');
         $('.sidebar__contacts').removeClass('active');
         $('.sidebar__settings').removeClass('active');
+        $('.sidebar__estate').removeClass('active');
         $('.personal__card ').removeClass('show');
         $('.user__card-breadcrumbs').removeClass('active');
         return false;
@@ -93,6 +94,7 @@ $(document).ready(function () {
         $('.settings').removeClass('active');
         $('.sidebar__contacts').removeClass('active');
         $('.sidebar__settings').removeClass('active');
+        $('.sidebar__estate').removeClass('active');
         $('.agreements').toggleClass('active');
         $(this).toggleClass('active');
     });
@@ -102,6 +104,7 @@ $(document).ready(function () {
         $('.agreements').removeClass('active');
         $('.settings').removeClass('active');
         $('.sidebar__agreements').removeClass('active');
+        $('.sidebar__estate').removeClass('active');
         $('.sidebar__settings').removeClass('active');
         $('.contacts').toggleClass('active');
         $(this).toggleClass('active');
@@ -113,7 +116,19 @@ $(document).ready(function () {
         $('.contacts').removeClass('active');
         $('.sidebar__agreements').removeClass('active');
         $('.sidebar__contacts').removeClass('active');
+        $('.sidebar__estate').removeClass('active');
         $('.settings').toggleClass('active');
+        $(this).toggleClass('active');
+    });
+
+    //  sidebar estate open ----------------- //
+    $('.sidebar__estate').on('click', function () {
+        $('.agreements').removeClass('active');
+        $('.contacts').removeClass('active');
+        $('.sidebar__agreements').removeClass('active');
+        $('.sidebar__contacts').removeClass('active');
+        $('.sidebar__settings').removeClass('active');
+        $('.subestate').toggleClass('active');
         $(this).toggleClass('active');
     });
 
@@ -134,12 +149,17 @@ $(document).ready(function () {
         $('.sidebar>.tab-sidebar').removeClass('active');
     });
 
+    $('.subestate .submenu__inner-item, .sidebar__estate').on('click', function () {
+        $('.sidebar__estate').addClass('active');
+        $('.sidebar>.tab-sidebar').removeClass('active');
+    });
+
 
     // close sidebar when click not submenu -------- //
     $(document).on('click', function (event) {
         var target = $(event.target);
 
-        if (!target.closest('.submenu__inner, .sidebar__settings, .sidebar__contacts, .sidebar__agreements, .submenu__header').length) {
+        if (!target.closest('.submenu__inner, .sidebar__settings, .sidebar__contacts, .sidebar__agreements, .sidebar__estate, .submenu__header').length) {
             $('.submenu__inner').removeClass('active');
         }
     });
@@ -161,7 +181,6 @@ $(document).ready(function () {
     //  checkbox form select menu ----------------- //
     $('.select input[type="text"]').on('click', function () {
         $(this).closest('.select').find('.dropdown-response').slideToggle();
-        // $(this).closest('.select').find('ul').slideToggle();
 
         // close dropdown-element if click not this element-------- //
         $(document).on('click', function (event) {
@@ -217,6 +236,36 @@ $(document).ready(function () {
 
 
 
+    // analytics dropdown ---------------------------------------------- //
+    $('.analytics__select .analytics__input').on('click', function () {
+        $('.analytics__select').find('ul').slideToggle();
+    });
+
+    $(document).on('click', function (event) {
+        var target = $(event.target);
+
+        if (!target.closest('.analytics__select').length) {
+            $('.analytics__select').find('ul').slideUp();
+        }
+    });
+
+    $('.analytics__select li').on('click', function () {
+        const $select = $(this).closest('.analytics__select');
+        const selectedValue = $(this).find('input[type=radio]').val();
+        const selectedLength = selectedValue.length;
+        $select.find('.analytics__input').val(selectedValue);
+        var maxLength = 12; // Максимальна довжина для скороченого тексту
+
+        if (selectedLength > maxLength) {
+            var shortText = selectedValue.substring(0, maxLength) + '...'; // Скорочений текст з трикрапкою
+            $select.find('.analytics__input').val(shortText);
+        } else {
+            $select.find('.analytics__input').val(selectedValue);
+        }
+    });
+
+
+
 
     // select dropdown ---------------------------------------------- //
     $('.select').on('click', function () {
@@ -226,10 +275,11 @@ $(document).ready(function () {
     $('.select li').on('click', function () {
         const $select = $(this).closest('.select');
         const selectedValue = $(this).find('input[type=radio]').val();
+        const selectedLength = selectedValue.length;
         $select.find('input[type=text]').val(selectedValue);
         var maxLength = 12; // Максимальна довжина для скороченого тексту
 
-        if (selectedValue.length > maxLength) {
+        if (selectedLength > maxLength) {
             var shortText = selectedValue.substring(0, maxLength) + '...'; // Скорочений текст з трикрапкою
             $select.find('input[type=text]').val(shortText);
         } else {
@@ -331,6 +381,21 @@ $(document).ready(function () {
 
     // ------------------------  ESTATE TAB ------------------------------------- //
 
+    // ------------------ ESTATE TAB -------------------------- //
+    $('.estate__head-tab').on('click', function () {
+        var dataClass = $(this).attr('data-tab');
+        $('.estate__window').removeClass('show').hide();
+        $('.estate__head-tab').removeClass('active');
+        $(this).addClass('active');
+        $('.' + dataClass).addClass('show').fadeIn(500);
+        return false;
+    });
+
+    // click on burger submenu
+    $('.burger-estate').on('click', function () {
+        $('.subestate').toggleClass('active');
+    });
+
     // estate image slider --------------------- // 
     var swiper = new Swiper(".estate-slider", {
         loop: true,
@@ -409,13 +474,13 @@ $(document).ready(function () {
             prevEl: ".swiper-button-prev",
         },
         keyboard: true,
-        
+
     });
 
     //  gallery ----------- //
-    $('[data-fancybox^="images"]').each(function() {
+    $('[data-fancybox^="images"]').each(function () {
         var galleryType = $(this).data('fancybox');
-        
+
         $(`[data-fancybox="${galleryType}"]`).fancybox({
             thumbs: {
                 autoStart: true
@@ -743,6 +808,7 @@ $(document).ready(function () {
     $('.saleowner__head-filterbtn').on('click', function () {
         $(this).toggleClass('active');
         $('.form__filter').slideToggle();
+        $('.estate__window').toggleClass('active');
         $('.saleowner__table').toggleClass('active');
         $('.saleowner__kanban').toggleClass('active');
     });
