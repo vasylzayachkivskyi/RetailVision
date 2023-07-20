@@ -28,7 +28,7 @@
     }
 }
 
-.analytics__input{
+.analytics__input {
     cursor: pointer;
 }
 
@@ -46,8 +46,8 @@
         position: absolute;
         top: 34px;
         left: 16px;
-        width: 16px;
-        height: 16px;
+        width: 14px;
+        height: 14px;
         background-size: cover;
         background-image: url(../img/svg_icons/analytics_calendar.svg);
     }
@@ -111,6 +111,13 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        &.active{
+            span {
+                border: 1px solid #3670F0;
+                background: rgba(59, 110, 223, 0.10);
+                color: #3670F0;
+            }
+        }
 
         .line {
             width: 8px;
@@ -119,10 +126,28 @@
             margin: 0 4px;
         }
 
-        .onlydatepicker {
+        .calendar-wrapper {
             width: calc(50% - 6px);
-            padding: 10px;
+            position: relative;
+
+            &:before {
+                content: '';
+                position: absolute;
+                left: 12px;
+                top: 13px;
+                width: 14px;
+                height: 14px;
+                background-size: cover;
+                background-image: url(../img/svg_icons/analytics_calendar.svg);
+            }
+
+        }
+
+        .onlydatepicker {
+            width: 100%;
+            padding: 10px 10px 10px 30px;
             display: flex;
+            font-weight: 500;
             align-items: center;
             justify-content: center;
         }
@@ -136,11 +161,11 @@
             margin: 0;
             border: none;
 
-            &.checked+span {
-                border: 1px solid #3670F0;
-                background: rgba(59, 110, 223, 0.10);
-                color: #3670F0;
-            }
+            // &.checked+span {
+            //     border: 1px solid #3670F0;
+            //     background: rgba(59, 110, 223, 0.10);
+            //     color: #3670F0;
+            // }
         }
     }
 }

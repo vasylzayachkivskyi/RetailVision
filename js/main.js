@@ -244,7 +244,7 @@ $(document).ready(function () {
     $(document).on('click', function (event) {
         var target = $(event.target);
 
-        if (!target.closest('.analytics__select').length) {
+        if (!target.closest('.analytics__select, .flatpickr-calendar').length) {
             $('.analytics__select').find('ul').slideUp();
         }
     });
