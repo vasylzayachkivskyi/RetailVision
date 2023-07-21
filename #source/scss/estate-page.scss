@@ -11,6 +11,10 @@
     align-items: center;
 }
 
+.estbuttons-mobile{
+    display: none;
+}
+
 .estheader__logo {
     a {
         display: block;
@@ -1168,6 +1172,23 @@
         }
     }
 
+    .estcard .estcard__buttons{
+        display: none;
+    }
+    .estbuttons-mobile {
+        position: fixed;
+        display: block;
+        bottom: 0;
+        left: 0;
+        z-index: 999;
+        width: 100%;
+        transition: .6s;
+        transform: translateX(100%);
+        &.show {
+            transform: translateX(0%);
+        }
+    }
+
     .estpage .col-md-4 {
         padding: 0;
     }
@@ -1616,10 +1637,6 @@
         right: 90%;
         background-image: url(../img/svg_icons/close_gallery_mobile.svg);
     }
-
-    // .fancybox-stage {
-    //     display: none !important;
-    // }
 
     .fancybox-navigation {
         display: none;

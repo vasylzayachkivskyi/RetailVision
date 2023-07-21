@@ -438,20 +438,24 @@ $(document).ready(function () {
     // sell
     $('.open-estcard-sell').on('click', function () {
         $('.estcard-sell').addClass('show');
+        $('.estbuttons-sell').addClass('show');
         $('.estcard-breadcrumbs').addClass('active');
     });
     $('.close-estcard-sell').on('click', function () {
         $('.estcard-sell').removeClass('show');
+        $('.estbuttons-sell').removeClass('show');
         $('.estcard-breadcrumbs').removeClass('active');
     });
 
     // rent
     $('.open-estcard-rent').on('click', function () {
         $('.estcard-rent').addClass('show');
+        $('.estbuttons-rent').addClass('show');
         $('.estcard-breadcrumbs').addClass('active');
     });
     $('.close-estcard-rent').on('click', function () {
         $('.estcard-rent').removeClass('show');
+        $('.estbuttons-rent').removeClass('show');
         $('.estcard-breadcrumbs').removeClass('active');
     });
 
