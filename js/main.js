@@ -251,7 +251,8 @@ $(document).ready(function () {
 
     $('.analytics__select li').on('click', function () {
         const $select = $(this).closest('.analytics__select');
-        const selectedValue = $(this).find('input[type=radio]').val();
+        // const selectedValue = $(this).find('input[type=radio]').val();
+        const selectedValue = $(this).find('.analytics__field input').val();
         const selectedLength = selectedValue.length;
         $select.find('.analytics__input').val(selectedValue);
         var maxLength = 12; // Максимальна довжина для скороченого тексту
@@ -263,6 +264,24 @@ $(document).ready(function () {
             $select.find('.analytics__input').val(selectedValue);
         }
     });
+
+    const calendarInputs = $('.calendar input.onlydatepicker');
+    const analyticsInput = $('.analytics__input');
+    const maxLength = 18; // Максимальна довжина для скороченого тексту
+
+    // Створюємо подію, яка відбудеться при зміні значення у полях calendar
+    calendarInputs.on('change', function () {
+        // Отримуємо значення з першого та другого поля calendar
+        const firstDate = calendarInputs.eq(0).val();
+        const secondDate = calendarInputs.eq(1).val();
+
+        // Об'єднуємо значення у вигляді періоду та вставляємо у поле analytics__input
+        const periodValue = `${firstDate} - ${secondDate}`;
+        const shortText = periodValue.length > maxLength ? periodValue.substring(0, maxLength) + '...' : periodValue;
+        analyticsInput.val(shortText);
+    });
+
+
 
 
 
@@ -1077,15 +1096,15 @@ $(document).ready(function () {
 
     $('.onlydatepicker').flatpickr({
         time_24hr: true,
-        dateFormat: "d.m.Y",
-        ariaDateFormat: "d.m.Y",
-        altFormat: "d.m.Y",
+        dateFormat: "d.m.y",
+        ariaDateFormat: "d.m.y",
+        altFormat: "d.m.y",
         enableTime: false,
         minDate: "Завтра",
         minuteIncrement: 30,
         disableMobile: "true",
         locale: {
-            firstDayOfWeek: 1, // Встановлюємо перший день тижня на понеділок
+            firstDayOfWeek: 1,
             months: {
                 shorthand: ['Січ', 'Лют', 'Бер', 'Кві', 'Тра', 'Чер', 'Лип', 'Сер', 'Вер', 'Жов', 'Лис', 'Гру'],
                 longhand: ['Січень', 'Лютий', 'Березень', 'Квітень', 'Травень', 'Червень', 'Липень', 'Серпень', 'Вересень', 'Жовтень', 'Листопад', 'Грудень']
