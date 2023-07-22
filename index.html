@@ -24,6 +24,15 @@
             <div class="row justify-content-between">
                <div class="col-3 d-flex align-items-center">
                   <div class="tab-header">
+                     <div class="submenu__header sidebar-box sidenews-tab active-box">
+                        <ul>
+                           <li>
+                              <span>
+                                 Головна
+                              </span>
+                           </li>
+                        </ul>
+                     </div>
                      <div class="saleowner__info-breadcrumbs popup__btn" data-popup="lead-warning__popup">
                         <img src="img/svg_icons/arrow_back.svg" alt="back">
                         <span>Назад</span>
@@ -45,7 +54,7 @@
                            </li>
                         </ul>
                      </div>
-                     <div class="submenu__header sidebar-box sideestate-tab active-box">
+                     <div class="submenu__header sidebar-box sideestate-tab">
                         <ul>
                            <li>
                               <div class="burger-btn burger-estate">
@@ -406,7 +415,7 @@
             <a href="#" class="sidebar__logo">
                <img src="img/logotype.png" alt="logo">
             </a>
-            <a href="#" class="sidebar__news tab-sidebar" data-tab="sidenews-tab">
+            <a href="#" class="sidebar__news tab-sidebar active" data-tab="sidenews-tab">
                <img src="img/svg_icons/aside_news.svg" alt="news">
                <img class="hover-item" src="img/svg_icons/aside_news_hover.svg" alt="news">
                <div class="sidebar-name">
@@ -433,7 +442,7 @@
                   </div>
                </div>
             </a>
-            <a href="#" class="sidebar__estate active">
+            <a href="#" class="sidebar__estate">
                <img src="img/svg_icons/aside_estate.svg" alt="estate">
                <img class="hover-item" src="img/svg_icons/aside_estate_hover.svg" alt="estate">
                <div class="sidebar-name">
@@ -609,305 +618,145 @@
 
          <div class="mainsect">
 
-            <!-- NEWS(СТРІЧКА НОВИН) -->
-            <div class="sidebar-box sidenews-tab">
+            <!-- NEWSFEED(СТРІЧКА НОВИН) -->
+            <div class="sidebar-box sidenews-tab active-box">
                <div class="newsfeed">
-                  <div class="newsfeed__wrapper">
-                     <div class="estate__inner-item">
-                        <span class="time">9 годин тому</span>
-                        <div class="estate__item-img">
-                           <div class="swiper estate-slider">
-                              <div class="swiper-wrapper">
-                                 <div class="swiper-slide">
-                                    <img src="img/image.png" alt="image">
+                  <div class="customcontainer">
+                     <div class="newsfeed__title">
+                        <h2>
+                           Стрічка новин
+                        </h2>
+                     </div>
+                     <div class="col-8">
+                        <div class="newsfeed__left">
+                           <div class="newsfeed__box">
+                              <div class="newsfeed__box-head">
+                                 <div class="newsfeed__box-ava">
+                                    <img src="img/newsfeed__ava.png" alt="avatar">
                                  </div>
-                                 <div class="swiper-slide">
-                                    <img src="img/image.png" alt="image">
+                                 <div class="newsfeed__box-headinfo">
+                                    <span>
+                                       Відповідальний
+                                    </span>
+                                    <h3>
+                                       Марія Зенецька
+                                    </h3>
+                                    <i>
+                                       Додав/ла новий об’єкт
+                                    </i>
+                                    <p>
+                                       24 квітня, 20:25
+                                    </p>
                                  </div>
-                                 <div class="swiper-slide">
-                                    <img src="img/image.png" alt="image">
-                                 </div>
-                                 <div class="swiper-slide">
-                                    <img src="img/image.png" alt="image">
-                                 </div>
-                                 <div class="swiper-slide">
-                                    <img src="img/image.png" alt="image">
-                                 </div>
-                                 <div class="swiper-slide">
-                                    <img src="img/image.png" alt="image">
-                                 </div>
-                                 <div class="swiper-slide">
-                                    <img src="img/image.png" alt="image">
-                                 </div>
-                                 <div class="swiper-slide">
-                                    <img src="img/image.png" alt="image">
-                                 </div>
-                                 <div class="swiper-slide">
-                                    <img src="img/image.png" alt="image">
+                                 <div class="newsfeed__box-additionally">
+                                    NEW
                                  </div>
                               </div>
-                              <div class="swiper-button-next"></div>
-                              <div class="swiper-button-prev"></div>
-                              <div class="swiper-pagination"></div>
-                           </div>
-                        </div>
-                        <div class="estate__item-content">
-                           <div class="estate__item-top">
-                              <p>
-                                 Продаж
-                              </p>
-                              <p>
-                                 Торгівельна нерухомість
-                              </p>
-                           </div>
-                           <div class="estate__item-middle">
-                              <h3>
-                                 8 000 000$
-                              </h3>
-                              <p>
-                                 Петра Сагайдачного, 37
-                              </p>
-                              <span>
-                                 Подольский р-н, Киев
-                              </span>
-                           </div>
-                           <div class="estate__item-bottom">
-                              <div class="estate__bottom-row">
-                                 <img src="img/svg_icons/area.svg" alt="icon">
+                              <div class="newsfeed__box-content">
+                                 <div class="newsfeed__box-left">
+                                    <div class="newsfeed__box-slider">
+                                       <div class="newsfeed__video">
+                                          
+                                       </div>
+                                       <div class="swiper newsfeed-slider">
+                                          <div class="swiper-wrapper">
+                                             <div class="swiper-slide">
+                                                <img src="img/estate_slide1.png" alt="image">
+                                             </div>
+                                             <div class="swiper-slide">
+                                                <img src="img/estate_slide2.png" alt="image">
+                                             </div>
+                                             <div class="swiper-slide">
+                                                <img src="img/estate_slide3.png" alt="image">
+                                             </div>
+                                             <div class="swiper-slide">
+                                                <img src="img/estate_slide4.png" alt="image">
+                                             </div>
+                                             <div class="swiper-slide">
+                                                <img src="img/estate_slide1.png" alt="image">
+                                             </div>
+                                             <div class="swiper-slide">
+                                                <img src="img/estate_slide2.png" alt="image">
+                                             </div>
+                                             <div class="swiper-slide">
+                                                <img src="img/estate_slide3.png" alt="image">
+                                             </div>
+                                             <div class="swiper-slide">
+                                                <img src="img/estate_slide4.png" alt="image">
+                                             </div>
+                                             <div class="swiper-slide">
+                                                <img src="img/estate_slide3.png" alt="image">
+                                             </div>
+                                          </div>
+                                          <div class="swiper-button-next"></div>
+                                          <div class="swiper-button-prev"></div>
+                                          <div class="swiper-pagination"></div>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div class="newsfeed__box-right">
+                                    <div class="newsfeed__row">
+                                       <p>
+                                          Продаж
+                                       </p>
+                                       <p>
+                                          Торгівельна нерухомість
+                                       </p>
+                                    </div>
+                                    <div class="newsfeed__row">
+                                       <h4>
+                                          $80 000 000
+                                       </h4>
+                                       <span>
+                                          $67 000 за м<sup>2</sup>
+                                       </span>
+                                    </div>
+                                    <div class="newsfeed__box-address">
+                                       Київ, вул. Січових Стрільців, 58а
+                                    </div>
+                                    <div class="newsfeed__box-info">
+                                       <ul>
+                                          <li>
+                                              <img src="img/svg_icons/estpage_mobile_shop.svg" alt="icon">
+                                              <p>
+                                                  Площа1 320 м<sup>2</sup>
+                                              </p>
+                                          </li>
+                                          <li>
+                                              <img src="img/svg_icons/estcard_box_info_icon1.svg" alt="icon">
+                                              <p>
+                                                  Площа ділянки 300 сот.
+                                              </p>
+                                          </li>
+                                          <li>
+                                              <img src="img/svg_icons/estpage_mobile_time-past.svg" alt="icon">
+                                              <p>
+                                                  Поточна окупність 8 років
+                                              </p>
+                                          </li>
+                                          <li>
+                                              <img src="img/svg_icons/estpage_mobile_time-quarter-to.svg" alt="icon">
+                                              <p>
+                                                  Потенційна окупність 7 років
+                                              </p>
+                                          </li>
+                                      </ul>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="newsfeed__box-bottom">
                                  <p>
-                                    1 320 м<sup>2</sup>
+                                    Кваліфікація об’єкту
                                  </p>
-                              </div>
-                              <div class="estate__bottom-row">
-                                 <img src="img/svg_icons/time_cash.svg" alt="icon">
                                  <p>
-                                    8,5 років
+                                    Комісія 100% + бонус
                                  </p>
                               </div>
                            </div>
                         </div>
                      </div>
-                     <div class="estate__inner-item">
-                        <span class="time">9 годин тому</span>
-                        <div class="estate__item-img">
-                           <div class="swiper estate-slider">
-                              <div class="swiper-wrapper">
-                                 <div class="swiper-slide">
-                                    <img src="img/image.png" alt="image">
-                                 </div>
-                                 <div class="swiper-slide">
-                                    <img src="img/image.png" alt="image">
-                                 </div>
-                                 <div class="swiper-slide">
-                                    <img src="img/image.png" alt="image">
-                                 </div>
-                                 <div class="swiper-slide">
-                                    <img src="img/image.png" alt="image">
-                                 </div>
-                                 <div class="swiper-slide">
-                                    <img src="img/image.png" alt="image">
-                                 </div>
-                                 <div class="swiper-slide">
-                                    <img src="img/image.png" alt="image">
-                                 </div>
-                                 <div class="swiper-slide">
-                                    <img src="img/image.png" alt="image">
-                                 </div>
-                                 <div class="swiper-slide">
-                                    <img src="img/image.png" alt="image">
-                                 </div>
-                                 <div class="swiper-slide">
-                                    <img src="img/image.png" alt="image">
-                                 </div>
-                              </div>
-                              <div class="swiper-button-next"></div>
-                              <div class="swiper-button-prev"></div>
-                              <div class="swiper-pagination"></div>
-                           </div>
-                        </div>
-                        <div class="estate__item-content">
-                           <div class="estate__item-top">
-                              <p>
-                                 Продаж
-                              </p>
-                              <p>
-                                 Торгівельна нерухомість
-                              </p>
-                           </div>
-                           <div class="estate__item-middle">
-                              <h3>
-                                 8 000 000$
-                              </h3>
-                              <p>
-                                 Петра Сагайдачного, 37
-                              </p>
-                              <span>
-                                 Подольский р-н, Киев
-                              </span>
-                           </div>
-                           <div class="estate__item-bottom">
-                              <div class="estate__bottom-row">
-                                 <img src="img/svg_icons/area.svg" alt="icon">
-                                 <p>
-                                    1 320 м<sup>2</sup>
-                                 </p>
-                              </div>
-                              <div class="estate__bottom-row">
-                                 <img src="img/svg_icons/time_cash.svg" alt="icon">
-                                 <p>
-                                    8,5 років
-                                 </p>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="estate__inner-item">
-                        <span class="time">9 годин тому</span>
-                        <div class="estate__item-img">
-                           <div class="swiper estate-slider">
-                              <div class="swiper-wrapper">
-                                 <div class="swiper-slide">
-                                    <img src="img/image.png" alt="image">
-                                 </div>
-                                 <div class="swiper-slide">
-                                    <img src="img/image.png" alt="image">
-                                 </div>
-                                 <div class="swiper-slide">
-                                    <img src="img/image.png" alt="image">
-                                 </div>
-                                 <div class="swiper-slide">
-                                    <img src="img/image.png" alt="image">
-                                 </div>
-                                 <div class="swiper-slide">
-                                    <img src="img/image.png" alt="image">
-                                 </div>
-                                 <div class="swiper-slide">
-                                    <img src="img/image.png" alt="image">
-                                 </div>
-                                 <div class="swiper-slide">
-                                    <img src="img/image.png" alt="image">
-                                 </div>
-                                 <div class="swiper-slide">
-                                    <img src="img/image.png" alt="image">
-                                 </div>
-                                 <div class="swiper-slide">
-                                    <img src="img/image.png" alt="image">
-                                 </div>
-                              </div>
-                              <div class="swiper-button-next"></div>
-                              <div class="swiper-button-prev"></div>
-                              <div class="swiper-pagination"></div>
-                           </div>
-                        </div>
-                        <div class="estate__item-content">
-                           <div class="estate__item-top">
-                              <p>
-                                 Продаж
-                              </p>
-                              <p>
-                                 Торгівельна нерухомість
-                              </p>
-                           </div>
-                           <div class="estate__item-middle">
-                              <h3>
-                                 8 000 000$
-                              </h3>
-                              <p>
-                                 Петра Сагайдачного, 37
-                              </p>
-                              <span>
-                                 Подольский р-н, Киев
-                              </span>
-                           </div>
-                           <div class="estate__item-bottom">
-                              <div class="estate__bottom-row">
-                                 <img src="img/svg_icons/area.svg" alt="icon">
-                                 <p>
-                                    1 320 м<sup>2</sup>
-                                 </p>
-                              </div>
-                              <div class="estate__bottom-row">
-                                 <img src="img/svg_icons/time_cash.svg" alt="icon">
-                                 <p>
-                                    8,5 років
-                                 </p>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="estate__inner-item">
-                        <span class="time">9 годин тому</span>
-                        <div class="estate__item-img">
-                           <div class="swiper estate-slider">
-                              <div class="swiper-wrapper">
-                                 <div class="swiper-slide">
-                                    <img src="img/image.png" alt="image">
-                                 </div>
-                                 <div class="swiper-slide">
-                                    <img src="img/image.png" alt="image">
-                                 </div>
-                                 <div class="swiper-slide">
-                                    <img src="img/image.png" alt="image">
-                                 </div>
-                                 <div class="swiper-slide">
-                                    <img src="img/image.png" alt="image">
-                                 </div>
-                                 <div class="swiper-slide">
-                                    <img src="img/image.png" alt="image">
-                                 </div>
-                                 <div class="swiper-slide">
-                                    <img src="img/image.png" alt="image">
-                                 </div>
-                                 <div class="swiper-slide">
-                                    <img src="img/image.png" alt="image">
-                                 </div>
-                                 <div class="swiper-slide">
-                                    <img src="img/image.png" alt="image">
-                                 </div>
-                                 <div class="swiper-slide">
-                                    <img src="img/image.png" alt="image">
-                                 </div>
-                              </div>
-                              <div class="swiper-button-next"></div>
-                              <div class="swiper-button-prev"></div>
-                              <div class="swiper-pagination"></div>
-                           </div>
-                        </div>
-                        <div class="estate__item-content">
-                           <div class="estate__item-top">
-                              <p>
-                                 Продаж
-                              </p>
-                              <p>
-                                 Торгівельна нерухомість
-                              </p>
-                           </div>
-                           <div class="estate__item-middle">
-                              <h3>
-                                 8 000 000$
-                              </h3>
-                              <p>
-                                 Петра Сагайдачного, 37
-                              </p>
-                              <span>
-                                 Подольский р-н, Киев
-                              </span>
-                           </div>
-                           <div class="estate__item-bottom">
-                              <div class="estate__bottom-row">
-                                 <img src="img/svg_icons/area.svg" alt="icon">
-                                 <p>
-                                    1 320 м<sup>2</sup>
-                                 </p>
-                              </div>
-                              <div class="estate__bottom-row">
-                                 <img src="img/svg_icons/time_cash.svg" alt="icon">
-                                 <p>
-                                    8,5 років
-                                 </p>
-                              </div>
-                           </div>
-                        </div>
+                     <div class="col-4">
+                        <div class="newsfeed__right"></div>
                      </div>
                   </div>
                </div>
@@ -932,8 +781,7 @@
                               <div class="dropdown-wrapper">
                                  <div class="dropdown-row">
                                     <label>
-                                       <input class="customcheck" type="checkbox" name="estateresponse"
-                                          value="Усі">
+                                       <input class="customcheck" type="checkbox" name="estateresponse" value="Усі">
                                        Усі
                                     </label>
                                  </div>
@@ -946,50 +794,43 @@
                                  </div>
                                  <div class="dropdown-row">
                                     <label>
-                                       <input class="customcheck" type="checkbox" name="estateresponse"
-                                          value="Коля">
+                                       <input class="customcheck" type="checkbox" name="estateresponse" value="Коля">
                                        Коля
                                     </label>
                                  </div>
                                  <div class="dropdown-row">
                                     <label>
-                                       <input class="customcheck" type="checkbox" name="estateresponse"
-                                          value="Олег">
+                                       <input class="customcheck" type="checkbox" name="estateresponse" value="Олег">
                                        Олег
                                     </label>
                                  </div>
                                  <div class="dropdown-row">
                                     <label>
-                                       <input class="customcheck" type="checkbox" name="estateresponse"
-                                          value="Діма">
+                                       <input class="customcheck" type="checkbox" name="estateresponse" value="Діма">
                                        Діма
                                     </label>
                                  </div>
                                  <div class="dropdown-row">
                                     <label>
-                                       <input class="customcheck" type="checkbox" name="estateresponse"
-                                          value="Оля">
+                                       <input class="customcheck" type="checkbox" name="estateresponse" value="Оля">
                                        Оля
                                     </label>
                                  </div>
                                  <div class="dropdown-row">
                                     <label>
-                                       <input class="customcheck" type="checkbox" name="estateresponse"
-                                          value="Іван">
+                                       <input class="customcheck" type="checkbox" name="estateresponse" value="Іван">
                                        Іван
                                     </label>
                                  </div>
                                  <div class="dropdown-row">
                                     <label>
-                                       <input class="customcheck" type="checkbox" name="estateresponse"
-                                          value="Діма">
+                                       <input class="customcheck" type="checkbox" name="estateresponse" value="Діма">
                                        Діма
                                     </label>
                                  </div>
                                  <div class="dropdown-row">
                                     <label>
-                                       <input class="customcheck" type="checkbox" name="estateresponse"
-                                          value="Іван">
+                                       <input class="customcheck" type="checkbox" name="estateresponse" value="Іван">
                                        Іван
                                     </label>
                                  </div>
@@ -1032,25 +873,29 @@
                               </li>
                               <li>
                                  <label class="analytics__field">
-                                    <input class="customradio" name="analytics__period" type="radio" value="За останні 7 днів">
+                                    <input class="customradio" name="analytics__period" type="radio"
+                                       value="За останні 7 днів">
                                     <span>За останні 7 днів</span>
                                  </label>
                               </li>
                               <li>
                                  <label class="analytics__field">
-                                    <input class="customradio" name="analytics__period" type="radio" value="За останні 30 днів">
+                                    <input class="customradio" name="analytics__period" type="radio"
+                                       value="За останні 30 днів">
                                     <span>За останні 30 днів</span>
                                  </label>
                               </li>
                               <li>
                                  <label class="analytics__field">
-                                    <input class="customradio" name="analytics__period" type="radio" value="Цей тиждень">
+                                    <input class="customradio" name="analytics__period" type="radio"
+                                       value="Цей тиждень">
                                     <span>Цей тиждень</span>
                                  </label>
                               </li>
                               <li>
                                  <label class="analytics__field">
-                                    <input class="customradio" name="analytics__period" type="radio" value="Минулий тиждень">
+                                    <input class="customradio" name="analytics__period" type="radio"
+                                       value="Минулий тиждень">
                                     <span>Минулий тиждень</span>
                                  </label>
                               </li>
@@ -1062,19 +907,22 @@
                               </li>
                               <li>
                                  <label class="analytics__field">
-                                    <input class="customradio" name="analytics__period" type="radio" value="Минулий місяць">
+                                    <input class="customradio" name="analytics__period" type="radio"
+                                       value="Минулий місяць">
                                     <span>Минулий місяць</span>
                                  </label>
                               </li>
                               <li>
                                  <label class="analytics__field">
-                                    <input class="customradio" name="analytics__period" type="radio" value="Цей квартал">
+                                    <input class="customradio" name="analytics__period" type="radio"
+                                       value="Цей квартал">
                                     <span>Цей квартал</span>
                                  </label>
                               </li>
                               <li>
                                  <label class="analytics__field">
-                                    <input class="customradio" name="analytics__period" type="radio" value="Минулий квартал">
+                                    <input class="customradio" name="analytics__period" type="radio"
+                                       value="Минулий квартал">
                                     <span>Минулий квартал</span>
                                  </label>
                               </li>
@@ -1330,7 +1178,7 @@
                                  <tr>
                                     <td class="total active">
                                        <p>
-                                         23
+                                          23
                                        </p>
                                     </td>
                                  </tr>
@@ -1460,7 +1308,7 @@
                                  <tr>
                                     <td class="total active">
                                        <p>
-                                         23
+                                          23
                                        </p>
                                     </td>
                                  </tr>
@@ -1590,7 +1438,7 @@
                                  <tr>
                                     <td class="total active">
                                        <p>
-                                         23
+                                          23
                                        </p>
                                     </td>
                                  </tr>
@@ -1720,7 +1568,7 @@
                                  <tr>
                                     <td class="total active">
                                        <p>
-                                         23
+                                          23
                                        </p>
                                     </td>
                                  </tr>
@@ -1850,7 +1698,7 @@
                                  <tr>
                                     <td class="total active">
                                        <p>
-                                         23
+                                          23
                                        </p>
                                     </td>
                                  </tr>
@@ -1980,7 +1828,7 @@
                                  <tr>
                                     <td class="total active">
                                        <p>
-                                         23
+                                          23
                                        </p>
                                     </td>
                                  </tr>
@@ -2110,7 +1958,7 @@
                                  <tr>
                                     <td class="total active">
                                        <p>
-                                         23
+                                          23
                                        </p>
                                     </td>
                                  </tr>
@@ -2130,7 +1978,7 @@
             </div>
 
             <!-- ESTATE(НЕРУХОМІСТЬ) -->
-            <div class="sidebar-box sideestate-tab active-box">
+            <div class="sidebar-box sideestate-tab">
                <div class="estate">
                   <div class="customcontainer">
                      <div class="estate__header">

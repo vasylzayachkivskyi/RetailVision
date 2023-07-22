@@ -398,6 +398,22 @@ $(document).ready(function () {
     })
 
 
+    // ------------------  NEWSFEED TAB ---------------------- //
+
+    // newsfeed slider --------------------- // 
+    var swiper = new Swiper(".newsfeed-slider", {
+        loop: true,
+        pagination: {
+            el: ".swiper-pagination",
+            type: "fraction",
+        },
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+    });
+
+
     // ------------------------  ESTATE TAB ------------------------------------- //
 
     // ------------------ ESTATE TAB -------------------------- //

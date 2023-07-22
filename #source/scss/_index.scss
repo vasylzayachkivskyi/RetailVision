@@ -547,29 +547,7 @@
    }
 }
 
-// newsfeed --------------- //
-.newsfeed {
-   padding: 30px 56px 30px 0;
-   height: calc(100vh - 78px);
-   width: 100%;
-   overflow-y: scroll;
-   overflow-x: hidden;
 
-   &::-webkit-scrollbar {
-      width: 0;
-   }
-
-   /* ie 10+ */
-   -ms-overflow-style: none;
-   /* FF*/
-   overflow: -moz-scrollbars-none;
-}
-
-.newsfeed__wrapper {
-   width: 50%;
-   min-width: 564px;
-   margin-left: 25%;
-}
 
 
 
