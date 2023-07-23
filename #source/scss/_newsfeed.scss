@@ -415,11 +415,11 @@
     .hidden{
         display: none;
     }
-    &.active{
-        .hidden{
-            display: table-row;
-        }
-    }
+    // &.active{
+    //     .hidden{
+    //         display: table-row;
+    //     }
+    // }
 
     th {
         &:nth-child(1) {
@@ -439,8 +439,6 @@
         }
 
         padding: 4px 8px 12px;
-        display: inline-flex;
-        align-items: center;
 
         p {
             color: rgba(5, 10, 21, 0.50);
@@ -508,14 +506,15 @@
         &:nth-child(4) {
             width: 24%;
         }
-
-        padding: 9px 8px;
-        display: inline-flex;
-        align-items: center;
+        >div{
+            padding: 9px 8px;
+        }
 
         .photo {
             position: relative;
             margin-right: 6px;
+            display: inline-block;
+            vertical-align: middle;
 
             img {
                 width: 16px;
@@ -535,6 +534,8 @@
         }
 
         .name {
+            display: inline-block;
+            vertical-align: middle;
             overflow: hidden;
             color: #383D54;
             text-overflow: ellipsis;

@@ -415,7 +415,8 @@ $(document).ready(function () {
     // more/less
     $('.newsfeed__morebtn').on('click', function () {
         $(this).toggleClass('active');
-        $('.newsfeed__rating-table ').toggleClass('active');
+        // $('.newsfeed__rating-table ').toggleClass('active');
+        $('.newsfeed__rating-table ').find('.hidden').slideToggle('fast');
     });
 
 

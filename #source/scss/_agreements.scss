@@ -1388,6 +1388,18 @@
     }
 }
 
+.info-search__copybtn.bluebtn {
+    margin-bottom: 16px;
+    padding: 11px 16px;
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    height: 40px;
+    svg{
+        margin-right: 10px;
+    }
+}
+
 .info-specifications__map {
     display: none;
 }
@@ -2919,6 +2931,7 @@
     .base {
         overflow-x: scroll;
         width: calc(100vw - 56px);
+
         .table-wrapper {
             position: relative;
             padding-bottom: 73px;
