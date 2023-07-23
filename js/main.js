@@ -237,21 +237,20 @@ $(document).ready(function () {
 
 
     // analytics dropdown ---------------------------------------------- //
-    $('.analytics__select .analytics__input').on('click', function () {
-        $('.analytics__select').find('ul').slideToggle();
+    $('.analytics__select-btn .analytics__input').on('click', function () {
+        $('.analytics__select-btn').find('ul').slideToggle();
     });
 
     $(document).on('click', function (event) {
         var target = $(event.target);
 
-        if (!target.closest('.analytics__select, .flatpickr-calendar').length) {
-            $('.analytics__select').find('ul').slideUp();
+        if (!target.closest('.analytics__select-btn, .flatpickr-calendar').length) {
+            $('.analytics__select-btn').find('ul').slideUp();
         }
     });
 
-    $('.analytics__select li').on('click', function () {
-        const $select = $(this).closest('.analytics__select');
-        // const selectedValue = $(this).find('input[type=radio]').val();
+    $('.analytics__select-btn li').on('click', function () {
+        const $select = $(this).closest('.analytics__select-btn');
         const selectedValue = $(this).find('.analytics__field input').val();
         const selectedLength = selectedValue.length;
         $select.find('.analytics__input').val(selectedValue);
@@ -265,8 +264,8 @@ $(document).ready(function () {
         }
     });
 
-    const calendarInputs = $('.calendar input.onlydatepicker');
-    const analyticsInput = $('.analytics__input');
+    const calendarInputs = $('.analytics__select-btn .calendar input.onlydatepicker');
+    const analyticsInput = $('.analytics__select-btn .analytics__input');
     const maxLength = 18; // Максимальна довжина для скороченого тексту
 
     // Створюємо подію, яка відбудеться при зміні значення у полях calendar
@@ -411,6 +410,59 @@ $(document).ready(function () {
             nextEl: ".swiper-button-next",
             prevEl: ".swiper-button-prev",
         },
+    });
+
+    // more/less
+    $('.newsfeed__morebtn').on('click', function () {
+        $(this).toggleClass('active');
+        $('.newsfeed__rating-table ').toggleClass('active');
+    });
+
+
+    // sort tooltip 
+    $('.sort-btn').on('click', function () {
+        $(this).toggleClass('active');
+    });
+
+    // newsfeed dropdown ---------------------------------------------- //
+    $('.newsfeed__select-btn .analytics__input').on('click', function () {
+        $('.newsfeed__select-btn').find('ul').slideToggle();
+    });
+
+    $(document).on('click', function (event) {
+        var target = $(event.target);
+
+        if (!target.closest('.newsfeed__select-btn, .flatpickr-calendar').length) {
+            $('.newsfeed__select-btn').find('ul').slideUp();
+        }
+    });
+
+    $('.newsfeed__select-btn li').on('click', function () {
+        const $select = $(this).closest('.newsfeed__select-btn');
+        const selectedValue = $(this).find('.analytics__field input').val();
+        const selectedLength = selectedValue.length;
+        $select.find('.analytics__input').val(selectedValue);
+        var maxLength = 18;
+
+        if (selectedLength > maxLength) {
+            var shortText = selectedValue.substring(0, maxLength) + '...';
+            $select.find('.analytics__input').val(shortText);
+        } else {
+            $select.find('.analytics__input').val(selectedValue);
+        }
+    });
+
+    const calendar = $('.newsfeed__select-btn .calendar input.onlydatepicker');
+    const newsfeedInput = $('.newsfeed__select-btn .analytics__input');
+    const maxL = 20;
+
+    calendar.on('change', function () {
+        const firstDate = calendar.eq(0).val();
+        const secondDate = calendar.eq(1).val();
+
+        const periodValue = `${firstDate} - ${secondDate}`;
+        const shortText = periodValue.length > maxL ? periodValue.substring(0, maxL) + '...' : periodValue;
+        newsfeedInput.val(shortText);
     });
 
 
@@ -582,6 +634,11 @@ $(document).ready(function () {
 
 
     // ------------------------  LEADS TAB ------------------------------------- //
+
+    // lead saved -------- //
+    $('.leads-agreement').on('click', function () {
+        $(this).closest('.leads__info-agreement').addClass('saved-card');
+    });
     //  table__row active
     $('.table__row .table__row-input').on('click', function () {
         $(this).toggleClass('active');
@@ -961,6 +1018,13 @@ $(document).ready(function () {
 
     // ------------------ CONTACT TAB ---------------------- //
 
+    
+
+    // contacts head dropdown
+    $('.contact__head-btn').on('click', function () {
+        $(this).find('ul').slideToggle();
+    });
+
     // burger contacts
     $('.burger-contacts').on('click', function () {
         $('.contacts').toggleClass('active');
@@ -1001,6 +1065,7 @@ $(document).ready(function () {
         // Якщо потрібно встановити альтернативний шлях до зображення після видалення:
         image.attr('src', 'img/user_avatar_choise.png');
     });
+
 
 
 

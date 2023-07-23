@@ -257,19 +257,68 @@
 }
 
 .contact__head-btn {
-    width: 40px;
-    height: 40px;
-    border-radius: 2px;
-    border: 1px solid #D9D9D9;
-    background: #F5F5F5;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    position: relative;
     cursor: pointer;
+    .btn{
+        width: 40px;
+        height: 40px;
+        border-radius: 2px;
+        border: 1px solid #D9D9D9;
+        background: #F5F5F5;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: .3s;
+        &:hover{
+            background: #ddd;
+        }
+    }
 
     img {
         width: 20px;
         height: 20px;
+    }
+
+    ul {
+        position: absolute;
+        z-index: 33;
+        border-radius: 4px;
+        border: 1px solid #D9D9D9;
+        background: #FBFBFB;
+        box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.08), 2px 0px 3px 0px rgba(0, 0, 0, 0.08);
+        top: 110%;
+        right: 0;
+        width: 142px;
+        display: none;
+
+        li {
+            padding: 8px 16px;
+            transition: .3s;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            &:hover{
+                background-color: #ddd;
+            }
+
+        }
+
+        p {
+            color: #383D54;
+            font-family: Mont;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 20px;
+            letter-spacing: 0.25px;
+        }
+
+        img {
+            margin-right: 8px;
+            width: 16px;
+            height: 16px;
+            background-size: cover;
+        }
     }
 }
 

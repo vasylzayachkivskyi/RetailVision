@@ -28,12 +28,12 @@
     }
 }
 
-.analytics__input {
+.analytics__head .analytics__select .analytics__input {
     cursor: pointer;
 
     &:focus {
-        background: #FBFBFB!important;
-        border: 1px solid #D9D9D9!important;
+        background: #FBFBFB;
+        border: 1px solid #D9D9D9;
     }
 }
 

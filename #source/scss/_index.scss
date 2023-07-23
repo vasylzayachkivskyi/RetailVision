@@ -589,8 +589,6 @@
 
 // RESPONSIVE ----------------------------------------------------------- //
 
-
-
 @media(max-width:1400px) {
 
    .submenu__header {
@@ -613,9 +611,6 @@
       line-height: 18px;
    }
 
-   .newsfeed__wrapper {
-      margin-left: calc(25% - 60px);
-   }
 
 }
 
@@ -629,23 +624,8 @@
    }
 }
 
-@media(max-width:992px) {
-
-   .newsfeed {
-      padding: 30px 35px 30px 91px;
-   }
-
-   .newsfeed__wrapper {
-      width: 100%;
-      min-width: auto;
-      margin-left: 0;
-   }
-
-}
-
 
 @media(max-width:768px) {
-
    .mainsect {
       width: fit-content;
    }
