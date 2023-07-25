@@ -1267,11 +1267,13 @@
    &.fancybox-button--arrow_left {
       background-image: url(../img/svg_icons/estacard_slider_arrow_prev.svg);
       left: 5%;
+      display: none;
    }
 
    &.fancybox-button--arrow_right {
       background-image: url(../img/svg_icons/estacard_slider_arrow_next.svg);
       right: 5%;
+      display: none;
    }
 }
 
