@@ -8,10 +8,12 @@
     overflow-y: auto;
     height: calc(100vh - 140px);
 }
+
 .newsfeed__right {
     overflow-y: auto;
     height: calc(100vh - 140px);
 }
+
 .newsfeed__title {
     h2 {
         padding: 24px 0 16px;
@@ -381,6 +383,7 @@
             cursor: pointer;
             font-size: 12px;
 
+            &:active,
             &:focus {
                 border: none;
                 background: transparent;
@@ -412,9 +415,11 @@
     table {
         width: 100%;
     }
-    .hidden{
+
+    .hidden {
         display: none;
     }
+
     // &.active{
     //     .hidden{
     //         display: table-row;
@@ -479,6 +484,7 @@
                 .increase {
                     display: block;
                 }
+
                 .decrease {
                     display: none;
                 }
@@ -506,7 +512,8 @@
         &:nth-child(4) {
             width: 24%;
         }
-        >div{
+
+        >div {
             padding: 9px 8px;
         }
 

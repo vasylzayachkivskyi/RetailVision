@@ -329,7 +329,6 @@
         width: 18px;
         height: 18px;
         background-size: cover;
-        margin-right: 8px;
     }
 
     p {
@@ -337,6 +336,17 @@
         font-size: 14px;
         line-height: 18px;
         color: #5C6476;
+    }
+
+    &.unite-btn {
+        transition: .3s;
+        pointer-events: none;
+        opacity: 0.5;
+
+        &.active {
+            pointer-events: initial;
+            opacity: 1;
+        }
     }
 }
 
@@ -1395,7 +1405,8 @@
     align-items: center;
     width: fit-content;
     height: 40px;
-    svg{
+
+    svg {
         margin-right: 10px;
     }
 }

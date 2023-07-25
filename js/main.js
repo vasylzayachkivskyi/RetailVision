@@ -352,9 +352,9 @@ $(document).ready(function () {
 
 
     // -----------MULTISELECT-------- //
-    $('.multiselect input').on('click', function () {
-        $(this).parent('.multiselect').find('.dropdownwrap').slideToggle('fast');
-        $(this).parent('.multiselect').find('input[type="text"]').val('')
+    $('.multiselect input, .multiselect-edit').on('click', function () {
+        $(this).closest('.multiselect').find('.dropdownwrap').slideToggle('fast');
+        $(this).closest('.multiselect').find('input[type="text"]').val('')
         $(this).closest('.multiselect').find('.loading').addClass('active');
         $('.dropdownwrap-bottom').removeClass('active');
         $('.dropdownwrap-bottom span').text('');
@@ -401,7 +401,6 @@ $(document).ready(function () {
 
     // newsfeed slider --------------------- // 
     var swiper = new Swiper(".newsfeed-slider", {
-        loop: true,
         pagination: {
             el: ".swiper-pagination",
             type: "fraction",
@@ -645,6 +644,22 @@ $(document).ready(function () {
         $(this).toggleClass('active');
     });
 
+    // table unite button
+    function checkCheckboxes(e) {
+        var activeCheckboxes = $(e).closest('.table-wrapper').find('.table__row-checkbox input:checked').not('.head_table_check');
+        var uniteBtn = $(e).closest('.table-wrapper').find('.unite-btn');
+
+        if (activeCheckboxes.length >= 2) {
+            uniteBtn.addClass('active');
+        } else {
+            uniteBtn.removeClass('active');
+        }
+    }
+    $('.table__row-checkbox input').on('change', function () {
+        checkCheckboxes(this);
+    });
+
+
     // lead row settings -------- //
     $('.lead-block-dropdown').on('click', function () {
         $(this).slideUp();
@@ -839,6 +854,31 @@ $(document).ready(function () {
     });
 
 
+    // dropdown choise comunication
+    $('.dropdown-response .dropdown-check').on('click', function () {
+        var $checkbox = $(this); // Поточний чекбокс, який ми клікнули
+        var $dropdownElement = $checkbox.closest('.dropdown-element'); // Батьківський елемент блоку dropdown-element
+        var selectedValues = []; // Масив для збереження обраних значень
+
+        // Знаходимо всі чекбокси в батьківському блоку і обробляємо їх
+        $dropdownElement.find('.dropdown-check:checked').each(function () {
+            selectedValues.push($(this).val()); // Додаємо значення до масиву
+        });
+
+        // Перевіряємо, чи є обрані значення, і відповідно додаємо або забираємо клас "not-filled"
+        if (selectedValues.length > 0) {
+            $dropdownElement.removeClass('not-filled');
+            // Записуємо обрані значення у відповідний елемент <p> блоку dropdown-element
+            $dropdownElement.find('p').text(selectedValues.join(', '));
+        } else {
+            $dropdownElement.addClass('not-filled');
+            // Якщо нічого не обрано, показуємо початковий текст у відповідному елементі <p>
+            $dropdownElement.find('p').text('Оберіть варіант');
+        }
+    });
+
+
+
     // lead row checkbox ------------ //
     $('.head_table_check').click(function () {
         var name = $(this).attr('name');
@@ -1019,7 +1059,7 @@ $(document).ready(function () {
 
     // ------------------ CONTACT TAB ---------------------- //
 
-    
+
 
     // contacts head dropdown
     $('.contact__head-btn').on('click', function () {
