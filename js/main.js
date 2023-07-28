@@ -249,35 +249,39 @@ $(document).ready(function () {
         }
     });
 
+    // period 
     $('.analytics__select-btn li').on('click', function () {
         const $select = $(this).closest('.analytics__select-btn');
         const selectedValue = $(this).find('.analytics__field input').val();
         const selectedLength = selectedValue.length;
         $select.find('.analytics__input').val(selectedValue);
-        var maxLength = 12; // Максимальна довжина для скороченого тексту
+        var maxLength = 12; 
 
         if (selectedLength > maxLength) {
-            var shortText = selectedValue.substring(0, maxLength) + '...'; // Скорочений текст з трикрапкою
+            var shortText = selectedValue.substring(0, maxLength) + '...'; 
             $select.find('.analytics__input').val(shortText);
         } else {
             $select.find('.analytics__input').val(selectedValue);
         }
     });
 
+    // date picker
     const calendarInputs = $('.analytics__select-btn .calendar input.onlydatepicker');
-    const analyticsInput = $('.analytics__select-btn .analytics__input');
-    const maxLength = 18; // Максимальна довжина для скороченого тексту
+    // const analyticsInput = $('.analytics__select-btn .analytics__input');
+    const maxLength = 18; 
 
-    // Створюємо подію, яка відбудеться при зміні значення у полях calendar
+    
     calendarInputs.on('change', function () {
-        // Отримуємо значення з першого та другого поля calendar
-        const firstDate = calendarInputs.eq(0).val();
-        const secondDate = calendarInputs.eq(1).val();
+        
+        // const firstDate = calendarInputs.eq(0).val();
+        // const secondDate = calendarInputs.eq(1).val();
 
-        // Об'єднуємо значення у вигляді періоду та вставляємо у поле analytics__input
+        const firstDate = $(this).closest('.analytics__select-btn').find('.onlydatepicker').eq(0).val();
+        const secondDate = $(this).closest('.analytics__select-btn').find('.onlydatepicker').eq(1).val();
+       
         const periodValue = `${firstDate} - ${secondDate}`;
         const shortText = periodValue.length > maxLength ? periodValue.substring(0, maxLength) + '...' : periodValue;
-        analyticsInput.val(shortText);
+        $(this).closest('.analytics__select-btn').find('.analytics__input').val(shortText);
     });
 
 
@@ -295,7 +299,7 @@ $(document).ready(function () {
         const selectedValue = $(this).find('input[type=radio]').val();
         const selectedLength = selectedValue.length;
         $select.find('input[type=text]').val(selectedValue);
-        var maxLength = 12; // Максимальна довжина для скороченого тексту
+        var maxLength = 23; // Максимальна довжина для скороченого тексту
 
         if (selectedLength > maxLength) {
             var shortText = selectedValue.substring(0, maxLength) + '...'; // Скорочений текст з трикрапкою
@@ -1055,6 +1059,17 @@ $(document).ready(function () {
         $('.' + dataClass).addClass('show').fadeIn(500);
         return false;
     });
+
+        // ------------------ PARSER TAB -------------------------- //
+
+        $('.parser__tab').on('click', function () {
+            var dataClass = $(this).attr('data-tab');
+            $('.parser__window').removeClass('show').hide();
+            $('.parser__tab').removeClass('active');
+            $(this).addClass('active');
+            $('.' + dataClass).addClass('show').fadeIn(500);
+            return false;
+        });
 
 
     // ------------------ CONTACT TAB ---------------------- //

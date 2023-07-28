@@ -1267,13 +1267,11 @@
    &.fancybox-button--arrow_left {
       background-image: url(../img/svg_icons/estacard_slider_arrow_prev.svg);
       left: 5%;
-      display: none;
    }
 
    &.fancybox-button--arrow_right {
       background-image: url(../img/svg_icons/estacard_slider_arrow_next.svg);
       right: 5%;
-      display: none;
    }
 }
 
@@ -1294,16 +1292,19 @@
          background: rgba(0, 0, 0, 0);
       }
 
-      background-image: url(../img/svg_icons/close_gallery.svg);
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-      background-size: cover;
-      background-repeat: no-repeat;
-      position: absolute;
-      top: 32px;
-      right: 10%;
-      transition: .3s;
+      // background-image: url(../img/svg_icons/close_gallery.svg);
+      // width: 36px;
+      // height: 36px;
+      // border-radius: 50%;
+      // background-size: cover;
+      // background-repeat: no-repeat;
+      // position: absolute;
+      // top: 32px;
+      // right: 10%;
+      // transition: .3s;
+      background: transparent;
+      width: 0;
+      height: 0;
 
 
       &:before {

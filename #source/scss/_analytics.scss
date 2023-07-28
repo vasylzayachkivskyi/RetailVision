@@ -28,7 +28,7 @@
     }
 }
 
-.analytics__head .analytics__select .analytics__input {
+.inputfield.analytics__select .analytics__input {
     cursor: pointer;
 
     &:focus {
@@ -168,12 +168,6 @@
             height: 0;
             margin: 0;
             border: none;
-
-            // &.checked+span {
-            //     border: 1px solid #3670F0;
-            //     background: rgba(59, 110, 223, 0.10);
-            //     color: #3670F0;
-            // }
         }
     }
 }
@@ -182,10 +176,8 @@
 
 
 //  analytics__infosect //
-
 .analytics__infosect {
     display: flex;
-    justify-content: space-between;
     margin-bottom: 16px;
 }
 
@@ -196,6 +188,9 @@
     width: 304px;
     height: 180px;
     padding: 16px 16px 8px 24px;
+    &+.analytics__infobox{
+        margin-left: 20px;
+    }
 }
 
 .analytics__infobox-head {
@@ -467,12 +462,7 @@
 
 // --------------- ADAPTIVE --------------- //
 
-// @media (min-width: 1440.2px) {
-//  .analytics .customcontainer {
-//     padding: 0 12px;
-//         max-width: 1300px;
-//     }
-// }
+
 
 @media (max-width: 1400px) {
     .analytics {

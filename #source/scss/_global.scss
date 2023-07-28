@@ -773,7 +773,7 @@ body {
 
 .dropdown-wrapper.dropdownscroll {
     height: 200px;
-    overflow-y: scroll;
+    overflow-y: auto;
 
     &::-webkit-scrollbar {
         width: 2px;
