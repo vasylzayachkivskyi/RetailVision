@@ -1,3 +1,7 @@
+.parser {
+    overflow-y: hidden;
+}
+
 .parser__tabs {
     display: flex;
     align-items: center;
@@ -39,10 +43,67 @@
     }
 }
 
+.parser__empty {
+    height: calc(100vh - 150px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    img {
+        margin-bottom: 32px;
+        width: 40px;
+        height: 40px;
+    }
+
+    p {
+        color: #383D54;
+        font-family: Mont;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+    }
+}
+
 
 
 .parser__window {
     display: none;
+
+    .parser__window-content {
+        transition: .3s;
+        padding-bottom: 20px;
+        overflow-y: auto;
+        height: calc(100vh - 150px);
+        padding-right: 13px;
+        margin-right: -13px;
+
+        &::-webkit-scrollbar {
+            width: 4px;
+            cursor: pointer;
+            height: 100%;
+        }
+
+        &::-webkit-scrollbar-track {
+            background: #D9D9D9;
+            cursor: pointer;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background-color: #3670F0;
+            cursor: pointer;
+            border-radius: 12px;
+        }
+    }
+
+    &.parser-my .parser__window-content {
+        height: calc(100vh - 150px) !important;
+    }
+
+    &.active .parser__window-content {
+        height: calc(100vh - 230px);
+    }
 
     &.show {
         display: block;
@@ -54,10 +115,11 @@
             justify-content: space-between;
             align-items: flex-end;
             flex-wrap: wrap;
+            gap: 10px;
         }
 
         button {
-            margin: 0 auto 16px 16px;
+            margin: 0 0 16px;
         }
 
         .inputfield {
@@ -142,8 +204,44 @@
     }
 }
 
+.parser__object-time {
+    width: 325px;
+    height: 38px;
+    border-radius: 100px;
+    background: #FBFBFB;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    z-index: 12;
+    left: 50%;
+    top: 15px;
+    transform: translateX(-50%);
+
+    span {
+        color: rgba(34, 35, 42, 0.50);
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 130%;
+    }
+
+    p {
+        margin-left: 10px;
+        color: rgba(34, 35, 42, 0.80);
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+    }
+}
+
 
 .parser__window-content {
+    .estpage__row:hover {
+        background: #fbfbfb;
+    }
+
     .estpage__row-descr {
         position: relative;
         height: 100%;
@@ -242,6 +340,8 @@
         left: initial;
         right: 0;
 
+
+
         li {
             color: #383D54;
             font-size: 14px;
@@ -259,7 +359,8 @@
                 font-weight: 600;
                 line-height: 20px;
                 letter-spacing: 0.25px;
-                img{
+
+                img {
                     margin-right: 6px;
                 }
 
@@ -334,10 +435,88 @@
     }
 }
 
+//  ---------------- POPUPS  ---------------- //
+
+
+.parser-response__popup .popup__wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.parser-response__popup-inner {
+    border-radius: 8px;
+    background: #FBFBFB;
+    padding: 24px;
+}
+
+.parser-response__popup-head {
+    margin-bottom: 16px;
+    text-align: right;
+
+    .popup__close {
+        width: 16px;
+        height: 16px;
+    }
+}
+
+.parser__popup-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    a {
+        height: 40px;
+        padding: 8px 16px;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &.whitebtn {
+            border: none;
+        }
+
+        &+a {
+            margin-left: 8px;
+        }
+    }
+}
+
+.parser-response__popup-inner {
+
+    p {
+        color: #22232A;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        margin-bottom: 24px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
 
 // ADAPTIVE ------------------ //
 
+@media (max-width: 1756px) {
+    .parser__window.active .parser__window-content {
+        height: calc(100vh - 295px);
+    }
+}
+
 @media (max-width: 1400px) {
+    .parser__window .parser__window-content {
+        margin-right: -10px;
+    }
+
     .parser {
         overflow-x: scroll;
         width: calc(100vw - 56px);

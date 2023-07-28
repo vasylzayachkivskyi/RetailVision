@@ -255,10 +255,10 @@ $(document).ready(function () {
         const selectedValue = $(this).find('.analytics__field input').val();
         const selectedLength = selectedValue.length;
         $select.find('.analytics__input').val(selectedValue);
-        var maxLength = 12; 
+        var maxLength = 12;
 
         if (selectedLength > maxLength) {
-            var shortText = selectedValue.substring(0, maxLength) + '...'; 
+            var shortText = selectedValue.substring(0, maxLength) + '...';
             $select.find('.analytics__input').val(shortText);
         } else {
             $select.find('.analytics__input').val(selectedValue);
@@ -268,17 +268,17 @@ $(document).ready(function () {
     // date picker
     const calendarInputs = $('.analytics__select-btn .calendar input.onlydatepicker');
     // const analyticsInput = $('.analytics__select-btn .analytics__input');
-    const maxLength = 18; 
+    const maxLength = 18;
 
-    
+
     calendarInputs.on('change', function () {
-        
+
         // const firstDate = calendarInputs.eq(0).val();
         // const secondDate = calendarInputs.eq(1).val();
 
         const firstDate = $(this).closest('.analytics__select-btn').find('.onlydatepicker').eq(0).val();
         const secondDate = $(this).closest('.analytics__select-btn').find('.onlydatepicker').eq(1).val();
-       
+
         const periodValue = `${firstDate} - ${secondDate}`;
         const shortText = periodValue.length > maxLength ? periodValue.substring(0, maxLength) + '...' : periodValue;
         $(this).closest('.analytics__select-btn').find('.analytics__input').val(shortText);
@@ -1060,16 +1060,31 @@ $(document).ready(function () {
         return false;
     });
 
-        // ------------------ PARSER TAB -------------------------- //
+    // ------------------ PARSER TAB -------------------------- //
 
-        $('.parser__tab').on('click', function () {
-            var dataClass = $(this).attr('data-tab');
-            $('.parser__window').removeClass('show').hide();
-            $('.parser__tab').removeClass('active');
-            $(this).addClass('active');
-            $('.' + dataClass).addClass('show').fadeIn(500);
-            return false;
-        });
+    $('.parser__tab').on('click', function () {
+        var dataClass = $(this).attr('data-tab');
+        $('.parser__window').removeClass('show').hide();
+        $('.parser__tab').removeClass('active');
+        $(this).addClass('active');
+        $('.' + dataClass).addClass('show').fadeIn(500);
+        return false;
+    });
+
+
+    //  ------------------- PARSER FILTER BTN ----------------- //
+    $('.parser-filterbtn').on('click', function () {
+        $('.parser__window').toggleClass('active');
+    });
+
+    $('.parser__tab').on('click', function () {
+        console.log('df');
+        if( $(this).attr('data-tab') == 'parser-my' ) {
+            $('.parser-filterbtn').hide();
+        } else {
+            $('.parser-filterbtn').show();
+        }
+    });
 
 
     // ------------------ CONTACT TAB ---------------------- //
