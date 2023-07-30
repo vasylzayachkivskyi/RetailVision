@@ -97,6 +97,19 @@
 }
 
 
+.estcard__box-row .whitebtn {
+    margin: 0 0 0 auto;
+    color: #3670F0;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 16px;
+    height: 40px;
+    padding: 10px 16px;
+    display: flex;
+    align-items: center;
+    border-radius: 8px;
+}
+
 
 
 
@@ -923,6 +936,7 @@
             height: 3px;
         }
     }
+
 
     .estpage {
         .estcard__slider {

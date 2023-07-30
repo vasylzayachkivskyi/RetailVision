@@ -356,13 +356,25 @@ $(document).ready(function () {
 
 
     // -----------MULTISELECT-------- //
-    $('.multiselect input, .multiselect-edit').on('click', function () {
+    $('.multiselect input').on('click', function () {
         $(this).closest('.multiselect').find('.dropdownwrap').slideToggle('fast');
         $(this).closest('.multiselect').find('input[type="text"]').val('')
         $(this).closest('.multiselect').find('.loading').toggleClass('active');
         $('.dropdownwrap-bottom').removeClass('active');
         $('.dropdownwrap-bottom span').text('');
     });
+
+    // -------------
+    $('.multiselect-edit').on('click', function () {
+        $(this).closest('dl').find('.dropdownwrap').slideToggle('fast');
+        $(this).closest('dl').addClass('dfd');
+        $(this).closest('dl').find('input[type="text"]').focus();
+        $(this).closest('dl').find('input[type="text"]').val('')
+        $(this).closest('dl').find('.loading').toggleClass('active');
+        $('.dropdownwrap-bottom').removeClass('active');
+        $('.dropdownwrap-bottom span').text('');
+    });
+    // -------------
 
     $('.dropdownwrap-bottom').on('click', function () {
         $(this).closest('.multiselect').find('.dropdownwrap').slideToggle('fast');
@@ -391,9 +403,10 @@ $(document).ready(function () {
         }
     });
 
+
     $(document).on('click', function (event) {
         var target = $(event.target);
-        var selectElements = $('.multiselect');
+        var selectElements = $('dl');
         selectElements.each(function () {
             var selectThis = $(this);
             var dropdownResponse = selectThis.find('.dropdownwrap');
@@ -402,6 +415,18 @@ $(document).ready(function () {
             }
         });
     })
+
+    // $(document).on('click', function (event) {
+    //     var target = $(event.target);
+    //     var selectElements = $('.multiselect');
+    //     selectElements.each(function () {
+    //         var selectThis = $(this);
+    //         var dropdownResponse = selectThis.find('.dropdownwrap');
+    //         if (!target.closest(selectThis).length) {
+    //             dropdownResponse.slideUp('fast');
+    //         }
+    //     });
+    // })
 
 
     // ------------------  NEWSFEED TAB ---------------------- //

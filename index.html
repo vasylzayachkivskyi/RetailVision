@@ -422,10 +422,10 @@
          <!-- SIDEBAR(БІЧНА ПАНЕЛЬ) -->
          <aside class="sidebar">
 
-            <a href="#" class="sidebar__logo">
+            <a href="#" class="sidebar__logo ">
                <img src="img/logotype.png" alt="logo">
             </a>
-            <a href="#" class="sidebar__news tab-sidebar" data-tab="sidenews-tab">
+            <a href="#" class="sidebar__news tab-sidebar new" data-tab="sidenews-tab">
                <img src="img/svg_icons/aside_news.svg" alt="news">
                <img class="hover-item" src="img/svg_icons/aside_news_hover.svg" alt="news">
                <div class="sidebar-name">
@@ -434,7 +434,7 @@
                   </div>
                </div>
             </a>
-            <a href="#" class="sidebar__tasks tab-sidebar active" data-tab="sidetasks-tab">
+            <a href="#" class="sidebar__tasks tab-sidebar new active" data-tab="sidetasks-tab">
                <img src="img/svg_icons/aside_tasks.svg" alt="news">
                <img class="hover-item" src="img/svg_icons/aside_tasks_hover.svg" alt="news">
                <div class="sidebar-name">
@@ -443,7 +443,7 @@
                   </div>
                </div>
             </a>
-            <a href="#" class="sidebar__analytics tab-sidebar" data-tab="sideanalytics-tab">
+            <a href="#" class="sidebar__analytics tab-sidebar new" data-tab="sideanalytics-tab">
                <img src="img/svg_icons/aside_analytics.svg" alt="analytics">
                <img class="hover-item" src="img/svg_icons/aside_analytics_hover.svg" alt="analytics">
                <div class="sidebar-name">
@@ -452,7 +452,7 @@
                   </div>
                </div>
             </a>
-            <a href="#" class="sidebar__estate">
+            <a href="#" class="sidebar__estate new">
                <img src="img/svg_icons/aside_estate.svg" alt="estate">
                <img class="hover-item" src="img/svg_icons/aside_estate_hover.svg" alt="estate">
                <div class="sidebar-name">
@@ -461,7 +461,7 @@
                   </div>
                </div>
             </a>
-            <a href="#" class="sidebar__leads tab-sidebar" data-tab="sideleads-tab">
+            <a href="#" class="sidebar__leads tab-sidebar new" data-tab="sideleads-tab">
                <img src="img/svg_icons/aside_leads.svg" alt="leads">
                <img class="hover-item" src="img/svg_icons/aside_leads_hover.svg" alt="leads">
                <div class="sidebar-name">
@@ -470,7 +470,7 @@
                   </div>
                </div>
             </a>
-            <a href="#" class="sidebar__agreements">
+            <a href="#" class="sidebar__agreements new">
                <img src="img/svg_icons/aside_agreements.svg" alt="agreements">
                <img class="hover-item" src="img/svg_icons/aside_agreements_hover.svg" alt="agreements">
                <div class="sidebar-name">
@@ -479,7 +479,7 @@
                   </div>
                </div>
             </a>
-            <a href="#" class="sidebar__contacts">
+            <a href="#" class="sidebar__contacts new">
                <img src="img/svg_icons/aside_contacts.svg" alt="contacts">
                <img class="hover-item" src="img/svg_icons/aside_contacts_hover.svg" alt="contacts">
                <div class="sidebar-name">
@@ -488,7 +488,7 @@
                   </div>
                </div>
             </a>
-            <a href="#" class="sidebar__settings">
+            <a href="#" class="sidebar__settings new">
                <img src="img/svg_icons/aside_settings.svg" alt="settings">
                <img class="hover-item" src="img/svg_icons/aside_settings_hover.svg" alt="settings">
                <div class="sidebar-name">
@@ -9152,7 +9152,6 @@
                            <div class="col-lg-5 col-5">
                               <div class="leads__info-left">
                                  <div class="leads__left-wrapper">
-
                                     <div class="leads__info-leftblock main-info">
                                        <div class="leads__leftblock-header">
                                           <h2>
@@ -9214,8 +9213,6 @@
                                           </div>
                                        </div>
                                     </div>
-
-
                                     <div class="leads__info-leftblock contact-info">
                                        <div class="leads__leftblock-header">
                                           <h2>
@@ -9277,8 +9274,7 @@
                                              </dl>
                                              <dl>
                                                 <dt>Телефон</dt>
-                                                <dd
-                                                   class="leads__leftblock-input leads__leftblock-action hover-element not-filled phonemask multiselect">
+                                                <dd class="leads__leftblock-input leads__leftblock-action hover-element not-filled phonemask multiselect">
                                                    <img src="img/svg_icons/Loading_icon.svg" alt="load" class="loading">
                                                    <img class="add-icon" src="img/svg_icons/plus_circle_grey.svg"
                                                       alt="icon">
@@ -9298,17 +9294,29 @@
                                                          </div>
                                                       </div>
                                                    </div>
-                                                   <ul>
-                                                      <li class="multiselect-edit">
-                                                         <img src="img/svg_icons/edit_icon_black.svg" alt="icon">
-                                                         Редагувати
-                                                      </li>
-                                                      <li>
-                                                         <img src="img/svg_icons/copy_icon_black.svg" alt="icon">
-                                                         Скопіювати
-                                                      </li>
-                                                   </ul>
                                                 </dd>
+                                                <ul class="multiselect-dropdown">
+                                                   <li class="multiselect-edit">
+                                                      <img src="img/svg_icons/edit_icon_black.svg" alt="icon">
+                                                      Редагувати
+                                                   </li>
+                                                   <li>
+                                                      <img src="img/svg_icons/copy_icon_black.svg" alt="icon">
+                                                      Скопіювати
+                                                   </li>
+                                                   <li>
+                                                      <img src="img/svg_icons/viber_icons.svg" alt="icon">
+                                                      Відправити в Viber
+                                                   </li>
+                                                   <li>
+                                                      <img src="img/svg_icons/telegram_icon.svg" alt="icon">
+                                                      Відправити в Telegram
+                                                   </li>
+                                                   <li>
+                                                      <img src="img/svg_icons/whatsup_icon.svg" alt="icon">
+                                                      Відправити в WhatsApp
+                                                   </li>
+                                                </ul>
                                              </dl>
                                              <dl>
                                                 <dt>Email</dt>
@@ -9333,6 +9341,20 @@
                                                       </div>
                                                    </div>
                                                 </dd>
+                                                <ul class="multiselect-dropdown">
+                                                   <li class="multiselect-edit">
+                                                      <img src="img/svg_icons/edit_icon_black.svg" alt="icon">
+                                                      Редагувати
+                                                   </li>
+                                                   <li>
+                                                      <img src="img/svg_icons/copy_icon_black.svg" alt="icon">
+                                                      Скопіювати
+                                                   </li>
+                                                   <li>
+                                                      <img src="img/svg_icons/send_email_icon.svg" alt="icon">
+                                                      Відправити Email
+                                                   </li>
+                                                </ul>
                                              </dl>
                                              <dl class="source-client">
                                                 <dt class="el-with-tooltip">Спосіб комунік...
@@ -13640,6 +13662,28 @@
                                                          </div>
                                                       </div>
                                                    </dd>
+                                                   <ul class="multiselect-dropdown">
+                                                      <li class="multiselect-edit">
+                                                         <img src="img/svg_icons/edit_icon_black.svg" alt="icon">
+                                                         Редагувати
+                                                      </li>
+                                                      <li>
+                                                         <img src="img/svg_icons/copy_icon_black.svg" alt="icon">
+                                                         Скопіювати
+                                                      </li>
+                                                      <li>
+                                                         <img src="img/svg_icons/viber_icons.svg" alt="icon">
+                                                         Відправити в Viber
+                                                      </li>
+                                                      <li>
+                                                         <img src="img/svg_icons/telegram_icon.svg" alt="icon">
+                                                         Відправити в Telegram
+                                                      </li>
+                                                      <li>
+                                                         <img src="img/svg_icons/whatsup_icon.svg" alt="icon">
+                                                         Відправити в WhatsApp
+                                                      </li>
+                                                   </ul>
                                                 </dl>
                                                 <dl>
                                                    <dt>Email</dt>
@@ -13665,6 +13709,20 @@
                                                          </div>
                                                       </div>
                                                    </dd>
+                                                   <ul class="multiselect-dropdown">
+                                                      <li class="multiselect-edit">
+                                                         <img src="img/svg_icons/edit_icon_black.svg" alt="icon">
+                                                         Редагувати
+                                                      </li>
+                                                      <li>
+                                                         <img src="img/svg_icons/copy_icon_black.svg" alt="icon">
+                                                         Скопіювати
+                                                      </li>
+                                                      <li>
+                                                         <img src="img/svg_icons/send_email_icon.svg" alt="icon">
+                                                         Відправити Email
+                                                      </li>
+                                                   </ul>
                                                 </dl>
                                                 <dl class="source-client">
                                                    <dt class="el-with-tooltip">Спосіб комунік...
@@ -13827,6 +13885,28 @@
                                                          </div>
                                                       </div>
                                                    </dd>
+                                                   <ul class="multiselect-dropdown">
+                                                      <li class="multiselect-edit">
+                                                         <img src="img/svg_icons/edit_icon_black.svg" alt="icon">
+                                                         Редагувати
+                                                      </li>
+                                                      <li>
+                                                         <img src="img/svg_icons/copy_icon_black.svg" alt="icon">
+                                                         Скопіювати
+                                                      </li>
+                                                      <li>
+                                                         <img src="img/svg_icons/viber_icons.svg" alt="icon">
+                                                         Відправити в Viber
+                                                      </li>
+                                                      <li>
+                                                         <img src="img/svg_icons/telegram_icon.svg" alt="icon">
+                                                         Відправити в Telegram
+                                                      </li>
+                                                      <li>
+                                                         <img src="img/svg_icons/whatsup_icon.svg" alt="icon">
+                                                         Відправити в WhatsApp
+                                                      </li>
+                                                   </ul>
                                                 </dl>
                                                 <dl>
                                                    <dt>Email</dt>
@@ -13852,6 +13932,20 @@
                                                          </div>
                                                       </div>
                                                    </dd>
+                                                   <ul class="multiselect-dropdown">
+                                                      <li class="multiselect-edit">
+                                                         <img src="img/svg_icons/edit_icon_black.svg" alt="icon">
+                                                         Редагувати
+                                                      </li>
+                                                      <li>
+                                                         <img src="img/svg_icons/copy_icon_black.svg" alt="icon">
+                                                         Скопіювати
+                                                      </li>
+                                                      <li>
+                                                         <img src="img/svg_icons/send_email_icon.svg" alt="icon">
+                                                         Відправити Email
+                                                      </li>
+                                                   </ul>
                                                 </dl>
                                                 <dl class="source-client">
                                                    <dt class="el-with-tooltip">Спосіб комунік...
@@ -14960,7 +15054,11 @@
                                                    </label>
                                                    <label>
                                                       <input type="checkbox" class="customcheck">
-                                                      <span>Загальна видимість</span>
+                                                      <span>Закритий продаж</span>
+                                                   </label>
+                                                   <label>
+                                                      <input type="checkbox" class="customcheck">
+                                                      <span>Зробити "Найкращою пропозицією на сайті ТКН"</span>
                                                    </label>
                                                 </div>
                                              </div>
@@ -20405,6 +20503,28 @@
                                                          </div>
                                                       </div>
                                                    </dd>
+                                                   <ul class="multiselect-dropdown">
+                                                      <li class="multiselect-edit">
+                                                         <img src="img/svg_icons/edit_icon_black.svg" alt="icon">
+                                                         Редагувати
+                                                      </li>
+                                                      <li>
+                                                         <img src="img/svg_icons/copy_icon_black.svg" alt="icon">
+                                                         Скопіювати
+                                                      </li>
+                                                      <li>
+                                                         <img src="img/svg_icons/viber_icons.svg" alt="icon">
+                                                         Відправити в Viber
+                                                      </li>
+                                                      <li>
+                                                         <img src="img/svg_icons/telegram_icon.svg" alt="icon">
+                                                         Відправити в Telegram
+                                                      </li>
+                                                      <li>
+                                                         <img src="img/svg_icons/whatsup_icon.svg" alt="icon">
+                                                         Відправити в WhatsApp
+                                                      </li>
+                                                   </ul>
                                                 </dl>
                                                 <dl>
                                                    <dt>Email</dt>
@@ -20430,6 +20550,20 @@
                                                          </div>
                                                       </div>
                                                    </dd>
+                                                   <ul class="multiselect-dropdown">
+                                                      <li class="multiselect-edit">
+                                                         <img src="img/svg_icons/edit_icon_black.svg" alt="icon">
+                                                         Редагувати
+                                                      </li>
+                                                      <li>
+                                                         <img src="img/svg_icons/copy_icon_black.svg" alt="icon">
+                                                         Скопіювати
+                                                      </li>
+                                                      <li>
+                                                         <img src="img/svg_icons/send_email_icon.svg" alt="icon">
+                                                         Відправити Email
+                                                      </li>
+                                                   </ul>
                                                 </dl>
                                                 <dl class="source-client">
                                                    <dt class="el-with-tooltip">Спосіб комунік...
@@ -20592,6 +20726,28 @@
                                                          </div>
                                                       </div>
                                                    </dd>
+                                                   <ul class="multiselect-dropdown">
+                                                      <li class="multiselect-edit">
+                                                         <img src="img/svg_icons/edit_icon_black.svg" alt="icon">
+                                                         Редагувати
+                                                      </li>
+                                                      <li>
+                                                         <img src="img/svg_icons/copy_icon_black.svg" alt="icon">
+                                                         Скопіювати
+                                                      </li>
+                                                      <li>
+                                                         <img src="img/svg_icons/viber_icons.svg" alt="icon">
+                                                         Відправити в Viber
+                                                      </li>
+                                                      <li>
+                                                         <img src="img/svg_icons/telegram_icon.svg" alt="icon">
+                                                         Відправити в Telegram
+                                                      </li>
+                                                      <li>
+                                                         <img src="img/svg_icons/whatsup_icon.svg" alt="icon">
+                                                         Відправити в WhatsApp
+                                                      </li>
+                                                   </ul>
                                                 </dl>
                                                 <dl>
                                                    <dt>Email</dt>
@@ -20617,6 +20773,20 @@
                                                          </div>
                                                       </div>
                                                    </dd>
+                                                   <ul class="multiselect-dropdown">
+                                                      <li class="multiselect-edit">
+                                                         <img src="img/svg_icons/edit_icon_black.svg" alt="icon">
+                                                         Редагувати
+                                                      </li>
+                                                      <li>
+                                                         <img src="img/svg_icons/copy_icon_black.svg" alt="icon">
+                                                         Скопіювати
+                                                      </li>
+                                                      <li>
+                                                         <img src="img/svg_icons/send_email_icon.svg" alt="icon">
+                                                         Відправити Email
+                                                      </li>
+                                                   </ul>
                                                 </dl>
                                                 <dl class="source-client">
                                                    <dt class="el-with-tooltip">Спосіб комунік...
@@ -21632,7 +21802,11 @@
                                                    </label>
                                                    <label>
                                                       <input type="checkbox" class="customcheck">
-                                                      <span>Загальна видимість</span>
+                                                      <span>Закритий продаж</span>
+                                                   </label>
+                                                   <label>
+                                                      <input type="checkbox" class="customcheck">
+                                                      <span>Зробити "Найкращою пропозицією на сайті ТКН"</span>
                                                    </label>
                                                 </div>
                                              </div>
@@ -26521,6 +26695,28 @@
                                                          </div>
                                                       </div>
                                                    </dd>
+                                                   <ul class="multiselect-dropdown">
+                                                      <li class="multiselect-edit">
+                                                         <img src="img/svg_icons/edit_icon_black.svg" alt="icon">
+                                                         Редагувати
+                                                      </li>
+                                                      <li>
+                                                         <img src="img/svg_icons/copy_icon_black.svg" alt="icon">
+                                                         Скопіювати
+                                                      </li>
+                                                      <li>
+                                                         <img src="img/svg_icons/viber_icons.svg" alt="icon">
+                                                         Відправити в Viber
+                                                      </li>
+                                                      <li>
+                                                         <img src="img/svg_icons/telegram_icon.svg" alt="icon">
+                                                         Відправити в Telegram
+                                                      </li>
+                                                      <li>
+                                                         <img src="img/svg_icons/whatsup_icon.svg" alt="icon">
+                                                         Відправити в WhatsApp
+                                                      </li>
+                                                   </ul>
                                                 </dl>
                                                 <dl>
                                                    <dt>Email</dt>
@@ -26546,6 +26742,20 @@
                                                          </div>
                                                       </div>
                                                    </dd>
+                                                   <ul class="multiselect-dropdown">
+                                                      <li class="multiselect-edit">
+                                                         <img src="img/svg_icons/edit_icon_black.svg" alt="icon">
+                                                         Редагувати
+                                                      </li>
+                                                      <li>
+                                                         <img src="img/svg_icons/copy_icon_black.svg" alt="icon">
+                                                         Скопіювати
+                                                      </li>
+                                                      <li>
+                                                         <img src="img/svg_icons/send_email_icon.svg" alt="icon">
+                                                         Відправити Email
+                                                      </li>
+                                                   </ul>
                                                 </dl>
                                                 <dl class="source-client">
                                                    <dt class="el-with-tooltip">Спосіб комунік...
@@ -26708,6 +26918,28 @@
                                                          </div>
                                                       </div>
                                                    </dd>
+                                                   <ul class="multiselect-dropdown">
+                                                      <li class="multiselect-edit">
+                                                         <img src="img/svg_icons/edit_icon_black.svg" alt="icon">
+                                                         Редагувати
+                                                      </li>
+                                                      <li>
+                                                         <img src="img/svg_icons/copy_icon_black.svg" alt="icon">
+                                                         Скопіювати
+                                                      </li>
+                                                      <li>
+                                                         <img src="img/svg_icons/viber_icons.svg" alt="icon">
+                                                         Відправити в Viber
+                                                      </li>
+                                                      <li>
+                                                         <img src="img/svg_icons/telegram_icon.svg" alt="icon">
+                                                         Відправити в Telegram
+                                                      </li>
+                                                      <li>
+                                                         <img src="img/svg_icons/whatsup_icon.svg" alt="icon">
+                                                         Відправити в WhatsApp
+                                                      </li>
+                                                   </ul>
                                                 </dl>
                                                 <dl>
                                                    <dt>Email</dt>
@@ -26733,6 +26965,20 @@
                                                          </div>
                                                       </div>
                                                    </dd>
+                                                   <ul class="multiselect-dropdown">
+                                                      <li class="multiselect-edit">
+                                                         <img src="img/svg_icons/edit_icon_black.svg" alt="icon">
+                                                         Редагувати
+                                                      </li>
+                                                      <li>
+                                                         <img src="img/svg_icons/copy_icon_black.svg" alt="icon">
+                                                         Скопіювати
+                                                      </li>
+                                                      <li>
+                                                         <img src="img/svg_icons/send_email_icon.svg" alt="icon">
+                                                         Відправити Email
+                                                      </li>
+                                                   </ul>
                                                 </dl>
                                                 <dl class="source-client">
                                                    <dt class="el-with-tooltip">Спосіб комунік...
@@ -32547,6 +32793,28 @@
                                                          </div>
                                                       </div>
                                                    </dd>
+                                                   <ul class="multiselect-dropdown">
+                                                      <li class="multiselect-edit">
+                                                         <img src="img/svg_icons/edit_icon_black.svg" alt="icon">
+                                                         Редагувати
+                                                      </li>
+                                                      <li>
+                                                         <img src="img/svg_icons/copy_icon_black.svg" alt="icon">
+                                                         Скопіювати
+                                                      </li>
+                                                      <li>
+                                                         <img src="img/svg_icons/viber_icons.svg" alt="icon">
+                                                         Відправити в Viber
+                                                      </li>
+                                                      <li>
+                                                         <img src="img/svg_icons/telegram_icon.svg" alt="icon">
+                                                         Відправити в Telegram
+                                                      </li>
+                                                      <li>
+                                                         <img src="img/svg_icons/whatsup_icon.svg" alt="icon">
+                                                         Відправити в WhatsApp
+                                                      </li>
+                                                   </ul>
                                                 </dl>
                                                 <dl>
                                                    <dt>Email</dt>
@@ -32572,6 +32840,20 @@
                                                          </div>
                                                       </div>
                                                    </dd>
+                                                   <ul class="multiselect-dropdown">
+                                                      <li class="multiselect-edit">
+                                                         <img src="img/svg_icons/edit_icon_black.svg" alt="icon">
+                                                         Редагувати
+                                                      </li>
+                                                      <li>
+                                                         <img src="img/svg_icons/copy_icon_black.svg" alt="icon">
+                                                         Скопіювати
+                                                      </li>
+                                                      <li>
+                                                         <img src="img/svg_icons/send_email_icon.svg" alt="icon">
+                                                         Відправити Email
+                                                      </li>
+                                                   </ul>
                                                 </dl>
                                                 <dl class="source-client">
                                                    <dt class="el-with-tooltip">Спосіб комунік...
@@ -32734,6 +33016,28 @@
                                                          </div>
                                                       </div>
                                                    </dd>
+                                                   <ul class="multiselect-dropdown">
+                                                      <li class="multiselect-edit">
+                                                         <img src="img/svg_icons/edit_icon_black.svg" alt="icon">
+                                                         Редагувати
+                                                      </li>
+                                                      <li>
+                                                         <img src="img/svg_icons/copy_icon_black.svg" alt="icon">
+                                                         Скопіювати
+                                                      </li>
+                                                      <li>
+                                                         <img src="img/svg_icons/viber_icons.svg" alt="icon">
+                                                         Відправити в Viber
+                                                      </li>
+                                                      <li>
+                                                         <img src="img/svg_icons/telegram_icon.svg" alt="icon">
+                                                         Відправити в Telegram
+                                                      </li>
+                                                      <li>
+                                                         <img src="img/svg_icons/whatsup_icon.svg" alt="icon">
+                                                         Відправити в WhatsApp
+                                                      </li>
+                                                   </ul>
                                                 </dl>
                                                 <dl>
                                                    <dt>Email</dt>
@@ -32759,6 +33063,20 @@
                                                          </div>
                                                       </div>
                                                    </dd>
+                                                   <ul class="multiselect-dropdown">
+                                                      <li class="multiselect-edit">
+                                                         <img src="img/svg_icons/edit_icon_black.svg" alt="icon">
+                                                         Редагувати
+                                                      </li>
+                                                      <li>
+                                                         <img src="img/svg_icons/copy_icon_black.svg" alt="icon">
+                                                         Скопіювати
+                                                      </li>
+                                                      <li>
+                                                         <img src="img/svg_icons/send_email_icon.svg" alt="icon">
+                                                         Відправити Email
+                                                      </li>
+                                                   </ul>
                                                 </dl>
                                                 <dl>
                                                    <dt>Посада</dt>
@@ -43780,6 +44098,28 @@
                                                          </div>
                                                       </div>
                                                    </dd>
+                                                   <ul class="multiselect-dropdown">
+                                                      <li class="multiselect-edit">
+                                                         <img src="img/svg_icons/edit_icon_black.svg" alt="icon">
+                                                         Редагувати
+                                                      </li>
+                                                      <li>
+                                                         <img src="img/svg_icons/copy_icon_black.svg" alt="icon">
+                                                         Скопіювати
+                                                      </li>
+                                                      <li>
+                                                         <img src="img/svg_icons/viber_icons.svg" alt="icon">
+                                                         Відправити в Viber
+                                                      </li>
+                                                      <li>
+                                                         <img src="img/svg_icons/telegram_icon.svg" alt="icon">
+                                                         Відправити в Telegram
+                                                      </li>
+                                                      <li>
+                                                         <img src="img/svg_icons/whatsup_icon.svg" alt="icon">
+                                                         Відправити в WhatsApp
+                                                      </li>
+                                                   </ul>
                                                 </dl>
                                                 <dl>
                                                    <dt>Email</dt>
@@ -43805,6 +44145,20 @@
                                                          </div>
                                                       </div>
                                                    </dd>
+                                                   <ul class="multiselect-dropdown">
+                                                      <li class="multiselect-edit">
+                                                         <img src="img/svg_icons/edit_icon_black.svg" alt="icon">
+                                                         Редагувати
+                                                      </li>
+                                                      <li>
+                                                         <img src="img/svg_icons/copy_icon_black.svg" alt="icon">
+                                                         Скопіювати
+                                                      </li>
+                                                      <li>
+                                                         <img src="img/svg_icons/send_email_icon.svg" alt="icon">
+                                                         Відправити Email
+                                                      </li>
+                                                   </ul>
                                                 </dl>
                                                 <dl class="source-client">
                                                    <dt class="el-with-tooltip">Спосіб комунік...
