@@ -45,7 +45,7 @@
                         <img src="img/svg_icons/arrow_back.svg" alt="back">
                         <span>Назад</span>
                      </div>
-                     <div class="submenu__header sidebar-box sidetasks-tab">
+                     <div class="submenu__header sidebar-box sidetasks-tab active-box">
                         <ul>
                            <li>
                               <span>
@@ -80,7 +80,7 @@
                            </li>
                         </ul>
                      </div>
-                     <div class="submenu__header sidebar-box sideparser-tab active-box">
+                     <div class="submenu__header sidebar-box sideparser-tab">
                         <ul>
                            <li>
                               <div class="burger-btn burger-estate">
@@ -434,7 +434,7 @@
                   </div>
                </div>
             </a>
-            <a href="#" class="sidebar__tasks tab-sidebar" data-tab="sidetasks-tab">
+            <a href="#" class="sidebar__tasks tab-sidebar active" data-tab="sidetasks-tab">
                <img src="img/svg_icons/aside_tasks.svg" alt="news">
                <img class="hover-item" src="img/svg_icons/aside_tasks_hover.svg" alt="news">
                <div class="sidebar-name">
@@ -452,7 +452,7 @@
                   </div>
                </div>
             </a>
-            <a href="#" class="sidebar__estate active">
+            <a href="#" class="sidebar__estate">
                <img src="img/svg_icons/aside_estate.svg" alt="estate">
                <img class="hover-item" src="img/svg_icons/aside_estate_hover.svg" alt="estate">
                <div class="sidebar-name">
@@ -511,7 +511,7 @@
                   Нерухомість
                </a>
             </div>
-            <div class="submenu__inner-item tab-sidebar active" data-tab="sideparser-tab">
+            <div class="submenu__inner-item tab-sidebar" data-tab="sideparser-tab">
                <div class="submenu__inner-img">
                   <img class="submenu__inner-img--static" src="img/svg_icons/subestate_icon2.svg" alt="icon">
                   <img class="submenu__inner-img--hover" src="img/svg_icons/subestate_icon2_hover.svg" alt="icon">
@@ -1541,11 +1541,11 @@
             </div>
 
             <!-- TASKS(ЗАДАЧІ) -->
-            <div class="sidebar-box sidetasks-tab">
+            <div class="sidebar-box sidetasks-tab active-box">
                <div class="tasks">
                   <div class="customcontainer">
                      <div class="saleowner__head">
-                        <a href="#" class="saleowner__head-addbtn bluebtn open-leadinfo">
+                        <a href="#" class="saleowner__head-addbtn bluebtn popup__btn" data-popup="task__popup">
                            <img src="img/svg_icons/plus_white.svg" alt="plus">
                            Додати задачу
                         </a>
@@ -1556,7 +1556,7 @@
                         </a>
                      </div>
                      <div class="form__filter">
-                        <form>
+                        <div class="form">
                            <div class="tasks__forminput inputfield select">
                               <label>
                                  <span>Відповідальний</span>
@@ -1765,10 +1765,10 @@
                            <button class="bluebtn">
                               Знайти
                            </button>
-                        </form>
+                        </div>
                      </div>
-                     <div class="table-wrapper">
-                        <div class="commontable">
+                     <div class="table-wrapper tasks-table">
+                        <div class="commontable tasks-not-completed">
                            <table>
                               <tr class="table__headrow">
                                  <th class="tooltip-common">
@@ -1839,13 +1839,573 @@
                                     </label>
                                  </td>
                                  <td>
+                                    <div class="table__row-field">
+                                       <textarea
+                                          placeholder="Напишіть результат виконаної задачі: Напишіть результат "></textarea>
+                                       <a class="cancel" href="#">Скасувати</a>
+                                       <a class="perform" href="#">Виконати</a>
+                                    </div>
                                     <p>
                                        12 Червня
                                     </p>
                                  </td>
                                  <td>
-                                    <p>
+                                    <p class="green">
+                                       <img src="img/svg_icons/lead_green_task.svg" alt="icon">
                                        Задача
+                                    </p>
+                                 </td>
+                                 <td>
+                                    <p class="short-field">
+                                       Олександр Мирошніченко
+                                    </p>
+                                 </td>
+                                 <td>
+                                    <p class="short-field">
+                                       Олександр Пимоненко
+                                    </p>
+                                 </td>
+                                 <td>
+                                    <p>
+                                       +380 65 564 76 76
+                                    </p>
+                                 </td>
+                                 <td>
+                                    <p class="short-field">
+                                       Аптека Доброго Дня
+                                    </p>
+                                 </td>
+                                 <td>
+                                    <p class="short-field">
+                                       Об’єкт продаж
+                                    </p>
+                                 </td>
+                                 <td>
+                                    <p class="short-field">
+                                       Назначений завдаток/eujlf
+                                    </p>
+                                 </td>
+                                 <td>
+                                    <p class="short-field">
+                                       Успішно зідвонились, домовились про зустріч
+                                    </p>
+                                 </td>
+                                 <td>
+                                    <p class="table_settings open-saleownerinfo">
+                                       <span>
+                                          ...
+                                       </span>
+                                    </p>
+                                 </td>
+                              </tr>
+                              <tr class="table__row">
+                                 <td class="tooltip-common">
+                                    <span class="tooltip-text">Виконати задачу</span>
+                                    <label class="table__row-checkbox">
+                                       <input class="table__row-input" type="checkbox" name="saleowner_row">
+                                       <span></span>
+                                    </label>
+                                 </td>
+                                 <td>
+                                    <div class="table__row-field">
+                                       <textarea
+                                          placeholder="Напишіть результат виконаної задачі: Напишіть результат "></textarea>
+                                       <a class="cancel" href="#">Скасувати</a>
+                                       <a class="perform" href="#">Виконати</a>
+                                    </div>
+                                    <p>
+                                       12 Червня
+                                    </p>
+                                 </td>
+                                 <td>
+                                    <p class="green">
+                                       <img src="img/svg_icons/lead_green_phone.svg" alt="icon">
+                                       Дзвінок
+                                    </p>
+                                 </td>
+                                 <td>
+                                    <p class="short-field">
+                                       Олександр Мирошніченко
+                                    </p>
+                                 </td>
+                                 <td>
+                                    <p class="short-field">
+                                       Олександр Пимоненко
+                                    </p>
+                                 </td>
+                                 <td>
+                                    <p>
+                                       +380 65 564 76 76
+                                    </p>
+                                 </td>
+                                 <td>
+                                    <p class="short-field">
+                                       Аптека Доброго Дня
+                                    </p>
+                                 </td>
+                                 <td>
+                                    <p class="short-field">
+                                       Об’єкт продаж
+                                    </p>
+                                 </td>
+                                 <td>
+                                    <p class="short-field">
+                                       Назначений завдаток/eujlf
+                                    </p>
+                                 </td>
+                                 <td>
+                                    <p class="short-field">
+                                       Успішно зідвонились, домовились про зустріч
+                                    </p>
+                                 </td>
+                                 <td>
+                                    <p class="table_settings open-saleownerinfo">
+                                       <span>
+                                          ...
+                                       </span>
+                                    </p>
+                                 </td>
+                              </tr>
+                              <tr class="table__row">
+                                 <td class="tooltip-common">
+                                    <span class="tooltip-text">Виконати задачу</span>
+                                    <label class="table__row-checkbox">
+                                       <input class="table__row-input" type="checkbox" name="saleowner_row">
+                                       <span></span>
+                                    </label>
+                                 </td>
+                                 <td>
+                                    <div class="table__row-field">
+                                       <textarea
+                                          placeholder="Напишіть результат виконаної задачі: Напишіть результат "></textarea>
+                                       <a class="cancel" href="#">Скасувати</a>
+                                       <a class="perform" href="#">Виконати</a>
+                                    </div>
+                                    <p>
+                                       12 Червня
+                                    </p>
+                                 </td>
+                                 <td>
+                                    <p class="green">
+                                       <img src="img/svg_icons/lead_green_user.svg" alt="icon">
+                                       Зустріч
+                                    </p>
+                                 </td>
+                                 <td>
+                                    <p class="short-field">
+                                       Олександр Мирошніченко
+                                    </p>
+                                 </td>
+                                 <td>
+                                    <p class="short-field">
+                                       Олександр Пимоненко
+                                    </p>
+                                 </td>
+                                 <td>
+                                    <p>
+                                       +380 65 564 76 76
+                                    </p>
+                                 </td>
+                                 <td>
+                                    <p class="short-field">
+                                       Аптека Доброго Дня
+                                    </p>
+                                 </td>
+                                 <td>
+                                    <p class="short-field">
+                                       Об’єкт продаж
+                                    </p>
+                                 </td>
+                                 <td>
+                                    <p class="short-field">
+                                       Назначений завдаток/eujlf
+                                    </p>
+                                 </td>
+                                 <td>
+                                    <p class="short-field">
+                                       Успішно зідвонились, домовились про зустріч
+                                    </p>
+                                 </td>
+                                 <td>
+                                    <p class="table_settings open-saleownerinfo">
+                                       <span>
+                                          ...
+                                       </span>
+                                    </p>
+                                 </td>
+                              </tr>
+                              <tr class="table__row">
+                                 <td class="tooltip-common">
+                                    <span class="tooltip-text">Виконати задачу</span>
+                                    <label class="table__row-checkbox">
+                                       <input class="table__row-input" type="checkbox" name="saleowner_row">
+                                       <span></span>
+                                    </label>
+                                 </td>
+                                 <td>
+                                    <div class="table__row-field">
+                                       <textarea
+                                          placeholder="Напишіть результат виконаної задачі: Напишіть результат "></textarea>
+                                       <a class="cancel" href="#">Скасувати</a>
+                                       <a class="perform" href="#">Виконати</a>
+                                    </div>
+                                    <p>
+                                       10 Червня
+                                    </p>
+                                 </td>
+                                 <td>
+                                    <p class="red">
+                                       <img src="img/svg_icons/lead_red_task.svg" alt="icon">
+                                       Задача
+                                    </p>
+                                 </td>
+                                 <td>
+                                    <p class="short-field">
+                                       Олександр Мирошніченко
+                                    </p>
+                                 </td>
+                                 <td>
+                                    <p class="short-field">
+                                       Олександр Пимоненко
+                                    </p>
+                                 </td>
+                                 <td>
+                                    <p>
+                                       +380 65 564 76 76
+                                    </p>
+                                 </td>
+                                 <td>
+                                    <p class="short-field">
+                                       Аптека Доброго Дня
+                                    </p>
+                                 </td>
+                                 <td>
+                                    <p class="short-field">
+                                       Об’єкт продаж
+                                    </p>
+                                 </td>
+                                 <td>
+                                    <p class="short-field">
+                                       Назначений завдаток/eujlf
+                                    </p>
+                                 </td>
+                                 <td>
+                                    <p class="short-field">
+                                       Успішно зідвонились, домовились про зустріч
+                                    </p>
+                                 </td>
+                                 <td>
+                                    <p class="table_settings open-saleownerinfo">
+                                       <span>
+                                          ...
+                                       </span>
+                                    </p>
+                                 </td>
+                              </tr>
+                              <tr class="table__row">
+                                 <td class="tooltip-common">
+                                    <span class="tooltip-text">Виконати задачу</span>
+                                    <label class="table__row-checkbox">
+                                       <input class="table__row-input" type="checkbox" name="saleowner_row">
+                                       <span></span>
+                                    </label>
+                                 </td>
+                                 <td>
+                                    <div class="table__row-field">
+                                       <textarea
+                                          placeholder="Напишіть результат виконаної задачі: Напишіть результат "></textarea>
+                                       <a class="cancel" href="#">Скасувати</a>
+                                       <a class="perform" href="#">Виконати</a>
+                                    </div>
+                                    <p>
+                                       12 Червня
+                                    </p>
+                                 </td>
+                                 <td>
+                                    <p class="red">
+                                       <img src="img/svg_icons/lead_red_phone.svg" alt="icon">
+                                       Дзвінок
+                                    </p>
+                                 </td>
+                                 <td>
+                                    <p class="short-field">
+                                       Олександр Мирошніченко
+                                    </p>
+                                 </td>
+                                 <td>
+                                    <p class="short-field">
+                                       Олександр Пимоненко
+                                    </p>
+                                 </td>
+                                 <td>
+                                    <p>
+                                       +380 65 564 76 76
+                                    </p>
+                                 </td>
+                                 <td>
+                                    <p class="short-field">
+                                       Аптека Доброго Дня
+                                    </p>
+                                 </td>
+                                 <td>
+                                    <p class="short-field">
+                                       Об’єкт продаж
+                                    </p>
+                                 </td>
+                                 <td>
+                                    <p class="short-field">
+                                       Назначений завдаток/eujlf
+                                    </p>
+                                 </td>
+                                 <td>
+                                    <p class="short-field">
+                                       Успішно зідвонились, домовились про зустріч
+                                    </p>
+                                 </td>
+                                 <td>
+                                    <p class="table_settings open-saleownerinfo">
+                                       <span>
+                                          ...
+                                       </span>
+                                    </p>
+                                 </td>
+                              </tr>
+                              <tr class="table__row">
+                                 <td class="tooltip-common">
+                                    <span class="tooltip-text">Виконати задачу</span>
+                                    <label class="table__row-checkbox">
+                                       <input class="table__row-input" type="checkbox" name="saleowner_row">
+                                       <span></span>
+                                    </label>
+                                 </td>
+                                 <td>
+                                    <div class="table__row-field">
+                                       <textarea
+                                          placeholder="Напишіть результат виконаної задачі: Напишіть результат "></textarea>
+                                       <a class="cancel" href="#">Скасувати</a>
+                                       <a class="perform" href="#">Виконати</a>
+                                    </div>
+                                    <p>
+                                       10 Червня
+                                    </p>
+                                 </td>
+                                 <td>
+                                    <p class="red">
+                                       <img src="img/svg_icons/lead_red_user.svg" alt="icon">
+                                       Зустріч
+                                    </p>
+                                 </td>
+                                 <td>
+                                    <p class="short-field">
+                                       Олександр Мирошніченко
+                                    </p>
+                                 </td>
+                                 <td>
+                                    <p class="short-field">
+                                       Олександр Пимоненко
+                                    </p>
+                                 </td>
+                                 <td>
+                                    <p>
+                                       +380 65 564 76 76
+                                    </p>
+                                 </td>
+                                 <td>
+                                    <p class="short-field">
+                                       Аптека Доброго Дня
+                                    </p>
+                                 </td>
+                                 <td>
+                                    <p class="short-field">
+                                       Об’єкт продаж
+                                    </p>
+                                 </td>
+                                 <td>
+                                    <p class="short-field">
+                                       Назначений завдаток/eujlf
+                                    </p>
+                                 </td>
+                                 <td>
+                                    <p class="short-field">
+                                       Успішно зідвонились, домовились про зустріч
+                                    </p>
+                                 </td>
+                                 <td>
+                                    <p class="table_settings open-saleownerinfo">
+                                       <span>
+                                          ...
+                                       </span>
+                                    </p>
+                                 </td>
+                              </tr>
+                           </table>
+                        </div>
+                        <div class="table-divider">
+                           <p>
+                              Виконані
+                           </p>
+                        </div>
+                        <div class="commontable tasks-completed">
+                           <table>
+                              <tr class="table__row done popup__btn" data-popup="completed-task__popup">
+                                 <td class="tooltip-common">
+                                    <span class="tooltip-text">Виконати задачу</span>
+                                    <label class="table__row-checkbox">
+                                       <input class="table__row-input" type="checkbox" name="saleowner_row">
+                                       <span></span>
+                                    </label>
+                                 </td>
+                                 <td>
+                                    <div class="table__row-field">
+                                       <textarea
+                                          placeholder="Напишіть результат виконаної задачі: Напишіть результат "></textarea>
+                                       <a class="cancel" href="#">Скасувати</a>
+                                       <a class="perform" href="#">Виконати</a>
+                                    </div>
+                                    <p>
+                                       12 Червня
+                                    </p>
+                                 </td>
+                                 <td>
+                                    <p class="green">
+                                       <img src="img/svg_icons/lead_green_task.svg" alt="icon">
+                                       Задача
+                                    </p>
+                                 </td>
+                                 <td>
+                                    <p class="short-field">
+                                       Олександр Мирошніченко
+                                    </p>
+                                 </td>
+                                 <td>
+                                    <p class="short-field">
+                                       Олександр Пимоненко
+                                    </p>
+                                 </td>
+                                 <td>
+                                    <p>
+                                       +380 65 564 76 76
+                                    </p>
+                                 </td>
+                                 <td>
+                                    <p class="short-field">
+                                       Аптека Доброго Дня
+                                    </p>
+                                 </td>
+                                 <td>
+                                    <p class="short-field">
+                                       Об’єкт продаж
+                                    </p>
+                                 </td>
+                                 <td>
+                                    <p class="short-field">
+                                       Назначений завдаток/eujlf
+                                    </p>
+                                 </td>
+                                 <td>
+                                    <p class="short-field">
+                                       Успішно зідвонились, домовились про зустріч
+                                    </p>
+                                 </td>
+                                 <td>
+                                    <p class="table_settings open-saleownerinfo">
+                                       <span>
+                                          ...
+                                       </span>
+                                    </p>
+                                 </td>
+                              </tr>
+                              <tr class="table__row done popup__btn" data-popup="completed-task__popup">
+                                 <td class="tooltip-common">
+                                    <span class="tooltip-text">Виконати задачу</span>
+                                    <label class="table__row-checkbox">
+                                       <input class="table__row-input" type="checkbox" name="saleowner_row">
+                                       <span></span>
+                                    </label>
+                                 </td>
+                                 <td>
+                                    <div class="table__row-field">
+                                       <textarea
+                                          placeholder="Напишіть результат виконаної задачі: Напишіть результат "></textarea>
+                                       <a class="cancel" href="#">Скасувати</a>
+                                       <a class="perform" href="#">Виконати</a>
+                                    </div>
+                                    <p>
+                                       12 Червня
+                                    </p>
+                                 </td>
+                                 <td>
+                                    <p class="green">
+                                       <img src="img/svg_icons/lead_green_phone.svg" alt="icon">
+                                       Дзвінок
+                                    </p>
+                                 </td>
+                                 <td>
+                                    <p class="short-field">
+                                       Олександр Мирошніченко
+                                    </p>
+                                 </td>
+                                 <td>
+                                    <p class="short-field">
+                                       Олександр Пимоненко
+                                    </p>
+                                 </td>
+                                 <td>
+                                    <p>
+                                       +380 65 564 76 76
+                                    </p>
+                                 </td>
+                                 <td>
+                                    <p class="short-field">
+                                       Аптека Доброго Дня
+                                    </p>
+                                 </td>
+                                 <td>
+                                    <p class="short-field">
+                                       Об’єкт продаж
+                                    </p>
+                                 </td>
+                                 <td>
+                                    <p class="short-field">
+                                       Назначений завдаток/eujlf
+                                    </p>
+                                 </td>
+                                 <td>
+                                    <p class="short-field">
+                                       Успішно зідвонились, домовились про зустріч
+                                    </p>
+                                 </td>
+                                 <td>
+                                    <p class="table_settings open-saleownerinfo">
+                                       <span>
+                                          ...
+                                       </span>
+                                    </p>
+                                 </td>
+                              </tr>
+                              <tr class="table__row done popup__btn" data-popup="completed-task__popup">
+                                 <td class="tooltip-common">
+                                    <span class="tooltip-text">Виконати задачу</span>
+                                    <label class="table__row-checkbox">
+                                       <input class="table__row-input" type="checkbox" name="saleowner_row">
+                                       <span></span>
+                                    </label>
+                                 </td>
+                                 <td>
+                                    <div class="table__row-field">
+                                       <textarea
+                                          placeholder="Напишіть результат виконаної задачі: Напишіть результат "></textarea>
+                                       <a class="cancel" href="#">Скасувати</a>
+                                       <a class="perform" href="#">Виконати</a>
+                                    </div>
+                                    <p>
+                                       12 Червня
+                                    </p>
+                                 </td>
+                                 <td>
+                                    <p class="green">
+                                       <img src="img/svg_icons/lead_green_user.svg" alt="icon">
+                                       Зустріч
                                     </p>
                                  </td>
                                  <td>
@@ -5315,7 +5875,7 @@
             </div>
 
             <!-- PARSER(ПАРСЕР) -->
-            <div class="sidebar-box sideparser-tab active-box">
+            <div class="sidebar-box sideparser-tab">
                <div class="parser">
                   <div class="customcontainer">
                      <div class="saleowner__head">
@@ -46874,7 +47434,6 @@
                </div>
             </div>
 
-
          </div>
 
          <!-- NOTIFICATION(ПОВІДОМЛЕННЯ) -->
@@ -47066,11 +47625,389 @@
                      Ви ставите себе відповідальним за цей об’єкт.
                   </p>
                   <p>
-                     У Вас буде <b>24 години,</b> щоб перетворити об’єкт в угоду. Якщо цього не було зроблено, об’єкт автоматично видаляється з Вашої відповідальності.
+                     У Вас буде <b>24 години,</b> щоб перетворити об’єкт в угоду. Якщо цього не було зроблено, об’єкт
+                     автоматично видаляється з Вашої відповідальності.
                   </p>
                   <div class="parser__popup-bottom">
                      <a href="#" class="popup__close whitebtn">Скасувати</a>
                      <a class="bluebtn popup__close" href="#">Продовжити</a>
+                  </div>
+               </div>
+            </div>
+         </div>
+
+         <!-- POPUP TASK -->
+         <div class="popup__window task__popup">
+            <div class="popup__wrapper">
+               <div class="task__popup-inner">
+                  <div class="task__popup-head">
+                     <p>
+                        Нова задача
+                     </p>
+                     <img class="popup__close" src="img/svg_icons/close.svg" alt="close">
+                  </div>
+                  <div class="task__popup-form">
+
+                     <div class="leads__leftblock-input multiselect">
+                        <img class="search" src="img/svg_icons/search_icon.svg" alt="search">
+                        <span>
+                           Прив’язати до угоди
+                        </span>
+                        <img src="img/svg_icons/Loading_icon.svg" alt="load" class="loading">
+                        <input class="commoninput" type="text"
+                           placeholder="Введіть контактну особу, телефон або організацію">
+                        <div class="dropdownwrap dropdownscroll">
+                           <ul>
+                              <li>Угода Аптека Доброго Дня</li>
+                              <li>Угода Аптека Подорожник</li>
+                              <li>Угода Аптека Доброго Дня</li>
+                              <li>Угода Аптека Подорожник</li>
+                           </ul>
+                        </div>
+                     </div>
+
+                     <div class="task__popup-twocol">
+                        <div class="leads__leftblock-input multiselect">
+                           <img class="search" src="img/svg_icons/estpage_mobile_user.svg" alt="search">
+                           <span>
+                              Контактна особа
+                           </span>
+                           <img src="img/svg_icons/Loading_icon.svg" alt="load" class="loading">
+                           <input class="commoninput" type="text" placeholder="">
+                           <div class="dropdownwrap dropdownscroll">
+                              <ul>
+                                 <li>Угода Аптека Доброго Дня</li>
+                                 <li>Угода Аптека Подорожник</li>
+                                 <li>Угода Аптека Доброго Дня</li>
+                                 <li>Угода Аптека Подорожник</li>
+                              </ul>
+                              <div class="dropdownwrap-bottom">
+                                 <img src="img/svg_icons/plus_circle_blue.svg" alt="img">
+                                 <div>
+                                    Додати ‘<span> </span>’ як новий контакт
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+
+                        <div class="leads__leftblock-input multiselect">
+                           <img class="search" src="img/svg_icons/task_estate_icon.svg" alt="search">
+                           <span>
+                              Організація
+                           </span>
+                           <img src="img/svg_icons/Loading_icon.svg" alt="load" class="loading">
+                           <input class="commoninput" type="text" placeholder="">
+                           <div class="dropdownwrap dropdownscroll">
+                              <ul>
+                                 <li>Угода Аптека Доброго Дня</li>
+                                 <li>Угода Аптека Подорожник</li>
+                                 <li>Угода Аптека Доброго Дня</li>
+                                 <li>Угода Аптека Подорожник</li>
+                              </ul>
+                              <div class="dropdownwrap-bottom">
+                                 <img src="img/svg_icons/plus_circle_blue.svg" alt="img">
+                                 <div>
+                                    Додати ‘<span> </span>’ як нову організацію
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+
+                     <div class="task__popup-twocol">
+                        <div class="tasks__forminput inputfield select">
+                           <label>
+                              <span>Відповідальний</span>
+                              <svg width="14" height="8" viewBox="0 0 14 8" fill="none"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                 <path d="M13 1L7 7L1 1" stroke="#383D54" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                              </svg>
+                              <input class="commoninput" type="text" placeholder="Усі" readonly>
+                           </label>
+                           <div class="dropdown-response">
+                              <div class="dropdown-wrapper dropdownscroll">
+                                 <div class="dropdown-row">
+                                    <label>
+                                       <input class="customcheck" type="checkbox" name="response" value="Усі">
+                                       Усі
+                                    </label>
+                                 </div>
+                                 <div class="dropdown-row">
+                                    <label>
+                                       <input class="customcheck" type="checkbox" name="response" value="Олександр">
+                                       Олександр
+                                    </label>
+                                 </div>
+                                 <div class="dropdown-row">
+                                    <label>
+                                       <input class="customcheck" type="checkbox" name="response" value="Микола">
+                                       Микола
+                                    </label>
+                                 </div>
+                                 <div class="dropdown-row">
+                                    <label>
+                                       <input class="customcheck" type="checkbox" name="response" value="Олександр">
+                                       Олександр
+                                    </label>
+                                 </div>
+                                 <div class="dropdown-row">
+                                    <label>
+                                       <input class="customcheck" type="checkbox" name="response" value="Микола">
+                                       Микола
+                                    </label>
+                                 </div>
+                                 <div class="dropdown-row">
+                                    <label>
+                                       <input class="customcheck" type="checkbox" name="response" value="Олександр">
+                                       Олександр
+                                    </label>
+                                 </div>
+                                 <div class="dropdown-row">
+                                    <label>
+                                       <input class="customcheck" type="checkbox" name="response" value="Микола">
+                                       Микола
+                                    </label>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+
+                     <div class="leads__info-tasks">
+                        <div class="leads__task-head">
+                           <div class="leads__task-headinfo">
+                              <span>Задача на</span>
+                              <input class="datepicker" type="text" placeholder="Завтра" readonly>
+                              <div class="leads__task-type tasktype">
+                                 <p>
+                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                       xmlns="http://www.w3.org/2000/svg">
+                                       <path
+                                          d="M14 9.67473L11.0569 8.35535L11.0456 8.35035C10.8543 8.26788 10.6454 8.23467 10.4379 8.25378C10.2305 8.27289 10.0312 8.3437 9.85813 8.45973C9.83388 8.47596 9.81051 8.49349 9.78813 8.51223L8.39375 9.69973C7.58125 9.2591 6.74188 8.4266 6.30063 7.6241L7.49188 6.20785C7.51103 6.18499 7.52877 6.16099 7.545 6.13598C7.65799 5.96357 7.72659 5.7659 7.74469 5.56057C7.76279 5.35524 7.72984 5.14861 7.64875 4.9591C7.64683 4.95547 7.64516 4.95171 7.64375 4.94785L6.325 1.99973C6.21676 1.75318 6.03201 1.54803 5.7981 1.41464C5.5642 1.28126 5.29357 1.22672 5.02625 1.2591C4.11899 1.37828 3.28612 1.82365 2.68322 2.51201C2.08031 3.20037 1.74859 4.08466 1.75 4.99973C1.75 10.1004 5.89938 14.2497 11 14.2497C11.9151 14.2511 12.7994 13.9194 13.4877 13.3165C14.1761 12.7136 14.6214 11.8807 14.7406 10.9735C14.773 10.7062 14.7185 10.4355 14.5851 10.2016C14.4517 9.96772 14.2466 9.78297 14 9.67473ZM11 12.7497C8.94534 12.7472 6.97554 11.9299 5.52267 10.4771C4.0698 9.02419 3.25249 7.05439 3.25 4.99973C3.24857 4.48191 3.42437 3.97919 3.74818 3.57511C4.07199 3.17103 4.52432 2.88991 5.03 2.77848L6.20625 5.40348L5.00875 6.82973C4.9894 6.85279 4.97145 6.877 4.955 6.90223C4.83697 7.08257 4.76758 7.29037 4.75356 7.50545C4.73954 7.72053 4.78138 7.93559 4.875 8.12973C5.46375 9.33473 6.67688 10.5397 7.89438 11.1297C8.08982 11.2224 8.30595 11.2627 8.52165 11.2469C8.73736 11.231 8.94525 11.1594 9.125 11.0391C9.14917 11.0228 9.17234 11.0051 9.19438 10.986L10.5963 9.7941L13.2213 10.9697C13.1098 11.4754 12.8287 11.9277 12.4246 12.2516C12.0205 12.5754 11.5178 12.7512 11 12.7497Z"
+                                          fill="#383D54" />
+                                    </svg>
+                                    Дзвінок
+                                 </p>
+                                 <ul>
+                                    <li>
+                                       <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                          xmlns="http://www.w3.org/2000/svg">
+                                          <path
+                                             d="M14 9.67473L11.0569 8.35535L11.0456 8.35035C10.8543 8.26788 10.6454 8.23467 10.4379 8.25378C10.2305 8.27289 10.0312 8.3437 9.85813 8.45973C9.83388 8.47596 9.81051 8.49349 9.78813 8.51223L8.39375 9.69973C7.58125 9.2591 6.74188 8.4266 6.30063 7.6241L7.49188 6.20785C7.51103 6.18499 7.52877 6.16099 7.545 6.13598C7.65799 5.96357 7.72659 5.7659 7.74469 5.56057C7.76279 5.35524 7.72984 5.14861 7.64875 4.9591C7.64683 4.95547 7.64516 4.95171 7.64375 4.94785L6.325 1.99973C6.21676 1.75318 6.03201 1.54803 5.7981 1.41464C5.5642 1.28126 5.29357 1.22672 5.02625 1.2591C4.11899 1.37828 3.28612 1.82365 2.68322 2.51201C2.08031 3.20037 1.74859 4.08466 1.75 4.99973C1.75 10.1004 5.89938 14.2497 11 14.2497C11.9151 14.2511 12.7994 13.9194 13.4877 13.3165C14.1761 12.7136 14.6214 11.8807 14.7406 10.9735C14.773 10.7062 14.7185 10.4355 14.5851 10.2016C14.4517 9.96772 14.2466 9.78297 14 9.67473ZM11 12.7497C8.94534 12.7472 6.97554 11.9299 5.52267 10.4771C4.0698 9.02419 3.25249 7.05439 3.25 4.99973C3.24857 4.48191 3.42437 3.97919 3.74818 3.57511C4.07199 3.17103 4.52432 2.88991 5.03 2.77848L6.20625 5.40348L5.00875 6.82973C4.9894 6.85279 4.97145 6.877 4.955 6.90223C4.83697 7.08257 4.76758 7.29037 4.75356 7.50545C4.73954 7.72053 4.78138 7.93559 4.875 8.12973C5.46375 9.33473 6.67688 10.5397 7.89438 11.1297C8.08982 11.2224 8.30595 11.2627 8.52165 11.2469C8.73736 11.231 8.94525 11.1594 9.125 11.0391C9.14917 11.0228 9.17234 11.0051 9.19438 10.986L10.5963 9.7941L13.2213 10.9697C13.1098 11.4754 12.8287 11.9277 12.4246 12.2516C12.0205 12.5754 11.5178 12.7512 11 12.7497Z"
+                                             fill="#383D54" />
+                                       </svg>
+                                       Дзвінок
+                                    </li>
+                                    <li>
+                                       <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                          xmlns="http://www.w3.org/2000/svg">
+                                          <path
+                                             d="M8 8C7.175 8 6.46875 7.70625 5.88125 7.11875C5.29375 6.53125 5 5.825 5 5C5 4.175 5.29375 3.46875 5.88125 2.88125C6.46875 2.29375 7.175 2 8 2C8.825 2 9.53125 2.29375 10.1187 2.88125C10.7062 3.46875 11 4.175 11 5C11 5.825 10.7062 6.53125 10.1187 7.11875C9.53125 7.70625 8.825 8 8 8ZM12.5 14H3.5C3.0875 14 2.73425 13.853 2.44025 13.559C2.14625 13.265 1.9995 12.912 2 12.5V11.9C2 11.475 2.1095 11.0842 2.3285 10.7277C2.5475 10.3712 2.838 10.0995 3.2 9.9125C3.975 9.525 4.7625 9.23425 5.5625 9.04025C6.3625 8.84625 7.175 8.7495 8 8.75C8.825 8.75 9.6375 8.847 10.4375 9.041C11.2375 9.235 12.025 9.5255 12.8 9.9125C13.1625 10.1 13.4532 10.372 13.6722 10.7285C13.8912 11.085 14.0005 11.4755 14 11.9V12.5C14 12.9125 13.853 13.2657 13.559 13.5597C13.265 13.8537 12.912 14.0005 12.5 14ZM3.5 12.5H12.5V11.9C12.5 11.7625 12.4655 11.6375 12.3965 11.525C12.3275 11.4125 12.237 11.325 12.125 11.2625C11.45 10.925 10.7687 10.672 10.0812 10.5035C9.39375 10.335 8.7 10.2505 8 10.25C7.3 10.25 6.60625 10.3345 5.91875 10.5035C5.23125 10.6725 4.55 10.9255 3.875 11.2625C3.7625 11.325 3.67175 11.4125 3.60275 11.525C3.53375 11.6375 3.4995 11.7625 3.5 11.9V12.5ZM8 6.5C8.4125 6.5 8.76575 6.353 9.05975 6.059C9.35375 5.765 9.5005 5.412 9.5 5C9.5 4.5875 9.353 4.23425 9.059 3.94025C8.765 3.64625 8.412 3.4995 8 3.5C7.5875 3.5 7.23425 3.647 6.94025 3.941C6.64625 4.235 6.4995 4.588 6.5 5C6.5 5.4125 6.647 5.76575 6.941 6.05975C7.235 6.35375 7.588 6.5005 8 6.5Z"
+                                             fill="#383D54" />
+                                       </svg>
+                                       Зустріч
+                                    </li>
+                                    <li>
+                                       <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                          xmlns="http://www.w3.org/2000/svg">
+                                          <path
+                                             d="M14 7.40699V3.33366C14 2.98004 13.8595 2.6409 13.6095 2.39085C13.3594 2.1408 13.0203 2.00033 12.6667 2.00033H9.88C9.6 1.22699 8.86667 0.666992 8 0.666992C7.13333 0.666992 6.4 1.22699 6.12 2.00033H3.33333C2.6 2.00033 2 2.60033 2 3.33366V12.667C2 13.0206 2.14048 13.3598 2.39052 13.6098C2.64057 13.8598 2.97971 14.0003 3.33333 14.0003H7.40667C8.24667 14.827 9.39333 15.3337 10.6667 15.3337C13.2467 15.3337 15.3333 13.247 15.3333 10.667C15.3333 9.39366 14.8267 8.24699 14 7.40699ZM8 2.00033C8.36667 2.00033 8.66667 2.30033 8.66667 2.66699C8.66667 3.03366 8.36667 3.33366 8 3.33366C7.63333 3.33366 7.33333 3.03366 7.33333 2.66699C7.33333 2.30033 7.63333 2.00033 8 2.00033ZM3.33333 12.667V3.33366H4.66667V4.66699H11.3333V3.33366H12.6667V6.45366C12.06 6.16699 11.3867 6.00033 10.6667 6.00033H4.66667V7.33366H7.4C7 7.71366 6.69333 8.16699 6.45333 8.66699H4.66667V10.0003H6.05333C6.02 10.2203 6 10.4403 6 10.667C6 11.387 6.16667 12.0603 6.45333 12.667H3.33333ZM10.6667 14.0003C8.82667 14.0003 7.33333 12.507 7.33333 10.667C7.33333 8.82699 8.82667 7.33366 10.6667 7.33366C12.5067 7.33366 14 8.82699 14 10.667C14 12.507 12.5067 14.0003 10.6667 14.0003ZM11 10.8337L12.9067 11.9603L12.4067 12.7737L10 11.3337V8.00033H11V10.8337Z"
+                                             fill="#383D54" />
+                                       </svg>
+                                       Задача
+                                    </li>
+                                 </ul>
+                              </div>
+                           </div>
+                        </div>
+                        <textarea class="leads__task-field" placeholder="Введіть текст..."></textarea>
+                     </div>
+                  </div>
+
+                  <div class="task__popup-bottom">
+                     <a href="#" class="popup__close whitebtn">Скасувати</a>
+                     <a class="bluebtn popup__close" href="#">Продовжити</a>
+                  </div>
+               </div>
+            </div>
+         </div>
+
+         <!-- POPUP TASK (COMPLETED)-->
+         <div class="popup__window completed-task__popup">
+            <div class="popup__wrapper">
+               <div class="task__popup-inner">
+                  <div class="task__popup-head">
+                     <p>
+                        Виконана задача
+                     </p>
+                     <img class="popup__close" src="img/svg_icons/close.svg" alt="close">
+                  </div>
+                  <div class="task__popup-form">
+
+                     <div class="completed-task__popup-result">
+                        <p>
+                           Результат : Домовлено про зустріч
+                        </p>
+                     </div>
+
+                     <div class="leads__leftblock-input multiselect">
+                        <img class="search" src="img/svg_icons/search_icon.svg" alt="search">
+                        <span>
+                           Прив’язати до угоди
+                        </span>
+                        <img src="img/svg_icons/Loading_icon.svg" alt="load" class="loading">
+                        <input class="commoninput" type="text"
+                        value="Угода Доброго Дня">
+                        <div class="dropdownwrap dropdownscroll">
+                           <ul>
+                              <li>Угода Аптека Доброго Дня</li>
+                              <li>Угода Аптека Подорожник</li>
+                              <li>Угода Аптека Доброго Дня</li>
+                              <li>Угода Аптека Подорожник</li>
+                           </ul>
+                        </div>
+                     </div>
+
+                     <div class="task__popup-twocol">
+                        <div class="leads__leftblock-input multiselect">
+                           <img class="search" src="img/svg_icons/estpage_mobile_user.svg" alt="search">
+                           <span>
+                              Контактна особа
+                           </span>
+                           <img src="img/svg_icons/Loading_icon.svg" alt="load" class="loading">
+                           <input class="commoninput" type="text" value="Валентин  Костромаха">
+                           <div class="dropdownwrap dropdownscroll">
+                              <ul>
+                                 <li>Угода Аптека Доброго Дня</li>
+                                 <li>Угода Аптека Подорожник</li>
+                              </ul>
+                              <div class="dropdownwrap-bottom">
+                                 <img src="img/svg_icons/plus_circle_blue.svg" alt="img">
+                                 <div>
+                                    Додати ‘<span> </span>’ як новий контакт
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+
+                        <div class="leads__leftblock-input multiselect">
+                           <img class="search" src="img/svg_icons/task_estate_icon.svg" alt="search">
+                           <span>
+                              Організація
+                           </span>
+                           <img src="img/svg_icons/Loading_icon.svg" alt="load" class="loading">
+                           <input class="commoninput" type="text" value="Аптека Доброго Дня">
+                           <div class="dropdownwrap dropdownscroll">
+                              <ul>
+                                 <li>Угода Аптека Доброго Дня</li>
+                                 <li>Угода Аптека Подорожник</li>
+                              </ul>
+                              <div class="dropdownwrap-bottom">
+                                 <img src="img/svg_icons/plus_circle_blue.svg" alt="img">
+                                 <div>
+                                    Додати ‘<span> </span>’ як нову організацію
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+
+                     <div class="task__popup-twocol">
+                        <div class="tasks__forminput inputfield select">
+                           <label>
+                              <span>Відповідальний</span>
+                              <svg width="14" height="8" viewBox="0 0 14 8" fill="none"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                 <path d="M13 1L7 7L1 1" stroke="#383D54" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                              </svg>
+                              <input class="commoninput" type="text" value="Олександр Мірошниченков" readonly>
+                           </label>
+                           <div class="dropdown-response">
+                              <div class="dropdown-wrapper dropdownscroll">
+                                 <div class="dropdown-row">
+                                    <label>
+                                       <input class="customcheck" type="checkbox" name="response" value="Усі">
+                                       Усі
+                                    </label>
+                                 </div>
+                                 <div class="dropdown-row">
+                                    <label>
+                                       <input class="customcheck" type="checkbox" name="response" value="Микола">
+                                       Микола
+                                    </label>
+                                 </div>
+                                 <div class="dropdown-row">
+                                    <label>
+                                       <input class="customcheck" type="checkbox" name="response" value="Олександр">
+                                       Олександр
+                                    </label>
+                                 </div>
+                                 <div class="dropdown-row">
+                                    <label>
+                                       <input class="customcheck" type="checkbox" name="response" value="Микола">
+                                       Микола
+                                    </label>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+
+                     <div class="leads__info-tasks">
+                        <div class="leads__task-head">
+                           <div class="leads__task-headinfo">
+                              <span>Задача на</span>
+                              <input class="datepicker" type="text" placeholder="Завтра" readonly>
+                              <div class="leads__task-type tasktype">
+                                 <p>
+                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                       xmlns="http://www.w3.org/2000/svg">
+                                       <path
+                                          d="M14 9.67473L11.0569 8.35535L11.0456 8.35035C10.8543 8.26788 10.6454 8.23467 10.4379 8.25378C10.2305 8.27289 10.0312 8.3437 9.85813 8.45973C9.83388 8.47596 9.81051 8.49349 9.78813 8.51223L8.39375 9.69973C7.58125 9.2591 6.74188 8.4266 6.30063 7.6241L7.49188 6.20785C7.51103 6.18499 7.52877 6.16099 7.545 6.13598C7.65799 5.96357 7.72659 5.7659 7.74469 5.56057C7.76279 5.35524 7.72984 5.14861 7.64875 4.9591C7.64683 4.95547 7.64516 4.95171 7.64375 4.94785L6.325 1.99973C6.21676 1.75318 6.03201 1.54803 5.7981 1.41464C5.5642 1.28126 5.29357 1.22672 5.02625 1.2591C4.11899 1.37828 3.28612 1.82365 2.68322 2.51201C2.08031 3.20037 1.74859 4.08466 1.75 4.99973C1.75 10.1004 5.89938 14.2497 11 14.2497C11.9151 14.2511 12.7994 13.9194 13.4877 13.3165C14.1761 12.7136 14.6214 11.8807 14.7406 10.9735C14.773 10.7062 14.7185 10.4355 14.5851 10.2016C14.4517 9.96772 14.2466 9.78297 14 9.67473ZM11 12.7497C8.94534 12.7472 6.97554 11.9299 5.52267 10.4771C4.0698 9.02419 3.25249 7.05439 3.25 4.99973C3.24857 4.48191 3.42437 3.97919 3.74818 3.57511C4.07199 3.17103 4.52432 2.88991 5.03 2.77848L6.20625 5.40348L5.00875 6.82973C4.9894 6.85279 4.97145 6.877 4.955 6.90223C4.83697 7.08257 4.76758 7.29037 4.75356 7.50545C4.73954 7.72053 4.78138 7.93559 4.875 8.12973C5.46375 9.33473 6.67688 10.5397 7.89438 11.1297C8.08982 11.2224 8.30595 11.2627 8.52165 11.2469C8.73736 11.231 8.94525 11.1594 9.125 11.0391C9.14917 11.0228 9.17234 11.0051 9.19438 10.986L10.5963 9.7941L13.2213 10.9697C13.1098 11.4754 12.8287 11.9277 12.4246 12.2516C12.0205 12.5754 11.5178 12.7512 11 12.7497Z"
+                                          fill="#383D54" />
+                                    </svg>
+                                    Дзвінок
+                                 </p>
+                                 <ul>
+                                    <li>
+                                       <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                          xmlns="http://www.w3.org/2000/svg">
+                                          <path
+                                             d="M14 9.67473L11.0569 8.35535L11.0456 8.35035C10.8543 8.26788 10.6454 8.23467 10.4379 8.25378C10.2305 8.27289 10.0312 8.3437 9.85813 8.45973C9.83388 8.47596 9.81051 8.49349 9.78813 8.51223L8.39375 9.69973C7.58125 9.2591 6.74188 8.4266 6.30063 7.6241L7.49188 6.20785C7.51103 6.18499 7.52877 6.16099 7.545 6.13598C7.65799 5.96357 7.72659 5.7659 7.74469 5.56057C7.76279 5.35524 7.72984 5.14861 7.64875 4.9591C7.64683 4.95547 7.64516 4.95171 7.64375 4.94785L6.325 1.99973C6.21676 1.75318 6.03201 1.54803 5.7981 1.41464C5.5642 1.28126 5.29357 1.22672 5.02625 1.2591C4.11899 1.37828 3.28612 1.82365 2.68322 2.51201C2.08031 3.20037 1.74859 4.08466 1.75 4.99973C1.75 10.1004 5.89938 14.2497 11 14.2497C11.9151 14.2511 12.7994 13.9194 13.4877 13.3165C14.1761 12.7136 14.6214 11.8807 14.7406 10.9735C14.773 10.7062 14.7185 10.4355 14.5851 10.2016C14.4517 9.96772 14.2466 9.78297 14 9.67473ZM11 12.7497C8.94534 12.7472 6.97554 11.9299 5.52267 10.4771C4.0698 9.02419 3.25249 7.05439 3.25 4.99973C3.24857 4.48191 3.42437 3.97919 3.74818 3.57511C4.07199 3.17103 4.52432 2.88991 5.03 2.77848L6.20625 5.40348L5.00875 6.82973C4.9894 6.85279 4.97145 6.877 4.955 6.90223C4.83697 7.08257 4.76758 7.29037 4.75356 7.50545C4.73954 7.72053 4.78138 7.93559 4.875 8.12973C5.46375 9.33473 6.67688 10.5397 7.89438 11.1297C8.08982 11.2224 8.30595 11.2627 8.52165 11.2469C8.73736 11.231 8.94525 11.1594 9.125 11.0391C9.14917 11.0228 9.17234 11.0051 9.19438 10.986L10.5963 9.7941L13.2213 10.9697C13.1098 11.4754 12.8287 11.9277 12.4246 12.2516C12.0205 12.5754 11.5178 12.7512 11 12.7497Z"
+                                             fill="#383D54" />
+                                       </svg>
+                                       Дзвінок
+                                    </li>
+                                    <li>
+                                       <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                          xmlns="http://www.w3.org/2000/svg">
+                                          <path
+                                             d="M8 8C7.175 8 6.46875 7.70625 5.88125 7.11875C5.29375 6.53125 5 5.825 5 5C5 4.175 5.29375 3.46875 5.88125 2.88125C6.46875 2.29375 7.175 2 8 2C8.825 2 9.53125 2.29375 10.1187 2.88125C10.7062 3.46875 11 4.175 11 5C11 5.825 10.7062 6.53125 10.1187 7.11875C9.53125 7.70625 8.825 8 8 8ZM12.5 14H3.5C3.0875 14 2.73425 13.853 2.44025 13.559C2.14625 13.265 1.9995 12.912 2 12.5V11.9C2 11.475 2.1095 11.0842 2.3285 10.7277C2.5475 10.3712 2.838 10.0995 3.2 9.9125C3.975 9.525 4.7625 9.23425 5.5625 9.04025C6.3625 8.84625 7.175 8.7495 8 8.75C8.825 8.75 9.6375 8.847 10.4375 9.041C11.2375 9.235 12.025 9.5255 12.8 9.9125C13.1625 10.1 13.4532 10.372 13.6722 10.7285C13.8912 11.085 14.0005 11.4755 14 11.9V12.5C14 12.9125 13.853 13.2657 13.559 13.5597C13.265 13.8537 12.912 14.0005 12.5 14ZM3.5 12.5H12.5V11.9C12.5 11.7625 12.4655 11.6375 12.3965 11.525C12.3275 11.4125 12.237 11.325 12.125 11.2625C11.45 10.925 10.7687 10.672 10.0812 10.5035C9.39375 10.335 8.7 10.2505 8 10.25C7.3 10.25 6.60625 10.3345 5.91875 10.5035C5.23125 10.6725 4.55 10.9255 3.875 11.2625C3.7625 11.325 3.67175 11.4125 3.60275 11.525C3.53375 11.6375 3.4995 11.7625 3.5 11.9V12.5ZM8 6.5C8.4125 6.5 8.76575 6.353 9.05975 6.059C9.35375 5.765 9.5005 5.412 9.5 5C9.5 4.5875 9.353 4.23425 9.059 3.94025C8.765 3.64625 8.412 3.4995 8 3.5C7.5875 3.5 7.23425 3.647 6.94025 3.941C6.64625 4.235 6.4995 4.588 6.5 5C6.5 5.4125 6.647 5.76575 6.941 6.05975C7.235 6.35375 7.588 6.5005 8 6.5Z"
+                                             fill="#383D54" />
+                                       </svg>
+                                       Зустріч
+                                    </li>
+                                    <li>
+                                       <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                          xmlns="http://www.w3.org/2000/svg">
+                                          <path
+                                             d="M14 7.40699V3.33366C14 2.98004 13.8595 2.6409 13.6095 2.39085C13.3594 2.1408 13.0203 2.00033 12.6667 2.00033H9.88C9.6 1.22699 8.86667 0.666992 8 0.666992C7.13333 0.666992 6.4 1.22699 6.12 2.00033H3.33333C2.6 2.00033 2 2.60033 2 3.33366V12.667C2 13.0206 2.14048 13.3598 2.39052 13.6098C2.64057 13.8598 2.97971 14.0003 3.33333 14.0003H7.40667C8.24667 14.827 9.39333 15.3337 10.6667 15.3337C13.2467 15.3337 15.3333 13.247 15.3333 10.667C15.3333 9.39366 14.8267 8.24699 14 7.40699ZM8 2.00033C8.36667 2.00033 8.66667 2.30033 8.66667 2.66699C8.66667 3.03366 8.36667 3.33366 8 3.33366C7.63333 3.33366 7.33333 3.03366 7.33333 2.66699C7.33333 2.30033 7.63333 2.00033 8 2.00033ZM3.33333 12.667V3.33366H4.66667V4.66699H11.3333V3.33366H12.6667V6.45366C12.06 6.16699 11.3867 6.00033 10.6667 6.00033H4.66667V7.33366H7.4C7 7.71366 6.69333 8.16699 6.45333 8.66699H4.66667V10.0003H6.05333C6.02 10.2203 6 10.4403 6 10.667C6 11.387 6.16667 12.0603 6.45333 12.667H3.33333ZM10.6667 14.0003C8.82667 14.0003 7.33333 12.507 7.33333 10.667C7.33333 8.82699 8.82667 7.33366 10.6667 7.33366C12.5067 7.33366 14 8.82699 14 10.667C14 12.507 12.5067 14.0003 10.6667 14.0003ZM11 10.8337L12.9067 11.9603L12.4067 12.7737L10 11.3337V8.00033H11V10.8337Z"
+                                             fill="#383D54" />
+                                       </svg>
+                                       Задача
+                                    </li>
+                                 </ul>
+                              </div>
+                           </div>
+                        </div>
+                        <textarea class="leads__task-field" placeholder="Введіть текст..."></textarea>
+                     </div>
+                  </div>
+
+                  <div class="task__popup-bottom">
+                     <a class="bluebtn popup__close" href="#">Закрити</a>
                   </div>
                </div>
             </div>

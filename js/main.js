@@ -359,7 +359,7 @@ $(document).ready(function () {
     $('.multiselect input, .multiselect-edit').on('click', function () {
         $(this).closest('.multiselect').find('.dropdownwrap').slideToggle('fast');
         $(this).closest('.multiselect').find('input[type="text"]').val('')
-        $(this).closest('.multiselect').find('.loading').addClass('active');
+        $(this).closest('.multiselect').find('.loading').toggleClass('active');
         $('.dropdownwrap-bottom').removeClass('active');
         $('.dropdownwrap-bottom span').text('');
     });
@@ -386,16 +386,19 @@ $(document).ready(function () {
 
     $(document).on('click', function (event) {
         var target = $(event.target);
+        if (!target.closest('.multiselect').length) {
+            $('.loading').removeClass('active');
+        }
+    });
+
+    $(document).on('click', function (event) {
+        var target = $(event.target);
         var selectElements = $('.multiselect');
-
         selectElements.each(function () {
-            var selectElement = $(this);
-            var dropdownResponse = selectElement.find('.dropdownwrap');
-
-
-            if (!target.closest(selectElement).length) {
+            var selectThis = $(this);
+            var dropdownResponse = selectThis.find('.dropdownwrap');
+            if (!target.closest(selectThis).length) {
                 dropdownResponse.slideUp('fast');
-
             }
         });
     })
@@ -470,7 +473,47 @@ $(document).ready(function () {
     });
 
 
-    // ------------------------  ESTATE TAB ------------------------------------- //
+    // ------------------------  TASKS TAB ------------------------------------- //
+
+    // show buttons on field tasks table row
+    $('.table__row-field textarea').on('input', function () {
+        if ($(this).val() !== '') {
+            $(this).closest('.table__row-field').addClass('active');
+        } else {
+            $(this).closest('.table__row-field').removeClass('active');
+        }
+    });
+
+    // action cancel button on field tasks row
+    $('.table__row .cancel').on('click', function (event) {
+        event.preventDefault();
+        var $tableRow = $(this).closest('.table__row');
+        $tableRow.find('.table__row-field textarea').val('');
+        $tableRow.find('.table__row-input').prop('checked', false);
+        $tableRow.find('.table__row-field').removeClass('active');
+        $tableRow.removeClass('active');
+    });
+
+    // action perform button
+
+    $('.table__row .perform').on('click', function (event) {
+        event.preventDefault(); 
+        var $tableRow = $(this).closest('.table__row');
+        var $tasksCompletedTable = $('.tasks-completed table');
+        if ($tasksCompletedTable.length === 0) {
+            $tasksCompletedTable = $('<table class="tasks-completed"></table>');
+            $('.tasks-not-completed').after($tasksCompletedTable);
+        }
+        $tableRow.appendTo($tasksCompletedTable);
+        $tableRow.find('.table__row-input').prop('checked', false);
+        $tableRow.find('.table__row-field').removeClass('active');
+        $tableRow.addClass('done');
+
+    });
+
+
+
+
 
     // ------------------ ESTATE TAB -------------------------- //
     $('.estate__head-tab').on('click', function () {
@@ -1079,7 +1122,7 @@ $(document).ready(function () {
 
     $('.parser__tab').on('click', function () {
         console.log('df');
-        if( $(this).attr('data-tab') == 'parser-my' ) {
+        if ($(this).attr('data-tab') == 'parser-my') {
             $('.parser-filterbtn').hide();
         } else {
             $('.parser-filterbtn').show();
@@ -1197,7 +1240,7 @@ $(document).ready(function () {
     $(document).on('click', function (event) {
         var target = $(event.target);
 
-        if (!target.closest('.popup__inner ').length) {
+        if (!target.closest('.popup__window').length) {
             $('.popup__window').removeClass('active');
         }
     });

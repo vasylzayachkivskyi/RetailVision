@@ -661,10 +661,10 @@
 
         ul {
             max-height: 250px;
-            overflow-y: scroll;
+            overflow-y: auto;
 
             &::-webkit-scrollbar {
-                width: 4px;
+                width: 2px;
                 cursor: pointer;
             }
 
