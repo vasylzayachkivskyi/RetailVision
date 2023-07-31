@@ -382,7 +382,7 @@
     }
 
     .inputfield {
-        width: 170px;
+        width: 158px;
         position: relative;
 
         .analytics__input {
@@ -399,10 +399,12 @@
         }
     }
 
-
+    .analytics__select .commoninput {
+        padding-left: 28px;
+    }
 
     .analytics__select svg {
-        top: 20px;
+        top: 19px;
         right: 0;
         width: 8px;
         height: 4px;

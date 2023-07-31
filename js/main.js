@@ -395,10 +395,10 @@ $(document).ready(function () {
         $('.dropdownwrap-bottom span').text('');
     });
 
-    // -------------
+
+    // multiselect-edit -------------
     $('.multiselect-edit').on('click', function () {
         $(this).closest('dl').find('.dropdownwrap').slideToggle('fast');
-        $(this).closest('dl').addClass('dfd');
         $(this).closest('dl').find('input[type="text"]').focus();
         $(this).closest('dl').find('input[type="text"]').val('')
         $(this).closest('dl').find('.loading').toggleClass('active');
@@ -417,7 +417,7 @@ $(document).ready(function () {
         const select = $(this).closest('.dropdownwrap');
         const selectedValue = $(this).text();
         select.slideUp('fast');
-        select.prev('.multiselect input').val(selectedValue);
+        select.closest('.multiselect').find('input[type="text"]').val(selectedValue);
         select.closest('.multiselect').addClass('filled');
     });
 
