@@ -14,7 +14,7 @@ $(document).ready(function () {
     $(document).on('click', function (event) {
         var target = $(event.target);
 
-        if (!target.closest('.notification, .header__notification, .header__search').length) {
+        if (!target.closest('.notification, .header__notification, .header__search, .notification-close, .delete-list').length) {
             fkt();
         }
     });
@@ -41,9 +41,40 @@ $(document).ready(function () {
     // notification items collapsing  -------- //
     $('.notification-box__item').on('click', function () {
         var elementTarget = $(this).parent('.notification-box__wrapper').find('.notification-box__item:not(:first-child)');
+        $(elementTarget).find('.notification-item__wrapper').slideDown();
+        $(elementTarget).addClass('active');
+        $(this).closest('.notification__col').addClass('active');
+    });
+
+    // notification items collapsing less ----------- //
+    $(".less-list").on('click', function () {
+        var elementTarget = $(this).closest('.notification__col').find('.notification-box__wrapper').find('.notification-box__item:not(:first-child)');
         $(elementTarget).find('.notification-item__wrapper').slideToggle();
         $(elementTarget).toggleClass('active');
+        $(this).closest('.notification__col').toggleClass('active');
     });
+
+    // delete notification col----------- //
+    $(".delete-list").click(function () {
+        var closestNotificationBox = $(this).closest('.notification-box');
+        $(this).closest(".notification__col").remove();
+        if (closestNotificationBox.find('.notification__col').length === 0) {
+            closestNotificationBox.find('.notification-box__divider').remove();
+          }
+    });
+
+    // delete notification ----------- //
+    $(".notification-close").click(function () {
+        var closestNotificationCol = $(this).closest('.notification__col');
+        $(this).closest(".notification-box__item").remove();
+        if (closestNotificationCol.find('.notification-box__item').length === 0) {
+            closestNotificationCol.remove();
+        }
+    });
+
+
+
+
 
     //  header search open ----------------- //
     $('.hsbtn').on('click', function () {
@@ -522,7 +553,7 @@ $(document).ready(function () {
     // action perform button
 
     $('.table__row .perform').on('click', function (event) {
-        event.preventDefault(); 
+        event.preventDefault();
         var $tableRow = $(this).closest('.table__row');
         var $tasksCompletedTable = $('.tasks-completed table');
         if ($tasksCompletedTable.length === 0) {
@@ -572,6 +603,13 @@ $(document).ready(function () {
     $('.filter').on('click', function () {
         $('.filter-dropdown').slideToggle();
     });
+
+    // estate header ----------------- //
+    $('.estfltr-btn').on('click', function () {
+        $(this).closest('.estate__header').toggleClass('active');
+    });
+
+    
 
 
     // estate card show/hide -------------- //

@@ -5,15 +5,32 @@
    height: calc(100vh - 72px);
    overflow: hidden;
    background: #EDF2F6;
+
+   .form__filter {
+      box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.04);
+      position: relative;
+      z-index: 15;
+   }
 }
 
 .estate__header {
-   display: flex;
-   align-items: center;
-   padding: 18px 0 16px;
+   box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.04);
    position: relative;
-   z-index: 11;
-   width: 100vw;
+   z-index: 15;
+   transition: .3s .2s;
+   &.active{
+      box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.0);
+      transition: 0s;
+   }
+
+
+   &-wrap {
+      display: flex;
+      align-items: center;
+      padding: 18px 0 16px;
+      position: relative;
+      z-index: 11;
+   }
 
    &-form {
       display: flex;
@@ -96,6 +113,7 @@
       .estate__inner-content {
          height: calc(100vh - 252px);
          transition: .5s;
+         box-shadow: -3px 0px 10px 0px rgba(0, 0, 0, 0.05);
       }
    }
 }
@@ -295,6 +313,7 @@
    overflow: hidden;
    position: relative;
    margin-bottom: 20px;
+   box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.04), 2px 0px 10px 0px rgba(0, 0, 0, 0.04), -2px 4px 10px 0px rgba(0, 0, 0, 0.04);
 
    .swiper {
       height: 100%;

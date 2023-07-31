@@ -3871,26 +3871,32 @@
             </div>
 
             <!-- ESTATE(НЕРУХОМІСТЬ) -->
-            <div class="sidebar-box sideestate-tab">
+            <div class="sidebar-box sideestate-tab active-box">
                <div class="estate">
-                  <div class="customcontainer">
-                     <div class="estate__header">
-                        <div class="estate__head-tabs">
-                           <div class="estate__head-tab active" data-tab="estate-sell">
-                              Продаж
+
+                  <div class="estate__header">
+                     <div class="customcontainer">
+                        <div class="estate__header-wrap">
+                           <div class="estate__head-tabs">
+                              <div class="estate__head-tab active" data-tab="estate-sell">
+                                 Продаж
+                              </div>
+                              <div class="estate__head-tab" data-tab="estate-rent">
+                                 Оренда
+                              </div>
                            </div>
-                           <div class="estate__head-tab" data-tab="estate-rent">
-                              Оренда
-                           </div>
+                           <a href="#" class="saleowner__head-filterbtn whitebtn estfltr-btn">
+                              <img src="img/svg_icons/filter_icon.svg" alt="filter">
+                              <span class="hide">Фільтр</span>
+                              <span class="open">Сховати фільтр</span>
+                           </a>
                         </div>
-                        <a href="#" class="saleowner__head-filterbtn whitebtn">
-                           <img src="img/svg_icons/filter_icon.svg" alt="filter">
-                           <span class="hide">Фільтр</span>
-                           <span class="open">Сховати фільтр</span>
-                        </a>
                      </div>
-                     <div class="estate__window estate-sell show">
-                        <div class="form__filter ">
+                  </div>
+
+                  <div class="estate__window estate-sell show">
+                     <div class="form__filter">
+                        <div class="customcontainer">
                            <div class="estate__header-form">
                               <div class="estate__forminput inputfield select">
                                  <label>
@@ -4064,6 +4070,8 @@
                               <button class="bluebtn" type="submit">Знайти</button>
                            </div>
                         </div>
+                     </div>
+                     <div class="customcontainer">
                         <div class="estate__inner">
                            <div class="estate__inner-map">
                               <iframe
@@ -5039,8 +5047,10 @@
                            </div>
                         </div>
                      </div>
-                     <div class="estate__window estate-rent">
-                        <div class="form__filter ">
+                  </div>
+                  <div class="estate__window estate-rent">
+                     <div class="form__filter ">
+                        <div class="customcontainer">
                            <div class="estate__header-form">
                               <div class="estate__forminput inputfield select">
                                  <label>
@@ -5206,6 +5216,8 @@
                               <button class="bluebtn" type="submit">Знайти</button>
                            </div>
                         </div>
+                     </div>
+                     <div class="customcontainer">
                         <div class="estate__inner">
                            <div class="estate__inner-map">
                               <iframe
@@ -5644,9 +5656,9 @@
                                              <div class="swiper-button-prev"></div>
                                              <div class="swiper-pagination"></div>
                                           </div>
-
+   
                                           <div class="estcard__box">
-
+   
                                              <div class="estcard__box-head">
                                                 <h2>
                                                    Торгівельна нерухомість під власний бізнес
@@ -5692,9 +5704,9 @@
                                                    </li>
                                                 </ul>
                                              </div>
-
+   
                                           </div>
-
+   
                                           <div class="estcard__box">
                                              <h3>
                                                 Опис
@@ -5762,14 +5774,14 @@
                                                    </p>
                                                 </div>
                                              </div>
-
+   
                                              <div class="more-btn">
                                                 <img src="img/svg_icons/arrow_down_blue.svg" alt="icon">
                                                 <span class="more">Повний опис</span>
                                                 <span class="less">Згорнути</span>
                                              </div>
                                           </div>
-
+   
                                           <div class="estcard__box">
                                              <h3>
                                                 Параметри об’єкту
@@ -9956,7 +9968,7 @@
             <!-------------------------------- AGREEMENTS(УГОДИ) ----------------------------------->
 
             <!---- SALEOWNER(ОБ'ЄКТ ПРОДАЖ) ---->
-            <div class="sidebar-box saleowner-tab active-box">
+            <div class="sidebar-box saleowner-tab">
                <div class="saleowner">
                   <div class="customcontainer">
                      <div class="saleowner__head">
@@ -13414,7 +13426,7 @@
                         </div>
                      </div>
                   </div>
-                  <div class="saleowner__info show">
+                  <div class="saleowner__info">
                      <div class="leads__info-wrapper">
                         <div class="customcontainer">
                            <div class="row">
@@ -28897,7 +28909,7 @@
                                                    </dl>
                                                 </div>
                                              </div>
-                                            
+
                                           </div>
                                        </div>
 
@@ -45654,161 +45666,230 @@
                   <div class="notification-box__head">
                      У вас 5 нових повідомлень
                   </div>
-                  <div class="notification-box__wrapper">
-                     <div class="notification-box__item">
-                        <div class="notification-item__wrapper">
-                           <img src="img/svg_icons/notification_plus.svg" alt="icon">
+
+                  <div class="notification__col">
+                     <div class="notification__col-head">
+                        <p>
+                           Нові сповіщення
+                        </p>
+                        <div class="delete-list">
+                           <img src="img/svg_icons/notification_close_btn.svg" alt="icon">
                            <span>
-                              10 хвилин тому
+                              Очистити
                            </span>
-                           <p>
-                              Брокер Тетяна додала об’єкт вул. Петра Запорожця у свій лістинг
-                           </p>
                         </div>
                      </div>
-
-                     <div class="notification-box__item">
-                        <div class="notification-item__wrapper">
-                           <img src="img/svg_icons/notification_file.svg" alt="icon">
-                           <span>
-                              10 хвилин тому
-                           </span>
-                           <p>
-                              Клієнт Дмитро Собко відкрив презентацію вул. Василя Стуса, 65
-                           </p>
+                     <div class="notification-box__wrapper">
+                        <div class="notification-box__item">
+                           <div class="notification-item__wrapper">
+                              <img class="notification-close" src="img/svg_icons/notification_item_close_btn.svg"
+                                 alt="icon">
+                              <img src="img/svg_icons/notification_plus.svg" alt="icon">
+                              <span>
+                                 10 хвилин тому
+                              </span>
+                              <p>
+                                 Брокер Тетяна додала об’єкт вул. Петра Запорожця у свій лістинг
+                              </p>
+                           </div>
+                        </div>
+                        <div class="notification-box__item">
+                           <div class="notification-item__wrapper">
+                              <img class="notification-close" src="img/svg_icons/notification_item_close_btn.svg"
+                                 alt="icon">
+                              <img src="img/svg_icons/notification_file.svg" alt="icon">
+                              <span>
+                                 10 хвилин тому
+                              </span>
+                              <p>
+                                 Клієнт Дмитро Собко відкрив презентацію вул. Василя Стуса, 65
+                              </p>
+                           </div>
+                        </div>
+                        <div class="notification-box__item">
+                           <div class="notification-item__wrapper">
+                              <img class="notification-close" src="img/svg_icons/notification_item_close_btn.svg"
+                                 alt="icon">
+                              <img src="img/svg_icons/notification_lead.svg" alt="icon">
+                              <span>
+                                 11 хвилин тому
+                              </span>
+                              <p>
+                                 Клієнт Дмитро Собко завантажив презентацію вул. Василя Стуса, 65
+                              </p>
+                           </div>
+                        </div>
+                        <div class="notification-box__item">
+                           <div class="notification-item__wrapper">
+                              <img class="notification-close" src="img/svg_icons/notification_item_close_btn.svg"
+                                 alt="icon">
+                              <img src="img/svg_icons/notification_like.svg" alt="icon">
+                              <span>
+                                 12 хвилин тому
+                              </span>
+                              <p>
+                                 Клієнт Дмитро Собко вподобав презентацію вул. Василя Стуса, 65
+                              </p>
+                           </div>
+                        </div>
+                        <div class="notification-box__item">
+                           <div class="notification-item__wrapper">
+                              <img class="notification-close" src="img/svg_icons/notification_item_close_btn.svg"
+                                 alt="icon">
+                              <img src="img/svg_icons/notification_dislike.svg" alt="icon">
+                              <span>
+                                 15 хвилин тому
+                              </span>
+                              <p>
+                                 Клієнт Дмитро Собко не вподобав презентацію вул. Василя Стуса, 65
+                              </p>
+                           </div>
                         </div>
                      </div>
-
-                     <div class="notification-box__item">
-                        <div class="notification-item__wrapper">
-                           <img src="img/svg_icons/notification_lead.svg" alt="icon">
+                     <div class="notification__col-bottom">
+                        <div class="less-list">
+                           <img src="img/svg_icons/notification_arrow_less.svg" alt="icon">
                            <span>
-                              11 хвилин тому
+                              Згорнути
                            </span>
-                           <p>
-                              Клієнт Дмитро Собко завантажив презентацію вул. Василя Стуса, 65
-                           </p>
                         </div>
-                     </div>
-
-                     <div class="notification-box__item">
-                        <div class="notification-item__wrapper">
-                           <img src="img/svg_icons/notification_like.svg" alt="icon">
+                        <div class="delete-list">
+                           <img src="img/svg_icons/notification_close_btn.svg" alt="icon">
                            <span>
-                              12 хвилин тому
+                              Очистити
                            </span>
-                           <p>
-                              Клієнт Дмитро Собко вподобав презентацію вул. Василя Стуса, 65
-                           </p>
-                        </div>
-                     </div>
-
-                     <div class="notification-box__item">
-                        <div class="notification-item__wrapper">
-                           <img src="img/svg_icons/notification_dislike.svg" alt="icon">
-                           <span>
-                              15 хвилин тому
-                           </span>
-                           <p>
-                              Клієнт Дмитро Собко не вподобав презентацію вул. Василя Стуса, 65
-                           </p>
                         </div>
                      </div>
                   </div>
+
                   <div class="notification-box__divider">
                      <p>
                         Вчора
                      </p>
                   </div>
-                  <div class="notification-box__wrapper">
-                     <div class="notification-box__item">
-                        <div class="notification-item__wrapper">
-                           <img src="img/svg_icons/notification_plus.svg" alt="icon">
-                           <span>
-                              10 хвилин тому
-                           </span>
-                           <p>
-                              Брокер Тетяна додала об’єкт вул. Петра Запорожця у свій лістинг
-                           </p>
-                        </div>
+                  <div class="notification__col">
+                     <div class="notification__col-head">
+                        <p>
+                           Нові сповіщення
+                        </p>
+                        <img class="delete-list" src="img/svg_icons/notification_close_btn.svg" alt="icon">
                      </div>
-
-                     <div class="notification-box__item">
-                        <div class="notification-item__wrapper">
-                           <img src="img/svg_icons/notification_file.svg" alt="icon">
-                           <span>
-                              10 хвилин тому
-                           </span>
-                           <p>
-                              Клієнт Дмитро Собко відкрив презентацію вул. Василя Стуса, 65
-                           </p>
+                     <div class="notification-box__wrapper">
+                        <div class="notification-box__item">
+                           <div class="notification-item__wrapper">
+                              <img class="notification-close" src="img/svg_icons/notification_item_close_btn.svg"
+                                 alt="icon">
+                              <img src="img/svg_icons/notification_plus.svg" alt="icon">
+                              <span>
+                                 10 хвилин тому
+                              </span>
+                              <p>
+                                 Брокер Тетяна додала об’єкт вул. Петра Запорожця у свій лістинг
+                              </p>
+                           </div>
                         </div>
-                     </div>
-
-                     <div class="notification-box__item">
-                        <div class="notification-item__wrapper">
-                           <img src="img/svg_icons/notification_lead.svg" alt="icon">
-                           <span>
-                              11 хвилин тому
-                           </span>
-                           <p>
-                              Клієнт Дмитро Собко завантажив презентацію вул. Василя Стуса, 65
-                           </p>
+                        <div class="notification-box__item">
+                           <div class="notification-item__wrapper">
+                              <img class="notification-close" src="img/svg_icons/notification_item_close_btn.svg"
+                                 alt="icon">
+                              <img src="img/svg_icons/notification_file.svg" alt="icon">
+                              <span>
+                                 10 хвилин тому
+                              </span>
+                              <p>
+                                 Клієнт Дмитро Собко відкрив презентацію вул. Василя Стуса, 65
+                              </p>
+                           </div>
                         </div>
-                     </div>
-
-                     <div class="notification-box__item">
-                        <div class="notification-item__wrapper">
-                           <img src="img/svg_icons/notification_like.svg" alt="icon">
-                           <span>
-                              12 хвилин тому
-                           </span>
-                           <p>
-                              Клієнт Дмитро Собко вподобав презентацію вул. Василя Стуса, 65
-                           </p>
+                        <div class="notification-box__item">
+                           <div class="notification-item__wrapper">
+                              <img class="notification-close" src="img/svg_icons/notification_item_close_btn.svg"
+                                 alt="icon">
+                              <img src="img/svg_icons/notification_lead.svg" alt="icon">
+                              <span>
+                                 11 хвилин тому
+                              </span>
+                              <p>
+                                 Клієнт Дмитро Собко завантажив презентацію вул. Василя Стуса, 65
+                              </p>
+                           </div>
                         </div>
-                     </div>
-
-                     <div class="notification-box__item">
-                        <div class="notification-item__wrapper">
-                           <img src="img/svg_icons/notification_dislike.svg" alt="icon">
-                           <span>
-                              15 хвилин тому
-                           </span>
-                           <p>
-                              Клієнт Дмитро Собко не вподобав презентацію вул. Василя Стуса, 65
-                           </p>
+                        <div class="notification-box__item">
+                           <div class="notification-item__wrapper">
+                              <img class="notification-close" src="img/svg_icons/notification_item_close_btn.svg"
+                                 alt="icon">
+                              <img src="img/svg_icons/notification_like.svg" alt="icon">
+                              <span>
+                                 12 хвилин тому
+                              </span>
+                              <p>
+                                 Клієнт Дмитро Собко вподобав презентацію вул. Василя Стуса, 65
+                              </p>
+                           </div>
+                        </div>
+                        <div class="notification-box__item">
+                           <div class="notification-item__wrapper">
+                              <img class="notification-close" src="img/svg_icons/notification_item_close_btn.svg"
+                                 alt="icon">
+                              <img src="img/svg_icons/notification_dislike.svg" alt="icon">
+                              <span>
+                                 15 хвилин тому
+                              </span>
+                              <p>
+                                 Клієнт Дмитро Собко не вподобав презентацію вул. Василя Стуса, 65
+                              </p>
+                           </div>
                         </div>
                      </div>
                   </div>
                </div>
                <div class="notification-box objects-tab">
-                  <div class="notification-box__wrapper">
-                     <div class="notification-box__item">
-                        <div class="notification-item__wrapper">
-                           <img src="img/svg_icons/notification_estate.svg" alt="icon">
-                           <span>
-                              15 хвилин тому
-                           </span>
-                           <p>
-                              4 нових об’єкти підходить під клієнта Анна Філіпова
-                           </p>
+                  <div class="notification__col">
+                     <div class="notification__col-head">
+                        <p>
+                           Вчора
+                        </p>
+                        <img class="delete-list" src="img/svg_icons/notification_close_btn.svg" alt="icon">
+                     </div>
+                     <div class="notification-box__wrapper">
+                        <div class="notification-box__item">
+                           <div class="notification-item__wrapper">
+                              <img class="notification-close" src="img/svg_icons/notification_item_close_btn.svg"
+                                 alt="icon">
+                              <img src="img/svg_icons/notification_estate.svg" alt="icon">
+                              <span>
+                                 15 хвилин тому
+                              </span>
+                              <p>
+                                 4 нових об’єкти підходить під клієнта Анна Філіпова
+                              </p>
+                           </div>
                         </div>
                      </div>
                   </div>
-
                </div>
+
                <div class="notification-box clients-tab">
-                  <div class="notification-box__wrapper">
-                     <div class="notification-box__item">
-                        <div class="notification-item__wrapper">
-                           <img src="img/svg_icons/notification_clients.svg" alt="icon">
-                           <span>
-                              15 хвилин тому
-                           </span>
-                           <p>
-                              4 нових клієнтів підходить під об’єкт вул. Новомостицька, 15
-                           </p>
+                  <div class="notification__col">
+                     <div class="notification__col-head">
+                        <p>
+                           Вчора
+                        </p>
+                        <img class="delete-list" src="img/svg_icons/notification_close_btn.svg" alt="icon">
+                     </div>
+                     <div class="notification-box__wrapper">
+                        <div class="notification-box__item">
+                           <div class="notification-item__wrapper">
+                              <img class="notification-close" src="img/svg_icons/notification_item_close_btn.svg"
+                                 alt="icon">
+                              <img src="img/svg_icons/notification_clients.svg" alt="icon">
+                              <span>
+                                 15 хвилин тому
+                              </span>
+                              <p>
+                                 4 нових клієнтів підходить під об’єкт вул. Новомостицька, 15
+                              </p>
+                           </div>
                         </div>
                      </div>
                   </div>
