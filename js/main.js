@@ -60,7 +60,7 @@ $(document).ready(function () {
         $(this).closest(".notification__col").remove();
         if (closestNotificationBox.find('.notification__col').length === 0) {
             closestNotificationBox.find('.notification-box__divider').remove();
-          }
+        }
     });
 
     // delete notification ----------- //
@@ -609,7 +609,7 @@ $(document).ready(function () {
         $(this).closest('.estate__header').toggleClass('active');
     });
 
-    
+
 
 
     // estate card show/hide -------------- //
@@ -1053,11 +1053,14 @@ $(document).ready(function () {
 
     // saleowner head filter
     $('.saleowner__head-filterbtn').on('click', function () {
+        var parrentBox = $(this).closest('.sidebar-box');
         $(this).toggleClass('active');
-        $('.form__filter').slideToggle();
-        $('.estate__window').toggleClass('active');
-        $('.saleowner__table').toggleClass('active');
-        $('.saleowner__kanban').toggleClass('active');
+        parrentBox.find('.form__filter').slideToggle();
+        parrentBox.find('.estate__window').toggleClass('active');
+        parrentBox.find('.saleowner__table').toggleClass('active');
+        parrentBox.find('.contact__table').toggleClass('active');
+        parrentBox.find('.company__table').toggleClass('active');
+        parrentBox.find('.saleowner__kanban').toggleClass('active');
     });
 
     // saleowner info open/close-------- //

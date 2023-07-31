@@ -2,6 +2,8 @@
     overflow-y: hidden;
 }
 
+
+
 .parser__tabs {
     display: flex;
     align-items: center;
@@ -73,7 +75,6 @@
 
     .parser__window-content {
         transition: .3s;
-        padding-bottom: 20px;
         overflow-y: auto;
         height: calc(100vh - 150px);
         padding-right: 13px;
@@ -102,7 +103,7 @@
     }
 
     &.active .parser__window-content {
-        height: calc(100vh - 230px);
+        height: calc(100vh - 255px);
     }
 
     &.show {

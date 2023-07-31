@@ -1,6 +1,12 @@
 // contact / contact ---------------------- //
 
 .contact__table {
+    &.commontable {
+        height: calc(100vh - 150px);
+        &.active {
+            height: calc(100vh - 243px);
+        }
+    }
     &.commontable p {
         margin-left: 8px;
     }
@@ -103,6 +109,12 @@
 }
 
 .company__table {
+    &.commontable {
+        height: calc(100vh - 150px);
+        &.active {
+            height: calc(100vh - 235px);
+        }
+    }
     &.commontable p {
         margin-left: 8px;
     }

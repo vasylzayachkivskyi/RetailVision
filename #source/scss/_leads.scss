@@ -91,14 +91,12 @@
 }
 
 .leads__table.saleowner__table {
-    height: calc(100vh - 235px);
-    // margin-bottom: 80px;
+    height: calc(100vh - 156px);
     transition: 0s;
 }
 
 .leads__table.saleowner__table.active {
-    height: calc(100vh - 323px);
-    // margin-bottom: 80px;
+    height: calc(100vh - 243px);
     transition: 0.2s .2s;
 }
 
@@ -191,10 +189,10 @@
 
 .pagination {
     padding: 24px 0 24px;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: 0;
+    // position: absolute;
+    // left: 50%;
+    // transform: translateX(-50%);
+    // bottom: 0;
 
     ul {
         display: inline-flex;

@@ -221,17 +221,17 @@
 
 .table-wrapper {
     position: relative;
-    padding-bottom: 80px;
+    padding-bottom: 0px;
 }
 
 .saleowner__table {
-    height: calc(100vh - 235px);
+    height: calc(100vh - 155px);
     transition: .3s;
     position: relative;
 
 
     &.active {
-        height: calc(100vh - 323px);
+        height: calc(100vh - 243px);
     }
 
     &.commontable {
