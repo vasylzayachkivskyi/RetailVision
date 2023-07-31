@@ -127,18 +127,18 @@
       }
    }
 
-   // .sidebar__estate {
-   //    &:after {
-   //       content: '';
-   //       position: absolute;
-   //       bottom: -14px;
-   //       display: block;
-   //       height: 2px;
-   //       width: 90%;
-   //       background: #3670F0;
-   //       border-radius: 20px;
-   //    }
-   // }
+   .sidebar__estate {
+      &:before {
+         content: '';
+         position: absolute;
+         bottom: -14px;
+         display: block;
+         height: 2px;
+         width: 90%;
+         background: #3670F0;
+         border-radius: 20px;
+      }
+   }
 }
 
 // sidebar-box ------------------ //

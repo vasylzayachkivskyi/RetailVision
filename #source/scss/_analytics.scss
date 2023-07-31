@@ -299,7 +299,7 @@
 .analytics__inner {
     position: relative;
     overflow-y: scroll;
-    height: calc(100vh - 380px);
+    height: calc(100vh - 180px);
 
     &::-webkit-scrollbar {
         width: 100%;
@@ -473,7 +473,7 @@
             white-space: nowrap;
             font-size: 14px;
             font-style: normal;
-            font-weight: 700;
+            font-weight: 600;
             line-height: normal;
             max-width: 90px;
         }
