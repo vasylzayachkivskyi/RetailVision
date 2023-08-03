@@ -799,6 +799,18 @@ body {
 .downloadfield {
     position: relative;
     height: auto;
+    display: block;
+    border: 1px solid #3670F0;
+    border-radius: 8px;
+    height: 40px;
+    width: 100%;
+    position: relative;
+    transition: 0.3s;
+    background-color: #fbfbfb;
+    &:hover{
+        background: rgba(59,110,223,0.1);
+    }
+
 
     span {
         position: absolute;
