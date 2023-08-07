@@ -1218,6 +1218,18 @@
 .image-container {
     margin-top: 24px;
 
+    .inputfield {
+        margin-top: 10px;
+
+        &>ul {
+            width: 100%;
+        }
+    }
+
+    .select svg {
+        top: 45%;
+    }
+
     h3 {
         font-weight: 500;
         font-size: 14px;
@@ -2098,7 +2110,8 @@
         line-height: normal;
     }
 }
-.statistic__box-counter{
+
+.statistic__box-counter {
     text-align: center;
 }
 
