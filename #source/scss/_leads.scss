@@ -189,10 +189,27 @@
 
 .pagination {
     padding: 24px 0 24px;
-    // position: absolute;
-    // left: 50%;
-    // transform: translateX(-50%);
-    // bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    .pagination-wrap{
+        position: relative;
+    }
+
+    .pagination-counter {
+        position: absolute;
+        left: -80px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #5C6476;
+        text-align: center;
+        font-family: Mont;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+    }
 
     ul {
         display: inline-flex;
@@ -571,6 +588,7 @@
             position: relative;
             transition: 0.3s;
             border-radius: 4px;
+
             &:hover {
                 background: #D9D9D9;
             }
@@ -705,6 +723,7 @@
         }
     }
 }
+
 .leads__leftblock-input {
     position: relative;
     width: 100%;

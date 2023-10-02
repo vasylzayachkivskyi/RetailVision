@@ -66,6 +66,30 @@
         margin-right: 10px;
     }
 }
+.clearfilter{
+    height: 40px;
+    margin-left: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 16px;
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: 600;
+    color: #3670F0;
+    outline: none;
+    border: none;
+    transition: 0.3s;
+    background: transparent;
+    border-radius: 8px;
+    &:hover{
+        background: rgba(54,112,240,0.04);
+        color: #3670F0;
+    }
+}
+.base .clearfilter{
+    margin-top: 6px;
+}
 
 .saleowner__head-filterbtn.whitebtn {
     padding: 0;

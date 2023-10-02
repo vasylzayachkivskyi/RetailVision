@@ -1190,8 +1190,10 @@ $(document).ready(function () {
         console.log('df');
         if ($(this).attr('data-tab') == 'parser-my') {
             $('.parser-filterbtn').hide();
+            $('.parser-filterbtn').next('.clearfilter').hide();
         } else {
             $('.parser-filterbtn').show();
+            $('.parser-filterbtn').next('.clearfilter').show();
         }
     });
 
@@ -1554,6 +1556,26 @@ $(document).ready(function () {
             $parentLogBox.find('button').prop('disabled', true);
         }
     });
+
+
+    // limit symbol on input 
+    $('.limit-counter').each(function () {
+        var maxCharacters = parseInt($(this).attr('data-limit'), 10); // Перевірка на числове значення
+        if (!isNaN(maxCharacters)) {
+            $(this).text(0 + '/' + maxCharacters);
+            $('.limit input').on('input', function () {
+                var textLength = $(this).val().length;
+                var remainingCharacters = maxCharacters - textLength;
+    
+                if (remainingCharacters < 0) {
+                    $(this).val($(this).val().substr(0, maxCharacters));
+                    remainingCharacters = 0;
+                }
+                $(this).closest('.limit').find('.limit-counter').text(textLength - (textLength > maxCharacters ? 1 : 0) + '/' + maxCharacters);
+            });
+        }
+    });
+    
 
 
 
