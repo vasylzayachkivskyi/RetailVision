@@ -581,7 +581,7 @@ body {
 
         .limit-counter {
             position: absolute;
-            top: 53% ;
+            top: 53%;
             right: 8px;
             color: #9FA6AE;
             font-family: Mont;
@@ -917,6 +917,55 @@ body {
 @keyframes circleanim {
     to {
         transform: rotate(360deg);
+    }
+}
+
+.with-dropdown {
+    width: fit-content;
+
+    .inputwrap,
+    p {
+        position: relative;
+        overflow: initial;
+        display: inline-block;
+    }
+
+    .leads__leftblock-settings {
+        position: absolute;
+        bottom: 0;
+        right: -30px;
+
+        i {
+            position: absolute;
+            opacity: 0;
+            transition: .3s;
+            top: 50%;
+            transform: translateY(-50%);
+            right: -105px;
+            color: var(--White, #FBFBFB);
+            font-family: Inter;
+            font-size: 10px;
+            line-height: 100%;
+            font-style: normal;
+            font-weight: 400;
+            height: 16px;
+            border-radius: 4px;
+            background: var(--Dark-Grey, #22232A);
+            padding: 4px 12px;
+            display: flex;
+            align-items: center;
+        }
+
+        &:hover {
+            i {
+                opacity: 1;
+            }
+        }
+    }
+
+    ul {
+        display: none;
+        transition: 0;
     }
 }
 

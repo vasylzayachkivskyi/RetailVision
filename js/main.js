@@ -1558,7 +1558,9 @@ $(document).ready(function () {
     });
 
 
-    // limit symbol on input 
+    // 2.10.23 change ---- //
+
+    // limit symbol on input  ------------ //
     $('.limit-counter').each(function () {
         var maxCharacters = parseInt($(this).attr('data-limit'), 10); // Перевірка на числове значення
         if (!isNaN(maxCharacters)) {
@@ -1573,6 +1575,18 @@ $(document).ready(function () {
                 }
                 $(this).closest('.limit').find('.limit-counter').text(textLength - (textLength > maxCharacters ? 1 : 0) + '/' + maxCharacters);
             });
+        }
+    });
+
+    // click on dots buton settings ---------- //
+    $('.with-dropdown .leads__leftblock-settings').on('click', function() {
+        $(this).closest('.with-dropdown').find('ul').slideToggle();
+    });
+    $(document).on('click', function (event) {
+        var target = $(event.target);
+
+        if (!target.closest('.with-dropdown .leads__leftblock-settings').length) {
+            $('.with-dropdown').find('ul').slideUp();
         }
     });
     

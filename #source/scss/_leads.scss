@@ -549,28 +549,30 @@
     dl {
         position: relative;
 
-        dd:hover .multiselect-dropdown {
-            transform: translateY(0px);
-            visibility: visible;
-            z-index: 2;
-            opacity: 1;
-            transition: 0.3s;
-        }
+        // dd:hover .multiselect-dropdown {
+        //     transform: translateY(0px);
+        //     visibility: visible;
+        //     z-index: 2;
+        //     opacity: 1;
+        //     transition: 0.3s;
+        // }
     }
 
     .multiselect-dropdown {
         position: absolute;
-        visibility: hidden;
-        z-index: -2;
-        opacity: 0;
-        transform: translateY(5px);
+        z-index: 2;
+        display: none;
+        // transition: 0.1s;
+        // visibility: hidden;
+        // z-index: -2;
+        // opacity: 0;
+        // transform: translateY(5px);
         left: 0%;
         top: 100%;
         background: #FBFBFB;
         border: 0.5px solid #D9D9D9;
         box-shadow: 2px 0px 3px rgba(0, 0, 0, 0.08), 0px 3px 3px rgba(0, 0, 0, 0.08);
         border-radius: 10px;
-        transition: 0.1s;
 
         li {
             width: auto;
@@ -923,28 +925,30 @@
         border-bottom: 0.5px solid #3670F0;
     }
 
-    &:hover {
-        >ul {
-            visibility: visible;
-            z-index: 22;
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
+    // &:hover {
+    //     >ul {
+    //         visibility: visible;
+    //         z-index: 22;
+    //         opacity: 1;
+    //         transform: translateY(0);
+    //     }
+    // }
 
     >ul {
+        // visibility: hidden;
+        // z-index: -2;
+        // opacity: 0;
+        // transform: translateY(5px);
+        // transition: .3s;
         position: absolute;
-        visibility: hidden;
-        z-index: -2;
-        opacity: 0;
-        transform: translateY(5px);
+        z-index: 22;
+        display: none;
         left: 0;
-        top: 100%;
+        top: calc(100% + 2px);
         background: #FBFBFB;
         border: 0.5px solid #D9D9D9;
         box-shadow: 2px 0px 3px rgba(0, 0, 0, 0.08), 0px 3px 3px rgba(0, 0, 0, 0.08);
         border-radius: 10px;
-        transition: .3s;
 
         li {
             width: auto;
