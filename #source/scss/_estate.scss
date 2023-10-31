@@ -18,7 +18,8 @@
    position: relative;
    z-index: 15;
    transition: .3s .2s;
-   &.active{
+
+   &.active {
       box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.0);
       transition: 0s;
    }
@@ -950,13 +951,11 @@
 .estcard__box-parametres {
    ul {
       display: flex;
-      max-width: 600px;
       align-items: center;
       flex-wrap: wrap;
 
       li {
-         width: 250px;
-         margin-right: 50px;
+         width: 50%;
          margin-bottom: 24px;
          position: relative;
          padding-left: 36px;
@@ -965,6 +964,25 @@
          font-style: normal;
          font-weight: 500;
          line-height: 130%;
+
+         span {
+            color: rgba(34, 35, 42, 0.60);
+            font-family: Mont;
+            font-size: 12px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+            margin-bottom: 4px;
+         }
+
+         p {
+            color: var(--Dark-Grey, #22232A);
+            font-family: Mont;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+         }
 
          &:before {
             position: absolute;
@@ -1312,16 +1330,6 @@
          background: rgba(0, 0, 0, 0);
       }
 
-      // background-image: url(../img/svg_icons/close_gallery.svg);
-      // width: 36px;
-      // height: 36px;
-      // border-radius: 50%;
-      // background-size: cover;
-      // background-repeat: no-repeat;
-      // position: absolute;
-      // top: 32px;
-      // right: 10%;
-      // transition: .3s;
       background: transparent;
       width: 0;
       height: 0;

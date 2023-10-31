@@ -357,6 +357,23 @@ $(document).ready(function () {
         });
     });
 
+    // submenu select dropdown
+    $('.has-submenu>label').on('click', function () {
+        $(this).closest('.has-submenu').find('.submenu-dropdown').slideToggle();
+    });
+
+    $('.submenu-dropdown input[type="checkbox"]').on('change', function () {
+        var checkboxes = $('.submenu-dropdown input[type="checkbox"]');
+        var fakeCheckbox = $(this).closest('.has-submenu').find('.fake-checkbox');
+
+        if (checkboxes.is(':checked')) {
+            fakeCheckbox.addClass('active');
+        } else {
+            fakeCheckbox.removeClass('active');
+        }
+    });
+    // --------------- //
+
     // ----------- DROPDOWN ELEMENT -------- //
     $('.dropdown-element p').on('click', function () {
         $(this).parent('.dropdown-element').find('.dropdownwrap').slideToggle('fast');
@@ -1568,7 +1585,7 @@ $(document).ready(function () {
             $('.limit input').on('input', function () {
                 var textLength = $(this).val().length;
                 var remainingCharacters = maxCharacters - textLength;
-    
+
                 if (remainingCharacters < 0) {
                     $(this).val($(this).val().substr(0, maxCharacters));
                     remainingCharacters = 0;
@@ -1579,7 +1596,7 @@ $(document).ready(function () {
     });
 
     // click on dots buton settings ---------- //
-    $('.with-dropdown .leads__leftblock-settings').on('click', function() {
+    $('.with-dropdown .leads__leftblock-settings').on('click', function () {
         $(this).closest('.with-dropdown').find('ul').slideToggle();
     });
     $(document).on('click', function (event) {
@@ -1589,7 +1606,7 @@ $(document).ready(function () {
             $('.with-dropdown').find('ul').slideUp();
         }
     });
-    
+
 
 
 
