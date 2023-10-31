@@ -358,15 +358,28 @@ $(document).ready(function () {
     });
 
     // submenu select dropdown
-    $('.has-submenu>label').on('click', function () {
+
+    $('.has-submenu>label').each(function () {
         var $parent = $(this).parent('.has-submenu');
         var $checkboxes = $parent.find('.submenu-dropdown input[type="checkbox"]');
         var fakeCheckbox = $parent.find('.fake-checkbox');
-        fakeCheckbox.removeClass('active');
-        $checkboxes.prop('checked', false);
-        $parent.find('.submenu-dropdown').find('.jq-checkbox').removeClass('checked');
-        $parent.find('.submenu-dropdown').slideToggle();
-
+        var isClicked = false;
+    
+        $(this).on('click', function () {
+            if (!isClicked) {
+                fakeCheckbox.addClass('active');
+                $checkboxes.prop('checked', true);
+                $parent.find('.submenu-dropdown').find('.jq-checkbox').addClass('checked');
+                $parent.find('.submenu-dropdown').slideDown();
+                isClicked = true;
+            } else {
+                fakeCheckbox.removeClass('active');
+                $checkboxes.prop('checked', false);
+                $parent.find('.submenu-dropdown').find('.jq-checkbox').removeClass('checked');
+                $parent.find('.submenu-dropdown').slideUp();
+                isClicked = false;
+            }
+        });
     });
 
     $('.submenu-dropdown input[type="checkbox"]').on('change', function () {
