@@ -359,19 +359,33 @@ $(document).ready(function () {
 
     // submenu select dropdown
     $('.has-submenu>label').on('click', function () {
-        $(this).closest('.has-submenu').find('.submenu-dropdown').slideToggle();
+        var $parent = $(this).parent('.has-submenu');
+        var $checkboxes = $parent.find('.submenu-dropdown input[type="checkbox"]');
+        var fakeCheckbox = $parent.find('.fake-checkbox');
+        fakeCheckbox.removeClass('active');
+        $checkboxes.prop('checked', false);
+        $parent.find('.submenu-dropdown').find('.jq-checkbox').removeClass('checked');
+        $parent.find('.submenu-dropdown').slideToggle();
+
     });
 
     $('.submenu-dropdown input[type="checkbox"]').on('change', function () {
-        var checkboxes = $('.submenu-dropdown input[type="checkbox"]');
-        var fakeCheckbox = $(this).closest('.has-submenu').find('.fake-checkbox');
+        var $parent = $(this).closest('.has-submenu');
+        var $checkboxes = $parent.find('.submenu-dropdown input[type="checkbox"]');
+        var fakeCheckbox = $parent.find('.fake-checkbox');
 
-        if (checkboxes.is(':checked')) {
+        if ($checkboxes.is(':checked')) {
             fakeCheckbox.addClass('active');
         } else {
             fakeCheckbox.removeClass('active');
         }
     });
+
+
+
+
+
+
     // --------------- //
 
     // ----------- DROPDOWN ELEMENT -------- //
