@@ -405,9 +405,12 @@
 .estpage__slider-btns {
     position: absolute;
     z-index: 3;
-    top: 16px;
-    left: 16px;
+    top: 0px;
+    left: 0px;
+    padding: 16px 16px 20px;
+    width: 100%;
     display: flex;
+    background: linear-gradient(180deg, rgba(5, 10, 21, 0.75) 0.01%, rgba(5, 10, 21, 0.00) 100%);
 
     a {
         margin-right: 16px;
@@ -967,6 +970,9 @@
             width: 40%;
         }
     }
+    .estcard__box-row .whitebtn {
+        padding: 10px 10px;
+    }
 
     .estcard__box-head h2 {
         font-size: 24px;
@@ -1071,6 +1077,13 @@
 }
 
 @media (max-width: 992px) {
+
+    .estcard__box-row .whitebtn {
+        width: 100%;
+        margin: 10px 0;
+        justify-content: center;
+    }
+
     .estcard__box-row b {
         font-size: 22px;
     }
@@ -1145,6 +1158,9 @@
 
 
 @media (max-width: 767.8px) {
+    .estcard__box-row .whitebtn {
+        display: none;
+    }
     .estcard__box-parametres ul li {
         width: 100% !important;
         display: flex;
@@ -1164,6 +1180,11 @@
             font-size: 14px;
             margin: 0;
         }
+    }
+
+    .estcard__user-phone {
+        margin-bottom: 70px;
+        max-width: 300px;
     }
 
     .estpage__slider-mobilepanel {
@@ -1342,7 +1363,7 @@
             color: #3670F0;
             font-size: 14px;
             font-style: normal;
-            font-weight: 700;
+            font-weight: 600;
             line-height: 16px;
 
             svg {
@@ -1687,6 +1708,7 @@
     .fancybox-button.fancybox-button--close {
         right: 90%;
         background-image: url(../img/svg_icons/close_gallery_mobile.svg);
+        background-size: cover;
     }
 
     .fancybox-navigation {
@@ -1695,7 +1717,7 @@
 
     .estpage__slider-btns {
         left: initial;
-        right: 16px;
+        right: 0px;
         flex-direction: row-reverse;
     }
 
@@ -1824,6 +1846,9 @@
 }
 
 @media (max-width: 575.8px) {
+    .estcard__user-phone {
+        max-width: 100%;
+    }
     .estcard__slider .swiper-pagination {
         top: 15px;
     }
@@ -1908,13 +1933,9 @@
 
 
     .estpage__slider-btns {
-        right: 0;
-        top: 5px;
+        padding: 10px 10px 10px;
     }
 
-    .estpage__slider-btns {
-        right: 0;
-    }
 
     .estpage__row-head p {
         font-size: 12px;
