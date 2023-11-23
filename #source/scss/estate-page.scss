@@ -970,6 +970,7 @@
             width: 40%;
         }
     }
+
     .estcard__box-row .whitebtn {
         padding: 10px 10px;
     }
@@ -1161,6 +1162,7 @@
     .estcard__box-row .whitebtn {
         display: none;
     }
+
     .estcard__box-parametres ul li {
         width: 100% !important;
         display: flex;
@@ -1185,7 +1187,8 @@
     .estcard__user-phone {
         max-width: 300px;
     }
-    .estcard__box.user-box{
+
+    .estcard__box.user-box {
         padding-bottom: 70px;
     }
 
@@ -1573,7 +1576,7 @@
 
     .estpage {
         .estcard {
-            height: calc(100vh - 70px);
+            height: calc(100vh - 130px);
             top: 70px;
             padding-top: 0;
         }
@@ -1849,9 +1852,18 @@
 }
 
 @media (max-width: 575.8px) {
+    .estpage {
+        .estcard {
+            height: calc(100vh - 100px);
+            top: 50px;
+            padding-top: 0;
+        }
+    }
+
     .estcard__user-phone {
         max-width: 100%;
     }
+
     .estcard__slider .swiper-pagination {
         top: 15px;
     }
