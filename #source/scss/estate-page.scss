@@ -1573,8 +1573,9 @@
 
     .estpage {
         .estcard {
-            height: calc(100vh - 50px);
-            top: 50px;
+            height: calc(100vh - 70px);
+            top: 70px;
+            padding-top: 0;
         }
 
         .estcard__slider-item {
