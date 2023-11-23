@@ -1159,6 +1159,9 @@
 
 
 @media (max-width: 767.8px) {
+    .estpage .estcard {
+       padding-bottom: 70px;
+    }
     .estcard__box-row .whitebtn {
         display: none;
     }
@@ -1186,7 +1189,6 @@
 
     .estcard__user-phone {
         max-width: 300px;
-        margin-bottom: 107px;
     }
 
 
