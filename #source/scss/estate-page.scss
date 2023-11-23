@@ -1186,7 +1186,7 @@
 
     .estcard__user-phone {
         max-width: 300px;
-        margin-bottom: 60px;
+        margin-bottom: 100px;
     }
 
 
@@ -1572,13 +1572,13 @@
             font-weight: 700;
         }
     }
-
-    .estpage {
-        .estcard {
-            height: calc(100vh - 130px);
+    .estpage .estcard {
+            height: calc(100vh - 70px);
             top: 70px;
             padding-top: 0;
         }
+
+    .estpage {
 
         .estcard__slider-item {
             width: 100%;
@@ -1851,12 +1851,10 @@
 }
 
 @media (max-width: 575.8px) {
-    .estpage {
-        .estcard {
-            height: calc(100vh - 100px);
-            top: 50px;
-            padding-top: 0;
-        }
+
+    .estpage .estcard {
+        height: calc(100vh - 50px);
+        top: 50px;
     }
 
     .estcard__user-phone {
