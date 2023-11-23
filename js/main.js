@@ -662,11 +662,13 @@ $(document).ready(function () {
         $('.estcard-sell').addClass('show');
         $('.estbuttons-sell').addClass('show');
         $('.estcard-breadcrumbs').addClass('active');
+        $('body').addClass('hidden');
     });
     $('.close-estcard-sell').on('click', function () {
         $('.estcard-sell').removeClass('show');
         $('.estbuttons-sell').removeClass('show');
         $('.estcard-breadcrumbs').removeClass('active');
+        $('body').removeClass('hidden');
     });
 
     // rent
