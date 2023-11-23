@@ -1294,7 +1294,7 @@
         display: block;
         position: absolute;
         left: 16px;
-        top: 47px;
+        top: 107px;
         width: 32px;
         height: 32px;
         background-size: cover;
@@ -1573,9 +1573,9 @@
         }
     }
     .estpage .estcard {
-            height: calc(100vh - 70px);
-            top: 70px;
-            padding-top: 0;
+            height: 100vh;
+            top: 0px;
+            padding-top: 70px;
         }
 
     .estpage {
@@ -1853,8 +1853,8 @@
 @media (max-width: 575.8px) {
 
     .estpage .estcard {
-        height: calc(100vh - 50px);
-        top: 50px;
+        top: 0px;
+        padding-top: 50px;
     }
 
     .estcard__user-phone {
@@ -1883,7 +1883,7 @@
     }
 
     .estcard__back {
-        top: 16px;
+        top: 66px;
     }
 
     .estcard {
