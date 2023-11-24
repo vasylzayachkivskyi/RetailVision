@@ -405,11 +405,11 @@
 .estpage__slider-btns {
     position: absolute;
     z-index: 3;
-    top: 0px;
-    left: 0px;
-    padding: 16px 16px 20px;
     width: 100%;
     display: flex;
+    left: 0px;
+    top: 0px;
+    padding: 16px 16px 20px;
     background: linear-gradient(180deg, rgba(5, 10, 21, 0.75) 0.01%, rgba(5, 10, 21, 0.00) 100%);
 
     a {
@@ -425,6 +425,7 @@
             }
         }
 
+        &:hover,
         &.active {
             img.static {
                 display: none;
@@ -1159,6 +1160,13 @@
 
 
 @media (max-width: 767.8px) {
+
+    .estpage__slider-btns {
+        left: initial;
+        right: 0px;
+        flex-direction: row-reverse;
+    }
+
     .estpage .estcard {
        padding-bottom: 80px;
         height: 100vh;
@@ -1720,11 +1728,6 @@
         display: none;
     }
 
-    .estpage__slider-btns {
-        left: initial;
-        right: 0px;
-        flex-direction: row-reverse;
-    }
 
     .estpage__row-col {
         display: none;
