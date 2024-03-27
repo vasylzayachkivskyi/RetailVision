@@ -1016,6 +1016,8 @@ body {
 
 
 
+
+
 //  ------------------ POPUP ------------------------ //
 
 .popup__window {
@@ -1115,5 +1117,50 @@ body {
     .customcontainer {
         padding: 0 30px;
         max-width: 1800px;
+    }
+}
+
+
+// ------------ map marker styles ---------------- //
+.estate__inner-map{
+    position: relative;
+}
+
+.map-marker{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    span{
+        position: absolute;
+        font-weight: 800;
+        font-size: 6px;
+        background-color: #fff;
+        color: #8D4BF6;
+        border: 2px solid #8D4BF6;
+        border-radius: 50px;
+        padding: 2px 4px;
+        top: -11px;
+        right: 0;
+        text-transform: uppercase;
+    }
+    p{
+        border-radius: 50px;
+        background-color: #8D4BF6;
+        color: #fff;
+        font-size: 10px;
+        font-weight: 500;
+        padding: 3px 8px 2px;
+    }
+    &:after{
+        content: '';
+        position: absolute;
+        bottom: -7px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        height: 0;
+        border-left: 5px solid transparent; 
+        border-right: 5px solid transparent; 
+        border-top: 7px solid #8D4BF6; 
     }
 }
