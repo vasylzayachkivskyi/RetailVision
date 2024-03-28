@@ -1640,8 +1640,8 @@ $(document).ready(function () {
 
     // ------------------ map marker dropdown ------------ //
 
-    $('.map-marker .price').on('click', function() {
-        $('.map-marker .price, .map-marker .info').not(this).closest('.map-marker').removeClass('show');
+    $('.map-marker .price, .map-marker .info').on('click', function() {
+        $('.map-marker').removeClass('show');
         $(this).closest('.map-marker').addClass('show');
     });
     $('.marker-dropdown .close').on('click', function() {
