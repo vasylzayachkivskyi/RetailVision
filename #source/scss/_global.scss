@@ -1159,6 +1159,7 @@ body {
         background-size: cover;
         transition: .3s ease;
         display: block;
+        z-index: 2;
 
         &:hover {
             opacity: 0.5;
@@ -1213,7 +1214,7 @@ body {
         transform: translateX(-50%);
         bottom: calc(100% + 2px);
         background-color: #fff;
-        padding: 9px 8px;
+        padding: 9px 8px 3px;
         box-shadow: 2px 3px 3px 0 rgba(#000, 0.08);
         border-radius: 4px;
         display: flex;
@@ -1222,8 +1223,9 @@ body {
         opacity: 0;
         visibility: hidden;
         transition: .3s ease;
+        width: 220px;
 
-        >img {
+        .map-card-image {
             width: 32px;
             height: 48px;
             object-fit: cover;
@@ -1264,5 +1266,56 @@ body {
             z-index: 10;
         }
     }
+    .swiper-button-next, .swiper-button-prev {
+        top: 22%;
+        height: 100%;
+        background-color: rgba(#fff, 1)!important;
+        &.swiper-button-disabled {
+            opacity: 1!important;
+            &:after{
+                opacity: 0.35;
+            }
+        }
+    }
+    .swiper-button-prev, .swiper-rtl .swiper-button-next {
+        left: 0px;
+    }
+    .swiper-button-next, .swiper-rtl .swiper-button-prev {
+        right: 0px;
+    }
+    .swiper-button-next:after,
+    .swiper-rtl .swiper-button-prev:after,
+    .swiper-button-prev:after,
+    .swiper-rtl .swiper-button-next:after {
+        width: 8px;
+        height: 14px;
+        background-size: cover;
+    }
+
+    .swiper-button-next:after,
+    .swiper-rtl .swiper-button-prev:after {
+        content: '';
+        background-image: url(../img/svg_icons/arrow_slide_next_black.svg);
+    }
+    .swiper-button-prev:after,
+    .swiper-rtl .swiper-button-next:after {
+        content: '';
+        background-image: url(../img/svg_icons/arrow_slide_prev_black.svg);
+    }
+    .swiper-pagination-fraction {
+        bottom: 0px;
+        font-size: 10px;
+    }
 }
+.map-card-slider{
+    padding: 0 0px 20px;
+}
+.map-card-slide {
+    width: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+
 // --- end map marker styles --//

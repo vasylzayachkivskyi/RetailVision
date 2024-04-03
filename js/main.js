@@ -721,7 +721,6 @@ $(document).ready(function () {
             prevEl: ".swiper-button-prev",
         },
         keyboard: true,
-
     });
 
     //  gallery ----------- //
@@ -1651,6 +1650,33 @@ $(document).ready(function () {
         var target = $(event.target);
         if (!target.closest('.map-marker').length) {
             $('.map-marker').removeClass('show');
+        }
+    });
+
+
+
+    // map card slider --------------------- // 
+    var swiper = new Swiper(".map-card-slider", {
+        slidesPerView: 1,
+        speed: 800,
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+        pagination: {
+            el: ".swiper-pagination",
+            type: "fraction",
+        },
+    });
+
+    $(".map-card-slider").each(function() {
+        var $slider = $(this);
+        var $slides = $slider.find(".swiper-slide");
+        if ($slides.length === 1) {
+            $slider.find(".swiper-pagination").hide();
+            $slider.closest('.marker-dropdown').find(".swiper-button-next, .swiper-button-prev").hide();
+            $slider.closest('.marker-dropdown').css('width', 180)
+            $slider.css('padding-bottom', 6);
         }
     });
 
