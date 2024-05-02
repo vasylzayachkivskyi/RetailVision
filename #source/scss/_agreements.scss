@@ -66,7 +66,8 @@
         margin-right: 10px;
     }
 }
-.clearfilter{
+
+.clearfilter {
     height: 40px;
     margin-left: 16px;
     display: flex;
@@ -82,12 +83,14 @@
     transition: 0.3s;
     background: transparent;
     border-radius: 8px;
-    &:hover{
-        background: rgba(54,112,240,0.04);
+
+    &:hover {
+        background: rgba(54, 112, 240, 0.04);
         color: #3670F0;
     }
 }
-.base .clearfilter{
+
+.base .clearfilter {
     margin-top: 6px;
 }
 
@@ -1241,7 +1244,8 @@
 
 .image-container {
     margin-top: 24px;
-    .image-box{
+
+    .image-box {
         border: 1px solid #D9D9D9;
         border-radius: 8px;
         padding: 0 7px 10px;
@@ -1887,57 +1891,179 @@
     }
 }
 
+// -----------------    client-form  -------------------------- //
+
 .infosearch-box__form.client-form {
+    margin-bottom: 0;
+
+    form {
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+
+        button {
+            margin: 0;
+        }
+    }
+
     .select .dropdown-response {
         background: #FBFBFB;
     }
 
-    .infosearch__forminput+.infosearch__forminput {
-        margin-left: 24px;
+    .infosearch__forminput.multiselect {
+        position: relative;
+        height: 62px;
+
+        input {
+            padding: 10px 16px;
+            background: #FBFBFB;
+            border: 0.5px solid #D9D9D9;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 18px;
+            height: 40px;
+            color: #383D54;
+
+            &::placeholder {
+                color: #5C6476;
+            }
+        }
+
+        svg {
+            position: absolute;
+            top: 62%;
+            right: 15px;
+            left: initial;
+            pointer-events: none;
+        }
+        .dropdownwrap {
+            width: 100%;
+            display: none;
+            position: absolute;
+            z-index: 22;
+            left: 0;
+            top: 110%;
+            background: #FBFBFB;
+            border: 0.5px solid #D9D9D9;
+            box-shadow: 2px 0px 3px rgba(0, 0, 0, 0.08), 0px 3px 3px rgba(0, 0, 0, 0.08);
+            border-radius: 10px;
+            padding: 8px;
+            padding: 15px 7px 15px 7px;
+            li{
+                width: auto;
+                cursor: pointer;
+                padding: 8px 8px 8px 24px;
+                font-weight: 600;
+                font-size: 14px;
+                line-height: 20px;
+                display: -webkit-box;
+                display: -ms-flexbox;
+                display: flex;
+                align-items: center;
+                letter-spacing: 0.25px;
+                color: #383D54;
+                position: relative;
+                transition: 0.3s;
+                &:before{
+                    content: "";
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    left: 0;
+                    transition: 0.3s;
+                    opacity: 0;
+                    width: 16px;
+                    height: 16px;
+                    background-image: url(../img/svg_icons/check.svg);
+                }
+                &:hover{
+                    opacity: 0.8;
+                    margin-left: 14px;
+                    &::before{
+                        opacity: 1;
+                    }
+                }
+            }
+            .notfound{
+                display: block;
+                text-align: center;
+                padding: 5px 10px;
+                font-weight: 600;
+            }
+        }
     }
+
 
     .infosearch__forminput p {
         display: inline-block;
     }
 
-    .infosearch__forminput:nth-child(1) {
-        width: auto;
 
-        input {
-            width: 80px;
-        }
+    .infosearch__forminput:nth-child(1) {
+        width: 24%;
     }
 
     .infosearch__forminput:nth-child(2) {
-        width: auto;
-
-        input {
-            width: 80px;
-        }
+        width: 24%;
     }
 
     .infosearch__forminput:nth-child(3) {
-        width: auto;
-
-        input {
-            width: 80px;
-        }
+        width: 24%;
     }
 
     .infosearch__forminput:nth-child(4) {
-        width: 15%;
+        width: 24%;
 
         input {
             width: 100%;
         }
 
         .dropdown-response {
-            width: 180px;
+            width: 100%;
+        }
+    }
+
+    .infosearch__forminput:nth-child(5) {
+        width: 40%;
+
+        input {
+            width: 100%;
+        }
+
+        .dropdown-response {
+            width: 100%;
+        }
+    }
+
+    .infosearch__forminput:nth-child(6) {
+        width: 40%;
+
+        input {
+            width: 100%;
+        }
+
+        .dropdown-response {
+            width: 100%;
+        }
+    }
+
+    .infosearch__forminput {
+        margin-bottom: 20px;
+
+        input {
+            width: 45%;
+        }
+
+
+        &+.infosearch__forminput {
+            margin-left: 0px;
         }
     }
 }
 
 .infosearch__forminput {
+
     input {
         width: 153px;
     }
@@ -1951,6 +2077,9 @@
         margin-left: 32px;
     }
 }
+
+
+
 
 .saleowner__info-blockbottom {
     height: 24px;
@@ -2913,9 +3042,6 @@
 
 @media (max-width: 1440px) {
 
-    .infosearch-box__form.client-form .infosearch__forminput+.infosearch__forminput {
-        margin-left: 10px;
-    }
 
     .info-righthead__tab p {
         font-size: 12px;
@@ -3082,36 +3208,6 @@
         }
     }
 
-    .infosearch-box__form.client-form {
-
-        .infosearch__forminput:nth-child(1) {
-            width: auto;
-
-            input {
-                width: 72px;
-            }
-        }
-
-        .infosearch__forminput:nth-child(2) {
-            width: auto;
-
-            input {
-                width: 72px;
-            }
-        }
-
-        .infosearch__forminput:nth-child(3) {
-            width: auto;
-
-            input {
-                width: 72px;
-            }
-        }
-
-        .infosearch__forminput:nth-child(4) {
-            width: 125px;
-        }
-    }
 
     .saleowner__info {
         overflow-x: scroll;
