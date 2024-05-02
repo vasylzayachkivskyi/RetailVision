@@ -1723,7 +1723,7 @@
 }
 
 .client-block .info-block__col:nth-child(2) {
-    width: 225px;
+    width: 235px;
 }
 
 .info-block__client {
@@ -1782,13 +1782,15 @@
         }
     }
 }
-
+.client-block .info-block__col{
+    padding-right: 5px;
+}
 .info-block__col:nth-child(4) {
     width: 143px;
 }
 
 .client-block .info-block__col:nth-child(4) {
-    width: 96px;
+    width: 160px;
 }
 
 .info-block__company {
